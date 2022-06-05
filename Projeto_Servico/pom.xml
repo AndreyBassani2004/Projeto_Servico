@@ -3,7 +3,7 @@
   <groupId>Projeto_Servico</groupId>
   <artifactId>Projeto_Servico</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging> 
+  <packaging>war</packaging>  
   <name>Projeto_Servico</name>
   <build>
     <plugins>
