@@ -28,7 +28,7 @@
 	
 	<div id="navMobile">
 	   <ul>
-            <li><a href="./index.html">INICIO</a></li>
+            <li><a href="<%= request.getContextPath() %>/index.jsp">INICIO</a></li>
             <li><a href="./quemsomos.html">QUEM SOMOS</a></li>
             <li><a href="./trabalheconosco.html">TRABALHE CONOSCO</a></li>
           </ul>
