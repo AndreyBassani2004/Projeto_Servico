@@ -43,11 +43,11 @@ body {
     margin-left: 2em;
 }
 
-h5{
+#Servicos h5{
     font-family:'Times New Roman', Times, serif; 
     font-size: 30px;
 }
-p{
+#Servicos p{
     font-family:'Times New Roman', Times, serif;
 }
 

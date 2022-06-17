@@ -8,8 +8,11 @@
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
+<div id="Menu">
    <%@include file="/Componentes/header.jsp"%>
-  
+</div>
+
+<div id="Servicos">
     <div id="titulo">
         <h1 size="20">Precisa consertar, reformar ou construir?</h1>
     </div>
@@ -87,7 +90,7 @@
     </div>
 
     <div id="linha1"></div>
-   
+   </div>
    <%@include file="/Componentes/rodape.jsp"%>
    
  
