@@ -1,14 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<head>
-<meta charset="ISO-8859-1">
+    
 <link href="<%= request.getContextPath() %>/css/header.css" rel="stylesheet" type="text/css">
-
-<title></title>
-</head>
-<body>
-
  <header>
         <div id="img"><img src="./img/#" alt="Logo" width="320" height="=240"></div>
         <div id="t1">
@@ -36,5 +29,3 @@
 	</div>
 	
     <div id="barra2"></div>
-
-</body>

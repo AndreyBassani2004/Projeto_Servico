@@ -1,7 +1,39 @@
 @charset "ISO-8859-1";
 
 body {
-    width: 100%;
+    width: 50%;
     margin: 0;
     padding: 0;
+    background-color: black;
+}
+
+#titulo h1{
+	font-family: 'Times New Roman', Times, serif;
+    text-align: center;  
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.9em;
+    margin-bottom: 0.5em;
+    font-size: 50px;   
+}
+
+#texto p{
+	font-family: 'Times New Roman', Times, serif;
+    text-align: center;  
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;  
+}
+
+#linha1{
+	align-items: center;
+    justify-content: space-between;
+    background-color: #ffff;
+    padding: 2em;
+}
+
+#login{
+	text-align: center;  
+    margin-left: auto;
+    margin-right: auto;
 }
