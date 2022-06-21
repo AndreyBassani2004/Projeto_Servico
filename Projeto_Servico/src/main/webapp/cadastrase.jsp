@@ -4,9 +4,30 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
- <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/cadastrase.css">
+ <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/cadastra.css">
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 		<%@include file="/Componentes/header.jsp"%>
+		
+		<div id="titulo">
+			<h1>Cadastra-se e trabalhe conosco.</h1>
+		</div>		
+		<div id="formulario">
+			
+		</div>
+		
+		<div id="linha1"></div>
+		
+		
+		<div id="redirecionar">
+		 <p>Já possui uma conta?</p> <br>
+		<a href="<%= request.getContextPath() %>/cadastrase.jsp"><button type="button" class="btn btn-success">Fazer Login</button></a>
+		</div>
+		
+		<div id="linha1"></div>
+		
+		
+		<%@include file="/Componentes/rodape.jsp"%>
+		
 </body>

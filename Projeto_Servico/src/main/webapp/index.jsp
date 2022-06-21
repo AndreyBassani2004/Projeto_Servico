@@ -15,7 +15,7 @@
 
 <div id="Servicos">
     <div id="titulo">
-        <h1 size="20">Precisa consertar, reformar ou construir?</h1>
+        <h1 size="20"><b>Precisa consertar, reformar ou construir?</b></h1>
     </div>
     <br>
     
