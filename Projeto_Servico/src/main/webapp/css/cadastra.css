@@ -23,6 +23,13 @@ body {
     padding: 2em;
 }
 
+#linha2{
+	align-items: center;
+    justify-content: space-between;
+    background-color: #F3F3F3;
+    height: 0.1em;
+}
+
 #redirecionar{
 	text-align: center;  
     margin-left: auto;
@@ -35,4 +42,43 @@ body {
     margin-left: auto;
     margin-right: auto;
     font-size: 20px; 	
+}
+
+#formulario{
+	margin-right: 8em;
+	margin-left: 8em;
+	}
+	
+#textcampo p{
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 17px; 
+}
+
+#textcampo input{
+	width: 40em;
+}
+
+#textcampo select{
+	width: 40em;
+}
+
+table{
+	margin-top: 1em;
+	margin-left: 4em;
+}
+
+table tr td {
+	padding-left: 5em;
+	padding-right: 5em;
+	padding-top: 1em;
+}
+
+#button{
+	align-items: flex-end;
+	text-align: right;
+}
+
+spam {
+	align-items: flex-end;
+	text-align: right;
 }
