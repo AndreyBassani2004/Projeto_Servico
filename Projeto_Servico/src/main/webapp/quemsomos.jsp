@@ -13,12 +13,12 @@
 
 	<%@include file="/Componentes/header.jsp"%>
 	<div id="titulo">
-		<h1>Quem Somos ?</h1>
+		<h1><b>Quem Somos ?</b></h1>
 		<br>
 	</div>
 	<div id="espaco"></div>
 	<div id="texto">
-		<h1>Nosso objetivo</h1><br><br>
+		<h2>Nosso objetivo</h2><br><br>
 		<p>Paragrafo 1</p><br>
 		<p>Paragrafo 2</p><br>
 		<p>Paragrafo 3</p><br>

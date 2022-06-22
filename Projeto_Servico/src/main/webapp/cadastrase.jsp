@@ -11,7 +11,7 @@
 		<%@include file="/Componentes/header.jsp"%>
 		
 		<div id="titulo">
-			<h1>Cadastra-se e trabalhe conosco.</h1>
+			<h1><b>Cadastra-se e trabalhe conosco.</b></h1>
 		</div>		
 		<div id="formulario">
 			
