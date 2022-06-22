@@ -170,7 +170,7 @@
 
 	<div id="redirecionar">
 		<p>Já possui uma conta?</p>
-		<br> <a href="<%=request.getContextPath()%>/cadastrase.jsp"><button
+		<br> <a href="<%=request.getContextPath()%>/login.jsp"><button
 				type="button" class="btn btn-warning">Fazer Login</button></a>
 	</div>
 
