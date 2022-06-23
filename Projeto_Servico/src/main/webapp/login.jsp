@@ -24,8 +24,9 @@
 	<div id="linha1"></div>
 
 	<div id="formulario">
-		<form enctype="multipart/form-data" action="" method="post"
+		<form action="ServletLogin" method="post"
 			id="cadastroCliente">
+			<input type="hidden" value = "<%= request.getParameter("url") %>" name = "url">
 			<table id="tabelafrom1">
 				<tr>
 					<td>
@@ -34,7 +35,7 @@
 								<b>Usuário:</b>
 							</p>
 							<input type="text" class="form-control"
-								placeholder="Digite seu login" name="" id="nome">
+								placeholder="Digite seu login" name="login" id="login">
 						</div>
 					</td>
 				</tr>
@@ -44,13 +45,13 @@
 								<b>Senha:</b>
 							</p>
 							<input type="password" class="form-control"
-								placeholder="Digite sua senha" name="" id="senha">
+								placeholder="Digite sua senha" name="senha" id="senha">
 						</div></td>
 				</tr>
 			</table>
 			<div id="linha1"></div>
 			<div id="spam">
-				<spam>msg</spam>
+				<spam>${msg}</spam>
 			</div>
 			<div id="button">
 
