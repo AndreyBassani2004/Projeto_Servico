@@ -1,1 +1,72 @@
 @charset "ISO-8859-1";
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+#titulo h1{
+	font-family: 'Times New Roman', Times, serif;
+    text-align: center;  
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.9em;
+    margin-bottom: 0.5em;
+    font-size: 50px;   
+}
+
+#linha1{
+	align-items: center;
+    justify-content: space-between;
+    background-color: #ffff;
+    padding: 3em;
+}
+
+#linha2{
+	align-items: center;
+    justify-content: space-between;
+    background-color: #ffff;
+    padding: 6em;
+}
+
+#textcampo p{
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 17px; 
+}
+
+#textcampo input{
+	width: 40em;
+}
+
+#textcampo select{
+	width: 40em;
+}
+
+table{
+	text-align: left;  
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.9em;
+    margin-bottom: 0.5em;
+}
+
+table tr td {
+	padding-left: 5em;
+	padding-right: 5em;
+	padding-top: 1em;
+}
+
+#button{
+	text-align: right;
+	margin-top: 1em;
+	margin-right: 40em;
+}
+
+spam {
+	align-items: flex-end;
+	text-align: right;
+	margin-top: 1em;
+	margin-left: 40em;
+}
