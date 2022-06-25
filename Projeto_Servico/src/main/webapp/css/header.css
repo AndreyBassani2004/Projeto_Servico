@@ -33,6 +33,7 @@ header{
 
 #img{
     padding: 0.1em 7.0em;
+    border: 0.1em;
 }
 
 #barra1{
@@ -41,6 +42,7 @@ header{
     justify-content: space-between;
     background-color: #F3F3F3;
     padding: 0.05em;
+    
 }
 
 #navMobile{

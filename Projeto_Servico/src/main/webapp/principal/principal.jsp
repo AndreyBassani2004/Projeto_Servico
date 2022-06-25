@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%@include file="/principal/Componente/header2.jsp"%>
 	<h1>Pagina Principal</h1>
 </body>
 </html>
