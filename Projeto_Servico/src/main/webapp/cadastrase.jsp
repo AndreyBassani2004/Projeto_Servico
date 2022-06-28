@@ -1,3 +1,5 @@
+<%@page import="Model.ModelLogin" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -23,7 +25,7 @@
 	<div id="linha1"></div>
 
 	<div id="formulario">
-		<form enctype="multipart/form-data" action="" method="post"
+		<form action="<%= request.getContextPath() %>/ServletCadastroPrestador" method="post"
 			id="cadastroCliente">
 			<div id="formulario1">
 				<h5>Cadastro do login</h5>
@@ -38,7 +40,7 @@
 									<b>Nome:</b>
 								</p>
 								<input type="text" class="form-control"
-									placeholder="Digite seu nome completo" name="" id="nome">
+									placeholder="Digite seu nome completo" name="nome" id="nome" value="${modelLogin.nome}">
 							</div>
 						</td>
 						<td>
@@ -47,7 +49,7 @@
 									<b>Email:</b>
 								</p>
 								<input type="email" class="form-control"
-									placeholder="Digite seu email para login" name="" id="email">
+									placeholder="Digite seu email para login" name="email" id="email" value="${modelLogin.login}">
 							</div>
 						</td>
 					</tr>
@@ -58,7 +60,7 @@
 									<b>Senha:</b>
 								</p>
 								<input type="password" class="form-control"
-									placeholder="Digite sua senha" name="" id="senha">
+									placeholder="Digite sua senha" name="senha" id="senha" value="${modelLogin.senha}">
 							</div>
 						</td>
 						<td>
@@ -67,7 +69,7 @@
 									<b>Repetir Senha:</b>
 								</p>
 								<input type="password" class="form-control"
-									placeholder="Digite sua senha novamente" name="" id="Rsenha">
+									placeholder="Digite sua senha novamente" name="Rsenha" id="Rsenha">
 							</div>
 						</td>
 					</tr>
@@ -88,8 +90,8 @@
 									<b>Telefone de contato:</b>
 								</p>
 								<input type="text" class="form-control"
-									placeholder="Digite seu telefone de contato" name=""
-									id="foneContato">
+									placeholder="Digite seu telefone de contato" name="foneContato"
+									id="foneContato" value="${modelLogin.telefone}">
 							</div>
 						</td>
 						<td>
@@ -137,8 +139,8 @@
 									<b>Cidade:</b>
 								</p>
 								<input type="text" class="form-control"
-									placeholder="Digite seu telefone de contato" name=""
-									id="cidade">
+									placeholder="Digite seu telefone de contato" name="cidade"
+									id="cidade" value="${modelLogin.cidade}">
 							</div>
 						</td>
 						<td>
@@ -147,8 +149,8 @@
 									<b>Logradouro:</b>
 								</p>
 								<input type="text" class="form-control"
-									placeholder="Digite seu telefone de contato" name=""
-									id="logradouro">
+									placeholder="Digite seu logradouro" name="logradouro"
+									id="logradouro" value="${modelLogin.logradouro}">
 							</div>
 						</td>
 					</tr>
@@ -160,7 +162,7 @@
 				<button type="submit"
 					class="btn btn-success waves-effect waves-light">Criar Conta</button>
 			</div>
-			<div id="spam"><spam>msg</spam></div>
+			<div id="spam"><spam>${msg}</spam></div>
 		</form>
 	</div>
 

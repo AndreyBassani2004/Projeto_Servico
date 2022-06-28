@@ -1,68 +1,68 @@
 @charset "ISO-8859-1";
 
 body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+	width: 100%;
+	margin: 0;
+	padding: 0;
 }
 
-#titulo h1{
+#titulo h1 {
 	font-family: 'Times New Roman', Times, serif;
-    text-align: center;  
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0.9em;
-    margin-bottom: 0.5em;
-    font-size: 50px;   
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0.9em;
+	margin-bottom: 0.5em;
+	font-size: 50px;
 }
 
-#linha1{
+#linha1 {
 	align-items: center;
-    justify-content: space-between;
-    background-color: #ffff;
-    padding: 2em;
+	justify-content: space-between;
+	background-color: #ffff;
+	padding: 2em;
 }
 
-#linha2{
+#linha2 {
 	align-items: center;
-    justify-content: space-between;
-    background-color: #F3F3F3;
-    height: 0.1em;
+	justify-content: space-between;
+	background-color: #F3F3F3;
+	height: 0.1em;
 }
 
-#redirecionar{
-	text-align: center;  
-    margin-left: auto;
-    margin-right: auto;
+#redirecionar {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-#redirecionar p{
+#redirecionar p {
 	font-family: 'Times New Roman', Times, serif;
-    text-align: center;  
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 20px; 	
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 20px;
 }
 
-#formulario{
+#formulario {
 	margin-right: 8em;
 	margin-left: 8em;
-	}
-	
-#textcampo p{
+}
+
+#textcampo p {
 	font-family: 'Times New Roman', Times, serif;
-	font-size: 17px; 
+	font-size: 17px;
 }
 
-#textcampo input{
+#textcampo input {
 	width: 30em;
 }
 
-#textcampo select{
+#textcampo select {
 	width: 30em;
 }
 
-table{
+table {
 	margin-top: 1em;
 	margin-left: 2em;
 }
@@ -73,7 +73,7 @@ table tr td {
 	padding-top: 1em;
 }
 
-#button{
+#button {
 	margin-left: 3em;
 	margin-right: 10em;
 	align-items: flex-end;
