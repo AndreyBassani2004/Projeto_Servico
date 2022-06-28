@@ -55,30 +55,33 @@ body {
 }
 
 #textcampo input{
-	width: 40em;
+	width: 30em;
 }
 
 #textcampo select{
-	width: 40em;
+	width: 30em;
 }
 
 table{
 	margin-top: 1em;
-	margin-left: 4em;
+	margin-left: 2em;
 }
 
 table tr td {
-	padding-left: 5em;
-	padding-right: 5em;
+	padding-left: 3em;
+	padding-right: 3em;
 	padding-top: 1em;
 }
 
 #button{
+	margin-left: 3em;
+	margin-right: 10em;
 	align-items: flex-end;
 	text-align: right;
 }
 
 spam {
+	margin-left: 10em;
 	align-items: flex-end;
 	text-align: right;
 }

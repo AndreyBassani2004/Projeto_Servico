@@ -5,9 +5,14 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/principal/css/principalpag.css">
 </head>
 <body>
 	<%@include file="/principal/Componente/header2.jsp"%>
-	<h1>Pagina Principal</h1>
+	<div id="titulo">
+	<h1>Seja, Bem Vindo!</h1>
+	</div>
+	<%@include file="/Componentes/rodape.jsp"%>
 </body>
 </html>

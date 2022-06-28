@@ -1,0 +1,15 @@
+@charset "ISO-8859-1";
+
+body{
+	width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#titulo{
+	text-align: center;
+	height: 20em;
+	width: 100%;
+	margin-top:20em;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
