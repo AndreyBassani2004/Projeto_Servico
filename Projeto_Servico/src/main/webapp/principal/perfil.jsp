@@ -17,7 +17,7 @@
 	<div id="linha1"></div>
 
 	<div id="formulario">
-		<form action="<%= request.getContextPath() %>/ServletCadastroPrestador" method="post"
+		<form action="<%= request.getContextPath() %>/ServletPosLoginPrestador" method="post"
 			id="cadastroCliente">
 			<input type="hidden" name="acao" id="acao" value="">
 			<div id="formulario1">
@@ -43,7 +43,7 @@
 									<b>Email (Para a conta) :</b>
 								</p>
 								<input type="email" class="form-control"
-									 name="email" id="email" value="<%= session.getAttribute("usuario")%>" readonly="readonly">
+									 name="email" id="email" value="<%=session.getAttribute("usuario")%>" readonly="readonly">
 							</div>
 						</td>
 					</tr>
@@ -62,7 +62,7 @@
 								<p>
 									<b>Repetir Senha:</b>
 								</p>
-								<input type="password" class="form-control"
+								<input type="password" class="form-control" value="${modelLogin.rSenha}"
 									placeholder="Digite sua senha novamente" name="Rsenha" id="Rsenha">
 							</div>
 						</td>
@@ -155,7 +155,7 @@
 
 				<button 
 					class="btn btn-warning">Alterar</button>
-					<button onclick="verEditar('<%=session.getAttribute("usuario")%>')" type="button" class="btn btn-info">Ver</button>
+					<button onclick="verEditar('<%=session.getAttribute("usuario")%>')" type="button" class="btn btn-info">Editar conta</button>
 			</div>
 			<div id="spam"><spam>${msg}</spam></div>
 		</form>

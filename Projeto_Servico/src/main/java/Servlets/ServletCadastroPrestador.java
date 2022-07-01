@@ -24,22 +24,6 @@ public class ServletCadastroPrestador extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try {
-			String acao = request.getParameter("acao");
-			
-			if(acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("buscarEditar")) {
-				String login = request.getParameter("login");
-				
-				ModelLogin modelLogin = daoCadastroPrestador.consultaUsuario(login);
-				
-				request.setAttribute("msg", "Usuario em edição");
-				request.setAttribute("modelLogin", modelLogin);
-				request.getRequestDispatcher("principal/perfil.jsp").forward(request, response);
-			}
-			
-		}catch (Exception e) {
-			// TODO: handle exception
-		}
 		
 	}
 
@@ -71,8 +55,7 @@ public class ServletCadastroPrestador extends HttpServlet {
 			modelLogin.setCidade(cidade);
 			modelLogin.setLogradouro(logradouro);
 			modelLogin.setPerfil(perfil);
-			
-			//daoCadastroPrestador.gravarUsuario(modelLogin);
+			modelLogin.setrSenha(Rsenha);
 			
 			if(daoCadastroPrestador.validarLogin(modelLogin.getLogin()) && modelLogin.getId() == null) {
 				msg = "Já existe usuario com o mesmo login, informe outro login.";

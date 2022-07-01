@@ -67,6 +67,7 @@ public class DAOCadastroPrestador {
 		while (resultado.next()) /* Se tem resultado */ {
 			modelLogin.setLogin(resultado.getString("email"));
 			modelLogin.setSenha(resultado.getString("senha"));
+			modelLogin.setrSenha(resultado.getString("senha"));
 			modelLogin.setNome(resultado.getString("nome"));
 			modelLogin.setEstado(resultado.getString("estado"));
 			modelLogin.setCidade(resultado.getString("cidade"));

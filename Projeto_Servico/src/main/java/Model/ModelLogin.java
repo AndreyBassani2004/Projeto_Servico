@@ -15,9 +15,15 @@ public class ModelLogin implements Serializable {
 	private String telefone;
 	private String cidade;
 	private String logradouro;
+	private String rSenha;
 	
 	
-	
+	public String getrSenha() {
+		return rSenha;
+	}
+	public void setrSenha(String rSenha) {
+		this.rSenha = rSenha;
+	}
 	public String getCidade() {
 		return cidade;
 	}
