@@ -46,7 +46,7 @@
 						<td>
 							<div id="textcampo">
 								<p>
-									<b>Email:</b>
+									<b>Email (Para a conta) :</b>
 								</p>
 								<input type="email" class="form-control"
 									placeholder="Digite seu email para login" name="email" id="email" value="${modelLogin.login}">
@@ -172,7 +172,7 @@
 
 	<div id="redirecionar">
 		<p>Já possui uma conta?</p>
-		<br> <a href="<%=request.getContextPath()%>/login.jsp"><button
+		<br> <a href="<%=request.getContextPath()%>/principal/principal.jsp"><button
 				type="button" class="btn btn-warning">Fazer Login</button></a>
 	</div>
 

@@ -40,6 +40,8 @@ public class ServletCadastroPrestador extends HttpServlet {
 			String cidade = request.getParameter("cidade");
 			String logradouro = request.getParameter("logradouro");
 			String perfil = "PRESTADOR";
+			
+			String msg ="Operacao realizada com sucesso!";
 
 			ModelLogin modelLogin = new ModelLogin();
 			
@@ -54,11 +56,18 @@ public class ServletCadastroPrestador extends HttpServlet {
 			modelLogin.setLogradouro(logradouro);
 			modelLogin.setPerfil(perfil);
 			
-			daoCadastroPrestador.gravarUsuario(modelLogin);
+			//daoCadastroPrestador.gravarUsuario(modelLogin);
 			
-			request.setAttribute("msg", "Operacao realizada com sucesso!");
+			if(daoCadastroPrestador.validarLogin(modelLogin.getLogin()) && modelLogin.getId() == null) {
+				msg = "Já existe usuario com o mesmo login, informe outro login.";
+			}else {
+				modelLogin = daoCadastroPrestador.gravarUsuario(modelLogin);
+			
+			}
+			
+			request.setAttribute("msg", msg);
 			request.setAttribute("modelLogin", modelLogin);
-		    request.getRequestDispatcher("cadastrase.jsp").forward(request, response);
+		    request.getRequestDispatcher("cadastroSucesso.jsp").forward(request, response);
 			
 			}else {
 				request.setAttribute("msg", "Senhas não identicas!");
