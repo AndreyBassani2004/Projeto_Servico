@@ -32,7 +32,7 @@ public class ServletCadastroPrestador extends HttpServlet {
 				
 				ModelLogin modelLogin = daoCadastroPrestador.consultaUsuario(login);
 				
-				request.setAttribute("msg", "Usuario em edicao");
+				request.setAttribute("msg", "Usuario em edição");
 				request.setAttribute("modelLogin", modelLogin);
 				request.getRequestDispatcher("principal/perfil.jsp").forward(request, response);
 			}
