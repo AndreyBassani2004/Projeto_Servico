@@ -1,38 +1,32 @@
 <%@page import="Model.ModelLogin" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
+<html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/css/cadastra.css">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
+	href="<%=request.getContextPath()%>/principal/css/perfilCSS.css">
 </head>
 <body>
-	<%@include file="/Componentes/header.jsp"%>
-
-	<div id="titulo">
-		<h1>
-			<b>Cadastra-se e trabalhe conosco.</b>
-		</h1>
-	</div>
-
+	<%@include file="/principal/Componente/header2.jsp"%>
+	<div id="titulo"><h1>Meus Dados</h1></div>
+	
 	<div id="linha1"></div>
 
 	<div id="formulario">
 		<form action="<%= request.getContextPath() %>/ServletCadastroPrestador" method="post"
 			id="cadastroCliente">
+			<input type="hidden" name="acao" id="acao" value="">
 			<div id="formulario1">
 				<h5>Cadastro do login</h5>
 				<br>
 				<div id="linha2"></div>
 				<br>
 				<table id="tabelafrom1">
+				
 					<tr>
 						<td>
 							<div id="textcampo">
@@ -40,7 +34,7 @@
 									<b>Nome:</b>
 								</p>
 								<input type="text" class="form-control"
-									placeholder="Digite seu nome completo" name="nome" id="nome" value="${modelLogin.nome}">
+									 name="nome" id="nome" value="${modelLogin.nome}" readonly="readonly">
 							</div>
 						</td>
 						<td>
@@ -49,7 +43,7 @@
 									<b>Email (Para a conta) :</b>
 								</p>
 								<input type="email" class="form-control"
-									placeholder="Digite seu email para login" name="email" id="email" value="${modelLogin.login}">
+									 name="email" id="email" value="<%= session.getAttribute("usuario")%>" readonly="readonly">
 							</div>
 						</td>
 					</tr>
@@ -79,7 +73,7 @@
 			<div id="linha1"></div>
 
 			<div id="fromulario2">
-				<h5>Qual seu local e contato?</h5>
+				<h5>Qual seu local e contato</h5>
 				<br>
 				<div id="linha2"></div>
 				<table id="tabelafrom1">
@@ -160,7 +154,8 @@
 		<div id="button">
 
 				<button type="submit"
-					class="btn btn-success waves-effect waves-light">Criar Conta</button>
+					class="btn btn-warning">Alterar</button>
+					<button onclick="verEditar('<%=session.getAttribute("usuario")%>')" type="button" class="btn btn-info">Ver</button>
 			</div>
 			<div id="spam"><spam>${msg}</spam></div>
 		</form>
@@ -168,17 +163,18 @@
 
 	<div id="linha1"></div>
 	
-
-
-	<div id="redirecionar">
-		<p>Já possui uma conta?</p>
-		<br> <a href="<%=request.getContextPath()%>/login.jsp"><button
-				type="button" class="btn btn-warning">Fazer Login</button></a>
-	</div>
-
-	<div id="linha1"></div>
-
-
+	<script type="text/javascript">
+	function verEditar(login){
+		
+		var urlAction = document.getElementById('cadastroCliente').action;
+		
+		window.location.href = urlAction + '?acao=buscarEditar&login=' + login;
+		
+		
+	}
+	</script>
+	
+	
 	<%@include file="/Componentes/rodape.jsp"%>
-
 </body>
+</html>

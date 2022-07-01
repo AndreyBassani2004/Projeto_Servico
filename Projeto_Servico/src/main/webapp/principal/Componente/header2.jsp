@@ -24,7 +24,7 @@
             <ul>
                 <li id="menu-cr"><a href="#">Menu</a>
                     <ul>
-                        <li><a href="#" id="opcao">Perfil</a></li>
+                        <li><a href="<%=request.getContextPath()%>\principal\perfil.jsp" id="opcao">Perfil</a></li>
                         <li><a href="<%=request.getContextPath()%>\principal\cadastroUser.jsp" id="opcao">Cadastra usuarios (ADM)</a></li>
                         <li><a href="#" id="opcao">Validar Avaliações</a></li>
                         <li><a href="#" id="opcao">Avaliações Denunciadas</a></li>

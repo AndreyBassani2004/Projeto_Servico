@@ -54,7 +54,7 @@ public class DAOCadastroPrestador {
 		
 		ModelLogin modelLogin = new ModelLogin();
 		
-		String sql = "select * from usuario where upper(email) = upper('"+login+"')";
+		String sql = "select * from usuario, dados_prestador where usuario(email), dados_prestador(email_user)  = upper('"+login+"');";
 		PreparedStatement statement = connection.prepareStatement(sql);
 
 		ResultSet resultado = statement.executeQuery();

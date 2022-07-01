@@ -21,9 +21,9 @@ public class DAOUsuarioPosLogin {
 
 		ModelLogin modelLogin = new ModelLogin();
 
-		String sql = "select * from model_login where upper(login) = upper('" + login + "');";
+		String sql = "select * from usuario where upper(email) = Trim('"+login+"');";
 		PreparedStatement statement = connection.prepareStatement(sql);
-
+        System.out.println(sql);
 		ResultSet resultado = statement.executeQuery();
 
 		while (resultado.next()) /* Se tem resultado */ {
