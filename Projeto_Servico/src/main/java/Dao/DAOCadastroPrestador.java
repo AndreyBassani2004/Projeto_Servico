@@ -50,6 +50,38 @@ public class DAOCadastroPrestador {
 		return this.consultaUsuario(objeto.getLogin());
 	}
 	
+	
+	
+		public void atualizaUsuario(ModelLogin objeto) throws Exception{
+		
+		String sql = "UPDATE usuario SET senha=?, estado=? WHERE email=?;";
+		String sql2 = "UPDATE dados_prestador SET telefone_contato=?, estado=?, cidade=?, cep=? WHERE email_user=?;";
+		
+	
+		connection.setAutoCommit(false);
+		PreparedStatement preparedSql = connection.prepareStatement(sql);		
+		preparedSql.setString(1, objeto.getSenha());
+		preparedSql.setString(2, objeto.getEstado());
+		preparedSql.setString(3, objeto.getLogin());
+		
+		preparedSql.execute();
+		connection.commit();
+		
+		PreparedStatement preparedSql2 = connection.prepareStatement(sql2);
+		preparedSql2.setString(1, objeto.getTelefone());
+		preparedSql2.setString(2, objeto.getEstado());
+		preparedSql2.setString(3, objeto.getCidade());
+		preparedSql2.setString(4, objeto.getLogradouro());
+		preparedSql2.setString(5, objeto.getLogin());
+		
+		preparedSql2.execute();
+		connection.commit();
+		
+		
+	}
+	
+	
+	
 	public ModelLogin consultaUsuario(String login) throws Exception{
 		
 		ModelLogin modelLogin = new ModelLogin();

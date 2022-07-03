@@ -153,7 +153,7 @@
 			<div id="linha1"></div>
 		<div id="button">
 
-				<button 
+				<button type="submit"
 					class="btn btn-warning">Alterar</button>
 					<button onclick="verEditar('<%=session.getAttribute("usuario")%>')" type="button" class="btn btn-info">Editar conta</button>
 			</div>

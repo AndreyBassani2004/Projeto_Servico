@@ -1,6 +1,8 @@
 package Servlets;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,18 +32,14 @@ public class ServletPosLoginPrestador extends HttpServlet {
 			
 			if(acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("buscarEditar")) {
 				String login = request.getParameter("login");
-				
+			
 				ModelLogin modelLogin = daoCadastroPrestador.consultaUsuario(login);
 				
 				request.setAttribute("msg", "Usuario em edição");
 				request.setAttribute("modelLogin", modelLogin);
 				request.getRequestDispatcher("principal/perfil.jsp").forward(request, response);
-			}else if(acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("editar")) {
-				try {
-					
-				}catch (Exception e) {
-					e.printStackTrace();
-				}
+			}else {
+				
 			}
 			
 		}catch (Exception e1) {
@@ -52,7 +50,61 @@ public class ServletPosLoginPrestador extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		doGet(request, response);
+		try {
+			String id = request.getParameter("id");
+			String nome = request.getParameter("nome");
+			String email = request.getParameter("email");
+			String senha = request.getParameter("senha");
+			String Rsenha = request.getParameter("Rsenha");
+			String telefone = request.getParameter("foneContato");
+			String uf = request.getParameter("uf");
+			String cidade = request.getParameter("cidade");
+			String logradouro = request.getParameter("logradouro");
+			String perfil = "PRESTADOR";
+			
+			String msg ="Alteração realizada com sucesso!";
+
+			ModelLogin modelLogin = new ModelLogin();
+			
+			if(senha.equals(Rsenha)) {
+			modelLogin.setId(id != null && !id.isEmpty() ? Long.parseLong(id) : null);
+			modelLogin.setNome(nome);
+			modelLogin.setLogin(email);
+			modelLogin.setSenha(senha);
+			modelLogin.setEstado(uf);
+			modelLogin.setTelefone(telefone);
+			modelLogin.setCidade(cidade);
+			modelLogin.setLogradouro(logradouro);
+			modelLogin.setPerfil(perfil);
+			modelLogin.setrSenha(Rsenha);
+			
+			
+			
+			daoCadastroPrestador.atualizaUsuario(modelLogin);
+
+			request.setAttribute("msg", msg);
+			request.setAttribute("modelLogin", modelLogin);
+		    request.getRequestDispatcher("/principal/perfil.jsp").forward(request, response);
+			
+			}else {
+				request.setAttribute("msg", "Senhas não identicas!");
+				request.setAttribute("modelLogin", modelLogin);
+			    request.getRequestDispatcher("/principal/perfil.jsp").forward(request, response);
+			}
+			
+			
+			
+			
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+			
+			RequestDispatcher redirecionar = request.getRequestDispatcher("erro.jsp");
+			request.setAttribute("msg", e.getMessage());
+			redirecionar.forward(request, response);
+		}
+		
+		
 	}
 
 }
