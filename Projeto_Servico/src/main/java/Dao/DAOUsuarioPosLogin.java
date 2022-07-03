@@ -11,6 +11,9 @@ public class DAOUsuarioPosLogin {
 	
 
 	private Connection connection;
+	
+	private DAOLoginRepository daoLoginRepository = new DAOLoginRepository();
+	
 
 	public DAOUsuarioPosLogin() {
 		connection = SingleConnectionBanco.getConnection();
@@ -21,9 +24,8 @@ public class DAOUsuarioPosLogin {
 
 		ModelLogin modelLogin = new ModelLogin();
 
-		String sql = "select * from usuario where upper(email) = Trim('"+login+"');";
+		String sql = "select * from usuario where upper(email) = upper('"+login+"');";
 		PreparedStatement statement = connection.prepareStatement(sql);
-        System.out.println(sql);
 		ResultSet resultado = statement.executeQuery();
 
 		while (resultado.next()) /* Se tem resultado */ {
@@ -31,6 +33,8 @@ public class DAOUsuarioPosLogin {
 			modelLogin.setLogin(resultado.getString("email"));
 			modelLogin.setSenha(resultado.getString("senha"));
 			modelLogin.setNome(resultado.getString("nome"));
+			modelLogin.setUseradmin(resultado.getBoolean("useradmin"));
+			modelLogin.setPerfil(resultado.getString("perfil"));
 		}
 
 		return modelLogin;

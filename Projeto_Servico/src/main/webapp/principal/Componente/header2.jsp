@@ -2,6 +2,8 @@
     pageEncoding="ISO-8859-1"%>
     
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    
+    <c:set scope="session" var="perfil" value='<%= request.getSession().getAttribute("perfil").toString() %>'></c:set>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -25,10 +27,12 @@
                 <li id="menu-cr"><a href="#">Menu</a>
                     <ul>
                         <li><a href="<%=request.getContextPath()%>\principal\perfil.jsp" id="opcao">Perfil</a></li>
+                        <c:if test="${perfil == 'ADMIN'}">
                         <li><a href="<%=request.getContextPath()%>\principal\cadastroUser.jsp" id="opcao">Cadastra usuarios (ADM)</a></li>
                         <li><a href="#" id="opcao">Validar Avaliações</a></li>
                         <li><a href="#" id="opcao">Avaliações Denunciadas</a></li>
                         <li><a href="#" id="opcao">Anuncio Denunciados</a></li>
+                        </c:if>
                         <li ><a href="ServletLogin?acao=logout" id="sair">Sair</a></li>
                     </ul>
                 </li>

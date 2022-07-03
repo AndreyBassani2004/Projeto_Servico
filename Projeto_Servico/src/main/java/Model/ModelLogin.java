@@ -17,7 +17,19 @@ public class ModelLogin implements Serializable {
 	private String logradouro;
 	private String rSenha;
 	
+	private boolean Useradmin;
 	
+	
+	public boolean getUseradmin() {
+		return Useradmin;
+	}
+	
+	public void setUseradmin(boolean useradmin) {
+		Useradmin = useradmin;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	public String getrSenha() {
 		return rSenha;
 	}
