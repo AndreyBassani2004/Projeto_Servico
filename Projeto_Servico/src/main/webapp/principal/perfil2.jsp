@@ -54,7 +54,7 @@
 									<b>Senha:</b>
 								</p>
 								<input type="password" class="form-control"
-									placeholder="Digite sua senha" name="senha" id="senha" value="<%= request.getSession().getAttribute("senha").toString() %>">
+									placeholder="Digite sua senha" name="senha" id="senha" value="${modelLogin.senha}">
 							</div>
 						</td>
 						<td>
@@ -85,7 +85,7 @@
 								</p>
 								<input type="text" class="form-control"
 									placeholder="Digite seu telefone de contato" name="foneContato"
-									id="foneContato" value="<%= session.getAttribute("telefone_contato").toString() %>">
+									id="foneContato" value="${modelLogin.telefone}">
 							</div>
 						</td>
 						<td>
@@ -134,7 +134,7 @@
 								</p>
 								<input type="text" class="form-control"
 									placeholder="Digite seu telefone de contato" name="cidade"
-									id="cidade" value="<%= request.getSession().getAttribute("cidade").toString() %>">
+									id="cidade" value="${modelLogin.cidade}">
 							</div>
 						</td>
 						<td>
@@ -144,7 +144,7 @@
 								</p>
 								<input type="text" class="form-control"
 									placeholder="Digite seu logradouro" name="logradouro"
-									id="logradouro" value="<%= request.getSession().getAttribute("cep").toString() %>">
+									id="logradouro" value="${modelLogin.logradouro}">
 							</div>
 						</td>
 					</tr>
@@ -155,7 +155,7 @@
 
 				<button type="submit"
 					class="btn btn-warning" onclick="verEditar('<%=session.getAttribute("usuario")%>')">Alterar</button>
-				<!--	<button onclick="verEditar('<%=session.getAttribute("usuario")%>')" type="button" class="btn btn-info">Editar conta</button>	-->
+				
 			</div>
 			<div id="spam"><spam>${msg}</spam></div>
 		</form>

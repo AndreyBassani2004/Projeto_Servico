@@ -84,12 +84,12 @@ public class ServletPosLoginPrestador extends HttpServlet {
 
 			request.setAttribute("msg", msg);
 			request.setAttribute("modelLogin", modelLogin);
-		    request.getRequestDispatcher("/principal/perfil.jsp").forward(request, response);
+		    request.getRequestDispatcher("/principal/perfil2.jsp").forward(request, response);
 			
 			}else {
 				request.setAttribute("msg", "Senhas não identicas!");
 				request.setAttribute("modelLogin", modelLogin);
-			    request.getRequestDispatcher("/principal/perfil.jsp").forward(request, response);
+			    request.getRequestDispatcher("/principal/perfil2.jsp").forward(request, response);
 			}
 			
 			
