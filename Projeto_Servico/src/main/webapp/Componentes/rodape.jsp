@@ -15,7 +15,7 @@
         <h5>EMAIL DE SUPORTE: email@email.com</h5>
         </div>
         <div id="t2">
-            <p>Todos os direitos reservados (Nome da empressa).</p>
+            <p>Todos os direitos reservados <b>presTEC</b>.</p>
         </div><br>
     </footer>  
 

@@ -29,12 +29,17 @@
                     <ul>
                     	<c:if test="${perfil == 'PRESTADOR'}">
                         <li><a href="<%=request.getContextPath()%>\principal\perfil.jsp" id="opcao">Perfil</a></li>
+                        <li><a href="<%=request.getContextPath()%>\principal\criarAnuncio.jsp" id="opcao">Criar Anuncio</a></li>
+                        <li><a href="#" id="opcao">Meus Anuncios</a></li>
+                        <li><a href="#" id="opcao">Avaliações</a></li>
+                        </c:if>  
+                        <c:if test="${perfil == 'ADMIN'}">
+                        <li><a href="<%=request.getContextPath()%>\principal\perfilAdm.jsp" id="opcao">Perfil</a></li>
                         </c:if>
                         <c:if test="${isAdmin}">
                         <li><a href="<%=request.getContextPath()%>\principal\cadastroUser.jsp" id="opcao">Cadastra usuarios (ADM)</a></li>
                         </c:if>
                         <c:if test="${perfil == 'ADMIN'}">
-                        <li><a href="<%=request.getContextPath()%>\principal\perfilAdm.jsp" id="opcao">Perfil</a></li>
                         <li><a href="#" id="opcao">Validar Avaliações</a></li>
                         <li><a href="#" id="opcao">Avaliações Denunciadas</a></li>
                         <li><a href="#" id="opcao">Anuncio Denunciados</a></li>
