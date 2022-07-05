@@ -17,9 +17,37 @@ public class ModelLogin implements Serializable {
 	private String logradouro;
 	private String rSenha;
 	
+	private String telefone_adm;
+	private String cidade_adm;
+	private String logradouro_adm;
+	
 	private boolean Useradmin;
 	
 	
+	public String getTelefone_adm() {
+		return telefone_adm;
+	}
+
+	public void setTelefone_adm(String telefone_adm) {
+		this.telefone_adm = telefone_adm;
+	}
+
+	public String getCidade_adm() {
+		return cidade_adm;
+	}
+
+	public void setCidade_adm(String cidade_adm) {
+		this.cidade_adm = cidade_adm;
+	}
+
+	public String getLogradouro_adm() {
+		return logradouro_adm;
+	}
+
+	public void setLogradouro_adm(String logradouro_adm) {
+		this.logradouro_adm = logradouro_adm;
+	}
+
 	public boolean getUseradmin() {
 		return Useradmin;
 	}

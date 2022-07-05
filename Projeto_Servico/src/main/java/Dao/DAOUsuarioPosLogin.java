@@ -51,6 +51,19 @@ public class DAOUsuarioPosLogin {
 			modelLogin.setLogradouro(resultado2.getString("cep"));
 		}
 		
+			String sql3 = "select * from dados_administrador where upper(email_user) = upper('"+login+"');";
+			PreparedStatement statement3 = connection.prepareStatement(sql3);
+			ResultSet resultado3 = statement3.executeQuery();
+
+			while (resultado3.next()) /* Se tem resultado */ {
+				modelLogin.setCidade_adm(resultado3.getString("cidade"));
+				modelLogin.setTelefone_adm(resultado3.getString("telefone_contato"));
+				modelLogin.setLogradouro_adm(resultado3.getString("cep"));
+			}
+		
+		
+		
+		
 
 		return modelLogin;
 

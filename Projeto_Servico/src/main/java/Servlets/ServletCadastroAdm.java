@@ -35,16 +35,15 @@ public class ServletCadastroAdm extends HttpServlet {
 			String nome = request.getParameter("nome");
 			String email = request.getParameter("email");
 			String senha = request.getParameter("senha");
-			String Rsenha = request.getParameter("Rsenha");
 			String telefone = request.getParameter("foneContato");
 			String uf = request.getParameter("uf");
 			String cidade = request.getParameter("cidade");
 			String logradouro = request.getParameter("logradouro");
-			String perfil = "PRESTADOR";
+			String perfil = "ADMIN";
 			
 			String msg ="Operacao realizada com sucesso!";
 			
-			if(nome == null && nome.isEmpty() && email == null && email.isEmpty() && senha == null && senha.isEmpty() && Rsenha == null && Rsenha.isEmpty() && telefone == null && telefone.isEmpty() && uf == null && uf.isEmpty() && cidade == null && cidade.isEmpty() && logradouro == null && logradouro.isEmpty()) {
+			if(nome == null && nome.isEmpty() && email == null && email.isEmpty() && senha == null && senha.isEmpty() && telefone == null && telefone.isEmpty() && uf == null && uf.isEmpty() && cidade == null && cidade.isEmpty() && logradouro == null && logradouro.isEmpty()) {
 				
 				request.setAttribute("msg", "Preencha todos os campos!");
 				
@@ -53,7 +52,6 @@ public class ServletCadastroAdm extends HttpServlet {
 
 			ModelLogin modelLogin = new ModelLogin();
 			
-			if(senha.equals(Rsenha)) {
 			modelLogin.setId(id != null && !id.isEmpty() ? Long.parseLong(id) : null);
 			modelLogin.setNome(nome);
 			modelLogin.setLogin(email);
@@ -63,7 +61,6 @@ public class ServletCadastroAdm extends HttpServlet {
 			modelLogin.setCidade(cidade);
 			modelLogin.setLogradouro(logradouro);
 			modelLogin.setPerfil(perfil);
-			modelLogin.setrSenha(Rsenha);
 			
 			if(daoCadastroAdm.validarLogin(modelLogin.getLogin()) && modelLogin.getId() == null) {
 				msg = "Já existe usuario com o mesmo login, informe outro login.";
@@ -74,15 +71,8 @@ public class ServletCadastroAdm extends HttpServlet {
 			
 			request.setAttribute("msg", msg);
 			request.setAttribute("modelLogin", modelLogin);
-		    request.getRequestDispatcher("cadastroSucesso.jsp").forward(request, response);
-			
-			}else {
-				request.setAttribute("msg", "Senhas não identicas!");
-				request.setAttribute("modelLogin", modelLogin);
-			    request.getRequestDispatcher("cadastrase.jsp").forward(request, response);
-			}
-			
-			
+		    request.getRequestDispatcher("/principal/cadastroUser.jsp").forward(request, response);
+						
 			}
 			
 			
