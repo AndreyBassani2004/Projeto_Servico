@@ -63,5 +63,25 @@ CREATE TABLE dados_administrador(
 	CONSTRAINT email_fk FOREIGN KEY (email) REFERENCES usuario(id)
 );
     
+-- Criar sequencia tabela anuncio
+
+CREATE SEQUENCE anuncio_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;   
     
+-- Criar tabela anuncio
+
+CREATE TABLE anuncio(
+	id integer NOT NULL DEFAULT nextval('anuncio_id_seq'::regclass),
+    email character varying(300) NOT NULL,
+    regiao character varying(300) NOT NULL,
+    estado character varying(300) NOT NULL,
+    titulo character varying(300) NOT NULL,
+    descricao character varying(300) NOT NULL,
+    estado boolean NOT NULL DEFAULT true,
+    CONSTRAINT anuncio_pkey PRIMARY KEY (id)
+);    
     
