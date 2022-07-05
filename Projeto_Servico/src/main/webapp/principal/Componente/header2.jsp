@@ -4,6 +4,7 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     
     <c:set scope="session" var="perfil" value='<%= request.getSession().getAttribute("perfil").toString() %>'></c:set>
+    <c:set scope="session" var="isAdmin" value='<%= request.getSession().getAttribute("isAdmin").toString() %>'></c:set>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -21,14 +22,15 @@
     <div id="barra">
         <div id="fotoNome">
         <img src="<%=request.getContextPath()%>/principal/img/user.jpg" alt="foto user"><br><br>
-        <p><%= session.getAttribute("usuario")%></p>
+        <p><%= session.getAttribute("nome") %></p>
         <nav class="dp-menu">
             <ul>
-                <li id="menu-cr"><a href="#">Menu</a>
+                <li id="menu-cr"><a href="<%=request.getContextPath()%>/principal/principal.jsp">Menu</a>
                     <ul>
                         <li><a href="<%=request.getContextPath()%>\principal\perfil.jsp" id="opcao">Perfil</a></li>
+                        <c:if test="${isAdmin}">
+                        <li><a href="<%=request.getContextPath()%>\principal\cadastroUser.jsp" id="opcao">Cadastra usuarios (ADM)</a></li></c:if>
                         <c:if test="${perfil == 'ADMIN'}">
-                        <li><a href="<%=request.getContextPath()%>\principal\cadastroUser.jsp" id="opcao">Cadastra usuarios (ADM)</a></li>
                         <li><a href="#" id="opcao">Validar Avaliações</a></li>
                         <li><a href="#" id="opcao">Avaliações Denunciadas</a></li>
                         <li><a href="#" id="opcao">Anuncio Denunciados</a></li>

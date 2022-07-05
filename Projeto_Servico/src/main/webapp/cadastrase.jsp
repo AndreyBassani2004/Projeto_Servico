@@ -40,7 +40,7 @@
 									<b>Nome:</b>
 								</p>
 								<input type="text" class="form-control"
-									placeholder="Digite seu nome completo" name="nome" id="nome" value="${modelLogin.nome}">
+									placeholder="Digite seu nome completo" name="nome" id="nome" value="${modelLogin.nome}" required="required">
 							</div>
 						</td>
 						<td>
@@ -49,7 +49,7 @@
 									<b>Email (Para a conta) :</b>
 								</p>
 								<input type="email" class="form-control"
-									placeholder="Digite seu email para login" name="email" id="email" value="${modelLogin.login}">
+									placeholder="Digite seu email para login" name="email" id="email" value="${modelLogin.login}" required="required">
 							</div>
 						</td>
 					</tr>
@@ -60,7 +60,7 @@
 									<b>Senha:</b>
 								</p>
 								<input type="password" class="form-control"
-									placeholder="Digite sua senha" name="senha" id="senha" value="${modelLogin.senha}">
+									placeholder="Digite sua senha" name="senha" id="senha" value="${modelLogin.senha}" required="required">
 							</div>
 						</td>
 						<td>
@@ -69,7 +69,7 @@
 									<b>Repetir Senha:</b>
 								</p>
 								<input type="password" class="form-control"
-									placeholder="Digite sua senha novamente" name="Rsenha" id="Rsenha">
+									placeholder="Digite sua senha novamente" name="Rsenha" id="Rsenha" required="required">
 							</div>
 						</td>
 					</tr>
@@ -91,7 +91,7 @@
 								</p>
 								<input type="text" class="form-control"
 									placeholder="Digite seu telefone de contato" name="foneContato"
-									id="foneContato" value="${modelLogin.telefone}">
+									id="foneContato" value="${modelLogin.telefone}" required="required">
 							</div>
 						</td>
 						<td>
@@ -99,7 +99,7 @@
 								<p>
 									<b>Estado:</b>
 								</p>
-								<select class="form-control" name="uf" id="uf">
+								<select class="form-control" name="uf" id="uf" required="required">
 									<option value="">Selecione</option>
 									<option value="AC">AC</option>
 									<option value="AL">AL</option>
@@ -140,7 +140,7 @@
 								</p>
 								<input type="text" class="form-control"
 									placeholder="Digite seu telefone de contato" name="cidade"
-									id="cidade" value="${modelLogin.cidade}">
+									id="cidade" value="${modelLogin.cidade}" required="required">
 							</div>
 						</td>
 						<td>
@@ -150,7 +150,7 @@
 								</p>
 								<input type="text" class="form-control"
 									placeholder="Digite seu logradouro" name="logradouro"
-									id="logradouro" value="${modelLogin.logradouro}">
+									id="logradouro" value="${modelLogin.logradouro}" required="required">
 							</div>
 						</td>
 					</tr>
