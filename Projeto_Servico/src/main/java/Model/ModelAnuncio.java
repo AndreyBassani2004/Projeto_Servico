@@ -14,9 +14,16 @@ public class ModelAnuncio implements Serializable{
 	private boolean situacao;
 	private String email_user;
 	private String servico;
+	private String emailContato;
 	
 	
 	
+	public String getEmailContato() {
+		return emailContato;
+	}
+	public void setEmailContato(String emailContato) {
+		this.emailContato = emailContato;
+	}
 	public Long getId() {
 		return id;
 	}

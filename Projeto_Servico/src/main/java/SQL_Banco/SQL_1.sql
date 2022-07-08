@@ -83,5 +83,73 @@ CREATE TABLE anuncio(
     descricao character varying(300) NOT NULL,
     estado boolean NOT NULL DEFAULT true,
     CONSTRAINT anuncio_pkey PRIMARY KEY (id)
-);    
+);
+
+-- Criar sequencia tabela denuncia_anuncio
+
+CREATE SEQUENCE denuncia_anuncio_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1; 
     
+-- Criar tabela denuncia_anuncio
+
+CREATE TABLE denuncia_anuncio(
+	id integer NOT NULL DEFAULT nextval('denuncia_anuncio_id_seq'::regclass),
+	id_anuncio integer NOT NULL,
+	nome_cliente character varying(300) NOT NULL,
+	email_cliente character varying(300) NOT NULL,
+	descricao_denuncia character varying(300) NOT NULL,
+	data_denuncia date NOT NULL,
+	estado_denuncia character varying(300) NOT NULL,
+	relatorio character varying(300) NOT NULL,
+	CONSTRAINT denuncio_anuncio_pkey PRIMARY KEY (id)
+);
+
+-- Criar sequencia tabela avaliacao_anuncio
+
+CREATE SEQUENCE avaliacao_anuncio_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+-- Criar tabela avaliacao_anuncio
+
+CREATE TABLE avaliacao_anuncio(
+	id integer NOT NULL DEFAULT nextval('avaliacao_anuncio_id_seq'::regclass),
+	id_anuncio integer NOT NULL,
+	nome_cliente character varying(300) NOT NULL,
+	email_cliente character varying(300) NOT NULL,
+	descricao_denuncia character varying(300) NOT NULL,
+	data_prestacao date NOT NULL,
+	nota float NOT NULL,
+	titulo character varying(300) NOT NULL,
+	descricao character varying(300) NOT NULL,
+	estado character varying(300) NOT NULL,
+	CONSTRAINT avaliacao_anuncio_pkey PRIMARY KEY (id)
+);
+    
+-- Criar sequencia tabela denuncia_avaliacao
+
+CREATE SEQUENCE denuncia_avaliacao_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+    
+-- Criar tabela denuncia_avaliacao
+    
+CREATE TABLE denuncia_avaliacao(
+	id integer NOT NULL DEFAULT nextval('denuncia_avaliacao_id_seq'::regclass),
+	id_anuncio integer NOT NULL,
+	id_prestador integer NOT NULL,
+	descricao character varying(300) NOT NULL,
+	estado_denuncia character varying(300) NOT NULL,
+	relatorio descricao character varying(300) NOT NULL,
+	CONSTRAINT denuncia_avaliacao_pkey PRIMARY KEY (id)
+);
