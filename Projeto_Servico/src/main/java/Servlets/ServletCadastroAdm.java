@@ -15,7 +15,7 @@ import Model.ModelLogin;
 
 
 @WebServlet("/ServletCadastroAdm")
-public class ServletCadastroAdm extends HttpServlet {
+public class ServletCadastroAdm extends ServletGenericUtil{
 	private static final long serialVersionUID = 1L;
     
 	private DAOCadastroAdm daoCadastroAdm = new DAOCadastroAdm();
@@ -65,7 +65,7 @@ public class ServletCadastroAdm extends HttpServlet {
 			if(daoCadastroAdm.validarLogin(modelLogin.getLogin()) && modelLogin.getId() == null) {
 				msg = "Já existe usuario com o mesmo login, informe outro login.";
 			}else {
-				modelLogin = daoCadastroAdm.gravarUsuario(modelLogin);
+				modelLogin = daoCadastroAdm.gravarUsuario(modelLogin, super.getUserLogado(request));
 			
 			}
 			

@@ -11,12 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Dao.DAOLoginRepository;
+import Dao.DAOUsuarioPosLogin;
 
 
 public class ServletGenericUtil extends HttpServlet  implements Serializable {
 	private static final long serialVersionUID = 1L;
     
-	private DAOLoginRepository daoLoginRepository = new DAOLoginRepository();
+	private DAOUsuarioPosLogin daoUsuarioPosLogin = new DAOUsuarioPosLogin();
 	
 	public Long getUserLogado(HttpServletRequest request) throws Exception{
 		
@@ -24,7 +25,7 @@ public class ServletGenericUtil extends HttpServlet  implements Serializable {
 
 		String usuarioLogado = (String) session.getAttribute("usuario");
 
-		return daoLoginRepository.consultarUsuarioLogado(usuarioLogado).getId();
+		return daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId();
 	}
 
 }

@@ -26,10 +26,10 @@ public class DAOCadastroAdm {
 	}
 	
 	
-	public ModelLogin gravarUsuario(ModelLogin objeto) throws Exception{
+	public ModelLogin gravarUsuario(ModelLogin objeto, Long userLogado) throws Exception{
 		
 		String sql = "INSERT INTO usuario(nome, email, perfil, senha, estado) VALUES (?, ?, ?, ?, ?);";
-		String sql2 = "INSERT INTO dados_administrador(telefone_contato, estado, cidade, cep, email_user) VALUES (?, ?, ?, ?, ?);";
+		String sql2 = "INSERT INTO dados_administrador(telefone_contato, estado, cidade, cep, email_user, user_id) VALUES (?, ?, ?, ?, ?, ?);";
 		
 	
 		connection.setAutoCommit(false);
@@ -49,6 +49,8 @@ public class DAOCadastroAdm {
 		preparedSql2.setString(3, objeto.getCidade());
 		preparedSql2.setString(4, objeto.getLogradouro());
 		preparedSql2.setString(5, objeto.getLogin());
+		preparedSql2.setLong(6, userLogado);
+
 		
 		preparedSql2.execute();
 		connection.commit();
