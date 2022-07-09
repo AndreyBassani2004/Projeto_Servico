@@ -67,6 +67,7 @@ public class ServletLogin extends HttpServlet {
 					modelLogin = daoUsuarioPosLogin.consultaUsuarioLogado(login);
 					
 					request.getSession().setAttribute("isAdmin", modelLogin.getUseradmin());
+					request.getSession().setAttribute("id", modelLogin.getId());
 					request.getSession().setAttribute("usuario", modelLogin.getLogin());
 					request.getSession().setAttribute("perfil", modelLogin.getPerfil());
 					request.getSession().setAttribute("nome", modelLogin.getNome());

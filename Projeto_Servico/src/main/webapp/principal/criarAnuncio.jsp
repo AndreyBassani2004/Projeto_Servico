@@ -124,6 +124,18 @@
 									id="emailContato" value="${modelAnuncio.emailContato}" >
 							</div>
 						</td>
+						<!--  
+						<td>
+						<div id="textcampo">
+								<p>
+									<b>ID prestador:</b>
+								</p>
+								<input type="text" class="form-control"
+									 name="id"
+									id="id" value="" >
+							</div>
+						</td>
+						-->
 				 </tr>
 				 </table>
 				

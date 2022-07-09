@@ -70,16 +70,17 @@ public class DAOUsuarioPosLogin {
 	}
 	
 	
-	public ModelLogin consultaUsuarioLogado2(String login) throws Exception{
+	public ModelLogin consultaUsuarioId(Long id) throws Exception{
 		
 		ModelLogin modelLogin = new ModelLogin();
 		
-		String sql = "select usuario.nome, usuario.email, usuario.perfil, usuario.senha, usuario.estado, dados_prestador.telefone_contato, dados_prestador.estado, dados_prestador.cep, dados_prestador.email_user, dados_prestador.cidade from usuario inner join dados_prestador on usuario.email = dados_prestador.email_user where  usuario.email = '"+login+"';";
+		String sql = "select*from usuario where id = '"+id+"';";
 		PreparedStatement statement = connection.prepareStatement(sql);
 		
 		ResultSet resultado = statement.executeQuery();
 
 		while (resultado.next()) /* Se tem resultado */ {
+			modelLogin.setId(resultado.getLong("id"));
 			modelLogin.setLogin(resultado.getString("email"));
 			modelLogin.setSenha(resultado.getString("senha"));
 			modelLogin.setrSenha(resultado.getString("senha"));
