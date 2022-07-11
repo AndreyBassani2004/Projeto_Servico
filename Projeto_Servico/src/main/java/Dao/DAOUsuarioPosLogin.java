@@ -74,21 +74,16 @@ public class DAOUsuarioPosLogin {
 		
 		ModelLogin modelLogin = new ModelLogin();
 		
-		String sql = "select*from usuario where id = '"+id+"';";
+		String sql = "select*from usuario where id = ?;";
 		PreparedStatement statement = connection.prepareStatement(sql);
+		statement.setLong(1, id);
 		
 		ResultSet resultado = statement.executeQuery();
 
 		while (resultado.next()) /* Se tem resultado */ {
 			modelLogin.setId(resultado.getLong("id"));
-			modelLogin.setLogin(resultado.getString("email"));
-			modelLogin.setSenha(resultado.getString("senha"));
-			modelLogin.setrSenha(resultado.getString("senha"));
 			modelLogin.setNome(resultado.getString("nome"));
-			modelLogin.setEstado(resultado.getString("estado"));
-			modelLogin.setCidade(resultado.getString("cidade"));
-			modelLogin.setLogradouro(resultado.getString("cep"));
-			modelLogin.setTelefone(resultado.getString("telefone_contato"));
+			modelLogin.setLogin(resultado.getString("email"));
 		}
 		
 

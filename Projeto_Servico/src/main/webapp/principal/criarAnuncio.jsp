@@ -25,6 +25,34 @@
 	<form action="<%=request.getContextPath()%>/ServletCadastraAnuncio"
 		method="post" id="cadastroAnuncio">
 		<div id="formulario">
+			<div id="formulario0">
+				<h5>Dados do prestador (conta):</h5>
+				<br>
+				<table>
+					<tr>
+						<td>
+							<div id="textcampo">
+								<p>
+									<b>Nome:</b>
+								</p>
+								<input type="text" class="form-control" name="nome" id="nome"
+									value="<%=session.getAttribute("nome")%>" readonly="readonly">
+							</div>
+						</td>
+						<td>
+							<div id="textcampo">
+								<p>
+									<b>ID:</b>
+								</p>
+								<input type="text" class="form-control" name="id" id="id"
+									value="<%=session.getAttribute("id")%>"
+									readonly="readonly">
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br><br>
 			<div id="formulario1">
 				<h5>Sobre região e serviço</h5>
 				<br>
@@ -109,19 +137,19 @@
 								<p>
 									<b>Telefone de contato (cadastrado):</b>
 								</p>
-								<input type="text" class="form-control"
-									 name="foneContato"
-									id="foneContato" value="<%=request.getSession().getAttribute("telefone").toString()%>" readonly="readonly">
+								<input type="text" class="form-control" name="foneContato"
+									id="foneContato"
+									value="<%=request.getSession().getAttribute("telefone").toString()%>"
+									readonly="readonly">
 							</div>
 						</td>
 						<td>
-						<div id="textcampo">
+							<div id="textcampo">
 								<p>
 									<b>Email para contato:</b>
 								</p>
-								<input type="text" class="form-control"
-									 name="emailContato"
-									id="emailContato" value="${modelAnuncio.emailContato}" >
+								<input type="text" class="form-control" name="emailContato"
+									id="emailContato" value="${modelAnuncio.emailContato}">
 							</div>
 						</td>
 						<!--  
@@ -136,14 +164,14 @@
 							</div>
 						</td>
 						-->
-				 </tr>
-				 </table>
-				
-				
+					</tr>
+				</table>
+
+
 			</div>
 			<div id="linha1"></div>
-			
-			
+
+
 			<div id="button">
 				<button type="submit"
 					class="btn btn-success waves-effect waves-light">Criar

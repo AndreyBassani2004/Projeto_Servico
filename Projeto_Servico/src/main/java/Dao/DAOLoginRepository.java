@@ -10,7 +10,7 @@ import Model.ModelLogin;
 public class DAOLoginRepository {
 
 	private Connection connection;
-
+	
 	public DAOLoginRepository() {
 		connection = SingleConnectionBanco.getConnection();
 
@@ -66,4 +66,8 @@ public class DAOLoginRepository {
 		return modelLogin;
 		
 	}
+	
+	
+	
+	
 }
