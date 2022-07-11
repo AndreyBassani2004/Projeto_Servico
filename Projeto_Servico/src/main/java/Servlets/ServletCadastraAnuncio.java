@@ -68,7 +68,6 @@ public class ServletCadastraAnuncio extends ServletGenericUtil {
 
 				request.setAttribute("msg", msg);
 				request.setAttribute("modelAnuncio", modelAnuncio);
-				request.setAttribute("modelLogin", modelLogin);
 				request.getRequestDispatcher("/principal/criarAnuncio.jsp").forward(request, response);
 			}
 		}catch (Exception e) {

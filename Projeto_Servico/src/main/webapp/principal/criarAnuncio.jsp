@@ -149,7 +149,7 @@
 									<b>Email para contato:</b>
 								</p>
 								<input type="text" class="form-control" name="emailContato"
-									id="emailContato" value="${modelAnuncio.emailContato}">
+									id="emailContato" value="${modelAnuncio.email_contato}">
 							</div>
 						</td>
 						<!--  
