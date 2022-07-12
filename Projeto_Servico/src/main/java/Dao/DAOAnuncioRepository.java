@@ -78,4 +78,48 @@ public class DAOAnuncioRepository {
 		return retorno;
 		
 	}
+	
+	public List<ModelAnuncio> listAnuncio2(Long id_user) throws Exception{
+		
+		List<ModelAnuncio> retorno = new ArrayList<ModelAnuncio>();
+		
+		String sql = "select*from anuncio where id_prestador = ?";
+		PreparedStatement statement = connection.prepareStatement(sql);
+		statement.setLong(1, id_user);
+		
+		ResultSet rs = statement.executeQuery();
+		
+		while (rs.next()) {
+			
+			ModelAnuncio modelAnuncio = new ModelAnuncio();
+			
+			modelAnuncio.setId(rs.getLong("id"));
+			modelAnuncio.setRegiao(rs.getString("regiao"));
+			modelAnuncio.setEstado(rs.getString("estado"));
+			modelAnuncio.setTitulo(rs.getString("titulo"));
+			modelAnuncio.setDescricao(rs.getString("descricao"));
+			modelAnuncio.setServico(rs.getString("servico"));
+			modelAnuncio.setSituacao(rs.getString("situacao"));
+			modelAnuncio.setEmail_contato(rs.getString("email_contato"));
+		
+			retorno.add(modelAnuncio);
+			
+		}
+		
+		return retorno;
+		
+	}
+	
+	public void deletarAnuncio(Long id) throws Exception{
+		
+		String sql = "DELETE FROM anuncio WHERE id = ?;";	
+		PreparedStatement prepareSql = connection.prepareStatement(sql);
+
+		prepareSql.setLong(1, id);
+
+		prepareSql.executeUpdate();
+
+		connection.commit();
+		
+	}
 }

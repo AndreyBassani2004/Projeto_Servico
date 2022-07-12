@@ -12,11 +12,21 @@ public class ModelAnuncio implements Serializable{
 	private String estado;
 	private String titulo;
 	private String descricao;
-	private boolean situacao;
+	private String situacao;
 	private String servico;
 	private String email_contato;
 	
 	private ModelLogin id_prestador;
+
+	
+	
+	public String getSituacao() {
+		return situacao;
+	}
+
+	public void setSituacao(String situacao) {
+		this.situacao = situacao;
+	}
 
 	public Long getId() {
 		return id;
@@ -56,14 +66,6 @@ public class ModelAnuncio implements Serializable{
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-
-	public boolean isSituacao() {
-		return situacao;
-	}
-
-	public void setSituacao(boolean situacao) {
-		this.situacao = situacao;
 	}
 
 	public String getServico() {
