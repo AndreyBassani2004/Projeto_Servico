@@ -44,7 +44,7 @@
                         <li><a href="#" id="opcao">Avaliações Denunciadas</a></li>
                         <li><a href="#" id="opcao">Anuncio Denunciados</a></li>
                         </c:if>
-                        <li ><a href="ServletLogin?acao=logout" id="sair">Sair</a></li>
+                        <li><a href="<%=request.getContextPath()%>\ServletLogin?acao=logout" id="sair">Sair</a></li>
                     </ul>
                 </li>
             </ul>

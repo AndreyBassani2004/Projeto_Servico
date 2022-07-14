@@ -39,7 +39,7 @@ public class ServletPosLoginAdm extends HttpServlet {
 				request.setAttribute("modelLogin", modelLogin);
 				request.getRequestDispatcher("principal/perfilAdm2.jsp").forward(request, response);
 			}else {
-				
+				request.getRequestDispatcher("principal/principal.jsp").forward(request, response);
 			}
 			
 		}catch (Exception e1) {
@@ -90,7 +90,7 @@ public class ServletPosLoginAdm extends HttpServlet {
 			}else {
 				request.setAttribute("msg", "Senhas não identicas!");
 				request.setAttribute("modelLogin", modelLogin);
-			    request.getRequestDispatcher("/principal/perfilAdm2.jsp").forward(request, response);
+			    request.getRequestDispatcher("/principal/perfilAdm.jsp").forward(request, response);
 			}
 			
 			

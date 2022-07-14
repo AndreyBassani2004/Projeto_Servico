@@ -85,3 +85,23 @@ spam {
 	align-items: flex-end;
 	text-align: right;
 }
+
+#finalizarOperacao{
+	text-align: center;
+	height: 4em;
+	width: 100%;
+	margin-top:4em;
+	margin-left:auto;
+	margin-right:auto;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#finalizarOperacao2{
+	text-align: center;
+	height: 4em;
+	width: 100%;
+	margin-top:4em;
+	margin-left:auto;
+	margin-right:auto;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

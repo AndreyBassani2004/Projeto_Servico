@@ -94,7 +94,7 @@
 									<b>Estado:</b>
 								</p>
 								<select class="form-control" name="uf" id="uf">
-									<option value="">Selecione</option>
+									<option value="<%= session.getAttribute("estado").toString() %>"><%= session.getAttribute("estado").toString() %></option>
 									<option value="AC">AC</option>
 									<option value="AL">AL</option>
 									<option value="AP">AP</option>

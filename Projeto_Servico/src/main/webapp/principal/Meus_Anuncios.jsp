@@ -40,7 +40,7 @@
 						<td><c:out value="${ma.titulo}"></c:out></td>
 						<td><c:out value="${ma.servico}"></c:out></td>
 						<td><c:out value="${ma.situacao}"></c:out></td>
-						<td><button type="button" class="btn btn-primary">Ver/Editar</button></td>
+						<td><a href="<%=request.getContextPath()%>\ServletCarregaAnuncio?acao=carregarAnuncio&id_anuncio=${ma.id}&id=<%= session.getAttribute("id")%>"><button type="button" class="btn btn-primary">Ver/Editar</button></a></td>
 						<td><a href="<%=request.getContextPath()%>\ServletCarregaAnuncio?acao=deletarajax&id=${ma.id}&id_user=<%= session.getAttribute("id")%>"><button type="button" class="btn btn-danger">Excluir</button></a></td>
 					</tr>
 				</c:forEach>

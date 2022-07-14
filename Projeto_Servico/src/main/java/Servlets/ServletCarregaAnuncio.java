@@ -35,10 +35,13 @@ public class ServletCarregaAnuncio extends HttpServlet {
 			if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("listarAnuncio")) {
 
 				String id = request.getParameter("id_user");
+				
+				String msg = "";
 
 				List<ModelAnuncio> modelAnuncios = daoAnuncioRepository.listAnuncio2(Long.parseLong(id));
 
-				request.setAttribute("msg", "Anuncios da conta.");
+				
+				request.setAttribute("msg", msg);
 				request.setAttribute("modelAnuncios", modelAnuncios);
 				request.getRequestDispatcher("/principal/Meus_Anuncios.jsp").forward(request, response);
 
@@ -55,6 +58,17 @@ public class ServletCarregaAnuncio extends HttpServlet {
 				request.setAttribute("modelAnuncios", modelAnuncios);
 				request.getRequestDispatcher("/principal/Meus_Anuncios.jsp").forward(request, response);
 
+			} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("carregarAnuncio")) {
+				String idUser = request.getParameter("id");
+				
+				String id_Anuncio = request.getParameter("id_anuncio");
+				
+				ModelAnuncio modelAnuncio = daoAnuncioRepository.consultarAnuncioID(Long.parseLong(idUser), Long.parseLong(id_Anuncio));
+
+				request.setAttribute("modelAnuncio", modelAnuncio);
+				request.getRequestDispatcher("principal/carregarAnuncio.jsp").forward(request, response);
+			}else {			
+				request.getRequestDispatcher("principal/principal.jsp").forward(request, response);
 			}
 
 		} catch (Exception e) {
@@ -70,7 +84,64 @@ public class ServletCarregaAnuncio extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		doGet(request, response);
+		try {
+
+			String id = request.getParameter("id");
+			String servico = request.getParameter("servico");
+			String estado = request.getParameter("uf2");
+			String regiao = request.getParameter("regiao");
+			String titulo = request.getParameter("tituloAn");
+			String descricao = request.getParameter("descricao");
+			String emailContato = request.getParameter("emailContato");
+			String situacao = request.getParameter("situacao");
+
+
+			String msg = "Cadastrado com sucesso !";
+
+			if (servico == null && servico.isEmpty() && regiao == null && regiao.isEmpty() && titulo == null
+					&& titulo.isEmpty() && descricao == null && descricao.isEmpty()) {
+				ModelAnuncio modelAnuncio = new ModelAnuncio();
+
+				modelAnuncio.setId(Long.parseLong(id));
+				modelAnuncio.setServico(servico);
+				modelAnuncio.setEstado(estado);
+				modelAnuncio.setRegiao(regiao);
+				modelAnuncio.setTitulo(titulo);
+				modelAnuncio.setDescricao(descricao);
+				modelAnuncio.setEmail_contato(emailContato);
+				modelAnuncio.setSituacao(situacao);
+
+				request.setAttribute("msg", "Preencha todos os campos !");
+				request.setAttribute("modelAnuncio", modelAnuncio);
+				request.getRequestDispatcher("/principal/carregarAnuncio.jsp").forward(request, response);
+			} else {
+				ModelAnuncio modelAnuncio = new ModelAnuncio();
+
+				modelAnuncio.setId(Long.parseLong(id));
+				modelAnuncio.setServico(servico);
+				modelAnuncio.setEstado(estado);
+				modelAnuncio.setRegiao(regiao);
+				modelAnuncio.setTitulo(titulo);
+				modelAnuncio.setDescricao(descricao);
+				modelAnuncio.setEmail_contato(emailContato);
+				modelAnuncio.setSituacao(situacao);
+
+				daoAnuncioRepository.updateAnuncio(modelAnuncio);
+
+				msg = "Alterado com sucesso !";
+
+				request.setAttribute("msg", msg);
+				request.setAttribute("modelAnuncio", modelAnuncio);
+				request.getRequestDispatcher("/principal/carregarAnuncio.jsp").forward(request, response);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+
+			RequestDispatcher redirecionar = request.getRequestDispatcher("erro.jsp");
+			request.setAttribute("msg", e.getMessage());
+			redirecionar.forward(request, response);
+		}
+
 	}
 
 }

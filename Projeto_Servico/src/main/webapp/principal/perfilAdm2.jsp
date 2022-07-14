@@ -1,7 +1,7 @@
-<%@page import="Model.ModelLogin" %>
+<%@page import="Model.ModelLogin"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,13 +12,15 @@
 </head>
 <body>
 	<%@include file="/principal/Componente/header2.jsp"%>
-	<div id="titulo"><h1>Meus Dados</h1></div>
-	
+	<div id="titulo">
+		<h1>Meus Dados</h1>
+	</div>
+
 	<div id="linha1"></div>
 
 	<div id="formulario">
-		<form action="<%= request.getContextPath() %>/ServletPosLoginAdm" method="post"
-			id="cadastroCliente">
+		<form action="<%=request.getContextPath()%>/ServletPosLoginAdm"
+			method="post" id="cadastroCliente">
 			<input type="hidden" name="acao" id="acao" value="">
 			<div id="formulario1">
 				<h5>Cadastro do login</h5>
@@ -26,15 +28,15 @@
 				<div id="linha2"></div>
 				<br>
 				<table id="tabelafrom1">
-				
+
 					<tr>
 						<td>
 							<div id="textcampo">
 								<p>
 									<b>Nome:</b>
 								</p>
-								<input type="text" class="form-control"
-									 name="nome" id="nome" value="<%= session.getAttribute("nome") %>" readonly="readonly">
+								<input type="text" class="form-control" name="nome" id="nome"
+									value="<%=session.getAttribute("nome")%>" readonly="readonly">
 							</div>
 						</td>
 						<td>
@@ -42,8 +44,9 @@
 								<p>
 									<b>Email (Para a conta) :</b>
 								</p>
-								<input type="email" class="form-control"
-									 name="email" id="email" value="<%=session.getAttribute("usuario")%>" readonly="readonly">
+								<input type="email" class="form-control" name="email" id="email"
+									value="<%=session.getAttribute("usuario")%>"
+									readonly="readonly">
 							</div>
 						</td>
 					</tr>
@@ -54,7 +57,8 @@
 									<b>Senha:</b>
 								</p>
 								<input type="password" class="form-control"
-									placeholder="Digite sua senha" name="senha" id="senha" value="${modelLogin.senha}">
+									placeholder="Digite sua senha" name="senha" id="senha"
+									value="${modelLogin.senha}">
 							</div>
 						</td>
 						<td>
@@ -62,8 +66,10 @@
 								<p>
 									<b>Repetir Senha:</b>
 								</p>
-								<input type="password" class="form-control" value="${modelLogin.rSenha}"
-									placeholder="Digite sua senha novamente" name="Rsenha" id="Rsenha">
+								<input type="password" class="form-control"
+									value="${modelLogin.rSenha}"
+									placeholder="Digite sua senha novamente" name="Rsenha"
+									id="Rsenha">
 							</div>
 						</td>
 					</tr>
@@ -95,33 +101,222 @@
 								</p>
 								<select class="form-control" name="uf" id="uf">
 									<option value="">Selecione</option>
-									<option value="AC">AC</option>
-									<option value="AL">AL</option>
-									<option value="AP">AP</option>
-									<option value="AM">AM</option>
-									<option value="BA">BA</option>
-									<option value="CE">CE</option>
-									<option value="DF">DF</option>
-									<option value="ES">ES</option>
-									<option value="GO">GO</option>
-									<option value="MA">MA</option>
-									<option value="MT">MT</option>
-									<option value="MS">MS</option>
-									<option value="MG">MG</option>
-									<option value="PA">PA</option>
-									<option value="PB">PB</option>
-									<option value="PR">PR</option>
-									<option value="PE">PE</option>
-									<option value="PI">PI</option>
-									<option value="RJ">RJ</option>
-									<option value="RN">RN</option>
-									<option value="RS">RS</option>
-									<option value="RO">RO</option>
-									<option value="RR">RR</option>
-									<option value="SC">SC</option>
-									<option value="SP">SP</option>
-									<option value="SE">SE</option>
-									<option value="TO">TO</option>
+									<option value="AC"
+										<%ModelLogin modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("AC")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>AC</option>
+									<option value="AL"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("AL")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>AL</option>
+									<option value="AP"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("AP")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>AP</option>
+									<option value="AM"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("AM")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>AM</option>
+									<option value="BA"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("BA")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>BA</option>
+									<option value="CE"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("CE")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>CE</option>
+									<option value="DF"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("DF")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>DF</option>
+									<option value="ES"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("ES")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>ES</option>
+									<option value="GO"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("GO")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>GO</option>
+									<option value="MA"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("MA")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>MA</option>
+									<option value="MT"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("MT")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>MT</option>
+									<option value="MS"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("MS")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>MS</option>
+									<option value="MG"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("MG")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>MG</option>
+									<option value="PA"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("PA")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>PA</option>
+									<option value="PB"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("PB")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>PB</option>
+									<option value="PR"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("PR")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>PR</option>
+									<option value="PE"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("PE")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>PE</option>
+									<option value="PI"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("PI")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>PI</option>
+									<option value="RJ"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("RJ")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>RJ</option>
+									<option value="RN"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("RN")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>RN</option>
+									<option value="RS"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("RS")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>RS</option>
+									<option value="RO"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("RO")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>RO</option>
+									<option value="RR"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("RR")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>RR</option>
+									<option value="SC"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("SC")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>SC</option>
+									<option value="SP"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("SP")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>SP</option>
+									<option value="SE"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("SE")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>SE</option>
+									<option value="TO"
+										<%modelLogin = (ModelLogin) request.getAttribute("modelLogin");
+
+if (modelLogin != null && modelLogin.getEstado().equals("TO")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>TO</option>
 								</select>
 							</div>
 						</td>
@@ -151,29 +346,47 @@
 				</table>
 			</div>
 			<div id="linha1"></div>
-		<div id="button">
-
-				<button type="submit"
-					class="btn btn-warning" onclick="verEditar('<%=session.getAttribute("usuario")%>')">Alterar</button>
+			<div id="button">
+				<button type="submit" class="btn btn-warning"
+					onclick="verEditar('<%=session.getAttribute("usuario")%>')">Alterar</button>
 			</div>
-			<div id="spam"><spam>${msg}</spam></div>
+			<div id="spam">
+				<spam>${msg}</spam>
+			</div>
 		</form>
 	</div>
 
 	<div id="linha1"></div>
-	
+
+	<div id="finalizarOperacao" class="finalizarOperacao">
+		<table>
+			<tr>
+				<td><h5>Para Finalizar as alterações deverar ser realizado
+						lagout.</h5></td>
+			</tr>
+			<tr>
+				<td><a
+					href="<%=request.getContextPath()%>\ServletLogin?acao=logout"><button
+							type="submit" class="btn btn-success" onclick="finalizar()">Finalizar</button></a></td>
+			</tr>
+		</table>
+	</div>
+
 	<script type="text/javascript">
-	function verEditar(login){
-		
-		var urlAction = document.getElementById('cadastroCliente').action;
-		
-		window.location.href = urlAction + '?acao=buscarEditar&login=' + login;
-		
-		
-	}
+		function finalizar() {
+			alert("Para finalizar as alterações sera feito logout!");
+		}
+		function verEditar(login) {
+
+			var urlAction = document.getElementById('cadastroCliente').action;
+
+			window.location.href = urlAction + '?acao=buscarEditar&login='
+					+ login;
+
+		}
 	</script>
-	
-	
+
+
 	<%@include file="/Componentes/rodape.jsp"%>
 </body>
 </html>

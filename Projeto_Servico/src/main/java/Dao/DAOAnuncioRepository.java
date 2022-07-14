@@ -37,6 +37,27 @@ public class DAOAnuncioRepository {
 		
 	}
 	
+	
+	public void updateAnuncio(ModelAnuncio modelAnuncio) throws Exception {
+		String sql = "UPDATE public.anuncio SET regiao=?, estado=?, titulo=?, descricao=?, servico=?, email_contato=?, situacao=? WHERE id=?;";
+		
+		PreparedStatement preparedStatement = connection.prepareStatement(sql);
+		preparedStatement.setString(1, modelAnuncio.getRegiao());
+		preparedStatement.setString(2, modelAnuncio.getEstado());
+		preparedStatement.setString(3, modelAnuncio.getTitulo());
+		preparedStatement.setString(4, modelAnuncio.getDescricao());
+		preparedStatement.setString(5, modelAnuncio.getServico());
+		preparedStatement.setString(6, modelAnuncio.getEmail_contato());
+		preparedStatement.setString(7, modelAnuncio.getSituacao());
+		preparedStatement.setLong(8, modelAnuncio.getId());
+		
+		preparedStatement.execute();
+		
+		connection.commit();
+		
+	}
+	
+	
 	public void deleteAnuncio(Long id) throws Exception{
 		String sql = "DELETE FROM anuncio WHERE id = ?; ";
 	
@@ -120,6 +141,32 @@ public class DAOAnuncioRepository {
 		prepareSql.executeUpdate();
 
 		connection.commit();
+		
+	}
+	
+	public ModelAnuncio consultarAnuncioID(Long id_user, Long id_anuncio) throws Exception{
+		
+		ModelAnuncio modelAnuncio = new ModelAnuncio();
+		
+		String sql = "SELECT * FROM anuncio where id = ? and id_prestador = ?;";
+		PreparedStatement statement = connection.prepareStatement(sql);
+		statement.setLong(1, id_anuncio);
+		statement.setLong(2, id_user);
+		
+		ResultSet resultado = statement.executeQuery();
+		
+		while(resultado.next()) {
+			modelAnuncio.setId(resultado.getLong("id"));
+			modelAnuncio.setRegiao(resultado.getString("regiao"));
+			modelAnuncio.setEstado(resultado.getString("estado"));
+			modelAnuncio.setTitulo(resultado.getString("titulo"));
+			modelAnuncio.setDescricao(resultado.getString("descricao"));
+			modelAnuncio.setServico(resultado.getString("servico"));
+			modelAnuncio.setEmail_contato(resultado.getString("email_contato"));
+			modelAnuncio.setSituacao(resultado.getString("situacao"));
+		}
+		
+		return modelAnuncio;
 		
 	}
 }
