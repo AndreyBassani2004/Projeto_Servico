@@ -31,13 +31,13 @@
 			<div class="container">
 				<div class="row">
 					<div class="col">
-						<div class="card mb-3" style="max-width: 840px;">
+						<div class="card mb-3" style="min-height: 900px; min-width: 700px;">
 							<div class="row g-0">
 
 
 								<c:forEach items="${modelAnuncios}" var="an">
 									<div class="col-md-4">
-										<img src="#" class="img-fluid rounded-start"
+										<img src="<%=request.getContextPath()%>/principal/img/user.jpg" class="img-fluid rounded-start"
 											alt="Imagem Prestador">
 									</div>
 									<div class="col-md-8">
@@ -60,16 +60,57 @@
 						</div>
 					</div>
 					<div class="col">
-						<div class="card mb-3" style="max-width: 340px;">
-							<div class="row g-0" >
-							<form action="#" class="col-md-4" id="form_pesquisa">
-								<h5>Pesquisar</h5><br/><br/>
-								<div id="text_campo">
-								<label>Cidade:</label><input type="text" placeholder="Digite o nome da cidade.">
-								</div>
-								<br/><br/>
-								<button type="button" class="btn btn-primary">Pesquisar</button>
-							</form>
+						<div class="card mb-3" style="min-width: 360px; min-height: 900px;">
+							<div class="row g-0">
+								<form action="#" class="col-md-4" id="form_pesquisa">
+									<h5><b>Pesquisar</b></h5>
+									<br /> <br /> <br />
+									<div id="text_campo">
+										<label>Cidade:</label><input type="text" class="form-control"
+											placeholder="Digite o nome da cidade." style="width: 250px;">
+									</div>
+									<br />
+									<div id="textcampo">
+										<p>
+											Estado:
+										</p>
+										<select class="form-control" name="uf" id="uf"
+											style="width: 250px;" required="required">
+											<option value="">Selecione</option>
+											<option value="AC">AC</option>
+											<option value="AL">AL</option>
+											<option value="AP">AP</option>
+											<option value="AM">AM</option>
+											<option value="BA">BA</option>
+											<option value="CE">CE</option>
+											<option value="DF">DF</option>
+											<option value="ES">ES</option>
+											<option value="GO">GO</option>
+											<option value="MA">MA</option>
+											<option value="MT">MT</option>
+											<option value="MS">MS</option>
+											<option value="MG">MG</option>
+											<option value="PA">PA</option>
+											<option value="PB">PB</option>
+											<option value="PR">PR</option>
+											<option value="PE">PE</option>
+											<option value="PI">PI</option>
+											<option value="RJ">RJ</option>
+											<option value="RN">RN</option>
+											<option value="RS">RS</option>
+											<option value="RO">RO</option>
+											<option value="RR">RR</option>
+											<option value="SC">SC</option>
+											<option value="SP">SP</option>
+											<option value="SE">SE</option>
+											<option value="TO">TO</option>
+										</select>
+									</div>
+									<div id="linha2"></div>
+									<div id="textcampo">
+									<button type="button" class="btn btn-primary">Pesquisar</button>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>

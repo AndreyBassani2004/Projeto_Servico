@@ -27,8 +27,15 @@ body {
 	padding: 3em;
 }
 
+#linha2 {
+	align-items: center;
+	justify-content: space-between;
+	background-color: #ffff;
+	padding: 2em;
+}
+
 .listaBarra {
-	max-width: 1260px;
+	min-width: 1060px;
 	margin: 0 auto;
 }
 
@@ -40,7 +47,8 @@ body {
 
 #form_pesquisa{
 	margin-top: 30px;
-	margin-left: 80px;
+	margin-left: 50px;
+	margin-right: 80px;
 	padding: 5px;
 	display: flex;
 	flex-wrap: wrap;
@@ -49,6 +57,7 @@ body {
 #textcampo{
 	align-items: flex-start;
 	text-align: left;
+	padding-top: 1em;
 
 	}
 
@@ -58,9 +67,18 @@ body {
 }
 
 #textcampo input {
-	width: 30em;
+	width: 60em;
 }
 
 #textcampo select {
-	width: 30em;
+	width: 10em;
 }
+
+
+
+#textcampo2{
+	align-items: flex-start;
+	text-align: left;
+	padding-top: 1em;
+
+	}
