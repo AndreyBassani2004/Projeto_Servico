@@ -20,7 +20,7 @@
 
 	<div id="titulo">
 		<h1>
-			Alvenaria
+			Eletricista
 		</h1>
 	</div>
 
@@ -68,7 +68,7 @@
 									int totalPagina = (int) request.getAttribute("totalPagina");
 									
 									for (int p = 0; p < totalPagina; p++){
-										String url = request.getContextPath()+ "/ServletPrestadores?acao=paginar&pagina=" + (p * 5) + "&categoria=alvenaria";
+										String url = request.getContextPath()+ "/ServletPrestadores?acao=paginar2&pagina=" + (p * 5) + "&categoria=eletricista";
 										out.print("<li class=\"page-item\"><a class=\"page-link\" href=\""+url+"\">"+(p + 1)+" </a></li>");									}
 								
 								%>

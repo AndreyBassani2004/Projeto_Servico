@@ -30,7 +30,7 @@
         etc., em edifícios e outras obras de construção geralmente </br>
         orientado pelo engenheiro ou Mestre de obras.</p>
         <br>
-       <a href="<%= request.getContextPath() %>/ServletPrestadores?acao=listar&categoria=Alvenaria"><button type="button" class="btn btn-outline-warning">VER PROFISSIONAIS</button></a> <br><br>     
+       <a href="<%= request.getContextPath() %>/ServletPrestadores?acao=listar&categoria=alvenaria"><button type="button" class="btn btn-outline-warning">VER PROFISSIONAIS</button></a> <br><br>     
         </div>             
     </div>
 
@@ -45,7 +45,7 @@
         instalacao, vistoria e reparo de aparelhos eletricos eletronicos</br>
         e de redes de distribuicao de energia. </p>
         <br>
-        <a href="<%= request.getContextPath() %>/ServletPrestadores?acao=listar&categoria=Eletricista"><button type="button" class="btn btn-outline-warning">VER PROFESSIONAIS</button></a><br><br>
+        <a href="<%= request.getContextPath() %>/ServletPrestadores?acao=listar2&categoria=eletricista"><button type="button" class="btn btn-outline-warning">VER PROFESSIONAIS</button></a><br><br>
         </div> 
         
         <div id="img2">
@@ -69,7 +69,7 @@
        
 
         <br>
-        <a href="<%= request.getContextPath() %>/ServletPrestadores?acao=listar&categoria=FazTudo"><button type="button" class="btn btn-outline-warning">VER PROFESSIONAIS</button></a><br><br>
+        <a href="<%= request.getContextPath() %>/ServletPrestadores?acao=listar3&categoria=faztudo"><button type="button" class="btn btn-outline-warning">VER PROFESSIONAIS</button></a><br><br>
         </div>        
     </div>
     
@@ -83,7 +83,7 @@
         siestemas hidraulicos de residencias estabelecimentos<br>
         e industrias.</p>
         <br>
-         <a href="<%= request.getContextPath() %>/ServletPrestadores?acao=listar&categoria=Encanador"><button type="button" class="btn btn-outline-warning">VER PROFESSIONAIS</button></a><br><br>
+         <a href="<%= request.getContextPath() %>/ServletPrestadores?acao=listar4&categoria=encanador"><button type="button" class="btn btn-outline-warning">VER PROFESSIONAIS</button></a><br><br>
         </div> 
         <div id="img2">
             <img src="<%= request.getContextPath() %>/Img/servicoencanador.jpg" alt="Alvenaria" width="510" height="340">

@@ -68,10 +68,10 @@
 								<select class="form-control" name="servico" id="servico"
 									required="required">
 									<option value="">Selecione</option>
-									<option value="Alvenaria">Alvenaria</option>
-									<option value="Eletricista">Eletricista</option>
-									<option value="FazTudo">FazTudo</option>
-									<option value="Encanador">Encanador</option>
+									<option value="alvenaria">Alvenaria</option>
+									<option value="eletricista">Eletricista</option>
+									<option value="faztudo">FazTudo</option>
+									<option value="encanador">Encanador</option>
 								</select>
 							</div>
 						</td>
