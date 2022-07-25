@@ -32,7 +32,7 @@
 				<div class="row">
 					<div class="col">
 						<div class="card mb-3"
-							style="min-height: 1065px; min-width: 700px;">
+							style="min-height: 800px; min-width: 700px;">
 							<div class="row g-0">
 
 
@@ -51,8 +51,8 @@
 												<c:out value="${an.descricao}"></c:out>
 											</p>
 											<p class="card-text">
-												<small class="text-muted"><button type="button"
-														class="btn btn-secondary">Conhecer</button></small>
+												<small class="text-muted"><a href="<%=request.getContextPath()%>/ServletPrestadores?acao=perfil&id=${an.id}"> <button type="button"
+														class="btn btn-secondary">Conhecer</button></a></small>
 											</p>
 										</div>
 									</div>
@@ -79,7 +79,7 @@
 					</div>
 					<div class="col">
 						<div class="card mb-3"
-							style="min-width: 360px; min-height: 1065px;">
+							style="min-width: 360px; min-height: 800px;">
 							<div class="row g-0">
 								<form action="#" class="col-md-4" id="form_pesquisa">
 									<h5>
@@ -88,7 +88,7 @@
 									<br /> <br /> <br />
 									<div id="text_campo">
 										<label>Cidade:</label><input type="text" class="form-control"
-											placeholder="Digite o nome da cidade." style="width: 250px;">
+											placeholder="Digite o nome da cidade." style="width: 250px;" required="required">
 									</div>
 									<br />
 									<div id="textcampo">
@@ -127,7 +127,7 @@
 									</div>
 									<div id="linha2"></div>
 									<div id="textcampo">
-										<button type="button" class="btn btn-primary">Pesquisar</button>
+										<button type="submit" class="btn btn-primary">Pesquisar</button>
 									</div>
 								</form>
 							</div>

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import Dao.DAOCarregarPublicoRepository;
 import Model.ModelAnuncio;
+import Model.ModelLogin;
 
 @WebServlet("/ServletPrestadores")
 public class ServletPrestadoresPublic extends HttpServlet {
@@ -126,6 +127,13 @@ public class ServletPrestadoresPublic extends HttpServlet {
 				request.setAttribute("modelAnuncios", modelAnuncios);
 				request.setAttribute("totalPagina", daoCarregarPublicoRepository.totalPagina(categoria));
 				request.getRequestDispatcher("/encanador.jsp").forward(request, response);
+			} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("perfil")) {
+				
+				String id = request.getParameter("id");
+				
+				ModelAnuncio modelAnuncio = daoCarregarPublicoRepository.consultarAnuncioID(Long.parseLong(id));
+				request.setAttribute("modelAnuncio", modelAnuncio);												
+				request.getRequestDispatcher("/perfil.jsp").forward(request, response);
 			}
 
 			else {

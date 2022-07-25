@@ -8,6 +8,7 @@ public class ModelAnuncio implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
+	private Long id_prestador2;
 	private String regiao;
 	private String estado;
 	private String titulo;
@@ -16,10 +17,47 @@ public class ModelAnuncio implements Serializable{
 	private String servico;
 	private String email_contato;
 	
+	//Nome do prestador
+	private String nome_prestador;
+	private String telefone_prestador;
+	private String email_prestador_perfil;
+	
 	private ModelLogin id_prestador;
 
 	
 	
+	public String getEmail_prestador_perfil() {
+		return email_prestador_perfil;
+	}
+
+	public void setEmail_prestador_perfil(String email_prestador_perfil) {
+		this.email_prestador_perfil = email_prestador_perfil;
+	}
+
+	public String getNome_prestador() {
+		return nome_prestador;
+	}
+
+	public void setNome_prestador(String nome_prestador) {
+		this.nome_prestador = nome_prestador;
+	}
+
+	public String getTelefone_prestador() {
+		return telefone_prestador;
+	}
+
+	public void setTelefone_prestador(String telefone_prestador) {
+		this.telefone_prestador = telefone_prestador;
+	}
+
+	public Long getId_prestador2() {
+		return id_prestador2;
+	}
+
+	public void setId_prestador2(Long id_prestador2) {
+		this.id_prestador2 = id_prestador2;
+	}
+
 	public String getSituacao() {
 		return situacao;
 	}

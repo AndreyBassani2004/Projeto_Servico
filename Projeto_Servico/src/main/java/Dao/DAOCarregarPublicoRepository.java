@@ -8,6 +8,7 @@ import java.util.List;
 
 import Connection.SingleConnectionBanco;
 import Model.ModelAnuncio;
+import Model.ModelLogin;
 
 public class DAOCarregarPublicoRepository {
 	
@@ -105,6 +106,55 @@ public class DAOCarregarPublicoRepository {
 			return retorno;
 			
 		}	
+		
+		public ModelAnuncio consultarAnuncioID(Long id_anuncio) throws Exception {
+
+			ModelAnuncio modelAnuncio = new ModelAnuncio();
+
+			String sql = "SELECT * FROM anuncio where id = ?";
+			PreparedStatement statement = connection.prepareStatement(sql);
+			statement.setLong(1, id_anuncio);
+
+			ResultSet resultado = statement.executeQuery();
+
+			while (resultado.next()) {
+				modelAnuncio.setId(resultado.getLong("id"));
+				modelAnuncio.setId_prestador2(resultado.getLong("id_prestador"));
+				modelAnuncio.setRegiao(resultado.getString("regiao"));
+				modelAnuncio.setEstado(resultado.getString("estado"));
+				modelAnuncio.setTitulo(resultado.getString("titulo"));
+				modelAnuncio.setDescricao(resultado.getString("descricao"));
+				modelAnuncio.setServico(resultado.getString("servico"));
+				modelAnuncio.setEmail_contato(resultado.getString("email_contato"));
+				modelAnuncio.setSituacao(resultado.getString("situacao"));
+			}
+			
+			
+			String sql2 = "select*from usuario where id = ?;";
+			PreparedStatement statement2 = connection.prepareStatement(sql2);
+			statement2.setLong(1, modelAnuncio.getId_prestador2());
+			
+			ResultSet resultado2 = statement2.executeQuery();
+
+			while (resultado2.next()) /* Se tem resultado */ {
+				modelAnuncio.setNome_prestador(resultado2.getString("nome"));
+				modelAnuncio.setEmail_prestador_perfil(resultado2.getString("email"));
+			}
+
+			String sql3 = "select*from dados_prestador where email_user = ?;";
+			PreparedStatement statement3 = connection.prepareStatement(sql3);
+			statement3.setString(1, modelAnuncio.getEmail_prestador_perfil());
+			
+			ResultSet resultado3 = statement3.executeQuery();
+
+			while (resultado3.next()) /* Se tem resultado */ {
+				modelAnuncio.setTelefone_prestador(resultado3.getString("telefone_contato"));
+			}
+			
+			return modelAnuncio;
+
+		}
+		
 		
 	
 }
