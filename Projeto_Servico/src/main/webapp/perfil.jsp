@@ -18,7 +18,7 @@
 	<%@include file="/Componentes/header.jsp"%>
 
 	<div id="linha1"></div>
-
+		
 	<div class="container">
 		<div class="row">
 			<div class="col" style="min-height: 500px; min-width: 500px;">
@@ -36,7 +36,7 @@
 			<div class="col" style="min-width: 360px; min-height: 600px;">
 				<div class="card mb-3">
 					<div class="row g-0">
-						<div class="col-md-8">
+						<div class="col-md-8" style="margin-left: 5em;">
 							<br /> <br />
 							<h5>
 								<b>Nota de avaliação:</b>
@@ -46,7 +46,7 @@
 							<br /> <br />
 						</div>
 
-						<div class="col-md-8">
+						<div class="col-md-8" style="margin-left: 5em;">
 							<h5>
 								<b>Local:</b>
 							</h5>
@@ -63,7 +63,7 @@
 							<br /> <br />
 						</div>
 
-						<div class="col-md-8">
+						<div class="col-md-8" style="margin-left: 5em;">
 							<h5>
 								<b>Contato:</b>
 							</h5>
@@ -101,7 +101,7 @@
 			</div>
 			<div class="col"></div>
 			<div class="col">
-				<a href="<%=request.getContextPath()%>/avaliar.jsp"><button type="button" class="btn btn-success">Avaliar</button></a>
+				<a href="<%=request.getContextPath()%>/ServletPrestadores?acao=avaliar&id=${modelAnuncio.id}"><button type="button" class="btn btn-success">Avaliar</button></a>
 				<button type="button" class="btn btn-danger">Denunciar</button>
 			</div>
 			<br /> <br /> <br />

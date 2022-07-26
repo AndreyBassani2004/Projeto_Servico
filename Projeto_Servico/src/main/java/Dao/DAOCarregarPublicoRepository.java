@@ -8,6 +8,7 @@ import java.util.List;
 
 import Connection.SingleConnectionBanco;
 import Model.ModelAnuncio;
+import Model.ModelAvaliacao;
 import Model.ModelLogin;
 
 public class DAOCarregarPublicoRepository {
@@ -156,5 +157,36 @@ public class DAOCarregarPublicoRepository {
 		}
 		
 		
-	
+		public ModelAvaliacao carregarAnuncioAvaliarID(Long id_anuncio) throws Exception{
+			
+			ModelAvaliacao modelAvaliacao = new ModelAvaliacao();
+			
+			String sql = "SELECT * FROM anuncio where id = ?";
+			PreparedStatement statement = connection.prepareStatement(sql);
+			statement.setLong(1, id_anuncio);
+			
+			ResultSet resultado = statement.executeQuery();
+			
+			while(resultado.next()) {
+				modelAvaliacao.setId_anuncio(resultado.getLong("id"));
+				modelAvaliacao.setId_prestador(resultado.getLong("id_prestador"));
+				modelAvaliacao.setServico_prestador(resultado.getString("servico"));
+				modelAvaliacao.setUf(resultado.getString("estado"));
+				modelAvaliacao.setTitulo_anuncio(resultado.getString("titulo"));
+				modelAvaliacao.setDescricao(resultado.getString("descricao"));
+			}
+			
+			String sql2 = "select*from usuario where id = ?;";
+			PreparedStatement statement2 = connection.prepareStatement(sql2);
+			statement2.setLong(1, modelAvaliacao.getId_prestador());
+			
+			ResultSet resultado2 = statement2.executeQuery();
+
+			while (resultado2.next()) /* Se tem resultado */ {
+				modelAvaliacao.setNome_prestador(resultado2.getString("nome"));
+			}
+			
+			return modelAvaliacao;
+			
+		}
 }

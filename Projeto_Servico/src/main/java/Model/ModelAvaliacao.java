@@ -8,16 +8,85 @@ public class ModelAvaliacao implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private Long id;
-	private Long id_anuncio;
+	//Dados avaliação
+	private Long id;	
 	private String nome_cliente;
 	private String email_cliente;
-	private String descricao_denuncia;
+	private String descricao_cliente;
 	private Data data_prestacao;
 	private Double nota;
-	private String Titulo;
+	private String titulo;
 	private String descricao;
 	private String estado;
+	
+	//Dados tabela terceiros
+	private Long id_anuncio;
+	private Long id_prestador;
+	private String nome_prestador;
+	private String servico_prestador;
+	private String uf;
+	private String titulo_anuncio;
+	private String descricao_anuncio;
+	
+	
+	
+	@Override
+	public String toString() {
+		return "ModelAvaliacao [id=" + id + ", nome_cliente=" + nome_cliente + ", email_cliente=" + email_cliente
+				+ ", descricao_cliente=" + descricao_cliente + ", data_prestacao=" + data_prestacao + ", nota=" + nota
+				+ ", titulo=" + titulo + ", descricao=" + descricao + ", estado=" + estado + ", id_anuncio="
+				+ id_anuncio + ", id_prestador=" + id_prestador + ", nome_prestador=" + nome_prestador
+				+ ", servico_prestador=" + servico_prestador + ", uf=" + uf + ", titulo_anuncio=" + titulo_anuncio
+				+ ", descricao_anuncio=" + descricao_anuncio + "]";
+	}
+	public String getTitulo() {
+		return titulo;
+	}
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	public String getDescricao_cliente() {
+		return descricao_cliente;
+	}
+	public void setDescricao_cliente(String descricao_cliente) {
+		this.descricao_cliente = descricao_cliente;
+	}
+	public Long getId_prestador() {
+		return id_prestador;
+	}
+	public void setId_prestador(Long id_prestador) {
+		this.id_prestador = id_prestador;
+	}
+	public String getTitulo_anuncio() {
+		return titulo_anuncio;
+	}
+	public void setTitulo_anuncio(String titulo_anuncio) {
+		this.titulo_anuncio = titulo_anuncio;
+	}
+	public String getNome_prestador() {
+		return nome_prestador;
+	}
+	public void setNome_prestador(String nome_prestador) {
+		this.nome_prestador = nome_prestador;
+	}
+	public String getServico_prestador() {
+		return servico_prestador;
+	}
+	public void setServico_prestador(String servico_prestador) {
+		this.servico_prestador = servico_prestador;
+	}
+	public String getUf() {
+		return uf;
+	}
+	public void setUf(String uf) {
+		this.uf = uf;
+	}
+	public String getDescricao_anuncio() {
+		return descricao_anuncio;
+	}
+	public void setDescricao_anuncio(String descricao_anuncio) {
+		this.descricao_anuncio = descricao_anuncio;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -42,12 +111,6 @@ public class ModelAvaliacao implements Serializable{
 	public void setEmail_cliente(String email_cliente) {
 		this.email_cliente = email_cliente;
 	}
-	public String getDescricao_denuncia() {
-		return descricao_denuncia;
-	}
-	public void setDescricao_denuncia(String descricao_denuncia) {
-		this.descricao_denuncia = descricao_denuncia;
-	}
 	public Data getData_prestacao() {
 		return data_prestacao;
 	}
@@ -59,12 +122,6 @@ public class ModelAvaliacao implements Serializable{
 	}
 	public void setNota(Double nota) {
 		this.nota = nota;
-	}
-	public String getTitulo() {
-		return Titulo;
-	}
-	public void setTitulo(String titulo) {
-		Titulo = titulo;
 	}
 	public String getDescricao() {
 		return descricao;
