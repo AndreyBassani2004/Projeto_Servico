@@ -21,12 +21,16 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col" style="min-height: 600px; min-width: 700px;">
-				<h2><spam>${modelAnuncio.nome_prestador}</spam></h2>
+			<div class="col" style="min-height: 500px; min-width: 500px;">
+				<h2>
+					<spam>${modelAnuncio.nome_prestador}</spam>
+				</h2>
 				<br /> <br /> <img alt="Prestador"
 					src="<%=request.getContextPath()%>/Img/user.jpg" width="460px"
 					height="340p">
-				<p><spam>${modelAnuncio.descricao}</spam></p>
+				<p>
+					<spam>${modelAnuncio.descricao}</spam>
+				</p>
 			</div>
 
 			<div class="col" style="min-width: 360px; min-height: 600px;">
@@ -47,9 +51,15 @@
 								<b>Local:</b>
 							</h5>
 							<br />
-							<h5>Estado: <spam>${modelAnuncio.estado}</spam></h5>
+							<h5>
+								Estado:
+								<spam>${modelAnuncio.estado}</spam>
+							</h5>
 							<br />
-							<h5>Cidades: <spam>${modelAnuncio.regiao}</spam></h5>
+							<h5>
+								Cidades:
+								<spam>${modelAnuncio.regiao}</spam>
+							</h5>
 							<br /> <br />
 						</div>
 
@@ -58,9 +68,15 @@
 								<b>Contato:</b>
 							</h5>
 							<br /> <br />
-							<h5>Email: <spam>${modelAnuncio.email_contato}</spam></h5>
+							<h5>
+								Email:
+								<spam>${modelAnuncio.email_contato}</spam>
+							</h5>
 							<br />
-							<h5>Telefone: <spam> ${modelAnuncio.telefone_prestador} </spam></h5>
+							<h5>
+								Telefone:
+								<spam> ${modelAnuncio.telefone_prestador} </spam>
+							</h5>
 							<br />
 
 						</div>
@@ -85,18 +101,50 @@
 			</div>
 			<div class="col"></div>
 			<div class="col">
-				<button type="button" class="btn btn-success">Avaliar</button>
+				<a href="<%=request.getContextPath()%>/avaliar.jsp"><button type="button" class="btn btn-success">Avaliar</button></a>
 				<button type="button" class="btn btn-danger">Denunciar</button>
 			</div>
-			<br>
-			<br>
+			<br /> <br /> <br />
 		</div>
 		<div class="row">
-		
+			<div class="card " style="width: 1200px; height: 800px;">
+				<div class="card-body">
+					<h5 class="card-title">
+						Cliente: <span>Nome</span> Nota: <span>nota</span>
+					</h5>
+					<br>
+					<p class="card-text">
+						Titulo:
+						<spam>titulo</spam>
+					</p>
+					<p class="card-text">
+						Descrição:
+						<spam>descricao</spam>
+					</p>
+				</div>
+			</div>
 		</div>
+		<nav aria-label="Page navigation example">
+			<ul class="pagination">
+				<li class="page-item"><a class="page-link" href="#">1</a></li>
+				<li class="page-item"><a class="page-link" href="#">2</a></li>
+				<li class="page-item"><a class="page-link" href="#">3</a></li>
+				<%
+				//	
+
+				//int totalPagina = (int) request.getAttribute("totalPagina");
+
+				//	for (int p = 0; p < totalPagina; p++){
+				//String url = request.getContextPath()+ "/ServletPrestadores?acao=paginar2&pagina=" + (p * 5) + "&categoria=eletricista";
+				//	out.print("<li class=\"page-item\"><a class=\"page-link\" href=\""+url+"\">"+(p + 1)+" </a></li>");									}
+				%>
+
+
+			</ul>
+		</nav>
 	</div>
-
-
+		<div id="linha1"></div>
+	
 	<%@include file="/Componentes/rodape.jsp"%>
 
 </body>

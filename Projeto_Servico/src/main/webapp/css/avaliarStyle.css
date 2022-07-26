@@ -13,17 +13,13 @@ body{
 	padding: 3em;
 }
 
-#barra{
-	background-color: #CCCCCC;
-}
-
-.descricao{
+#linha2 {
 	align-items: center;
-	text-align: center;
+	justify-content: space-between;
+	background-color: #ffff;
+	padding: 1em;
 }
 
-.tabela1{
-	margin-left: 10em;
-	margin-right: 10em;
+hr{
+	background-color: #F3F3F3;
 }
-

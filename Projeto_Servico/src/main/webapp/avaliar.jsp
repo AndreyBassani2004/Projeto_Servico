@@ -1,0 +1,217 @@
+<%@page import="Model.ModelAnuncio"%>
+<%@page import="Model.ModelLogin"%>
+<%@page import="Model.ModelAvaliacao"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/css/avaliarStyle.css">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<title>Insert title here</title>
+</head>
+<body>
+	<%@include file="/Componentes/header.jsp"%>
+
+	<div id="linha1"></div>
+
+
+
+	<div class="container">
+		<h3>Anuncio</h3>
+		<hr>
+		<div class="row">
+			<div class="col">
+
+				<div id="textcampo">
+					<p>
+						<b>ID:</b>
+					</p>
+					<input type="text" class="form-control" name="id" id="id" value="#"
+						readonly="readonly">
+				</div>
+
+				<div id="textcampo">
+					<p>
+						<b>Nome do prestador:</b>
+					</p>
+					<input type="text" class="form-control"
+						placeholder="Digite seu nome completo" name="nome_prestador"
+						id="nome_prestador" value="#" readonly="readonly">
+				</div>
+				<br />
+				<div id="textcampo">
+					<p>
+						<b>Serviço do prestador:</b>
+					</p>
+					<input type="text" class="form-control"
+						placeholder="Digite seu nome completo" name="servico_prestador"
+						id="servico_prestador" value="#" readonly="readonly">
+				</div>
+				<br />
+				<div id="textcampo">
+					<p>
+						<b>Estado:</b>
+					</p>
+					<input type="text" class="form-control"
+						placeholder="Digite seu nome completo" name="estado" id="estado"
+						value="#" readonly="readonly">
+				</div>
+
+			</div>
+			<div class="col">
+
+				<div id="textcampo">
+					<p>
+						<b>Titulo:</b>
+					</p>
+					<input type="text" class="form-control"
+						placeholder="Digite seu nome completo" name="titulo" id="titulo"
+						value="#" readonly="readonly">
+				</div>
+				<br />
+				<div id="textcampo">
+					<p>
+						<b>Descrição:</b>
+					</p>
+					<input type="text" class="form-control" style="height: 218px;"
+						id="descricao" name="descricao" readonly="readonly">
+				</div>
+
+			</div>
+
+		</div>
+		<br /> <br />
+		<h3>Dados</h3>
+		<hr>
+		<div class="row">
+			<div class="col">
+				<div id="textcampo">
+					<p>
+						<b>Nome:</b>
+					</p>
+					<input type="text" class="form-control"
+						placeholder="Digite seu nome completo" name="nome_cliente"
+						id="nome_cliente" required="required">
+				</div>
+				<br />
+			</div>
+			<div class="col">
+				<div id="textcampo">
+					<p>
+						<b>Email:</b>
+					</p>
+					<input type="text" class="form-control"
+						placeholder="Digite seu email completo" name="email_cliente"
+						id="email_cliente" required="required">
+				</div>
+				<br />
+			</div>
+		</div>
+		<br /> <br />
+		<h3>Prova da prestação</h3>
+		<hr>
+		<div class="row">
+			<div class="col">
+				<div id="textcampo">
+					<p>
+						<b>Data Prestação:</b>
+					</p>
+					<input type="date" class="form-control" name="data" id="data"
+						required="required">
+				</div>
+				<br />
+				<div id="textcampo">
+					<p>
+						<b>Como foi a prestação:</b>
+					</p>
+					<input type="text" class="form-control" style="height: 140px;"
+						id="prestacao_cliente" name="prestacao_cliente"
+						required="required">
+				</div>
+			</div>
+			<div class="col">
+				<div id="textcampo">
+					<p>
+						<b>Foto comprovação</b>
+					</p>
+					<p>Tire um print ou foto da concersa você e o prestador</p>
+					<p>(Essa imagen sera mandida em sigilo)</p>
+				</div>
+
+			</div>
+		</div>
+		<br /> <br />
+		<h3>Nota da prestação</h3>
+		<hr>
+		<div class="row">
+			<div class="col">
+				<div id="textcampo">
+					<p>
+						<b>Nota: (0-10)</b>
+					</p>
+					<select class="form-control" name="nota" id="nota"
+						required="required">
+						<option value="">Selecione</option>
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</select>
+				</div>
+				<br />
+			</div>
+			<div class="col">
+				<div id="textcampo">
+					<p>
+						<b>Titulo:</b>
+					</p>
+					<input type="text" class="form-control"
+						placeholder="Digite o Titulo" name="titulo" id="titulo"
+						required="required">
+				</div>
+				<br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div id="textcampo">
+					<p>
+						<b>Descrição:</b>
+					</p>
+					<input type="text" class="form-control" style="height: 140px;"
+						id="descricao" name="descricao" required="required">
+				</div>
+			</div>
+		</div>
+		<br /> <br />
+		<hr>
+		<div class="row">
+			<div class="col">
+				<spam style="margin-left: 5em;">msg</spam>
+			</div>
+			<div class="col">
+				<button type="button" class="btn btn-success" style="margin-left: 20em;">Avaliar</button>
+			</div>
+		</div>
+
+	</div>
+	<div id="linha1"></div>
+
+
+	<%@include file="/Componentes/rodape.jsp"%>
+
+</body>
+</html>
