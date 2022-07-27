@@ -2,9 +2,18 @@ package Model;
 
 import java.io.Serializable;
 
-public class ModelDenunciaAvaliacao implements Serializable {
+public class ModelDenunciaAnuncio implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
+	//Dados tabela denuncia anuncio
+	private Long id;
+	private String nome_cliente;
+	private String email_cliente;
+	private String descricao_denuncia;
+	private String situacao;
+	private String relatorio;
+	private String motivo;
 	
 	
 	// Dados tabela terceiros
@@ -17,6 +26,49 @@ public class ModelDenunciaAvaliacao implements Serializable {
 	private String descricao_anuncio;
 	
 
+	
+	public String getMotivo() {
+		return motivo;
+	}
+	public void setMotivo(String motivo) {
+		this.motivo = motivo;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getNome_cliente() {
+		return nome_cliente;
+	}
+	public void setNome_cliente(String nome_cliente) {
+		this.nome_cliente = nome_cliente;
+	}
+	public String getEmail_cliente() {
+		return email_cliente;
+	}
+	public void setEmail_cliente(String email_cliente) {
+		this.email_cliente = email_cliente;
+	}
+	public String getDescricao_denuncia() {
+		return descricao_denuncia;
+	}
+	public void setDescricao_denuncia(String descricao_denuncia) {
+		this.descricao_denuncia = descricao_denuncia;
+	}
+	public String getSituacao() {
+		return situacao;
+	}
+	public void setSituacao(String situacao) {
+		this.situacao = situacao;
+	}
+	public String getRelatorio() {
+		return relatorio;
+	}
+	public void setRelatorio(String relatorio) {
+		this.relatorio = relatorio;
+	}
 	public Long getId_anuncio() {
 		return id_anuncio;
 	}

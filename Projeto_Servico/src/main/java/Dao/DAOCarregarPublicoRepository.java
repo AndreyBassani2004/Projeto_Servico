@@ -9,7 +9,7 @@ import java.util.List;
 import Connection.SingleConnectionBanco;
 import Model.ModelAnuncio;
 import Model.ModelAvaliacao;
-import Model.ModelDenunciaAvaliacao;
+import Model.ModelDenunciaAnuncio;
 import Model.ModelLogin;
 
 public class DAOCarregarPublicoRepository {
@@ -208,9 +208,9 @@ public class DAOCarregarPublicoRepository {
 
 	}
 
-	public ModelDenunciaAvaliacao carregarAnuncioDenunciaID(Long id_anuncio) throws Exception {
+	public ModelDenunciaAnuncio carregarAnuncioDenunciaID(Long id_anuncio) throws Exception {
 
-		ModelDenunciaAvaliacao modelDenunciaAvaliacao = new ModelDenunciaAvaliacao();
+		ModelDenunciaAnuncio modelDenunciaAvaliacao = new ModelDenunciaAnuncio();
 
 		String sql = "SELECT * FROM anuncio where id = ?";
 		PreparedStatement statement = connection.prepareStatement(sql);
@@ -239,5 +239,22 @@ public class DAOCarregarPublicoRepository {
 
 		return modelDenunciaAvaliacao;
 
+	}
+	
+	public void cadastrarDenuncia(ModelDenunciaAnuncio objeto) throws Exception{
+		String sql = "INSERT INTO public.denuncia_anuncio(\r\n"
+				+ "	id_anuncio, nome_cliente, email_cliente, descricao_denuncia, estado_denuncia)\r\n"
+				+ "	VALUES (?, ?, ?, ?, ?);";
+		
+		PreparedStatement preparedSql = connection.prepareStatement(sql);
+		preparedSql.setLong(1, objeto.getId_anuncio());
+		preparedSql.setString(2, objeto.getNome_cliente());
+		preparedSql.setString(3, objeto.getEmail_cliente());
+		preparedSql.setString(4, objeto.getDescricao_denuncia());
+		preparedSql.setString(5, "ANALISE");
+		
+		preparedSql.execute();
+		connection.commit();
+		
 	}
 }

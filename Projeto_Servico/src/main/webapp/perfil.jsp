@@ -102,7 +102,7 @@
 			<div class="col"></div>
 			<div class="col">
 				<a href="<%=request.getContextPath()%>/ServletPrestadores?acao=avaliar&id=${modelAnuncio.id}"><button type="button" class="btn btn-success">Avaliar</button></a>
-				<a href="<%=request.getContextPath()%>/ServletPrestadores?acao=denuncia&id=${modelAnuncio.id}"><button type="button" class="btn btn-danger">Denunciar</button></a>
+				<a href="<%=request.getContextPath()%>/ServletPrestadores?acao=denuncia&id=${modelAnuncio.id}"><button type="button" class="btn btn-danger">Denunciar Anuncio</button></a>
 			</div>
 			<br /> <br /> <br />
 		</div>

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import Dao.DAOCarregarPublicoRepository;
 import Model.ModelAnuncio;
 import Model.ModelAvaliacao;
-import Model.ModelDenunciaAvaliacao;
+import Model.ModelDenunciaAnuncio;
 import Model.ModelLogin;
 
 @WebServlet("/ServletPrestadores")
@@ -149,9 +149,9 @@ public class ServletPrestadoresPublic extends HttpServlet {
 				
 				String id = request.getParameter("id");
 				
-				ModelDenunciaAvaliacao modelDenunciaAvaliacao = daoCarregarPublicoRepository.carregarAnuncioDenunciaID(Long.parseLong(id));
+				ModelDenunciaAnuncio modelDenunciaAnuncio = daoCarregarPublicoRepository.carregarAnuncioDenunciaID(Long.parseLong(id));
 				
-				request.setAttribute("modelDenunciaAvaliacao", modelDenunciaAvaliacao);	
+				request.setAttribute("modelDenunciaAnuncio", modelDenunciaAnuncio);	
 				request.getRequestDispatcher("/denunciar.jsp").forward(request, response);
 			}else {
 				request.getRequestDispatcher("/index.jsp").forward(request, response);

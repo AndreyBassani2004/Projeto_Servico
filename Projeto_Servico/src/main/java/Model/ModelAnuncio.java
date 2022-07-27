@@ -16,6 +16,7 @@ public class ModelAnuncio implements Serializable{
 	private String situacao;
 	private String servico;
 	private String email_contato;
+
 	
 	//Nome do prestador
 	private String nome_prestador;
