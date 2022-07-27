@@ -13,7 +13,7 @@ public class ModelAvaliacao implements Serializable{
 	private String nome_cliente;
 	private String email_cliente;
 	private String descricao_cliente;
-	private Data data_prestacao;
+	private String data_prestacao;
 	private Double nota;
 	private String titulo;
 	private String descricao;
@@ -30,15 +30,14 @@ public class ModelAvaliacao implements Serializable{
 	
 	
 	
-	@Override
-	public String toString() {
-		return "ModelAvaliacao [id=" + id + ", nome_cliente=" + nome_cliente + ", email_cliente=" + email_cliente
-				+ ", descricao_cliente=" + descricao_cliente + ", data_prestacao=" + data_prestacao + ", nota=" + nota
-				+ ", titulo=" + titulo + ", descricao=" + descricao + ", estado=" + estado + ", id_anuncio="
-				+ id_anuncio + ", id_prestador=" + id_prestador + ", nome_prestador=" + nome_prestador
-				+ ", servico_prestador=" + servico_prestador + ", uf=" + uf + ", titulo_anuncio=" + titulo_anuncio
-				+ ", descricao_anuncio=" + descricao_anuncio + "]";
+	public String getData_prestacao() {
+		return data_prestacao;
 	}
+
+	public void setData_prestacao(String data_prestacao) {
+		this.data_prestacao = data_prestacao;
+	}
+
 	public String getTitulo() {
 		return titulo;
 	}
@@ -110,12 +109,6 @@ public class ModelAvaliacao implements Serializable{
 	}
 	public void setEmail_cliente(String email_cliente) {
 		this.email_cliente = email_cliente;
-	}
-	public Data getData_prestacao() {
-		return data_prestacao;
-	}
-	public void setData_prestacao(Data data_prestacao) {
-		this.data_prestacao = data_prestacao;
 	}
 	public Double getNota() {
 		return nota;

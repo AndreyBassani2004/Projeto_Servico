@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import Dao.DAOCarregarPublicoRepository;
 import Model.ModelAnuncio;
 import Model.ModelAvaliacao;
+import Model.ModelDenunciaAvaliacao;
 import Model.ModelLogin;
 
 @WebServlet("/ServletPrestadores")
@@ -142,7 +143,16 @@ public class ServletPrestadoresPublic extends HttpServlet {
 				ModelAvaliacao modelAvaliacao = daoCarregarPublicoRepository.carregarAnuncioAvaliarID(Long.parseLong(id));
 				
 				request.setAttribute("modelAvaliacao", modelAvaliacao);												
-				request.getRequestDispatcher("/avaliar.jsp").forward(request, response);				
+				request.getRequestDispatcher("/avaliar.jsp").forward(request, response);
+			
+			} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("denuncia")) {
+				
+				String id = request.getParameter("id");
+				
+				ModelDenunciaAvaliacao modelDenunciaAvaliacao = daoCarregarPublicoRepository.carregarAnuncioDenunciaID(Long.parseLong(id));
+				
+				request.setAttribute("modelDenunciaAvaliacao", modelDenunciaAvaliacao);	
+				request.getRequestDispatcher("/denunciar.jsp").forward(request, response);
 			}else {
 				request.getRequestDispatcher("/index.jsp").forward(request, response);
 			}

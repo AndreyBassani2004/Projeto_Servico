@@ -26,7 +26,7 @@
 	<br />
 	<br />
 	<div class="container">
-		<form method="post" action="#" >
+		<form method="post" action="<%=request.getContextPath()%>/ServletCadastrarAvaliacao" >
 			<h3>Anuncio</h3>
 			<hr>
 			<div class="row">
@@ -78,7 +78,7 @@
 							<b>Titulo:</b>
 						</p>
 						<input type="text" class="form-control"
-							placeholder="Digite seu nome completo" name="titulo" id="titulo"
+							placeholder="Digite seu nome completo" name="titulo_anuncio" id="titulo_anuncio"
 							value="${modelAvaliacao.titulo_anuncio}" readonly="readonly">
 					</div>
 					<br />
@@ -87,8 +87,8 @@
 							<b>Descrição:</b>
 						</p>
 						<input type="text" class="form-control" style="height: 244px;"
-							value="${modelAvaliacao.descricao}" id="descricao"
-							name="descricao" readonly="readonly">
+							value="${modelAvaliacao.descricao}" id="descricao2"
+							name="descricao2" readonly="readonly">
 					</div>
 
 				</div>
@@ -212,7 +212,7 @@
 			<hr>
 			<div class="row">
 				<div class="col">
-					<spam style="margin-left: 5em;">msg</spam>
+					<spam style="margin-left: 5em;">${msg}</spam>
 				</div>
 				<div class="col">
 					<button type="submit" class="btn btn-success"
