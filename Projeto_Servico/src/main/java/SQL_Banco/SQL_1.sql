@@ -153,3 +153,5 @@ CREATE TABLE denuncia_avaliacao(
 	relatorio descricao character varying(300) NOT NULL,
 	CONSTRAINT denuncia_avaliacao_pkey PRIMARY KEY (id)
 );
+
+--Teste commit
