@@ -40,9 +40,9 @@
                         <li><a href="<%=request.getContextPath()%>\principal\cadastroUser.jsp" id="opcao">Cadastra usuarios (ADM)</a></li>
                         </c:if>
                         <c:if test="${perfil == 'ADMIN'}">
-                        <li><a href="<%=request.getContextPath()%>\ServletAvaliacao" id="opcao">Validar Avaliações</a></li>
+                        <li><a href="<%=request.getContextPath()%>\ServletAvaliacao?acao=carregarPagina&id_user=<%= session.getAttribute("id")%>" id="opcao">Validar Avaliações</a></li>
                         <li><a href="#" id="opcao">Avaliações Denunciadas</a></li>
-                        <li><a href="#" id="opcao">Anuncio Denunciados</a></li>
+                        <li><a href="<%=request.getContextPath()%>\ServletDenunciaAnuncio?acao=carregarDenuncias&id_user=<%= session.getAttribute("id")%>" id="opcao">Anuncio Denunciados</a></li>
                         </c:if>
                         <li><a href="<%=request.getContextPath()%>\ServletLogin?acao=logout" id="sair">Sair</a></li>
                     </ul>

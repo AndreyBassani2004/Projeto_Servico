@@ -8,13 +8,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/ServletAvaliacao")
-public class ServletAvaliacao extends HttpServlet {
+
+@WebServlet("/ServletDenunciaAnuncio")
+public class ServletDenunciaAnuncio extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
     
-    
-    public ServletAvaliacao() {
+    public ServletDenunciaAnuncio() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	
@@ -22,14 +24,14 @@ public class ServletAvaliacao extends HttpServlet {
 		
 		String acao = request.getParameter("acao");
 		
-		if(acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("carregarPagina")) {
+		if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("carregarDenuncias")) {
 			
-			String id = request.getParameter("id_user");
+			String id_user = request.getParameter("id_user");
 			
 			
-			request.getRequestDispatcher("principal/validarAvaliacao.jsp").forward(request, response);
+			request.getRequestDispatcher("principal/validarDenunciaAnuncio.jsp").forward(request, response);
+
 		}
-		
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
