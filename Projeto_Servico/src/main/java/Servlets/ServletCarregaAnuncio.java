@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Dao.DAOAnuncioRepository;
 import Dao.DAOUsuarioPosLogin;
@@ -34,13 +35,15 @@ public class ServletCarregaAnuncio extends HttpServlet {
 
 			if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("listarAnuncio")) {
 
-				String id = request.getParameter("id_user");
-				
+				HttpSession session = request.getSession();
+
+				String usuarioLogado = (String) session.getAttribute("usuario");
+
 				String msg = "";
 
-				List<ModelAnuncio> modelAnuncios = daoAnuncioRepository.listAnuncio2(Long.parseLong(id));
+				List<ModelAnuncio> modelAnuncios = daoAnuncioRepository
+						.listAnuncio2((daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId()));
 
-				
 				request.setAttribute("msg", msg);
 				request.setAttribute("modelAnuncios", modelAnuncios);
 				request.getRequestDispatcher("/principal/Meus_Anuncios.jsp").forward(request, response);
@@ -60,14 +63,27 @@ public class ServletCarregaAnuncio extends HttpServlet {
 
 			} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("carregarAnuncio")) {
 				String idUser = request.getParameter("id");
-				
-				String id_Anuncio = request.getParameter("id_anuncio");
-				
-				ModelAnuncio modelAnuncio = daoAnuncioRepository.consultarAnuncioID(Long.parseLong(idUser), Long.parseLong(id_Anuncio));
 
-				request.setAttribute("modelAnuncio", modelAnuncio);
-				request.getRequestDispatcher("principal/carregarAnuncio.jsp").forward(request, response);
-			}else {			
+				String id_Anuncio = request.getParameter("id_anuncio");
+
+				HttpSession session = request.getSession();
+
+				String usuarioLogado = (String) session.getAttribute("usuario");
+
+				Long id_session = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId();
+
+				if (Long.parseLong(idUser) == id_session) {
+					ModelAnuncio modelAnuncio = daoAnuncioRepository.consultarAnuncioID(Long.parseLong(idUser),
+							Long.parseLong(id_Anuncio));
+
+					request.setAttribute("modelAnuncio", modelAnuncio);
+					request.getRequestDispatcher("principal/carregarAnuncio.jsp").forward(request, response);
+				}else {
+					RequestDispatcher redirecionar = request.getRequestDispatcher("erro.jsp");
+					redirecionar.forward(request, response);
+				}
+
+			} else {
 				request.getRequestDispatcher("principal/principal.jsp").forward(request, response);
 			}
 
@@ -94,7 +110,6 @@ public class ServletCarregaAnuncio extends HttpServlet {
 			String descricao = request.getParameter("descricao");
 			String emailContato = request.getParameter("emailContato");
 			String situacao = request.getParameter("situacao");
-
 
 			String msg = "Cadastrado com sucesso !";
 

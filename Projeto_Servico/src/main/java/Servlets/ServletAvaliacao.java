@@ -7,11 +7,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Dao.DAOUsuarioPosLogin;
+import Model.ModelAnuncio;
+import Model.ModelLogin;
+
 
 @WebServlet("/ServletAvaliacao")
-public class ServletAvaliacao extends HttpServlet {
+public class ServletAvaliacao extends ServletGenericUtil {
 	private static final long serialVersionUID = 1L;
     
+	DAOUsuarioPosLogin daoUsuarioPosLogin = new DAOUsuarioPosLogin();
     
     public ServletAvaliacao() {
         super();
@@ -22,10 +27,18 @@ public class ServletAvaliacao extends HttpServlet {
 		
 		String acao = request.getParameter("acao");
 		
+		//ModelLogin modelLogin = new ModelLogin();
+		
+		//String id_prestador = daoUsuarioPosLogin.consultaUsuarioId(Long.parseLong(id_prestador));
+		
 		if(acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("carregarPagina")) {
+			
 			
 			String id = request.getParameter("id_user");
 			
+	     //   String usuario = (String) request.getSession().getAttribute("usuario");
+	        
+	       // System.out.println(usuario);
 			
 			request.getRequestDispatcher("principal/validarAvaliacao.jsp").forward(request, response);
 		}

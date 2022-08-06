@@ -19,7 +19,7 @@
 	<div id="linha1"></div>
 
 	<div class="container">
-		<h1 style="text-align: center;">Avaliar denuncias do anuncio</h1>
+		<h1 style="text-align: center;">Avaliar Denuncia avaliações</h1>
 	</div>
 
 	<div id="linha1"></div>

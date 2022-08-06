@@ -359,18 +359,24 @@ if (modelLogin != null && modelLogin.getEstado().equals("TO")) {
 	<div id="linha1"></div>
 
 	<div id="finalizarOperacao" class="finalizarOperacao">
-		<table>
-			<tr>
-				<td><h5>Para Finalizar as alterações deverar ser realizado
-						lagout.</h5></td>
-			</tr>
-			<tr>
-				<td><a
-					href="<%=request.getContextPath()%>\ServletLogin?acao=logout"><button
-							type="submit" class="btn btn-success" onclick="finalizar()">Finalizar</button></a></td>
-			</tr>
-		</table>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h5>Para Finalizar as alterações deverar ser realizado lagout.</h5>
+				</div>
+			</div>
+			<br/> <br/>
+			<div class="row">
+				<div class="col">
+					<a href="<%=request.getContextPath()%>\ServletLogin?acao=logout"><button
+							type="submit" class="btn btn-success" onclick="finalizar()">Finalizar</button></a>
+				</div>
+			</div>
+		</div>
 	</div>
+	
+	<div id="linha1"></div>
+	<div id="linha1"></div>
 
 	<script type="text/javascript">
 		function finalizar() {

@@ -29,7 +29,7 @@ public class ServletDenunciaAnuncio extends HttpServlet {
 			String id_user = request.getParameter("id_user");
 			
 			
-			request.getRequestDispatcher("principal/validarDenunciaAnuncio.jsp").forward(request, response);
+			request.getRequestDispatcher("principal/validarDenunciaAvaliação.jsp").forward(request, response);
 
 		}
 		
