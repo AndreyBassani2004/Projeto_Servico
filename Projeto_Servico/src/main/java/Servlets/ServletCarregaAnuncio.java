@@ -34,32 +34,64 @@ public class ServletCarregaAnuncio extends HttpServlet {
 			String acao = request.getParameter("acao");
 
 			if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("listarAnuncio")) {
-
+				
+				String id_user = request.getParameter("id_user");
+				
 				HttpSession session = request.getSession();
 
 				String usuarioLogado = (String) session.getAttribute("usuario");
 
 				String msg = "";
+				
+				String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
+				
+				Long id_usuario = (daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId());
+				
+				if(id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("PRESTADOR")) {
 
 				List<ModelAnuncio> modelAnuncios = daoAnuncioRepository
-						.listAnuncio2((daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId()));
+						.listAnuncio2((id_usuario));
 
 				request.setAttribute("msg", msg);
 				request.setAttribute("modelAnuncios", modelAnuncios);
 				request.getRequestDispatcher("/principal/Meus_Anuncios.jsp").forward(request, response);
+				}else {
+					RequestDispatcher redirecionar = request.getRequestDispatcher("principal/erro404.jsp");
+					redirecionar.forward(request, response);
+				}
 
 			} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("deletarajax")) {
-				String idUser = request.getParameter("id");
+				
+				String id_user = request.getParameter("id_user");
+				
+				HttpSession session = request.getSession();
 
-				daoAnuncioRepository.deletarAnuncio(Long.parseLong(idUser));
+				String usuarioLogado = (String) session.getAttribute("usuario");
 
-				String id = request.getParameter("id_user");
+				String msg = "";
+				
+				String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
+				
+				Long id_usuario = (daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId());
+				
+				if(id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("PRESTADOR")) {
+				
+				
+				String id_anuncio = request.getParameter("id");
 
-				List<ModelAnuncio> modelAnuncios = daoAnuncioRepository.listAnuncio2(Long.parseLong(id));
+				daoAnuncioRepository.deletarAnuncio(Long.parseLong(id_anuncio));
+
+				String idUser = request.getParameter("id_user");
+
+				List<ModelAnuncio> modelAnuncios = daoAnuncioRepository.listAnuncio2(Long.parseLong(idUser));
 
 				request.setAttribute("msg", "Excluido com Sucesso!");
 				request.setAttribute("modelAnuncios", modelAnuncios);
 				request.getRequestDispatcher("/principal/Meus_Anuncios.jsp").forward(request, response);
+				}else {
+					RequestDispatcher redirecionar = request.getRequestDispatcher("principal/erro404.jsp");
+					redirecionar.forward(request, response);
+				}
 
 			} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("carregarAnuncio")) {
 				String idUser = request.getParameter("id");
@@ -69,17 +101,19 @@ public class ServletCarregaAnuncio extends HttpServlet {
 				HttpSession session = request.getSession();
 
 				String usuarioLogado = (String) session.getAttribute("usuario");
+				
+				String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
+				
+				Long id_usuario = (daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId());
 
-				Long id_session = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId();
-
-				if (Long.parseLong(idUser) == id_session) {
-					ModelAnuncio modelAnuncio = daoAnuncioRepository.consultarAnuncioID(Long.parseLong(idUser),
+				if (id_usuario.equals(Long.parseLong(idUser)) && perfil.equals("PRESTADOR")) {
+					ModelAnuncio modelAnuncio = daoAnuncioRepository.consultarAnuncioID(id_usuario,
 							Long.parseLong(id_Anuncio));
 
 					request.setAttribute("modelAnuncio", modelAnuncio);
 					request.getRequestDispatcher("principal/carregarAnuncio.jsp").forward(request, response);
 				}else {
-					RequestDispatcher redirecionar = request.getRequestDispatcher("erro.jsp");
+					RequestDispatcher redirecionar = request.getRequestDispatcher("principal/erro404.jsp");
 					redirecionar.forward(request, response);
 				}
 
@@ -113,8 +147,8 @@ public class ServletCarregaAnuncio extends HttpServlet {
 
 			String msg = "Cadastrado com sucesso !";
 
-			if (servico == null && servico.isEmpty() && regiao == null && regiao.isEmpty() && titulo == null
-					&& titulo.isEmpty() && descricao == null && descricao.isEmpty()) {
+			if (servico == null || servico.isEmpty() || regiao == null || regiao.isEmpty() || titulo == null
+					|| titulo.isEmpty() || descricao == null || descricao.isEmpty()) {
 				ModelAnuncio modelAnuncio = new ModelAnuncio();
 
 				modelAnuncio.setId(Long.parseLong(id));

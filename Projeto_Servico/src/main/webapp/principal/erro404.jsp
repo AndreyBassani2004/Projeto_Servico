@@ -30,11 +30,11 @@ body {
 	<div class="container">
 		<div class="row">
 			<div class="col">
-				<h2>ERRO!</h2>
+				<h2>ERRO 404!</h2>
 				<hr>
 				<br />
-				<h4>Ocorreu um erro, entre em contato com os desenvolvedores.</h4>
-			<!-- <br /><a href="/index.jsp">Voltar ao Inicio</a> -->s
+				<h4>Pagina não existe.</h4>
+			<!-- <br /><a href="/index.jsp">Voltar ao Inicio</a> -->
 			</div>
 		</div>
 	</div>

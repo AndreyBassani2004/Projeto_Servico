@@ -9,8 +9,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Dao.DAOAvaliarRequisicao;
+import Dao.DAOUsuarioPosLogin;
 import Model.ModelAvaliacao;
 import Model.ModelDenunciaAnuncio;
 
@@ -19,6 +21,7 @@ public class ServletCarregarRequisicao extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	DAOAvaliarRequisicao daoAvaliarRequisicao = new DAOAvaliarRequisicao();
+	DAOUsuarioPosLogin daoUsuarioPosLogin = new DAOUsuarioPosLogin();
 
 	public ServletCarregarRequisicao() {
 		super();
@@ -31,20 +34,67 @@ public class ServletCarregarRequisicao extends HttpServlet {
 
 			if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("carregarDenuncias")) {
 
-				
-				List<ModelDenunciaAnuncio> modelDenunciaAnuncios = daoAvaliarRequisicao.lisarDenunciaAnuncio();
+				String id_user = request.getParameter("id_user");
 
-				request.setAttribute("modelDenunciaAnuncios", modelDenunciaAnuncios);
-				request.getRequestDispatcher("principal/validarDenunciaAnuncio.jsp").forward(request, response);
+				HttpSession session = request.getSession();
+
+				String usuarioLogado = (String) session.getAttribute("usuario");
+
+				Long id_usuario = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId();
+
+				String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
+
+				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
+					List<ModelDenunciaAnuncio> modelDenunciaAnuncios = daoAvaliarRequisicao.lisarDenunciaAnuncio();
+
+					request.setAttribute("modelDenunciaAnuncios", modelDenunciaAnuncios);
+					request.getRequestDispatcher("principal/validarDenunciaAnuncio.jsp").forward(request, response);
+				} else {
+
+					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);
+				}
 
 			} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("carregarAvaliacoes")) {
-				
-				List<ModelAvaliacao> modelAvaliacaos = daoAvaliarRequisicao.listarAvaliacaoesValidar();
-				
-				request.setAttribute("modelAvaliacaos", modelAvaliacaos);
-				request.getRequestDispatcher("principal/validarAvaliacao.jsp").forward(request, response);
 
-				
+				String id_user = request.getParameter("id_user");
+
+				HttpSession session = request.getSession();
+
+				String usuarioLogado = (String) session.getAttribute("usuario");
+
+				Long id_usuario = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId();
+
+				String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
+
+				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
+					List<ModelAvaliacao> modelAvaliacaos = daoAvaliarRequisicao.listarAvaliacaoesValidar();
+
+					request.setAttribute("modelAvaliacaos", modelAvaliacaos);
+					request.getRequestDispatcher("principal/validarAvaliacao.jsp").forward(request, response);
+				} else {
+
+					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);
+				}
+
+			} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("carregarDenunciaAvaliacoes")) {
+
+				String id_user = request.getParameter("id_user");
+
+				HttpSession session = request.getSession();
+
+				String usuarioLogado = (String) session.getAttribute("usuario");
+
+				Long id_usuario = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId();
+
+				String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
+
+				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
+
+					request.getRequestDispatcher("principal/validarDenunciaAvaliação.jsp").forward(request, response);
+
+				} else {
+					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);
+				}
 			} else {
 				request.getRequestDispatcher("principal/principal.jsp").forward(request, response);
 

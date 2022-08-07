@@ -34,7 +34,7 @@ body {
 				<hr>
 				<br />
 				<h4>Ocorreu um erro, entre em contato com os desenvolvedores.</h4>
-				<br /><a href="<%=request.getContextPath()%>/index.jsp">Voltar ao Inicio</a>
+			<!-- <br /><a href="<%=request.getContextPath()%>/index.jsp">Voltar ao Inicio</a> -->
 			</div>
 		</div>
 	</div>
