@@ -1,3 +1,4 @@
+<%@page import="Model.ModelAvaliacao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -30,17 +31,19 @@
 				<thead>
 					<tr>
 						<th scolpe="col">ID</th>
+						<th scolpe="col">Cliente</th>
 						<th scolpe="col">Titulo</th>
 						<th scope="col">Estado</th>
 						<th scope="col">Ver</th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="#" var="ma">
+					<c:forEach items="${modelAvaliacaos}" var="ma">
 						<tr>
-							<td><c:out value="#"></c:out></td>
-							<td><c:out value="#"></c:out></td>
-							<td><c:out value="#"></c:out></td>
+							<td><c:out value="${ma.id}"></c:out></td>
+							<td><c:out value="${ma.nome_cliente}"></c:out></td>
+							<td><c:out value="${ma.titulo}"></c:out></td>
+							<td><c:out value="${ma.estado}"></c:out></td>
 							<td><c:out value="#"></c:out></td>
 						</tr>
 					</c:forEach>

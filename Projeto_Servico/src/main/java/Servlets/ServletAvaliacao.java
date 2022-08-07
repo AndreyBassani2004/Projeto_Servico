@@ -27,18 +27,9 @@ public class ServletAvaliacao extends ServletGenericUtil {
 		
 		String acao = request.getParameter("acao");
 		
-		//ModelLogin modelLogin = new ModelLogin();
-		
-		//String id_prestador = daoUsuarioPosLogin.consultaUsuarioId(Long.parseLong(id_prestador));
-		
 		if(acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("carregarPagina")) {
 			
 			
-			String id = request.getParameter("id_user");
-			
-	     //   String usuario = (String) request.getSession().getAttribute("usuario");
-	        
-	       // System.out.println(usuario);
 			
 			request.getRequestDispatcher("principal/validarAvaliacao.jsp").forward(request, response);
 		}
@@ -47,9 +38,7 @@ public class ServletAvaliacao extends ServletGenericUtil {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

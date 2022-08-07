@@ -1,3 +1,4 @@
+<%@page import="Model.ModelDenunciaAnuncio"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -31,18 +32,18 @@
 					<tr>
 						<th scolpe="col">ID</th>
 						<th scolpe="col">Cliente</th>
-						<th scope="col">Prestador de serviço</th>
+						<th scope="col">Motivo</th>
 						<th scope="col">Estado</th>
 						<th scope="col">Ver</th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="#" var="ma">
+					<c:forEach items="${modelDenunciaAnuncios}" var="md">
 						<tr>
-							<td><c:out value="#"></c:out></td>
-							<td><c:out value="#"></c:out></td>
-							<td><c:out value="#"></c:out></td>
-							<td><c:out value="#"></c:out></td>
+							<td><c:out value="${md.id}"></c:out></td>
+							<td><c:out value="${md.nome_cliente}"></c:out></td>
+							<td><c:out value="${md.motivo}"></c:out></td>
+							<td><c:out value="${md.situacao}"></c:out></td>
 							<td><c:out value="#"></c:out></td>
 						</tr>
 					</c:forEach>
