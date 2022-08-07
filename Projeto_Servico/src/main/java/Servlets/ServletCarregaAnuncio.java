@@ -79,7 +79,7 @@ public class ServletCarregaAnuncio extends HttpServlet {
 				
 				String id_anuncio = request.getParameter("id");
 
-				daoAnuncioRepository.deletarAnuncio(Long.parseLong(id_anuncio));
+				daoAnuncioRepository.deletarAnuncio(Long.parseLong(id_anuncio), id_usuario);
 
 				String idUser = request.getParameter("id_user");
 

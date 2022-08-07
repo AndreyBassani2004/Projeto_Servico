@@ -58,11 +58,12 @@ public class DAOAnuncioRepository {
 	}
 	
 	
-	public void deleteAnuncio(Long id) throws Exception{
-		String sql = "DELETE FROM anuncio WHERE id = ?; ";
+	public void deleteAnuncio(Long id, Long id_prestador) throws Exception{
+		String sql = "DELETE FROM anuncio WHERE id = ? and id_prestador = ?; ";
 	
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
 		preparedStatement.setLong(1, id);
+		preparedStatement.setLong(2, id_prestador);
 				
 		preparedStatement.execute();
 		
@@ -131,12 +132,13 @@ public class DAOAnuncioRepository {
 		
 	}
 	
-	public void deletarAnuncio(Long id) throws Exception{
+	public void deletarAnuncio(Long id, Long id_user) throws Exception{
 		
-		String sql = "DELETE FROM anuncio WHERE id = ?;";	
+		String sql = "DELETE FROM anuncio WHERE id = ? and id_prestador = ?;";	
 		PreparedStatement prepareSql = connection.prepareStatement(sql);
 
 		prepareSql.setLong(1, id);
+		prepareSql.setLong(2, id_user);
 
 		prepareSql.executeUpdate();
 
@@ -148,10 +150,9 @@ public class DAOAnuncioRepository {
 		
 		ModelAnuncio modelAnuncio = new ModelAnuncio();
 		
-		String sql = "SELECT * FROM anuncio where id = ? and id_prestador = ?;";
+		String sql = "SELECT * FROM anuncio where id = ?;";
 		PreparedStatement statement = connection.prepareStatement(sql);
 		statement.setLong(1, id_anuncio);
-		statement.setLong(2, id_user);
 		
 		ResultSet resultado = statement.executeQuery();
 		
@@ -169,4 +170,5 @@ public class DAOAnuncioRepository {
 		return modelAnuncio;
 		
 	}
+	
 }
