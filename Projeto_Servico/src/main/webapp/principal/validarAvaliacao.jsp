@@ -44,7 +44,7 @@
 							<td><c:out value="${ma.nome_cliente}"></c:out></td>
 							<td><c:out value="${ma.titulo}"></c:out></td>
 							<td><c:out value="${ma.estado}"></c:out></td>
-							<td><c:out value="#"></c:out></td>
+							<td><a href="<%=request.getContextPath()%>/ServletAvaliarAvaliacao?acao=carregarAvaliacao&id_anuncio=${ma.id}&id_user=<%= session.getAttribute("id")%>"><button class="btn btn-primary">Ver</button></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

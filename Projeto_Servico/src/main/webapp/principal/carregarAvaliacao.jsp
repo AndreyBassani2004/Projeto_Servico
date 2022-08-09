@@ -129,7 +129,7 @@
 						<b>Descrição da prestação:</b>
 					</p>
 					<textarea class="form-control" id="descricao" name="descricao"
-						value="#" rows="3"	>
+						 rows="3"	>
 						
 					</textarea>
 				</div>

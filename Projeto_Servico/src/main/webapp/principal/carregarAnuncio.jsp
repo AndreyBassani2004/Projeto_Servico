@@ -160,7 +160,7 @@
 						<b>Descrição:</b>
 					</p>
 					<textarea class="form-control" id="descricao" name="descricao"
-						value="${modelAnuncio.descricao}" rows="3"></textarea>
+						 rows="3">${modelAnuncio.descricao}</textarea>
 				</div>
 				<br> <br>
 			</div>
