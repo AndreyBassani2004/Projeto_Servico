@@ -27,8 +27,16 @@ public class ServletDenunciaAvaliacao extends HttpServlet {
 			
 			String id_usuario = request.getParameter("id_user");
 			
+			
 			request.getRequestDispatcher("principal/validarDenunciaAvaliação.jsp").forward(request, response);
 
+		}else if(acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("carregarDenuncia")) {
+			
+			String id_usuario = request.getParameter("id_user");
+			
+			String id_denuncia = request.getParameter("id_denuncia");
+			
+			request.getRequestDispatcher("/principal/carregarDenunciaAnuncio.jsp").forward(request, response);
 		}
 		
 		

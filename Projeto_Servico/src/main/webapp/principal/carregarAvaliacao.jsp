@@ -15,7 +15,7 @@
 </head>
 <body>
 
-	<%@include file="/Componentes/header.jsp"%>
+	<%@include file="/principal/Componente/header2.jsp"%>
 
 	<div id="linha1"></div>
 
@@ -41,8 +41,9 @@
 						<p>
 							<b>ID Avaliação:</b>
 						</p>
-						<input type="text" class="form-control" value=""
-							name="id_avaliacao" id="id_avaliacao" readonly="readonly">
+						<input type="text" class="form-control"
+							value="${modelAvaliacao.id}" name="id_avaliacao"
+							id="id_avaliacao" readonly="readonly">
 					</div>
 					<br />
 					<!--  
@@ -58,8 +59,9 @@
 						<p>
 							<b>Nome do cliente:</b>
 						</p>
-						<input type="text" class="form-control" value=""
-							name="nome_cliente" id="nome_cliente" readonly="readonly">
+						<input type="text" class="form-control"
+							value="${modelAvaliacao.nome_cliente}" name="nome_cliente"
+							id="nome_cliente" readonly="readonly">
 					</div>
 					<br />
 				</div>
@@ -68,8 +70,9 @@
 						<p>
 							<b>Email Cliente:</b>
 						</p>
-						<input type="text" class="form-control" value=""
-							name="email_cliente" id="email_cliente" readonly="readonly">
+						<input type="text" class="form-control"
+							value="${modelAvaliacao.email_cliente}" name="email_cliente"
+							id="email_cliente" readonly="readonly">
 					</div>
 					<br />
 					<!-- 
@@ -81,14 +84,14 @@
 							name="email_prestador" id="email_prestador" readonly="readonly">
 					</div>
 					<br /> -->
-					<div id="textcampo">
+					<!--  <div id="textcampo">
 						<p>
 							<b>Data da avaliação:</b>
 						</p>
-						<input type="text" class="form-control" value=""
+						<input type="text" class="form-control" value="${modelAvaliacao.data_prestacao}"
 							name="data_denuncia" id="data_denuncia" readonly="readonly">
 					</div>
-					<br />
+					<br />-->
 				</div>
 			</div>
 			<h5>Prova da prestação</h5>
@@ -100,16 +103,18 @@
 						<p>
 							<b>Data da prestação:</b>
 						</p>
-						<input type="text" class="form-control" value=""
-							name="data_prestacao" id="data_prestacao" readonly="readonly">
+						<input type="text" class="form-control"
+							value="${modelAvaliacao.data_prestacao}" name="data_prestacao"
+							id="data_prestacao" readonly="readonly">
 					</div>
 					<br />
 					<div id="textcampo">
 						<p>
 							<b>Email do prestador de serviço:</b>
 						</p>
-						<input type="text" class="form-control" value=""
-							name="email_prestador" id="email_prestador" readonly="readonly">
+						<input type="text" class="form-control"
+							value="${modelAvaliacao.email_prestador}" name="email_prestador"
+							id="email_prestador" readonly="readonly">
 					</div>
 					<br />
 				</div>
@@ -123,17 +128,48 @@
 					<br />
 				</div>
 			</div>
+
+
+
+			<h5>Nota da prestação</h5>
+			<hr>
 			<div class="row">
-				<div id="textcampo">
-					<p>
-						<b>Descrição da prestação:</b>
-					</p>
-					<textarea class="form-control" id="descricao" name="descricao"
-						 rows="3"	>
-						
-					</textarea>
+				<div class="col">
+					<div id="textcampo">
+						<p>
+							<b>Nota:</b>
+						</p>
+						<input type="text" class="form-control"
+							placeholder="Digite o Titulo" name="nota" id="nota"
+							value="${modelAvaliacao.nota}" readonly="readonly">
+					</div>
+					<br />
+				</div>
+				<div class="col">
+					<div id="textcampo">
+						<p>
+							<b>Titulo:</b>
+						</p>
+						<input type="text" class="form-control"
+							placeholder="Digite o Titulo" name="titulo" id="titulo"
+							value="${modelAvaliacao.titulo}" readonly="readonly">
+					</div>
+					<br />
 				</div>
 			</div>
+			<div class="row">
+				<div class="col">
+					<div id="textcampo">
+						<p>
+							<b>Descrição:</b>
+						</p>
+						<textarea class="form-control" readonly="readonly">${modelAvaliacao.descricao}</textarea>
+
+					</div>
+				</div>
+			</div>
+
+
 			<br>
 			<hr>
 			<br>
@@ -148,6 +184,7 @@
 					<button type="button" class="btn btn-danger">Reprovar</button>
 				</div>
 			</div>
+
 		</div>
 	</form>
 

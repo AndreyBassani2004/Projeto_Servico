@@ -1,3 +1,4 @@
+<%@page import="Model.ModelDenunciaAnuncio"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -38,9 +39,9 @@
 			<div class="col">
 				<div id="textcampo">
 					<p>
-						<b>ID Avaliação:</b>
+						<b>ID Anuncio:</b>
 					</p>
-					<input type="text" class="form-control" value=""
+					<input type="text" class="form-control" value="${modelDenunciaAnuncio.id_anuncio}"
 						name="id_avaliacao" id="id_avaliacao" readonly="readonly">
 				</div>
 				<br />
@@ -49,7 +50,7 @@
 					<p>
 						<b>Nome do prestador de serviço:</b>
 					</p>
-					<input type="text" class="form-control" value=""
+					<input type="text" class="form-control" value="${modelDenunciaAnuncio.nome_prestador}"
 						name="nome_prestador" id="nome_prestador" readonly="readonly">
 				</div>
 				<br />
@@ -57,7 +58,7 @@
 					<p>
 						<b>Nome do cliente:</b>
 					</p>
-					<input type="text" class="form-control" value=""
+					<input type="text" class="form-control" value="${modelDenunciaAnuncio.nome_cliente}"
 						name="nome_cliente" id="nome_cliente" readonly="readonly">
 				</div>
 				<br />
@@ -67,7 +68,7 @@
 					<p>
 						<b>Email Cliente:</b>
 					</p>
-					<input type="text" class="form-control" value=""
+					<input type="text" class="form-control" value="${modelDenunciaAnuncio.email_cliente}"
 						name="email_cliente" id="email_cliente" readonly="readonly">
 				</div>
 				<br />
@@ -75,16 +76,8 @@
 					<p>
 						<b>Email do prestador de serviço:</b>
 					</p>
-					<input type="text" class="form-control" value=""
+					<input type="text" class="form-control" value="${modelDenunciaAnuncio.email_prestador}"
 						name="email_prestador" id="email_prestador" readonly="readonly">
-				</div>
-				<br />
-				<div id="textcampo">
-					<p>
-						<b>Data da avaliação:</b>
-					</p>
-					<input type="text" class="form-control" value=""
-						name="data_denuncia" id="data_denuncia" readonly="readonly">
 				</div>
 				<br />
 			</div>
@@ -98,7 +91,7 @@
 					<p>
 						<b>Motivo:</b>
 					</p>
-					<input type="text" class="form-control" value="" name="motivo"
+					<input type="text" class="form-control" value="${modelDenunciaAnuncio.motivo}" name="motivo"
 						id="motivo" readonly="readonly">
 				</div>
 				<br />
@@ -107,8 +100,7 @@
 						<b>Descrição da denucia:</b>
 					</p>
 					<textarea class="form-control" id="descricao_cliente"
-						name="descricao_cliente" value="abc" rows="3">
-						
+						name="descricao_cliente" readonly="readonly">${modelDenunciaAnuncio.descricao_anuncio}
 					</textarea>
 				</div>
 			</div>
@@ -131,8 +123,8 @@
 					<p>
 						<b>Relatorio:</b>
 					</p>
-					<textarea class="form-control" id="descricao_cliente"
-						name="descricao_cliente" value="abc" rows="3">
+					<textarea class="form-control" id="descricao_cliente" 
+						name="descricao_cliente" required="required">${modelDenunciaAnuncio.relatorio}
 						
 					</textarea>
 				</div>
@@ -147,9 +139,6 @@
 			</div>
 			<div class="col">
 				<button type="button" class="btn btn-success">Aprovar</button>
-			</div>
-			<div class="col">
-				<button type="button" class="btn btn-warning">Analise</button>
 			</div>
 			<div class="col">
 				<button type="button" class="btn btn-danger">Reprovar</button>

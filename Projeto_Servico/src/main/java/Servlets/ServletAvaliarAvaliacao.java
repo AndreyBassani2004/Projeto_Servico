@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Dao.DAOAvaliarRequisicao;
+import Dao.DAOSistemaAdmRepository;
 import Dao.DAOUsuarioPosLogin;
+import Model.ModelAvaliacao;
 
 
 @WebServlet("/ServletAvaliarAvaliacao")
@@ -18,7 +20,7 @@ public class ServletAvaliarAvaliacao extends HttpServlet {
 	
 	DAOUsuarioPosLogin daoUsuarioPosLogin = new DAOUsuarioPosLogin();
 	DAOAvaliarRequisicao daoAvaliarRequisicao = new DAOAvaliarRequisicao();
-       
+    DAOSistemaAdmRepository daoSistemaAdmRepository = new DAOSistemaAdmRepository();
     
     public ServletAvaliarAvaliacao() {
         super();
@@ -47,7 +49,9 @@ public class ServletAvaliarAvaliacao extends HttpServlet {
 			
 			if(id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
 				
+				ModelAvaliacao modelAvaliacao = daoSistemaAdmRepository.consultaAvaliacao(Long.parseLong(id_anuncio));
 				
+				request.setAttribute("modelAvaliacao", modelAvaliacao);
 				request.getRequestDispatcher("principal/carregarAvaliacao.jsp").forward(request, response);
 
 			}else {

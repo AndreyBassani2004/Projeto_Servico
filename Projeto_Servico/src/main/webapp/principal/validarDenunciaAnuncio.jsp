@@ -44,7 +44,7 @@
 							<td><c:out value="${md.nome_cliente}"></c:out></td>
 							<td><c:out value="${md.motivo}"></c:out></td>
 							<td><c:out value="${md.situacao}"></c:out></td>
-							<td><c:out value="#"></c:out></td>
+							<td><a href="<%=request.getContextPath()%>/ServletDenunciaAvaliacao?acao=carregarDenuncia&id_denuncia=${md.id}&id_user=<%= session.getAttribute("id")%>"><button class="btn btn-primary">Ver</button></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
