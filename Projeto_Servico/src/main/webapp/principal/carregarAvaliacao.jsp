@@ -1,5 +1,6 @@
+<%@page import="Model.ModelAvaliacao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,146 @@
 	crossorigin="anonymous">
 </head>
 <body>
+
+	<%@include file="/Componentes/header.jsp"%>
+
+	<div id="linha1"></div>
+
+	<div class="container">
+		<div class="row" style="align-items: center; text-align: center;">
+			<div class="col">
+				<h1>Avaliar avaliação do cliente</h1>
+			</div>
+		</div>
+	</div>
+
+	<div id="linha1"></div>
+
+	<form>
+		<div class="container">
+			<h5>Cadastro do login</h5>
+			<hr>
+			<br>
+			<div class="row">
+
+				<div class="col">
+					<div id="textcampo">
+						<p>
+							<b>ID Avaliação:</b>
+						</p>
+						<input type="text" class="form-control" value=""
+							name="id_avaliacao" id="id_avaliacao" readonly="readonly">
+					</div>
+					<br />
+					<!--  
+					<div id="textcampo">
+						<p>
+							<b>Nome do prestador de serviço:</b>
+						</p>
+						<input type="text" class="form-control" value=""
+							name="nome_prestador" id="nome_prestador" readonly="readonly">
+					</div>
+					<br />-->
+					<div id="textcampo">
+						<p>
+							<b>Nome do cliente:</b>
+						</p>
+						<input type="text" class="form-control" value=""
+							name="nome_cliente" id="nome_cliente" readonly="readonly">
+					</div>
+					<br />
+				</div>
+				<div class="col">
+					<div id="textcampo">
+						<p>
+							<b>Email Cliente:</b>
+						</p>
+						<input type="text" class="form-control" value=""
+							name="email_cliente" id="email_cliente" readonly="readonly">
+					</div>
+					<br />
+					<!-- 
+					<div id="textcampo">
+						<p>
+							<b>Email do prestador de serviço:</b>
+						</p>
+						<input type="text" class="form-control" value=""
+							name="email_prestador" id="email_prestador" readonly="readonly">
+					</div>
+					<br /> -->
+					<div id="textcampo">
+						<p>
+							<b>Data da avaliação:</b>
+						</p>
+						<input type="text" class="form-control" value=""
+							name="data_denuncia" id="data_denuncia" readonly="readonly">
+					</div>
+					<br />
+				</div>
+			</div>
+			<h5>Prova da prestação</h5>
+			<hr>
+			<br>
+			<div class="row">
+				<div class="col">
+					<div id="textcampo">
+						<p>
+							<b>Data da prestação:</b>
+						</p>
+						<input type="text" class="form-control" value=""
+							name="data_prestacao" id="data_prestacao" readonly="readonly">
+					</div>
+					<br />
+					<div id="textcampo">
+						<p>
+							<b>Email do prestador de serviço:</b>
+						</p>
+						<input type="text" class="form-control" value=""
+							name="email_prestador" id="email_prestador" readonly="readonly">
+					</div>
+					<br />
+				</div>
+				<div class="col">
+					<div id="textcampo">
+						<p>
+							<b>Foto comprovação:</b>
+						</p>
+
+					</div>
+					<br />
+				</div>
+			</div>
+			<div class="row">
+				<div id="textcampo">
+					<p>
+						<b>Descrição da prestação:</b>
+					</p>
+					<textarea class="form-control" id="descricao" name="descricao"
+						value="#" rows="3"	>
+						
+					</textarea>
+				</div>
+			</div>
+			<br>
+			<hr>
+			<br>
+			<div class="row">
+				<div class="col">
+					<span>${msg}</span>
+				</div>
+				<div class="col">
+					<button type="button" class="btn btn-success">Aprovar</button>
+				</div>
+				<div class="col">
+					<button type="button" class="btn btn-danger">Reprovar</button>
+				</div>
+			</div>
+		</div>
+	</form>
+
+	<div id="linha1"></div>
+
+	<%@include file="/Componentes/rodape.jsp"%>
 
 </body>
 </html>
