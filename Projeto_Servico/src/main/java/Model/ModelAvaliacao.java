@@ -28,9 +28,18 @@ public class ModelAvaliacao implements Serializable{
 	private String titulo_anuncio;
 	private String descricao_anuncio;
 	private String email_prestador;
+	private Long id_adm_alterador;
 	
 	
 	
+	public Long getId_adm_alterador() {
+		return id_adm_alterador;
+	}
+
+	public void setId_adm_alterador(Long id_adm_alterador) {
+		this.id_adm_alterador = id_adm_alterador;
+	}
+
 	public String getEmail_prestador() {
 		return email_prestador;
 	}

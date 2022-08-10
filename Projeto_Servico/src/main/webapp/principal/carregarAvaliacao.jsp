@@ -178,10 +178,10 @@
 					<span>${msg}</span>
 				</div>
 				<div class="col">
-					<button type="button" class="btn btn-success">Aprovar</button>
+				<a href="<%=request.getContextPath()%>/ServletAvaliarAvaliacao?acao=alterar&id_avaliacao=${modelAvaliacao.id}&id_user=<%= session.getAttribute("id") %>&situacao=APROVADO"><button type="button" class="btn btn-success">Aprovar</button></a>
 				</div>
 				<div class="col">
-					<button type="button" class="btn btn-danger">Reprovar</button>
+				<a href="<%=request.getContextPath()%>/ServletAvaliarAvaliacao?acao=alterar&id_avaliacao=${modelAvaliacao.id}&id_user=<%= session.getAttribute("id") %>&situacao=REPROVADO"><button type="button" class="btn btn-danger">Reprovar</button></a>
 				</div>
 			</div>
 

@@ -24,9 +24,15 @@ public class ModelDenunciaAnuncio implements Serializable {
 	private String uf;
 	private String titulo_anuncio;
 	private String descricao_anuncio;
-	
+	private String email_prestador;
 
 	
+	public String getEmail_prestador() {
+		return email_prestador;
+	}
+	public void setEmail_prestador(String email_prestador) {
+		this.email_prestador = email_prestador;
+	}
 	public String getMotivo() {
 		return motivo;
 	}

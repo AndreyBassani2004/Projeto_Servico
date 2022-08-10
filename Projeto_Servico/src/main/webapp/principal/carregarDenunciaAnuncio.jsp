@@ -41,8 +41,9 @@
 					<p>
 						<b>ID Anuncio:</b>
 					</p>
-					<input type="text" class="form-control" value="${modelDenunciaAnuncio.id_anuncio}"
-						name="id_avaliacao" id="id_avaliacao" readonly="readonly">
+					<input type="text" class="form-control"
+						value="${modelDenunciaAnuncio.id_anuncio}" name="id_avaliacao"
+						id="id_avaliacao" readonly="readonly">
 				</div>
 				<br />
 
@@ -50,7 +51,8 @@
 					<p>
 						<b>Nome do prestador de serviço:</b>
 					</p>
-					<input type="text" class="form-control" value="${modelDenunciaAnuncio.nome_prestador}"
+					<input type="text" class="form-control"
+						value="${modelDenunciaAnuncio.nome_prestador}"
 						name="nome_prestador" id="nome_prestador" readonly="readonly">
 				</div>
 				<br />
@@ -58,8 +60,9 @@
 					<p>
 						<b>Nome do cliente:</b>
 					</p>
-					<input type="text" class="form-control" value="${modelDenunciaAnuncio.nome_cliente}"
-						name="nome_cliente" id="nome_cliente" readonly="readonly">
+					<input type="text" class="form-control"
+						value="${modelDenunciaAnuncio.nome_cliente}" name="nome_cliente"
+						id="nome_cliente" readonly="readonly">
 				</div>
 				<br />
 			</div>
@@ -68,15 +71,17 @@
 					<p>
 						<b>Email Cliente:</b>
 					</p>
-					<input type="text" class="form-control" value="${modelDenunciaAnuncio.email_cliente}"
-						name="email_cliente" id="email_cliente" readonly="readonly">
+					<input type="text" class="form-control"
+						value="${modelDenunciaAnuncio.email_cliente}" name="email_cliente"
+						id="email_cliente" readonly="readonly">
 				</div>
 				<br />
 				<div id="textcampo">
 					<p>
 						<b>Email do prestador de serviço:</b>
 					</p>
-					<input type="text" class="form-control" value="${modelDenunciaAnuncio.email_prestador}"
+					<input type="text" class="form-control"
+						value="${modelDenunciaAnuncio.email_prestador}"
 						name="email_prestador" id="email_prestador" readonly="readonly">
 				</div>
 				<br />
@@ -91,19 +96,13 @@
 					<p>
 						<b>Motivo:</b>
 					</p>
-					<input type="text" class="form-control" value="${modelDenunciaAnuncio.motivo}" name="motivo"
-						id="motivo" readonly="readonly">
+					<input type="text" class="form-control"
+						value="${modelDenunciaAnuncio.motivo}" name="motivo" id="motivo"
+						readonly="readonly">
 				</div>
 				<br />
-				<div id="textcampo">
-					<p>
-						<b>Descrição da denucia:</b>
-					</p>
-					<textarea class="form-control" id="descricao_cliente"
-						name="descricao_cliente" readonly="readonly">${modelDenunciaAnuncio.descricao_anuncio}
-					</textarea>
-				</div>
 			</div>
+
 			<div class="col">
 				<div id="textcampo">
 					<p>
@@ -112,8 +111,19 @@
 				</div>
 			</div>
 		</div>
-		<br>
-		<br>
+		<div class="row">
+			<div class="col">
+				<div id="textcampo">
+					<p>
+						<b>Descrição da denucia:</b>
+					</p>
+					<textarea class="form-control" id="descricao_cliente"
+						name="descricao_cliente" readonly="readonly">${modelDenunciaAnuncio.descricao_denuncia}
+					</textarea>
+				</div>
+			</div>
+		</div>
+		<br> <br>
 		<h5>Medidas sobre denuncia</h5>
 		<hr>
 		<br>
@@ -123,25 +133,24 @@
 					<p>
 						<b>Relatorio:</b>
 					</p>
-					<textarea class="form-control" id="descricao_cliente" 
+					<textarea class="form-control" id="descricao_cliente"
 						name="descricao_cliente" required="required">${modelDenunciaAnuncio.relatorio}
 						
 					</textarea>
 				</div>
 			</div>
 		</div>
-		<br>
-		<br>
+		<br> <br>
 		<hr>
 		<div class="row">
 			<div class="col">
 				<span>${msg}</span>
 			</div>
 			<div class="col">
-				<button type="button" class="btn btn-success">Aprovar</button>
+			<a href=""><button type="button" class="btn btn-success">Aprovar</button></a>
 			</div>
 			<div class="col">
-				<button type="button" class="btn btn-danger">Reprovar</button>
+			<a href=""><button type="button" class="btn btn-danger">Reprovar</button></a>
 			</div>
 		</div>
 	</div>
