@@ -106,6 +106,31 @@ public class DAOCarregarPublicoRepository {
 		return retorno;
 
 	}
+	
+	public List<ModelAvaliacao> listAvaliacaoPaginada(Long id_anuncio, Integer offset) throws Exception{
+		
+		List<ModelAvaliacao> retorno = new ArrayList<ModelAvaliacao>();
+		
+		String sql = "SELECT*FROM avaliacao_anuncio where id_anuncio = "+ id_anuncio +" and situacao = 'APROVADO' offset "+ offset +" limit 5;";
+		PreparedStatement statement = connection.prepareStatement(sql);
+
+		ResultSet rs = statement.executeQuery();
+		
+		while (rs.next()) {
+			
+			ModelAvaliacao modelAvaliacao = new ModelAvaliacao();
+			
+			modelAvaliacao.setId(rs.getLong("id"));
+			modelAvaliacao.setNome_cliente(rs.getString("nome_cliente"));
+			modelAvaliacao.setNota(rs.getDouble("nota"));
+			modelAvaliacao.setTitulo(rs.getString("descricao_servico"));
+			modelAvaliacao.setDescricao(rs.getString("descricao"));
+			
+			retorno.add(modelAvaliacao);
+		}
+		
+		return retorno;
+	}
 
 	public ModelAnuncio consultarAnuncioID(Long id_anuncio) throws Exception {
 
@@ -263,7 +288,7 @@ public class DAOCarregarPublicoRepository {
 		
 		ModelAvaliacao modelAvaliacao = new ModelAvaliacao();
 		
-		String sql = "SELECT AVG(nota) AS mediaNota FROM avaliacao_anuncio where id_anuncio = ?;";		
+		String sql = "SELECT AVG(nota) AS mediaNota FROM avaliacao_anuncio where id_anuncio = ? and situacao = 'APROVADO';";		
 		PreparedStatement statement = connection.prepareStatement(sql);
 		statement.setLong(1, id_anuncio);
 

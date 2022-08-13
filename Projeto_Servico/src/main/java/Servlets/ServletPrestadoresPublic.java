@@ -137,6 +137,9 @@ public class ServletPrestadoresPublic extends HttpServlet {
 				
 				ModelAvaliacao modelAvaliacao = daoCarregarPublicoRepository.carregarNotaMediaAvaliacao(Long.parseLong(id));
 				
+				List<ModelAvaliacao> modelAvaliacaos = daoCarregarPublicoRepository.listAvaliacaoPaginada(Long.parseLong(id), 0);
+				
+				request.setAttribute("modelAvaliacaos", modelAvaliacaos);												
 				request.setAttribute("modelAvaliacao", modelAvaliacao);												
 				request.setAttribute("modelAnuncio", modelAnuncio);												
 				request.getRequestDispatcher("/perfil.jsp").forward(request, response);

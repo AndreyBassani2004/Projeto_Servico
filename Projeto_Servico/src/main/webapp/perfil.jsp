@@ -1,5 +1,6 @@
 <%@page import="Model.ModelAnuncio"%>
 <%@page import="Model.ModelAvaliacao"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -18,7 +19,7 @@
 	<%@include file="/Componentes/header.jsp"%>
 
 	<div id="linha1"></div>
-		
+
 	<div class="container">
 		<div class="row">
 			<div class="col" style="min-height: 500px; min-width: 500px;">
@@ -101,28 +102,38 @@
 			</div>
 			<div class="col"></div>
 			<div class="col">
-				<a href="<%=request.getContextPath()%>/ServletPrestadores?acao=avaliar&id=${modelAnuncio.id}"><button type="button" class="btn btn-success">Avaliar</button></a>
-				<a href="<%=request.getContextPath()%>/ServletPrestadores?acao=denuncia&id=${modelAnuncio.id}"><button type="button" class="btn btn-danger">Denunciar Anuncio</button></a>
+				<a
+					href="<%=request.getContextPath()%>/ServletPrestadores?acao=avaliar&id=${modelAnuncio.id}"><button
+						type="button" class="btn btn-success">Avaliar</button></a> <a
+					href="<%=request.getContextPath()%>/ServletPrestadores?acao=denuncia&id=${modelAnuncio.id}"><button
+						type="button" class="btn btn-danger">Denunciar Anuncio</button></a>
 			</div>
 			<br /> <br /> <br />
 		</div>
 		<div class="row">
-			<div class="card " style="width: 1200px; height: 800px;">
+
+			<div class="card " style="width: 1200px; height: 920px;">
 				<div class="card-body">
-					<h5 class="card-title">
-						Cliente: <span>Nome</span> Nota: <span>nota</span>
-					</h5>
-					<br>
-					<p class="card-text">
-						Titulo:
-						<spam>titulo</spam>
-					</p>
-					<p class="card-text">
-						Descrição:
-						<spam>descricao</spam>
-					</p>
+					<c:forEach items="${modelAvaliacaos}" var="av">
+						<h5 class="card-title">
+							Cliente:
+							<i><c:out value="${av.nome_cliente}"></c:out></i>
+							Nota: <i><c:out value="${av.nota}"></c:out></i>
+						</h5>
+						<br>
+						<p class="card-text">
+							Titulo:
+							<c:out value="${av.titulo}"></c:out>
+						</p>
+						<p class="card-text">
+							Descrição:
+							<c:out value="${av.descricao}"></c:out>
+						</p>
+						<br><br>
+					</c:forEach>
 				</div>
 			</div>
+
 		</div>
 		<nav aria-label="Page navigation example">
 			<ul class="pagination">
@@ -143,8 +154,8 @@
 			</ul>
 		</nav>
 	</div>
-		<div id="linha1"></div>
-	
+	<div id="linha1"></div>
+
 	<%@include file="/Componentes/rodape.jsp"%>
 
 </body>
