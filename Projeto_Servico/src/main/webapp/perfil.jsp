@@ -92,14 +92,14 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col">
-				<select class="form-control" name="uf" id="uf" style="width: 250px;"
+		 	<div class="col">
+			<!--  	<select class="form-control" name="uf" id="uf" style="width: 250px;"
 					required="required">
 					<option value="">Selecione</option>
 					<option value="Recente">Mais recente</option>
 					<option value="Antigos">Mais Antigos</option>
-				</select>
-			</div>
+				</select>-->
+			</div> 
 			<div class="col"></div>
 			<div class="col">
 				<a

@@ -122,4 +122,5 @@ public class DAOCadastroPrestador {
 		resultado.next();//Para entrar nos resultados do sql
 		return resultado.getBoolean("existe");
 	}
+		
 }

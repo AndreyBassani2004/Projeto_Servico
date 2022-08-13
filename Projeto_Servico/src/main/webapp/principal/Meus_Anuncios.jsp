@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/principal/css/meus_anuncios.css">
@@ -17,8 +17,11 @@
 	<div id="linha2"></div>
 	<div id="titulo">
 		<h1>Anuncios</h1>
-		<h2>Edite o anuncio</h2><br></br>
-		<h5><spam>${msg}</spam></h5>
+		<h2>Edite o anuncio</h2>
+		<br></br>
+		<h5>
+			<spam>${msg}</spam>
+		</h5>
 	</div>
 	<div id="linha1"></div>
 	<div id="tabela">
@@ -40,19 +43,35 @@
 						<td><c:out value="${ma.titulo}"></c:out></td>
 						<td><c:out value="${ma.servico}"></c:out></td>
 						<td><c:out value="${ma.situacao}"></c:out></td>
-						<td><a href="<%=request.getContextPath()%>\ServletCarregaAnuncio?acao=carregarAnuncio&id_anuncio=${ma.id}&id=<%= session.getAttribute("id")%>"><button type="button" class="btn btn-primary">Ver/Editar</button></a></td>
-						<td><a href="<%=request.getContextPath()%>\ServletCarregaAnuncio?acao=deletarajax&id=${ma.id}&id_user=<%= session.getAttribute("id")%>"><button type="button" class="btn btn-danger">Excluir</button></a></td>
+						<td><a
+							href="<%=request.getContextPath()%>\ServletCarregaAnuncio?acao=carregarAnuncio&id_anuncio=${ma.id}&id=<%= session.getAttribute("id")%>"><button
+									type="button" class="btn btn-primary">Ver/Editar</button></a></td>
+						<td><a
+							href="<%=request.getContextPath()%>\ServletCarregaAnuncio?acao=deletarajax&id=${ma.id}&id_user=<%= session.getAttribute("id")%>"><button
+									type="button" class="btn btn-danger">Excluir</button></a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
+
+		<%
+	//	ModelAnuncio modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+	//	int totalPagina = (int) request.getAttribute("totalPagina");
+
+		//for (int p = 0; p < totalPagina; p++) {
+	//		String url = request.getContextPath() + "/ServletPrestadores?acao=perfil&id=" + modelAnuncio.getId() + "&paginar="
+	//		+ (p * 5);
+	//		out.print("<li class=\"page-item\"><a class=\"page-link\" href=\"" + url + "\">" + (p + 1) + " </a></li>");
+	//	}
+		%>
 	</div>
 	<div id="linha1"></div>
 
 	<%@include file="/Componentes/rodape.jsp"%>
-	
+
 	<script type="text/javascript">
-	
+		
 	</script>
 </body>
 </html>

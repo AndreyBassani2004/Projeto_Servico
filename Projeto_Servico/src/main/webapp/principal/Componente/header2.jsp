@@ -29,8 +29,8 @@
                     <ul>
                     	<c:if test="${perfil == 'PRESTADOR'}">
                         <li><a href="<%=request.getContextPath()%>\principal\perfil.jsp" id="opcao">Perfil</a></li>
-                        <li><a href="<%=request.getContextPath()%>\principal\criarAnuncio.jsp" id="opcao">Criar Anuncio</a></li>
-                        <li><a href="<%=request.getContextPath()%>\ServletCarregaAnuncio?acao=listarAnuncio&id_user=<%= session.getAttribute("id")%>" id="opcao">Meus Anuncios</a></li>
+                        <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarCriarAnuncio&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Criar Anuncio</a></li>
+                        <li><a href="<%=request.getContextPath()%>\ServletCarregaAnuncio?acao=listarAnuncio&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Meus Anuncios</a></li>
                         <li><a href="#" id="opcao">Avaliações</a></li>
                         </c:if>  
                         <c:if test="${perfil == 'ADMIN'}">
