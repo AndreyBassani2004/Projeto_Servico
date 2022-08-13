@@ -18,6 +18,7 @@ public class ModelAvaliacao implements Serializable{
 	private String titulo;
 	private String descricao;
 	private String estado;
+	private Long nota_media;
 	
 	//Dados tabela terceiros
 	private Long id_anuncio;
@@ -32,6 +33,16 @@ public class ModelAvaliacao implements Serializable{
 	
 	
 	
+	
+
+	public Long getNota_media() {
+		return nota_media;
+	}
+
+	public void setNota_media(Long nota_media) {
+		this.nota_media = nota_media;
+	}
+
 	public Long getId_adm_alterador() {
 		return id_adm_alterador;
 	}

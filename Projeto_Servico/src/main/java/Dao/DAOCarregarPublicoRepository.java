@@ -190,14 +190,14 @@ public class DAOCarregarPublicoRepository {
 	public void gravarAvaliacao(ModelAvaliacao objeto) throws Exception {
 
 		String sql = "INSERT INTO public.avaliacao_anuncio(\r\n"
-				+ "	id_anuncio, nome_cliente, email_cliente, descricao_denuncia, data_prestacao, nota, titulo, descricao)\r\n"
+				+ "	id_anuncio, nome_cliente, email_cliente, descricao_servico, data_prestacao, nota, titulo, descricao)\r\n"
 				+ "	VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
 
 		PreparedStatement preparedSql = connection.prepareStatement(sql);
 		preparedSql.setLong(1, objeto.getId_anuncio());
 		preparedSql.setString(2, objeto.getNome_cliente());
 		preparedSql.setString(3, objeto.getEmail_cliente());
-		preparedSql.setString(4, objeto.getDescricao());
+		preparedSql.setString(4, objeto.getDescricao_cliente());
 		preparedSql.setString(5, objeto.getData_prestacao());
 		preparedSql.setDouble(6, objeto.getNota());
 		preparedSql.setString(7, objeto.getTitulo());
@@ -257,5 +257,22 @@ public class DAOCarregarPublicoRepository {
 		preparedSql.execute();
 		connection.commit();
 		
+	}
+	
+	public ModelAvaliacao carregarNotaMediaAvaliacao (Long id_anuncio) throws Exception{
+		
+		ModelAvaliacao modelAvaliacao = new ModelAvaliacao();
+		
+		String sql = "SELECT AVG(nota) AS mediaNota FROM avaliacao_anuncio where id_anuncio = ?;";		
+		PreparedStatement statement = connection.prepareStatement(sql);
+		statement.setLong(1, id_anuncio);
+
+		ResultSet resultado = statement.executeQuery();
+		
+		while (resultado.next()) /* Se tem resultado */ {
+			modelAvaliacao.setNota_media(resultado.getLong("mediaNota"));
+		}
+		
+		return modelAvaliacao;
 	}
 }

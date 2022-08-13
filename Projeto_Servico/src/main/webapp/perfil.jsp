@@ -1,5 +1,5 @@
 <%@page import="Model.ModelAnuncio"%>
-<%@page import="Model.ModelLogin"%>
+<%@page import="Model.ModelAvaliacao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -26,8 +26,8 @@
 					<spam>${modelAnuncio.nome_prestador}</spam>
 				</h2>
 				<br /> <br /> <img alt="Prestador"
-					src="<%=request.getContextPath()%>/Img/user.jpg" width="460px"
-					height="340p">
+					src="<%=request.getContextPath()%>/Img/user.jpg" width="519px"
+					height="459px">
 				<p>
 					<spam>${modelAnuncio.descricao}</spam>
 				</p>
@@ -39,10 +39,10 @@
 						<div class="col-md-8" style="margin-left: 5em;">
 							<br /> <br />
 							<h5>
-								<b>Nota de avaliação:</b>
+								<b>Nota média de avaliação:</b>
 							</h5>
 							<br />
-							<h6>Nota</h6>
+							<h6>${modelAvaliacao.nota_media}</h6>
 							<br /> <br />
 						</div>
 
