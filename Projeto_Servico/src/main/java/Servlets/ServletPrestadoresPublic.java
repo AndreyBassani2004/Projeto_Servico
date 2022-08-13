@@ -133,15 +133,18 @@ public class ServletPrestadoresPublic extends HttpServlet {
 				
 				String id = request.getParameter("id");
 				
+				String paginar = request.getParameter("paginar");
+				
 				ModelAnuncio modelAnuncio = daoCarregarPublicoRepository.consultarAnuncioID(Long.parseLong(id));
 				
 				ModelAvaliacao modelAvaliacao = daoCarregarPublicoRepository.carregarNotaMediaAvaliacao(Long.parseLong(id));
 				
-				List<ModelAvaliacao> modelAvaliacaos = daoCarregarPublicoRepository.listAvaliacaoPaginada(Long.parseLong(id), 0);
+				List<ModelAvaliacao> modelAvaliacaos = daoCarregarPublicoRepository.listAvaliacaoPaginada(Long.parseLong(id), Integer.parseInt(paginar));
 				
 				request.setAttribute("modelAvaliacaos", modelAvaliacaos);												
 				request.setAttribute("modelAvaliacao", modelAvaliacao);												
-				request.setAttribute("modelAnuncio", modelAnuncio);												
+				request.setAttribute("modelAnuncio", modelAnuncio);	
+				request.setAttribute("totalPagina", daoCarregarPublicoRepository.totalPagina2(Long.parseLong(id)));
 				request.getRequestDispatcher("/perfil.jsp").forward(request, response);
 			} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("avaliar")) {
 				

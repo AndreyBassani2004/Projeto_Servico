@@ -51,7 +51,7 @@
 												<c:out value="${an.descricao}"></c:out>
 											</p>
 											<p class="card-text">
-												<small class="text-muted"><a href="<%=request.getContextPath()%>/ServletPrestadores?acao=perfil&id=${an.id}"> <button type="button"
+												<small class="text-muted"><a href="<%=request.getContextPath()%>/ServletPrestadores?acao=perfil&id=${an.id}&paginar=0"> <button type="button"
 														class="btn btn-secondary">Conhecer</button></a></small>
 											</p>
 										</div>

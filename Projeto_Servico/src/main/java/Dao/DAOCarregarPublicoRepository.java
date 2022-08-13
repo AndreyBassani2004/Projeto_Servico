@@ -131,6 +131,31 @@ public class DAOCarregarPublicoRepository {
 		
 		return retorno;
 	}
+	
+	public int totalPagina2(Long id_anuncio) throws Exception {
+
+		String sql = "select count(1) as total from avaliacao_anuncio where id_anuncio = '" + id_anuncio + "' and situacao = 'APROVADO';";
+		PreparedStatement statement = connection.prepareStatement(sql);
+
+		ResultSet resultado = statement.executeQuery();
+
+		resultado.next();
+
+		Double cadastros = resultado.getDouble("total");
+
+		Double porpagina = 5.0;
+
+		Double pagina = cadastros / porpagina;
+
+		Double resto = pagina % 2;
+
+		if (resto > 0) {
+			pagina++;
+		}
+
+		return pagina.intValue();
+
+	}
 
 	public ModelAnuncio consultarAnuncioID(Long id_anuncio) throws Exception {
 

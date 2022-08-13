@@ -110,7 +110,7 @@
 			</div>
 			<br /> <br /> <br />
 		</div>
-		<div class="row">
+		<div class="row" id="avaliacoes">
 
 			<div class="card " style="width: 1200px; height: 920px;">
 				<div class="card-body">
@@ -137,18 +137,17 @@
 		</div>
 		<nav aria-label="Page navigation example">
 			<ul class="pagination">
-				<li class="page-item"><a class="page-link" href="#">1</a></li>
-				<li class="page-item"><a class="page-link" href="#">2</a></li>
-				<li class="page-item"><a class="page-link" href="#">3</a></li>
-				<%
-				//	
-
-				//int totalPagina = (int) request.getAttribute("totalPagina");
-
-				//	for (int p = 0; p < totalPagina; p++){
-				//String url = request.getContextPath()+ "/ServletPrestadores?acao=paginar2&pagina=" + (p * 5) + "&categoria=eletricista";
-				//	out.print("<li class=\"page-item\"><a class=\"page-link\" href=\""+url+"\">"+(p + 1)+" </a></li>");									}
-				%>
+				
+				<%	
+			   						ModelAnuncio modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+				
+									int totalPagina = (int) request.getAttribute("totalPagina");
+				
+									for (int p = 0; p < totalPagina; p++){
+										String url = request.getContextPath()+ "/ServletPrestadores?acao=perfil&id="+modelAnuncio.getId()+"&paginar=" + (p * 5);
+										out.print("<li class=\"page-item\"><a class=\"page-link\" href=\""+url+"\">"+(p + 1)+" </a></li>");									}
+								
+								%>
 
 
 			</ul>
