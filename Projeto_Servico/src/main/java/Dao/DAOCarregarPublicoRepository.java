@@ -337,6 +337,7 @@ public class DAOCarregarPublicoRepository {
 		ResultSet resultado = statement.executeQuery();
 
 		while (resultado.next()) {
+			modelDenunciaAvaliacao.setId(resultado.getLong("id"));
 			modelDenunciaAvaliacao.setId_anuncio(resultado.getLong("id_anuncio"));
 			modelDenunciaAvaliacao.setNome_cliente(resultado.getString("nome_cliente"));
 			modelDenunciaAvaliacao.setEmail_cliente(resultado.getString("email_cliente"));
@@ -353,6 +354,7 @@ public class DAOCarregarPublicoRepository {
 		ResultSet resultado2 = statement2.executeQuery();
 		
 		while (resultado2.next()) {
+			//modelDenunciaAvaliacao.setId_anuncio(resultado2.getLong("id_anuncio"));
 			modelDenunciaAvaliacao.setEmail_prestador("email_contato");
 		}
 		

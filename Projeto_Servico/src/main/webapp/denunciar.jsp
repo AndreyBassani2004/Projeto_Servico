@@ -154,7 +154,7 @@
 						<p>
 							<b>Descrição:</b>
 						</p>
-						<textarea class="form-control" required="required"></textarea>
+						<textarea class="form-control" maxlength="150" required="required"></textarea>
 
 					</div>
 					<br />

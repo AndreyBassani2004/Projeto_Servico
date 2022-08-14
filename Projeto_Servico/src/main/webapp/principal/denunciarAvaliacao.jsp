@@ -32,6 +32,7 @@
 	<br />
 	<br />
 	<br />
+	<form action="<%=request.getContextPath()%>/ServletSalvarDenunciaAvaliacao" method="post">
 	<div class="container">
 		<h5>Dados</h5>
 		<hr>
@@ -44,19 +45,12 @@
 							<b>ID Avaliação:</b>
 						</p>
 						<input type="text" class="form-control"
-							value="${modelDenunciaAvaliacao.id_anuncio}" name="id_avaliacao"
+							value="${modelDenunciaAvaliacao.id}" name="id_avaliacao"
 							id="id_avaliacao" readonly="readonly">
 					</div>
 					<br />
-					<!--  
-					<div id="textcampo">
-						<p>
-							<b>Nome do prestador de serviço:</b>
-						</p>
-						<input type="text" class="form-control" value=""
-							name="nome_prestador" id="nome_prestador" readonly="readonly">
-					</div>
-					<br />-->
+					  
+					
 					<div id="textcampo">
 						<p>
 							<b>Nome do cliente:</b>
@@ -68,6 +62,14 @@
 					<br />
 				</div>
 				<div class="col">
+				<div id="textcampo">
+						<p>
+							<b>ID anuncio:</b>
+						</p>
+						<input type="text" class="form-control" value="${modelDenunciaAvaliacao.id_anuncio}"
+							name="id_anuncio" id="id_anuncio" readonly="readonly">
+					</div>
+					<br />
 					<div id="textcampo">
 						<p>
 							<b>Email Cliente:</b>
@@ -177,7 +179,7 @@
 						<p>
 							<b>Descrição:</b>
 						</p>
-						<textarea class="form-control" required="required"></textarea>
+						<textarea id="descricao_denuncia" name="descricao_denuncia" class="form-control" maxlength="150" required="required"></textarea>
 					</div>
 					<br />
 				</div>
@@ -206,7 +208,7 @@
 				</div>
 			</div>
 	</div>
-	
+	</form>
 	
 
 

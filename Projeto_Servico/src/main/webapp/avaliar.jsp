@@ -140,7 +140,7 @@
 						<p>
 							<b>Como foi a prestação:</b>
 						</p>
-						<textarea class="form-control" required="required">${modelAvaliacao.descricao_cliente}</textarea>
+						<textarea class="form-control" maxlength="150" required="required">${modelAvaliacao.descricao_cliente}</textarea>
 					</div>
 				</div>
 				<div class="col">
@@ -199,7 +199,7 @@
 						<p>
 							<b>Descrição:</b>
 						</p>
-						<textarea class="form-control" required="required">${modelAvaliacao.descricao}</textarea>
+						<textarea class="form-control" maxlength="150" required="required">${modelAvaliacao.descricao}</textarea>
 					</div>
 				</div>
 			</div>
