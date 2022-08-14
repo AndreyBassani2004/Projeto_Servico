@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>PresTec</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>\principal\css\carregarAnuncio.css">
 <link rel="stylesheet"

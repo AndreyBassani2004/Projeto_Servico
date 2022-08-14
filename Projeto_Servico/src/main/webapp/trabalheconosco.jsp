@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>PresTec</title>
 	 <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/trabalhe.css">
  	 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
 </head>
@@ -17,7 +17,7 @@
  	    <div id="linha1"></div>
  	<div id="texto" style="align-items: flex-start; text-align: left;">
  		  <p>Se quer uma maneira fácil de solucionar seus problemas do dia a dia ou uma maneira de arranjar serviço,<br/> 
- 		  na Press tec facilitamos a sua procura, contando com profissionais especializados para atender suas <br/>
+ 		  na <i>PresTec</i> facilitamos a sua procura, contando com profissionais especializados para atender suas <br/>
  		  necessidades diárias, através de uma navegação simples fácil e gratuita.</p><br/>  
 
           <p>Também ao profissional facilitamos as oportunidades de serviço, com uma página somente de anúncio sobre<br/>

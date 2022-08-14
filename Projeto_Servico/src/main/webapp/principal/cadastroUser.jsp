@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>PresTec</title>
 <link href="<%=request.getContextPath()%>/principal/css/cadastroUserAdm.css"
 	rel="stylesheet" type="text/css">
 </head>

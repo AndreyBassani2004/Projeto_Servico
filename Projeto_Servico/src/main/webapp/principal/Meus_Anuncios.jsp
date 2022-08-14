@@ -7,7 +7,7 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>PresTec</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/principal/css/meus_anuncios.css">
 </head>

@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<title>PresTec</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>\principal\css\headerTarefa.css">
     <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -31,7 +31,7 @@
                         <li><a href="<%=request.getContextPath()%>\principal\perfil.jsp" id="opcao">Perfil</a></li>
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarCriarAnuncio&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Criar Anuncio</a></li>
                         <li><a href="<%=request.getContextPath()%>\ServletCarregaAnuncio?acao=listarAnuncio&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Meus Anuncios</a></li>
-                        <li><a href="#" id="opcao">Avaliações</a></li>
+                        <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarMinhasAvaliacoes&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Avaliações</a></li>
                         </c:if>  
                         <c:if test="${perfil == 'ADMIN'}">
                         <li><a href="<%=request.getContextPath()%>\principal\perfilAdm.jsp" id="opcao">Perfil</a></li>
