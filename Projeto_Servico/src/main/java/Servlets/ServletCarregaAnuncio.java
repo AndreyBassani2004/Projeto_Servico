@@ -68,24 +68,29 @@ public class ServletCarregaAnuncio extends HttpServlet {
 
 				String usuarioLogado = (String) session.getAttribute("usuario");
 
-				String msg = "";
+				String msg = "Excluido com Sucesso!";
 				
 				String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
 				
 				Long id_usuario = (daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId());
 				
-				if(id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("PRESTADOR")) {
-				
+				if(id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("PRESTADOR")) {	
 				
 				String id_anuncio = request.getParameter("id");
+				
+				if(daoAnuncioRepository.ExisteAvaliacao(Long.parseLong(id_anuncio))) {
+					msg = "Este anuncio não pode ser excluido! <br><b>Ele possuí avaliação somente pode ser pausado.</b>";
+				}else {
 
+				daoAnuncioRepository.deleteAnuncioDenuncias(Long.parseLong(id_anuncio));
 				daoAnuncioRepository.deletarAnuncio(Long.parseLong(id_anuncio), id_usuario);
-
+				}
+				
 				String idUser = request.getParameter("id_user");
 
 				List<ModelAnuncio> modelAnuncios = daoAnuncioRepository.listAnuncio2(Long.parseLong(idUser));
 
-				request.setAttribute("msg", "Excluido com Sucesso!");
+				request.setAttribute("msg", msg);
 				request.setAttribute("modelAnuncios", modelAnuncios);
 				request.getRequestDispatcher("/principal/Meus_Anuncios.jsp").forward(request, response);
 				}else {

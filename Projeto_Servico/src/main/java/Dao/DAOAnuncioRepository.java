@@ -128,6 +128,17 @@ public class DAOAnuncioRepository {
 		return retorno;
 
 	}
+	
+	public void deleteAnuncioDenuncias(Long id) throws Exception{
+		
+		String sql = "DELETE FROM denuncia_anuncio WHERE id_anuncio = ?;";
+		PreparedStatement prepareSql = connection.prepareStatement(sql);
+
+		prepareSql.setLong(1, id);
+		prepareSql.executeUpdate();
+
+		connection.commit();	
+	}
 
 	public void deletarAnuncio(Long id, Long id_user) throws Exception {
 
@@ -141,6 +152,16 @@ public class DAOAnuncioRepository {
 
 		connection.commit();
 
+	}
+	
+	public boolean ExisteAvaliacao(Long id_anuncio) throws Exception{
+		String sql = "select count(1) > 0 as existe from avaliacao_anuncio where id_anuncio = "+id_anuncio+";";
+		PreparedStatement statement = connection.prepareStatement(sql);
+
+		ResultSet resultado = statement.executeQuery();
+
+		resultado.next();//Para entrar nos resultados do sql
+		return resultado.getBoolean("existe");
 	}
 
 	public ModelAnuncio consultarAnuncioID(Long id_user, Long id_anuncio) throws Exception {
