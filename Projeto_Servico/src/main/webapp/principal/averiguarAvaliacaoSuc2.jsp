@@ -19,7 +19,7 @@
  	<br><br>
  	<h3></h3>
  	<br><br>
- 	<a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarAvaliacoes&id_user=<%= session.getAttribute("id")%>"><button type="button" class="btn btn-success waves-effect waves-light">Voltar</button></a>
+ 	<a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarAvaliacoes&id_user=<%= session.getAttribute("id")%>&paginar=0"><button type="button" class="btn btn-success waves-effect waves-light">Voltar</button></a>
  	</div>
  	
  	<%@include file="/Componentes/rodape.jsp"%>
