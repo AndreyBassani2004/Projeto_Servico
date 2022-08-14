@@ -140,10 +140,7 @@
 						<p>
 							<b>Como foi a prestação:</b>
 						</p>
-						<input type="text" class="form-control" style="height: 140px;"
-							value="${modelAvaliacao.descricao_cliente}"
-							id="descricao_cliente" name="descricao_cliente"
-							required="required">
+						<textarea class="form-control" required="required">${modelAvaliacao.descricao_cliente}</textarea>
 					</div>
 				</div>
 				<div class="col">
@@ -202,9 +199,7 @@
 						<p>
 							<b>Descrição:</b>
 						</p>
-						<input type="text" class="form-control" style="height: 140px;"
-							value="${modelAvaliacao.descricao}" id="descricao"
-							name="descricao" required="required">
+						<textarea class="form-control" required="required">${modelAvaliacao.descricao}</textarea>
 					</div>
 				</div>
 			</div>

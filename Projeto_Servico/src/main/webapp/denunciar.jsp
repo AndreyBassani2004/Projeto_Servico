@@ -95,9 +95,7 @@
 						<p>
 							<b>Descrição:</b>
 						</p>
-						<input type="text" class="form-control" style="height: 244px;"
-							value="${modelDenunciaAnuncio.descricao_anuncio}"
-							id="descricao2" name="descricao2" readonly="readonly">
+					<textarea class="form-control" readonly="readonly">${modelDenunciaAnuncio.descricao_anuncio}</textarea>
 					</div>
 
 				</div>
@@ -156,8 +154,8 @@
 						<p>
 							<b>Descrição:</b>
 						</p>
-						<input type="text" class="form-control" style="height: 140px;"
-							name="descricao" required="required">
+						<textarea class="form-control" required="required"></textarea>
+
 					</div>
 					<br />
 				</div>
