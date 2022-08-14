@@ -200,6 +200,28 @@ public class ServletCarregarRequisicao extends HttpServlet {
 					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);
 				}
 				
+			}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("denunciarAvaliacao")) {
+			
+				String id_anuncio = request.getParameter("id");
+				
+				String id_user = request.getParameter("id_user");
+
+				HttpSession session = request.getSession();
+
+				String usuarioLogado = (String) session.getAttribute("usuario");
+
+				Long id_usuario = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId();
+
+				String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
+
+				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("PRESTADOR")) {
+					
+					System.out.println(id_anuncio);
+					
+					request.getRequestDispatcher("principal/denunciarAvaliacao.jsp").forward(request, response);
+				}else {
+					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);
+				}			
 			}else {
 				request.getRequestDispatcher("principal/principal.jsp").forward(request, response);
 
