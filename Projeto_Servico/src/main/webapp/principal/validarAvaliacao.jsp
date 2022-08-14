@@ -17,7 +17,7 @@
 
 	<%@include file="/principal/Componente/header2.jsp"%>
 
-	<div id="linha1"></div>
+	<br/><br/><br/><br/><br/><br/>
 
 	<div class="container">
 		<h1 style="text-align: center;">Avaliações para validar</h1>
@@ -44,15 +44,34 @@
 							<td><c:out value="${ma.nome_cliente}"></c:out></td>
 							<td><c:out value="${ma.titulo}"></c:out></td>
 							<td><c:out value="${ma.estado}"></c:out></td>
-							<td><a href="<%=request.getContextPath()%>/ServletAvaliarAvaliacao?acao=carregarAvaliacao&id_anuncio=${ma.id}&id_user=<%= session.getAttribute("id")%>"><button class="btn btn-primary">Ver</button></a></td>
+							<td><a
+								href="<%=request.getContextPath()%>/ServletAvaliarAvaliacao?acao=carregarAvaliacao&id_anuncio=${ma.id}&id_user=<%= session.getAttribute("id")%>"><button
+										class="btn btn-primary">Ver</button></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 		</div>
+
+		<nav aria-label="Page navigation example" style="">
+			<ul class="pagination">
+				<%
+				int totalPagina = (int) request.getAttribute("totalPagina");
+
+				for (int p = 0; p < totalPagina; p++) {
+					String url = request.getContextPath() + "/ServletCarregarRequisicao?acao=carregarAvaliacoes&id_user="
+					+ request.getSession().getAttribute("id") + "&paginar=" + (p * 5);
+					out.print("<li class=\"page-item\"><a class=\"page-link\" href=\"" + url + "\">" + (p + 1) + " </a></li>");
+				}
+				%>
+			</ul>
+		</nav>
 	</div>
-	
-	<div id="linha1"></div>
+
+
+
+
+	<br/><br/><br/><br/><br/><br/>
 
 	<%@include file="/Componentes/rodape.jsp"%>
 

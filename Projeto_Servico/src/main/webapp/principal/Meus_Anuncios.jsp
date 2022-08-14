@@ -54,17 +54,6 @@
 			</tbody>
 		</table>
 
-		<%
-	//	ModelAnuncio modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
-
-	//	int totalPagina = (int) request.getAttribute("totalPagina");
-
-		//for (int p = 0; p < totalPagina; p++) {
-	//		String url = request.getContextPath() + "/ServletPrestadores?acao=perfil&id=" + modelAnuncio.getId() + "&paginar="
-	//		+ (p * 5);
-	//		out.print("<li class=\"page-item\"><a class=\"page-link\" href=\"" + url + "\">" + (p + 1) + " </a></li>");
-	//	}
-		%>
 	</div>
 	<div id="linha1"></div>
 

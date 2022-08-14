@@ -21,11 +21,11 @@ public class DAOAvaliarRequisicao {
 		connection = SingleConnectionBanco.getConnection();
 	}
 	
-	public List<ModelDenunciaAnuncio> lisarDenunciaAnuncio() throws Exception{
+	public List<ModelDenunciaAnuncio> lisarDenunciaAnuncio(Long offset) throws Exception{
 		
 		List<ModelDenunciaAnuncio> retorno = new ArrayList<ModelDenunciaAnuncio>();
 		
-		String sql = "SELECT * FROM denuncia_anuncio WHERE estado_denuncia = 'ANALISE';";
+		String sql = "SELECT * FROM denuncia_anuncio WHERE estado_denuncia = 'ANALISE' offset " + offset + " limit 5; ";
 		PreparedStatement statement = connection.prepareStatement(sql);
 		
 		ResultSet rs = statement.executeQuery();
@@ -46,11 +46,11 @@ public class DAOAvaliarRequisicao {
 		return retorno;
 	}
 	
-	public List<ModelAvaliacao> listarAvaliacaoesValidar() throws Exception{
+	public List<ModelAvaliacao> listarAvaliacaoesValidar(Long offset) throws Exception{
 		
 		List<ModelAvaliacao> retorno = new ArrayList<ModelAvaliacao>();
 		
-		String sql = "SELECT * FROM avaliacao_anuncio WHERE situacao = 'ANALISE';";
+		String sql = "SELECT * FROM avaliacao_anuncio WHERE situacao = 'ANALISE' offset " + offset + " limit 5; ";
 		PreparedStatement statement = connection.prepareStatement(sql);
 		
 		ResultSet rs = statement.executeQuery();
@@ -69,6 +69,56 @@ public class DAOAvaliarRequisicao {
 		}
 		
 		return retorno;
+	}
+	
+	public int totalPaginaAvaliacao() throws Exception {
+
+		String sql = "select count(1) as total from avaliacao_anuncio where situacao = 'ANALISE';";
+		PreparedStatement statement = connection.prepareStatement(sql);
+
+		ResultSet resultado = statement.executeQuery();
+
+		resultado.next();
+
+		Double cadastros = resultado.getDouble("total");
+
+		Double porpagina = 5.0;
+
+		Double pagina = cadastros / porpagina;
+
+		Double resto = pagina % 2;
+
+		if (resto > 0) {
+			pagina++;
+		}
+
+		return pagina.intValue();
+
+	}
+	
+	public int totalPaginaDenunciaAnuncio() throws Exception {
+
+		String sql = "select count(1) as total from denuncia_anuncio where estado_denuncia = 'ANALISE';";
+		PreparedStatement statement = connection.prepareStatement(sql);
+
+		ResultSet resultado = statement.executeQuery();
+
+		resultado.next();
+
+		Double cadastros = resultado.getDouble("total");
+
+		Double porpagina = 5.0;
+
+		Double pagina = cadastros / porpagina;
+
+		Double resto = pagina % 2;
+
+		if (resto > 0) {
+			pagina++;
+		}
+
+		return pagina.intValue();
+
 	}
 	
 }

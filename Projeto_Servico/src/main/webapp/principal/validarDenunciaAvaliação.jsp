@@ -16,7 +16,7 @@
 
 	<%@include file="/principal/Componente/header2.jsp"%>
 
-	<div id="linha1"></div>
+	<br/><br/><br/><br/><br/><br/><br/><br/>
 
 	<div class="container">
 		<h1 style="text-align: center;">Avaliar Denuncia avaliações</h1>
@@ -50,7 +50,7 @@
 		</div>
 	</div>
 	
-	<div id="linha1"></div>
+	<br/><br/><br/><br/><br/><br/><br/><br/>
 
 	<%@include file="/Componentes/rodape.jsp"%>
 

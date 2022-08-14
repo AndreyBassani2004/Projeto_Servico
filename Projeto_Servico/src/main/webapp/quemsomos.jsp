@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <head>
 <meta charset="ISO-8859-1">
@@ -23,42 +23,39 @@
 	</div>
 	<div id="espaco"></div>
 	<div id="texto">
-		<h2>Nosso objetivo</h2>
-		<br>
-		<br>
-		<p>
-			Em meios a tantos conflitos no dia a dia notamos que muitas pessoas
-			necessitam de serviços rápido, como <br> por exemplo a troca de
-			um chuveiro, problemas de internet entre outros problemas do dia a
-			dia. Há muitos casos <br> em que essas pessoas não sabem onde
-			encontrar ajuda ou uma solução para o problema. Também em meio a <br>
-			isso a muitos trabalhadores que poderiam ajudar, mas não tem noção de
-			como ou onde encontrá-las. 
+		<div lang="pt-BR">
+		<p lang="pt-BR">
+			Em meios a tantos conflitos no dia a dia notamos que muitas pessoas <br/>
+			necessitam de serviços rápido, como por exemplo a troca de <br/>
+			um chuveiro, problemas de internet entre outros problemas do dia a <br/>
+			dia. Há muitos casos  em que essas pessoas não sabem onde <br/>
+			encontrar ajuda ou uma solução para o problema. Também em meio a <br/>
+			isso a muitos trabalhadores que poderiam ajudar, mas não tem noção de <br/>
+			como ou onde encontrá-las.
 		</p>
-		<br>              
+		<br/> 
 		<p>
-			Como podemos perceber nos dias de hoje praticamente a maioria dos
-			problemas podem ser resolvidos pelo celular ou computador,<br>
-			mas como sempre existem casos de pessoas que ainda necessitam de uma
-			pessoa presente com capacidade de resolver tal problema.
+			Como podemos perceber nos dias de hoje praticamente a maioria dos<br/>
+			problemas podem ser resolvidos pelo celular ou computador,<br/>
+			mas como sempre existem casos de pessoas que ainda necessitam de uma<br/>
+			pessoa presente com capacidade de resolver tal problema.<br/>
 		</p>
-		<br>  
-		<p>
-			Com isso nosso grupo decidiu criar um site de prestação de serviços
-			rápidos, que seria uma grande<br> ajuda a solucionar esses tais
-			problemas do nosso cotidiano, o site<br> poderá ser utilizado de
-			forma rápida e fácil. além de ajudar nos problemas cotidianos<br>
-			das pessoas, pensamos também no profissional que<br> poderão
+		<br/> 
+		<p lang="pt-BR">
+			Com isso nosso grupo decidiu criar um site de prestação de serviços<br/>
+			rápidos, que seria uma grande ajuda a solucionar esses tais <br/>
+			problemas do nosso cotidiano, o site poderá ser utilizado de <br/>
+			forma rápida e fácil. além de ajudar nos problemas cotidianos <br/>
+			das pessoas, pensamos também no profissional que poderão <br/>
 			localizar os clientes de uma forma mais fácil.
 		</p>
-		<br>   
-		<p>
-			O intuito de criar esse site foi de<br> não somente ajudar no
-			cotidiano das pessoas, mas também em gerar<br> oportunidades de
-			serviço para os trabalhadores autônomos assim de uma forma ou de
+		<br/>
+		<p lang="pt-BR">
+			O intuito de criar esse site foi de não somente ajudar no<br/>
+			cotidiano das pessoas, mas também em gerar oportunidades de<br/>
+			serviço para os trabalhadores autônomos assim de uma forma ou de<br/>
 			outra todos saem ganhando.
-		<p />
-		 
+		<p /></div>
 	</div>
 	<div id="espaco"></div>
 

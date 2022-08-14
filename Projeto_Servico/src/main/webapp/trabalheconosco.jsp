@@ -15,11 +15,13 @@
  	<h1>Trabalhe Conosco</h1>
  	</div>
  	    <div id="linha1"></div>
- 	<div id="texto">
- 		<p>Paragrafo 1</p><br>
-		<p>Paragrafo 2</p><br>
-		<p>Paragrafo 3</p><br>
-		<p>Paragrafo 4</p><br>
+ 	<div id="texto" style="align-items: flex-start; text-align: left;">
+ 		  <p>Se quer uma maneira fácil de solucionar seus problemas do dia a dia ou uma maneira de arranjar serviço,<br/> 
+ 		  na Press tec facilitamos a sua procura, contando com profissionais especializados para atender suas <br/>
+ 		  necessidades diárias, através de uma navegação simples fácil e gratuita.</p><br/>  
+
+          <p>Também ao profissional facilitamos as oportunidades de serviço, com uma página somente de anúncio sobre<br/>
+           seu trabalho, além disso o site conta com uma maneira muito fácil de se cadastrar rápido prático e seguro.<p/>  
  	</div>
  	
  	    <div id="linha1"></div>

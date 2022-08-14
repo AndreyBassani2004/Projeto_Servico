@@ -17,7 +17,8 @@
 
 	<%@include file="/principal/Componente/header2.jsp"%>
 
-	<div id="linha1"></div>
+		<br/><br/><br/><br/><br/><br/>
+
 
 	<div class="container">
 		<div class="row" style="align-items: center; text-align: center;">
@@ -155,7 +156,7 @@
 		</div>
 	</div>
 
-	<div id="linha1"></div>
+	<br/><br/><br/><br/><br/><br/>
 
 </body>
 </html>

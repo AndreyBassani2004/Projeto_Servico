@@ -38,6 +38,8 @@ public class ServletCarregarRequisicao extends HttpServlet {
 			if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("carregarDenuncias")) {
 
 				String id_user = request.getParameter("id_user");
+				
+				String paginar = request.getParameter("paginar");
 
 				HttpSession session = request.getSession();
 
@@ -48,9 +50,10 @@ public class ServletCarregarRequisicao extends HttpServlet {
 				String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
 
 				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
-					List<ModelDenunciaAnuncio> modelDenunciaAnuncios = daoAvaliarRequisicao.lisarDenunciaAnuncio();
+					List<ModelDenunciaAnuncio> modelDenunciaAnuncios = daoAvaliarRequisicao.lisarDenunciaAnuncio(Long.parseLong(paginar));
 
 					request.setAttribute("modelDenunciaAnuncios", modelDenunciaAnuncios);
+					request.setAttribute("totalPagina", daoAvaliarRequisicao.totalPaginaDenunciaAnuncio());
 					request.getRequestDispatcher("principal/validarDenunciaAnuncio.jsp").forward(request, response);
 				} else {
 
@@ -62,6 +65,8 @@ public class ServletCarregarRequisicao extends HttpServlet {
 				String id_user = request.getParameter("id_user");
 
 				HttpSession session = request.getSession();
+				
+				String paginar = request.getParameter("paginar");
 
 				String usuarioLogado = (String) session.getAttribute("usuario");
 
@@ -70,9 +75,10 @@ public class ServletCarregarRequisicao extends HttpServlet {
 				String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
 
 				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
-					List<ModelAvaliacao> modelAvaliacaos = daoAvaliarRequisicao.listarAvaliacaoesValidar();
+					List<ModelAvaliacao> modelAvaliacaos = daoAvaliarRequisicao.listarAvaliacaoesValidar(Long.parseLong(paginar));
 
 					request.setAttribute("modelAvaliacaos", modelAvaliacaos);
+					request.setAttribute("totalPagina", daoAvaliarRequisicao.totalPaginaAvaliacao());
 					request.getRequestDispatcher("principal/validarAvaliacao.jsp").forward(request, response);
 				} else {
 
@@ -82,6 +88,8 @@ public class ServletCarregarRequisicao extends HttpServlet {
 			} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("carregarDenunciaAvaliacoes")) {
 
 				String id_user = request.getParameter("id_user");
+				
+				String paginar = request.getParameter("paginar");
 
 				HttpSession session = request.getSession();
 
@@ -101,7 +109,7 @@ public class ServletCarregarRequisicao extends HttpServlet {
 			} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("carregarCriarAnuncio")) {
 
 				String id_user = request.getParameter("id_user");
-
+				
 				HttpSession session = request.getSession();
 
 				String usuarioLogado = (String) session.getAttribute("usuario");
