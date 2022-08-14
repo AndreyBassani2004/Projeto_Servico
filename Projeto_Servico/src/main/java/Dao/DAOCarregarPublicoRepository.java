@@ -10,6 +10,7 @@ import Connection.SingleConnectionBanco;
 import Model.ModelAnuncio;
 import Model.ModelAvaliacao;
 import Model.ModelDenunciaAnuncio;
+import Model.ModelDenunciaAvaliacao;
 import Model.ModelLogin;
 
 public class DAOCarregarPublicoRepository {
@@ -325,4 +326,37 @@ public class DAOCarregarPublicoRepository {
 		
 		return modelAvaliacao;
 	}
+	
+	public ModelDenunciaAvaliacao carregarDenunciaAvaliacao(Long id_avaliacao, Long id_anuncio) throws Exception{
+		
+		ModelDenunciaAvaliacao modelDenunciaAvaliacao = new ModelDenunciaAvaliacao();
+		
+		String sql = "SELECT*FROM avaliacao_anuncio where id = "+id_avaliacao+" and id_anuncio = "+id_anuncio+";";
+		PreparedStatement statement = connection.prepareStatement(sql);
+		
+		ResultSet resultado = statement.executeQuery();
+
+		while (resultado.next()) {
+			modelDenunciaAvaliacao.setId_anuncio(resultado.getLong("id_anuncio"));
+			modelDenunciaAvaliacao.setNome_cliente(resultado.getString("nome_cliente"));
+			modelDenunciaAvaliacao.setEmail_cliente(resultado.getString("email_cliente"));
+			modelDenunciaAvaliacao.setDescricao_avaliacao(resultado.getString("descricao"));
+			modelDenunciaAvaliacao.setNota(resultado.getLong("nota"));
+			modelDenunciaAvaliacao.setTitulo(resultado.getString("titulo"));
+			modelDenunciaAvaliacao.setData_prestacao(resultado.getString("data_prestacao"));
+		}
+		
+		
+		String sql2 = "SELECT * FROM anuncio where id="+id_anuncio+" ;";
+		PreparedStatement statement2 = connection.prepareStatement(sql2);
+		
+		ResultSet resultado2 = statement2.executeQuery();
+		
+		while (resultado2.next()) {
+			modelDenunciaAvaliacao.setEmail_prestador("email_contato");
+		}
+		
+		return modelDenunciaAvaliacao;
+	}
+	
 }

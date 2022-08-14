@@ -1,4 +1,4 @@
-<%@page import="Model.ModelAvaliacao"%>
+<%@page import="Model.ModelDenunciaAvaliacao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -44,7 +44,7 @@
 							<b>ID Avaliação:</b>
 						</p>
 						<input type="text" class="form-control"
-							value="${modelAvaliacao.id}" name="id_avaliacao"
+							value="${modelDenunciaAvaliacao.id_anuncio}" name="id_avaliacao"
 							id="id_avaliacao" readonly="readonly">
 					</div>
 					<br />
@@ -62,7 +62,7 @@
 							<b>Nome do cliente:</b>
 						</p>
 						<input type="text" class="form-control"
-							value="${modelAvaliacao.nome_cliente}" name="nome_cliente"
+							value="${modelDenunciaAvaliacao.nome_cliente}" name="nome_cliente"
 							id="nome_cliente" readonly="readonly">
 					</div>
 					<br />
@@ -73,7 +73,7 @@
 							<b>Email Cliente:</b>
 						</p>
 						<input type="text" class="form-control"
-							value="${modelAvaliacao.email_cliente}" name="email_cliente"
+							value="${modelDenunciaAvaliacao.email_cliente}" name="email_cliente"
 							id="email_cliente" readonly="readonly">
 					</div>
 					<br />
@@ -89,7 +89,7 @@
 							<b>Data da prestação:</b>
 						</p>
 						<input type="text" class="form-control"
-							value="${modelAvaliacao.data_prestacao}" name="data_prestacao"
+							value="${modelDenunciaAvaliacao.data_prestacao}" name="data_prestacao"
 							id="data_prestacao" readonly="readonly">
 					</div>
 					<br />
@@ -98,7 +98,7 @@
 							<b>Email do prestador de serviço:</b>
 						</p>
 						<input type="text" class="form-control"
-							value="${modelAvaliacao.email_prestador}" name="email_prestador"
+							value="${modelDenunciaAvaliacao.email_prestador}" name="email_prestador"
 							id="email_prestador" readonly="readonly">
 					</div>
 					<br />
@@ -126,7 +126,7 @@
 						</p>
 						<input type="text" class="form-control"
 							placeholder="Digite o Titulo" name="nota" id="nota"
-							value="${modelAvaliacao.nota}" readonly="readonly">
+							value="${modelDenunciaAvaliacao.nota}" readonly="readonly">
 					</div>
 					<br />
 				</div>
@@ -137,7 +137,7 @@
 						</p>
 						<input type="text" class="form-control"
 							placeholder="Digite o Titulo" name="titulo" id="titulo"
-							value="${modelAvaliacao.titulo}" readonly="readonly">
+							value="${modelDenunciaAvaliacao.titulo}" readonly="readonly">
 					</div>
 					<br />
 				</div>
@@ -148,7 +148,7 @@
 						<p>
 							<b>Descrição:</b>
 						</p>
-						<textarea class="form-control" readonly="readonly">${modelAvaliacao.descricao}</textarea>
+						<textarea class="form-control" readonly="readonly">${modelDenunciaAvaliacao.descricao_avaliacao}</textarea>
 
 					</div>
 				</div>

@@ -18,6 +18,7 @@ import Dao.DAOUsuarioPosLogin;
 import Model.ModelAnuncio;
 import Model.ModelAvaliacao;
 import Model.ModelDenunciaAnuncio;
+import Model.ModelDenunciaAvaliacao;
 
 @WebServlet("/ServletCarregarRequisicao")
 public class ServletCarregarRequisicao extends HttpServlet {
@@ -202,7 +203,9 @@ public class ServletCarregarRequisicao extends HttpServlet {
 				
 			}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("denunciarAvaliacao")) {
 			
-				String id_anuncio = request.getParameter("id");
+				String id_avaliacao = request.getParameter("id");
+				
+				String id_anuncio = request.getParameter("id_anuncio");
 				
 				String id_user = request.getParameter("id_user");
 
@@ -216,8 +219,9 @@ public class ServletCarregarRequisicao extends HttpServlet {
 
 				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("PRESTADOR")) {
 					
-					System.out.println(id_anuncio);
+					ModelDenunciaAvaliacao modelDenunciaAvaliacao = daoCarregarPublicoRepository.carregarDenunciaAvaliacao(Long.parseLong(id_avaliacao), Long.parseLong(id_anuncio));
 					
+					request.setAttribute("modelDenunciaAvaliacao", modelDenunciaAvaliacao);	
 					request.getRequestDispatcher("principal/denunciarAvaliacao.jsp").forward(request, response);
 				}else {
 					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);

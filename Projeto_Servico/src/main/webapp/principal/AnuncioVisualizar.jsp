@@ -131,7 +131,7 @@
 						</p>
 						
 						<p class="card-text">
-							<a href="<%=request.getContextPath()%>/ServletCarregarRequisicao?acao=denunciarAvaliacao&id=${modelAnuncio.id}&id_user=<%= session.getAttribute("id")%>"><button
+							<a href="<%=request.getContextPath()%>/ServletCarregarRequisicao?acao=denunciarAvaliacao&id=${av.id}&id_user=<%= session.getAttribute("id")%>&id_anuncio=${modelAnuncio.id}"><button
 						type="button" class="btn btn-danger">Denunciar</button></a>
 						</p><br><br>
 					</c:forEach>

@@ -19,7 +19,7 @@
  	<br><br>
  	<h3>Entre em sua nova conta</h3>
  	<br><br>
- 	<a href="<%=request.getContextPath()%>/login.jsp"><button type="button" class="btn btn-success waves-effect waves-light">Entrar</button></a>
+ 	<a href="<%= request.getContextPath() %>/ServletPrestadores?acao=login"><button type="button" class="btn btn-success waves-effect waves-light">Entrar</button></a>
  	</div>
  	
  	<%@include file="/Componentes/rodape.jsp"%>
