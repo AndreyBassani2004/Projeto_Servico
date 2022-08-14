@@ -27,7 +27,7 @@
  	    <div id="linha1"></div>
  	
  	<div id="login">
- 		<a href="<%= request.getContextPath() %>/cadastrase.jsp"><button type="button" class="btn btn-warning">Cadastrar-se</button></a>
+ 		<a href="<%= request.getContextPath() %>/ServletPrestadores?acao=cadastrase"><button type="button" class="btn btn-warning">Cadastrar-se</button></a>
  	</div>
  	
  		<div id="linha1"></div>

@@ -172,7 +172,7 @@
 
 	<div id="redirecionar">
 		<p>Já possui uma conta?</p>
-		<br> <a href="<%=request.getContextPath()%>/login.jsp"><button
+		<br> <a href="<%= request.getContextPath() %>/ServletPrestadores?acao=login"><button
 				type="button" class="btn btn-warning">Fazer Login</button></a>
 	</div>
 

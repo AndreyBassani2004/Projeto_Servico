@@ -163,6 +163,16 @@ public class ServletPrestadoresPublic extends HttpServlet {
 				
 				request.setAttribute("modelDenunciaAnuncio", modelDenunciaAnuncio);	
 				request.getRequestDispatcher("/denunciar.jsp").forward(request, response);
+			}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("inicio")) {
+				request.getRequestDispatcher("/index.jsp").forward(request, response);
+			}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("quemsomos")) {
+				request.getRequestDispatcher("/quemsomos.jsp").forward(request, response);
+			}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("trabalheConosco")) {
+				request.getRequestDispatcher("/trabalheconosco.jsp").forward(request, response);
+			}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("cadastrase")) {
+				request.getRequestDispatcher("/cadastrase.jsp").forward(request, response);
+			}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("login")) {
+				request.getRequestDispatcher("/login.jsp").forward(request, response);
 			}else {
 				request.getRequestDispatcher("/index.jsp").forward(request, response);
 			}
