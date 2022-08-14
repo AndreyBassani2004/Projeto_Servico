@@ -63,7 +63,7 @@
 						<td><c:out value="${ma.titulo}"></c:out></td>
 						<td><c:out value="${ma.servico}"></c:out></td>
 						<td><c:out value="${ma.situacao}"></c:out></td>
-						<td><a href="#"><button type="button" class="btn btn-primary">Ver Avaliações</button></a></td>
+						<td><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarVisualizacaoAnuncio&id_user=<%= session.getAttribute("id")%>&paginar=0&id_anuncio=${ma.id}"><button type="button" class="btn btn-primary">Ver Avaliações</button></a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -79,7 +79,8 @@
 	<br />
 	<br />
 
+	<div style="width: 100%;">
 	<%@include file="/Componentes/rodape.jsp"%>
-
+	</div>
 </body>
 </html>
