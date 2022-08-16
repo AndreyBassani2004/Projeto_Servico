@@ -105,7 +105,11 @@ public class ServletCarregarRequisicao extends HttpServlet {
 				String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
 
 				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
+					
+					List<ModelDenunciaAvaliacao> modelDenunciaAvaliacaos = daoAvaliarRequisicao.listarDenunciaAvaliacao(Long.parseLong(paginar));
 
+					request.setAttribute("modelDenunciaAvaliacaos", modelDenunciaAvaliacaos);
+					request.setAttribute("totalPagina", daoAvaliarRequisicao.totalPaginaDenunciaAvaliacao());
 					request.getRequestDispatcher("principal/validarDenunciaAvaliação.jsp").forward(request, response);
 
 				} else {
@@ -146,6 +150,8 @@ public class ServletCarregarRequisicao extends HttpServlet {
 
 			} else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("carregarMinhasAvaliacoes")) {
 
+				//String paginar = request.getParameter("paginar");
+				
 				String id_user = request.getParameter("id_user");
 
 				HttpSession session = request.getSession();
@@ -161,6 +167,7 @@ public class ServletCarregarRequisicao extends HttpServlet {
 					List<ModelAnuncio> modelAnuncios = daoAnuncioRepository.listAnuncio2((id_usuario));
 
 					request.setAttribute("modelAnuncios", modelAnuncios);
+					request.setAttribute("totalPagina", daoAvaliarRequisicao.totalPaginaAvaliacao());
 					request.getRequestDispatcher("principal/MinhasAvaliacoes.jsp").forward(request, response);
 				} else {
 					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);

@@ -158,5 +158,7 @@
 
 	<br/><br/><br/><br/><br/><br/>
 
+		<%@include file="/Componentes/rodape.jsp"%>
+
 </body>
 </html>

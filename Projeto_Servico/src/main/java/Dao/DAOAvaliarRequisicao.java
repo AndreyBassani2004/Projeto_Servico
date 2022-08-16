@@ -10,6 +10,7 @@ import Connection.SingleConnectionBanco;
 import Model.ModelAnuncio;
 import Model.ModelAvaliacao;
 import Model.ModelDenunciaAnuncio;
+import Model.ModelDenunciaAvaliacao;
 
 public class DAOAvaliarRequisicao {
 	
@@ -46,6 +47,33 @@ public class DAOAvaliarRequisicao {
 		return retorno;
 	}
 	
+	public List<ModelDenunciaAvaliacao> listarDenunciaAvaliacao(Long offset) throws Exception{
+		
+		List<ModelDenunciaAvaliacao> retorno = new ArrayList<ModelDenunciaAvaliacao>();
+		
+		String sql = "SELECT * FROM denuncia_avaliacao  offset " + offset + " limit 5;";
+		PreparedStatement statement = connection.prepareStatement(sql);
+		
+		ResultSet rs = statement.executeQuery();
+		
+		while(rs.next()) {
+			
+			ModelDenunciaAvaliacao ModelDenunciaAvaliacao = new ModelDenunciaAvaliacao();
+			
+			ModelDenunciaAvaliacao.setId(rs.getLong("id"));
+			ModelDenunciaAvaliacao.setId_prestador(rs.getLong("id_prestador"));
+			ModelDenunciaAvaliacao.setDescricao(rs.getString("descricao"));
+			ModelDenunciaAvaliacao.setEstado_denuncia(rs.getString("estado_denuncia"));
+			ModelDenunciaAvaliacao.setId_avaliacao(rs.getLong("id_avaliacao"));
+			ModelDenunciaAvaliacao.setMotivo(rs.getString("motivo"));
+			
+			retorno.add(ModelDenunciaAvaliacao);
+			
+		}		
+		
+		return retorno;
+	}
+	
 	public List<ModelAvaliacao> listarAvaliacaoesValidar(Long offset) throws Exception{
 		
 		List<ModelAvaliacao> retorno = new ArrayList<ModelAvaliacao>();
@@ -70,6 +98,33 @@ public class DAOAvaliarRequisicao {
 		
 		return retorno;
 	}
+	
+	
+	public int totalPaginaDenunciaAvaliacao() throws Exception {
+
+		String sql = "select count(1) as total from  denuncia_avaliacao where estado_denuncia = 'ANALISE';";
+		PreparedStatement statement = connection.prepareStatement(sql);
+
+		ResultSet resultado = statement.executeQuery();
+
+		resultado.next();
+
+		Double cadastros = resultado.getDouble("total");
+
+		Double porpagina = 5.0;
+
+		Double pagina = cadastros / porpagina;
+
+		Double resto = pagina % 2;
+
+		if (resto > 0) {
+			pagina++;
+		}
+
+		return pagina.intValue();
+
+	}
+	
 	
 	public int totalPaginaAvaliacao() throws Exception {
 

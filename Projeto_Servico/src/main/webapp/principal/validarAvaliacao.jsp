@@ -23,6 +23,7 @@
 		<h1 style="text-align: center;">Avaliações para validar</h1>
 	</div>
 
+	<br/><br/><br/>
 	<div id="linha1"></div>
 
 	<div class="container">

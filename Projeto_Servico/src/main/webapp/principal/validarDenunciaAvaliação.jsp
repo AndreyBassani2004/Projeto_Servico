@@ -1,3 +1,4 @@
+<%@page import="Model.ModelDenunciaAvaliacao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -21,7 +22,8 @@
 	<div class="container">
 		<h1 style="text-align: center;">Avaliar Denuncia avaliações</h1>
 	</div>
-
+	
+		<br/><br/><br/>
 	<div id="linha1"></div>
 
 	<div class="container">
@@ -30,24 +32,40 @@
 				<thead>
 					<tr>
 						<th scolpe="col">ID</th>
-						<th scolpe="col">Cliente</th>
-						<th scope="col">Prestador de serviço</th>
+						<th scolpe="col">Motivo</th>
+						<th scope="col">Descrição</th>
 						<th scope="col">Estado</th>
 						<th scope="col">Ver</th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="#" var="ma">
+					<c:forEach items="${modelDenunciaAvaliacaos}" var="na">
 						<tr>
-							<td><c:out value="#"></c:out></td>
-							<td><c:out value="#"></c:out></td>
-							<td><c:out value="#"></c:out></td>
-							<td><c:out value="#"></c:out></td>
+							<td><c:out value="${na.id}"></c:out></td>
+							<td><c:out value="${na.motivo}"></c:out></td>
+							<td><c:out value="${na.descricao}"></c:out></td>
+							<td><c:out value="${na.estado_denuncia}"></c:out></td>
+							<td><a href="#"><button class="btn btn-primary">Ver</button></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 		</div>
+		
+		<nav aria-label="Page navigation example" style="">
+			<ul class="pagination">
+				<%
+				int totalPagina = (int) request.getAttribute("totalPagina");
+
+				for (int p = 0; p < totalPagina; p++) {
+					String url = request.getContextPath() + "/ServletCarregarRequisicao?acao=carregarDenunciaAvaliacoes&id_user="
+					+ request.getSession().getAttribute("id") + "&paginar=" + (p * 5);
+					out.print("<li class=\"page-item\"><a class=\"page-link\" href=\"" + url + "\">" + (p + 1) + " </a></li>");
+				}
+				%>
+			</ul>
+		</nav>
+		
 	</div>
 	
 	<br/><br/><br/><br/><br/><br/><br/><br/>

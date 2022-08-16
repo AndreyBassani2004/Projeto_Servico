@@ -15,7 +15,7 @@
  	<h1>Trabalhe Conosco</h1>
  	</div>
  	    <div id="linha1"></div>
- 	<div id="texto" style="align-items: flex-start; text-align: left;">
+ 	<div id="texto">
  		  <p>Se quer uma maneira fácil de solucionar seus problemas do dia a dia ou uma maneira de arranjar serviço,<br/> 
  		  na <i>PresTec</i> facilitamos a sua procura, contando com profissionais especializados para atender suas <br/>
  		  necessidades diárias, através de uma navegação simples fácil e gratuita.</p><br/>  
