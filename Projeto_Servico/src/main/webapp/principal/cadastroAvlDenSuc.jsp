@@ -17,9 +17,9 @@
  	<div id="text">
  	<h1>Denuncia efeutada com Sucesso!</h1>
  	<br><br>
- 	<h3>Veja seus anuncios</h3>
+ 	<h3>Veja suas avaliações</h3>
  	<br><br>
- 	<a href="<%=request.getContextPath()%>\ServletCarregaAnuncio?acao=listarAnuncio&id_user=<%= session.getAttribute("id")%>"><button type="button" class="btn btn-success waves-effect waves-light">Ver Anuncios</button></a>
+ 	<a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarMinhasAvaliacoes&id_user=<%= session.getAttribute("id")%>&paginar=0"><button type="button" class="btn btn-success waves-effect waves-light">Ver Avaliações</button></a>
  	</div>
  	
  	<%@include file="/Componentes/rodape.jsp"%>

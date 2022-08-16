@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import Connection.SingleConnectionBanco;
+import Model.ModelDenunciaAvaliacao;
 import Model.ModelLogin;
 
 public class DAOUsuarioPosLogin {
@@ -89,5 +90,23 @@ public class DAOUsuarioPosLogin {
 
 		return modelLogin;
 		
+	}
+	
+	
+	public void gravarDenunciaAvaliacao(ModelDenunciaAvaliacao objeto) throws Exception{
+		
+		String sql = "INSERT INTO denuncia_avaliacao(id_anuncio, id_prestador, descricao, estado_denuncia, id_avaliacao, motivo) VALUES (?, ?, ?, ?, ?, ?);";
+		
+		connection.setAutoCommit(false);
+		PreparedStatement preparedSql = connection.prepareStatement(sql);		
+		preparedSql.setLong(1, objeto.getId_anuncio());
+		preparedSql.setLong(2, objeto.getId_prestador());
+		preparedSql.setString(3, objeto.getDescricao());
+		preparedSql.setString(4, "ANALISE");
+		preparedSql.setLong(5, objeto.getId_avaliacao());
+		preparedSql.setString(6, objeto.getMotivo());
+		
+		preparedSql.execute();
+		connection.commit();
 	}
 }

@@ -72,6 +72,8 @@ public class ServletSalvarDenunciaAvaliacao extends ServletGenericUtil {
 				modelDenunciaAvaliacao.setDescricao(descricao_denuncia);
 				modelDenunciaAvaliacao.setMotivo(motivo);
 				
+				daoUsuarioPosLogin.gravarDenunciaAvaliacao(modelDenunciaAvaliacao);
+				
 				msg = "Cadastrado com sucesso !";
 
 				request.setAttribute("msg", msg);
