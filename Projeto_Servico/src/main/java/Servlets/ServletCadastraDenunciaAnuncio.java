@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import Dao.DAOCarregarPublicoRepository;
 import Model.ModelDenunciaAnuncio;
 
-@WebServlet("/ServletCadastraDenunciaAnuncio")
-public class ServletCadastraDenunciaAnuncio extends HttpServlet {
+@WebServlet(urlPatterns = {"/ServletCadastraDenunciaAnuncio"})
+public class ServletCadastraDenunciaAnuncio extends ServletGenericUtil {
 	private static final long serialVersionUID = 1L;
 
 	DAOCarregarPublicoRepository daoCarregarPublicoRepository = new DAOCarregarPublicoRepository();

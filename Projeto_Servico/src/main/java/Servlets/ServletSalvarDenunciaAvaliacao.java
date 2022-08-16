@@ -13,7 +13,7 @@ import Model.ModelAnuncio;
 import Model.ModelDenunciaAvaliacao;
 
 
-@WebServlet("/ServletSalvarDenunciaAvaliacao")
+@WebServlet(urlPatterns = {"/ServletSDenunciaAvaliacao"})
 public class ServletSalvarDenunciaAvaliacao extends ServletGenericUtil {
 	private static final long serialVersionUID = 1L;
     

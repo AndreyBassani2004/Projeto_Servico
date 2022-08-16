@@ -32,13 +32,14 @@
 	<br />
 	<br />
 	<br />
-	<form action="<%=request.getContextPath()%>/ServletSalvarDenunciaAvaliacao" method="post">
+	
 	<div class="container">
+	<form action="<%=request.getContextPath()%>/ServletSDenunciaAvaliacao" method="post">
 		<h5>Dados</h5>
 		<hr>
 		<br />
 		<div class="row">
-
+	
 				<div class="col">
 					<div id="textcampo">
 						<p>
@@ -207,8 +208,8 @@
 						style="margin-left: 20em;">Denunciar</button>
 				</div>
 			</div>
+		</form>
 	</div>
-	</form>
 	
 
 

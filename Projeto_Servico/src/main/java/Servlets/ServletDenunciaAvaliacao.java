@@ -12,7 +12,7 @@ import Dao.DAOSistemaAdmRepository;
 import Dao.DAOUsuarioPosLogin;
 import Model.ModelDenunciaAnuncio;
 
-@WebServlet("/ServletDenunciaAvaliacao")
+@WebServlet(urlPatterns = {"/ServletDenunciaAvaliacao"})
 public class ServletDenunciaAvaliacao extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

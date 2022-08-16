@@ -40,7 +40,7 @@ public class ServletCadastrarAvaliacao extends HttpServlet {
 			String descricao_cliente = request.getParameter("descricao_cliente");
 			String nota = request.getParameter("nota");
 			String titulo_avaliacao = request.getParameter("titulo");
-			String descricao = request.getParameter("descricao");
+			String descricao = request.getParameter("descricao2");
 
 			if (id_prestador != null && !id_prestador.isEmpty() && nome_cliente != null && !nome_cliente.isEmpty()
 					&& email_cliente != null && !email_cliente.isEmpty() && data_prestacao != null

@@ -31,7 +31,7 @@
 
 	<div class="container">
 		<form method="post"
-			action="<%=request.getContextPath()%>/ServletCadastraDenunciaAnuncio">
+			action="<%=request.getContextPath()%>/ServletDenunciaAnuncio">
 			<h3>Anuncio</h3>
 			<hr>
 			<div class="row">
@@ -154,7 +154,7 @@
 						<p>
 							<b>Descrição:</b>
 						</p>
-						<textarea class="form-control" maxlength="150" required="required"></textarea>
+						<textarea class="form-control" maxlength="150" id="descricao" name="descricao" required="required"></textarea>
 
 					</div>
 					<br />

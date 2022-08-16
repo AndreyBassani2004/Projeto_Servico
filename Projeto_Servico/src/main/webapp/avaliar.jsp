@@ -105,7 +105,7 @@
 						</p>
 						<input type="text" class="form-control"
 							placeholder="Digite seu nome completo" name="nome_cliente"
-							value="${modelAvaliacao.nome_cliente}" id="nome_cliente"
+							value="${modelAvaliacao.nome_cliente}" id="nome_cliente" 
 							required="required">
 					</div>
 					<br />
@@ -140,7 +140,7 @@
 						<p>
 							<b>Como foi a prestação:</b>
 						</p>
-						<textarea class="form-control" maxlength="150" required="required">${modelAvaliacao.descricao_cliente}</textarea>
+						<textarea class="form-control" maxlength="150" required="required" id="descricao_cliente" name="descricao_cliente">${modelAvaliacao.descricao_cliente}</textarea>
 					</div>
 				</div>
 				<div class="col">
