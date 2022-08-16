@@ -251,7 +251,7 @@ public class ServletCarregarRequisicao extends HttpServlet {
 
 				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
 					
-					request.getRequestDispatcher("principal/carregarDenunciaAnuncio.jsp").forward(request, response);
+					request.getRequestDispatcher("principal/CarregarDenunciaAvaliacao.jsp").forward(request, response);
 				} else {
 
 					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);
