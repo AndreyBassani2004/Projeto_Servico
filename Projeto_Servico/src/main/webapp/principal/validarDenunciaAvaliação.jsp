@@ -45,7 +45,7 @@
 							<td><c:out value="${na.motivo}"></c:out></td>
 							<td><c:out value="${na.descricao}"></c:out></td>
 							<td><c:out value="${na.estado_denuncia}"></c:out></td>
-							<td><a href="#"><button class="btn btn-primary">Ver</button></a></td>
+							<td><a href="<%=request.getContextPath()%>/ServletCarregarRequisicao?acao=AvaliarDenunciaAvaliacao&id_anuncio=${na.id}&id_user=<%= session.getAttribute("id")%>&paginar=0"><button class="btn btn-primary">Ver</button></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

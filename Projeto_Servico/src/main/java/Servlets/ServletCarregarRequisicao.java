@@ -232,7 +232,31 @@ public class ServletCarregarRequisicao extends HttpServlet {
 					request.getRequestDispatcher("principal/denunciarAvaliacao.jsp").forward(request, response);
 				}else {
 					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);
-				}			
+				}
+				
+			}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("AvaliarDenunciaAvaliacao")) {	
+				
+				
+				String id_user = request.getParameter("id_user");
+
+				String paginar = request.getParameter("paginar");
+
+				HttpSession session = request.getSession();
+
+				String usuarioLogado = (String) session.getAttribute("usuario");
+
+				Long id_usuario = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId();
+
+				String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
+
+				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
+					
+					request.getRequestDispatcher("principal/carregarDenunciaAnuncio.jsp").forward(request, response);
+				} else {
+
+					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);
+				}
+				
 			}else {
 				request.getRequestDispatcher("principal/principal.jsp").forward(request, response);
 
