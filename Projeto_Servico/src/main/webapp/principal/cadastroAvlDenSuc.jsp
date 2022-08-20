@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>PresTec</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -17,9 +16,9 @@
  	<div id="text">
  	<h1>Denuncia efeutada com Sucesso!</h1>
  	<br><br>
- 	<h3>Veja suas avaliações</h3>
+ 	<h3>Veja suas avaliaÃ§Ãµes</h3>
  	<br><br>
- 	<a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarMinhasAvaliacoes&id_user=<%= session.getAttribute("id")%>&paginar=0"><button type="button" class="btn btn-success waves-effect waves-light">Ver Avaliações</button></a>
+ 	<a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarMinhasAvaliacoes&id_user=<%= session.getAttribute("id")%>&paginar=0"><button type="button" class="btn btn-success waves-effect waves-light">Ver AvaliaÃ§Ãµes</button></a>
  	</div>
  	
  	<%@include file="/Componentes/rodape.jsp"%>

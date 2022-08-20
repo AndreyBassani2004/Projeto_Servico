@@ -1,10 +1,9 @@
 <%@page import="Model.ModelAvaliacao"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>PresTec</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/principal/css/carregarAvaliacaoStyle.css">
@@ -22,7 +21,7 @@
 	<div class="container">
 		<div class="row" style="align-items: center; text-align: center;">
 			<div class="col">
-				<h1>Avaliar avaliação do cliente</h1>
+				<h1>Avaliar avaliaÃ§Ã£o do cliente</h1>
 			</div>
 		</div>
 	</div>
@@ -39,7 +38,7 @@
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>ID Avaliação:</b>
+							<b>ID AvaliaÃ§Ã£o:</b>
 						</p>
 						<input type="text" class="form-control"
 							value="${modelAvaliacao.id}" name="id_avaliacao"
@@ -49,7 +48,7 @@
 					<!--  
 					<div id="textcampo">
 						<p>
-							<b>Nome do prestador de serviço:</b>
+							<b>Nome do prestador de serviÃ§o:</b>
 						</p>
 						<input type="text" class="form-control" value=""
 							name="nome_prestador" id="nome_prestador" readonly="readonly">
@@ -78,7 +77,7 @@
 					<!-- 
 					<div id="textcampo">
 						<p>
-							<b>Email do prestador de serviço:</b>
+							<b>Email do prestador de serviÃ§o:</b>
 						</p>
 						<input type="text" class="form-control" value=""
 							name="email_prestador" id="email_prestador" readonly="readonly">
@@ -86,7 +85,7 @@
 					<br /> -->
 					<!--  <div id="textcampo">
 						<p>
-							<b>Data da avaliação:</b>
+							<b>Data da avaliaÃ§Ã£o:</b>
 						</p>
 						<input type="text" class="form-control" value="${modelAvaliacao.data_prestacao}"
 							name="data_denuncia" id="data_denuncia" readonly="readonly">
@@ -94,14 +93,14 @@
 					<br />-->
 				</div>
 			</div>
-			<h5>Prova da prestação</h5>
+			<h5>Prova da prestaÃ§Ã£o</h5>
 			<hr>
 			<br>
 			<div class="row">
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>Data da prestação:</b>
+							<b>Data da prestaÃ§Ã£o:</b>
 						</p>
 						<input type="text" class="form-control"
 							value="${modelAvaliacao.data_prestacao}" name="data_prestacao"
@@ -110,7 +109,7 @@
 					<br />
 					<div id="textcampo">
 						<p>
-							<b>Email do prestador de serviço:</b>
+							<b>Email do prestador de serviÃ§o:</b>
 						</p>
 						<input type="text" class="form-control"
 							value="${modelAvaliacao.email_prestador}" name="email_prestador"
@@ -121,7 +120,7 @@
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>Foto comprovação:</b>
+							<b>Foto comprovaÃ§Ã£o:</b>
 						</p>
 
 					</div>
@@ -131,7 +130,7 @@
 
 
 
-			<h5>Nota da prestação</h5>
+			<h5>Nota da prestaÃ§Ã£o</h5>
 			<hr>
 			<div class="row">
 				<div class="col">
@@ -161,7 +160,7 @@
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>Descrição:</b>
+							<b>DescriÃ§Ã£o:</b>
 						</p>
 						<textarea class="form-control" readonly="readonly">${modelAvaliacao.descricao}</textarea>
 

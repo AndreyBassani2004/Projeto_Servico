@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     
@@ -31,7 +30,7 @@
                         <li><a href="<%=request.getContextPath()%>\principal\perfil.jsp" id="opcao">Perfil</a></li>
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarCriarAnuncio&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Criar Anuncio</a></li>
                         <li><a href="<%=request.getContextPath()%>\ServletCarregaAnuncio?acao=listarAnuncio&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Meus Anuncios</a></li>
-                        <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarMinhasAvaliacoes&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Avaliações</a></li>
+                        <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarMinhasAvaliacoes&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">AvaliaÃ§Ãµes</a></li>
                         </c:if>  
                         <c:if test="${perfil == 'ADMIN'}">
                         <li><a href="<%=request.getContextPath()%>\principal\perfilAdm.jsp" id="opcao">Perfil</a></li>
@@ -40,8 +39,8 @@
                         <li><a href="<%=request.getContextPath()%>\principal\cadastroUser.jsp" id="opcao">Cadastra usuarios (ADM)</a></li>
                         </c:if>
                         <c:if test="${perfil == 'ADMIN'}">
-                        <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarAvaliacoes&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Validar Avaliações</a></li>
-                        <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarDenunciaAvaliacoes&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Avaliações Denunciadas</a></li>
+                        <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarAvaliacoes&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Validar AvaliaÃ§Ãµes</a></li>
+                        <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarDenunciaAvaliacoes&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">AvaliaÃ§Ãµes Denunciadas</a></li>
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarDenuncias&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Anuncio Denunciados</a></li>
                         </c:if>
                         <li><a href="<%=request.getContextPath()%>\ServletLogin?acao=logout" id="sair">Sair</a></li>

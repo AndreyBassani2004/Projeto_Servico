@@ -1,12 +1,11 @@
 <%@page import="Model.ModelAnuncio"%>
 <%@page import="Model.ModelAvaliacao"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/perfilStyle.css">
 <link rel="stylesheet"
@@ -40,7 +39,7 @@
 						<div class="col-md-8" style="margin-left: 5em;">
 							<br /> <br />
 							<h5>
-								<b>Nota média de avaliação:</b>
+								<b>Nota mÃ©dia de avaliaÃ§Ã£o:</b>
 							</h5>
 							<br />
 							<h6>${modelAvaliacao.nota_media}</h6>
@@ -87,7 +86,7 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<h5>Avaliação</h5>
+				<h5>AvaliaÃ§Ã£o</h5>
 				<hr>
 			</div>
 		</div>
@@ -126,7 +125,7 @@
 							<c:out value="${av.titulo}"></c:out>
 						</p>
 						<p class="card-text">
-							Descrição:
+							DescriÃ§Ã£o:
 							<c:out value="${av.descricao}"></c:out>
 						</p>
 						<br><br>

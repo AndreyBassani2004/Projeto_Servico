@@ -2,12 +2,11 @@
 <%@page import="Model.ModelLogin"%>
 <%@page import="Model.ModelAvaliacao"%>
 <%@page import="Model.ModelDenunciaAnuncio"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>PresTec</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/denunciarStyle.css">
@@ -23,8 +22,8 @@
 	<div id="linha1"></div>
 
 	<div class="container">
-		<h1 style="text-align: center;">Denunciar anuncio prestação de
-			serviço</h1>
+		<h1 style="text-align: center;">Denunciar anuncio prestaÃ§Ã£o de
+			serviÃ§o</h1>
 	</div>
 	<br />
 	<br />
@@ -59,7 +58,7 @@
 					<br />
 					<div id="textcampo">
 						<p>
-							<b>Serviço do prestador:</b>
+							<b>ServiÃ§o do prestador:</b>
 						</p>
 						<input type="text" class="form-control"
 							placeholder="Digite seu nome completo" name="servico_prestador"
@@ -93,7 +92,7 @@
 					<br />
 					<div id="textcampo">
 						<p>
-							<b>Descrição:</b>
+							<b>DescriÃ§Ã£o:</b>
 						</p>
 					<textarea class="form-control" readonly="readonly">${modelDenunciaAnuncio.descricao_anuncio}</textarea>
 					</div>
@@ -131,7 +130,7 @@
 				</div>
 			</div>
 			<br /> <br />
-			<h3>Descrição denuncia</h3>
+			<h3>DescriÃ§Ã£o denuncia</h3>
 			<hr>
 			<div class="row">
 				<div class="col">
@@ -152,7 +151,7 @@
 					<br />
 					<div id="textcampo">
 						<p>
-							<b>Descrição:</b>
+							<b>DescriÃ§Ã£o:</b>
 						</p>
 						<textarea class="form-control" maxlength="150" id="descricao" name="descricao" required="required"></textarea>
 
@@ -163,9 +162,9 @@
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>Foto (Não obrigatório)</b>
+							<b>Foto (NÃ£o obrigatÃ³rio)</b>
 						</p>
-						<p>Ultilize este campo caso seja necessário</p>
+						<p>Ultilize este campo caso seja necessÃ¡rio</p>
 						<p>(Essa imagen sera mandida em sigilo)</p>
 					</div>
 

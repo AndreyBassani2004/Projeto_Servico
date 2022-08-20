@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>PresTec</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/loginStyle.css">
@@ -32,7 +31,7 @@
 					<td>
 						<div id="textcampo">
 							<p>
-								<b>Usuário:</b>
+								<b>UsuÃ¡rio:</b>
 							</p>
 							<input type="text" class="form-control"
 								placeholder="Digite seu login" name="login" id="login">

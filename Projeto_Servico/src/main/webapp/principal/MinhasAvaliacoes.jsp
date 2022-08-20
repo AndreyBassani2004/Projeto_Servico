@@ -1,12 +1,11 @@
 <%@page import="Model.ModelAnuncio"%>
 <%@page import="Model.ModelLogin"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>PresTec</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/MinhasAvaliacoesStyle.css">
@@ -29,7 +28,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
-				<h2>Minha Avaliacões</h2>
+				<h2>Minha AvaliacÃµes</h2>
 				<br />
 				<h3>Selecione o anuncio:</h3>
 			</div>
@@ -50,9 +49,9 @@
 				<tr>
 					<th scolpe="col">ID</th>
 					<th scolpe="col">Titulo</th>
-					<th scope="col">Serviço</th>
-					<th scope="col">Nota Média</th>
-					<th scope="col">Ver Avaliações</th>
+					<th scope="col">ServiÃ§o</th>
+					<th scope="col">Nota MÃ©dia</th>
+					<th scope="col">Ver AvaliaÃ§Ãµes</th>
 
 				</tr>
 			</thead>
@@ -63,7 +62,7 @@
 						<td><c:out value="${ma.titulo}"></c:out></td>
 						<td><c:out value="${ma.servico}"></c:out></td>
 						<td><c:out value="${ma.situacao}"></c:out></td>
-						<td><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarVisualizacaoAnuncio&id_user=<%= session.getAttribute("id")%>&paginar=0&id_anuncio=${ma.id}"><button type="button" class="btn btn-primary">Ver Avaliações</button></a></td>
+						<td><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarVisualizacaoAnuncio&id_user=<%= session.getAttribute("id")%>&paginar=0&id_anuncio=${ma.id}"><button type="button" class="btn btn-primary">Ver AvaliaÃ§Ãµes</button></a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -1,10 +1,9 @@
 <%@page import="Model.ModelDenunciaAnuncio"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>PresTec</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/principal/css/carregarDenAnuStyle.css">
@@ -50,7 +49,7 @@
 
 				<div id="textcampo">
 					<p>
-						<b>Nome do prestador de serviço:</b>
+						<b>Nome do prestador de serviÃ§o:</b>
 					</p>
 					<input type="text" class="form-control"
 						value="${modelDenunciaAnuncio.nome_prestador}"
@@ -79,7 +78,7 @@
 				<br />
 				<div id="textcampo">
 					<p>
-						<b>Email do prestador de serviço:</b>
+						<b>Email do prestador de serviÃ§o:</b>
 					</p>
 					<input type="text" class="form-control"
 						value="${modelDenunciaAnuncio.email_prestador}"
@@ -107,7 +106,7 @@
 			<div class="col">
 				<div id="textcampo">
 					<p>
-						<b>Foto comprovação (Não Obrigatório):</b>
+						<b>Foto comprovaÃ§Ã£o (NÃ£o ObrigatÃ³rio):</b>
 					</p>
 				</div>
 			</div>
@@ -116,7 +115,7 @@
 			<div class="col">
 				<div id="textcampo">
 					<p>
-						<b>Descrição da denucia:</b>
+						<b>DescriÃ§Ã£o da denucia:</b>
 					</p>
 					<textarea class="form-control" id="descricao_cliente"
 						name="descricao_cliente" readonly="readonly">${modelDenunciaAnuncio.descricao_denuncia}

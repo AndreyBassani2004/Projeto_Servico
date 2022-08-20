@@ -1,10 +1,9 @@
 <%@page import="Model.ModelLogin" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>PresTec</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/cadastra.css">
@@ -171,7 +170,7 @@
 
 
 	<div id="redirecionar">
-		<p>Já possui uma conta?</p>
+		<p>JÃ¡ possui uma conta?</p>
 		<br> <a href="<%= request.getContextPath() %>/ServletPrestadores?acao=login"><button
 				type="button" class="btn btn-warning">Fazer Login</button></a>
 	</div>

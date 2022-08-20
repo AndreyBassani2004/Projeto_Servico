@@ -1,10 +1,9 @@
 <%@page import="Model.ModelDenunciaAvaliacao"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>PresTec</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/principal/css/valida1Style.css">
@@ -20,7 +19,7 @@
 	<br/><br/><br/><br/><br/><br/><br/><br/>
 
 	<div class="container">
-		<h1 style="text-align: center;">Avaliar Denuncia avaliações</h1>
+		<h1 style="text-align: center;">Avaliar Denuncia avaliaÃ§Ãµes</h1>
 	</div>
 	
 		<br/><br/><br/>
@@ -33,7 +32,7 @@
 					<tr>
 						<th scolpe="col">ID</th>
 						<th scolpe="col">Motivo</th>
-						<th scope="col">Descrição</th>
+						<th scope="col">DescriÃ§Ã£o</th>
 						<th scope="col">Estado</th>
 						<th scope="col">Ver</th>
 					</tr>
