@@ -50,7 +50,7 @@
 					<th scolpe="col">ID</th>
 					<th scolpe="col">Titulo</th>
 					<th scope="col">Serviço</th>
-					<th scope="col">Nota Média</th>
+					<th scope="col">Situação</th>
 					<th scope="col">Ver Avaliações</th>
 
 				</tr>
