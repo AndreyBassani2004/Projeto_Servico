@@ -27,6 +27,7 @@ public class ServletCadastroPrestador extends HttpServlet {
 		
 	}
 
+	@SuppressWarnings("null")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 			

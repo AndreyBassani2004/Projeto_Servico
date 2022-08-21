@@ -13,7 +13,6 @@ import Dao.DAOCarregarPublicoRepository;
 import Model.ModelAnuncio;
 import Model.ModelAvaliacao;
 import Model.ModelDenunciaAnuncio;
-import Model.ModelLogin;
 
 @WebServlet("/ServletPrestadores")
 public class ServletPrestadoresPublic extends HttpServlet {

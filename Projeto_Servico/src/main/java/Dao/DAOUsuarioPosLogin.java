@@ -40,6 +40,7 @@ public class DAOUsuarioPosLogin {
 			modelLogin.setUseradmin(resultado.getBoolean("useradmin"));
 			modelLogin.setPerfil(resultado.getString("perfil"));
 			modelLogin.setEstado(resultado.getString("estado"));
+			modelLogin.setSituacao_user(resultado.getString("situacao_user"));
 		}
 		
 		String sql2 = "select * from dados_prestador where upper(email_user) = upper('"+login+"');";

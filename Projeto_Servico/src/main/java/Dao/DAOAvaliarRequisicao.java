@@ -177,4 +177,52 @@ public class DAOAvaliarRequisicao {
 	}
 	
 	
+
+
+	public ModelDenunciaAvaliacao carregarDenunciaAvaliação(Long id_avaliacao) throws Exception {
+		
+		ModelDenunciaAvaliacao modelDenunciaAvaliacao = new ModelDenunciaAvaliacao();
+		
+		String sql = "SELECT*FROM denuncia_avaliacao where id = "+ id_avaliacao+" ;";
+		PreparedStatement statement = connection.prepareStatement(sql);
+		
+		ResultSet resultado = statement.executeQuery();
+		
+		while(resultado.next()) {
+			modelDenunciaAvaliacao.setId(resultado.getLong("id"));
+			modelDenunciaAvaliacao.setId_anuncio(resultado.getLong("id_anuncio"));
+			modelDenunciaAvaliacao.setId_prestador(resultado.getLong("id_prestador"));
+			modelDenunciaAvaliacao.setDescricao(resultado.getString("estado_denuncia"));
+			modelDenunciaAvaliacao.setId_avaliacao(resultado.getLong("id_avaliacao"));
+			modelDenunciaAvaliacao.setMotivo(resultado.getString("motivo"));
+		}
+		
+		String sql2 = "SELECT*FROM avaliacao_anuncio where id = "+ modelDenunciaAvaliacao.getId_avaliacao() +";";
+		PreparedStatement statement2 = connection.prepareStatement(sql2);
+		
+		ResultSet resultado2 = statement2.executeQuery();
+		
+		while(resultado2.next()) {
+			modelDenunciaAvaliacao.setNome_cliente(resultado2.getString("nome_cliente"));
+			modelDenunciaAvaliacao.setEmail_cliente(resultado2.getString("email_cliente"));
+			modelDenunciaAvaliacao.setDescricao_avaliacao(resultado2.getString("descricao"));
+			modelDenunciaAvaliacao.setNota(resultado2.getLong("nota"));
+			modelDenunciaAvaliacao.setTitulo(resultado2.getString("titulo"));
+			modelDenunciaAvaliacao.setData_prestacao(resultado2.getString("data_prestacao"));
+			}
+		
+		String sql3 = "SELECT*FROM usuario where id = "+ modelDenunciaAvaliacao.getId_prestador() +";";
+		PreparedStatement statement3 = connection.prepareStatement(sql3);
+		
+		ResultSet resultado3 = statement3.executeQuery();
+		
+		while(resultado3.next()) {
+			modelDenunciaAvaliacao.setEmail_prestador(resultado3.getString("email"));
+		}
+		
+		return modelDenunciaAvaliacao;
+	}
+	
+
+	
 }

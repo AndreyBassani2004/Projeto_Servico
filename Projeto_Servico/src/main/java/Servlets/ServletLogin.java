@@ -80,6 +80,7 @@ public class ServletLogin extends HttpServlet {
 					request.getSession().setAttribute("telefone_contato_adm", modelLogin.getTelefone_adm());
 					request.getSession().setAttribute("cidade_adm", modelLogin.getCidade_adm());
 					request.getSession().setAttribute("cep_adm", modelLogin.getLogradouro_adm());
+					request.getSession().setAttribute("situacao_user", modelLogin.getSituacao_user());
 
 					if (url == null || url.equals("null")) {
 						url = "/principal/principal.jsp";

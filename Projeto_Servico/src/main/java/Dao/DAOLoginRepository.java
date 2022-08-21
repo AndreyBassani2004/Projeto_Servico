@@ -18,7 +18,7 @@ public class DAOLoginRepository {
 	
 	public boolean validarAutenticacao(ModelLogin modelLogin) throws Exception {
 
-		String sql = "select * from usuario where upper(email) = upper(?) and upper(senha) = upper(?) ";
+		String sql = "select * from usuario where upper(email) = upper(?) and upper(senha) = upper(?);";
 
 		PreparedStatement statement = connection.prepareStatement(sql);
 
@@ -40,7 +40,7 @@ public class DAOLoginRepository {
 		
 		ModelLogin modelLogin = new ModelLogin();
 		
-		String sql = "select usuario.id usuario.nome, usuario.email, usuario.perfil, usuario.senha, usuario.estado, dados_prestador.telefone_contato, \r\n"
+		String sql = "select usuario.id usuario.nome, usuario.email, usuario.perfil, usuario.senha, usuario.estado, usuario.situacao_user, dados_prestador.telefone_contato, \r\n"
 				+ "dados_prestador.estado, dados_prestador.cep, dados_prestador.email_user, dados_prestador.cidade\r\n"
 				+ "from usuario\r\n"
 				+ "	inner join dados_prestador\r\n"
@@ -53,6 +53,7 @@ public class DAOLoginRepository {
 		while (resultado.next()) /* Se tem resultado */ {
 			modelLogin.setId(resultado.getLong("id"));
 			modelLogin.setLogin(resultado.getString("email"));
+			modelLogin.setSituacao_user(resultado.getString("situacao_user"));
 			modelLogin.setSenha(resultado.getString("senha"));
 			modelLogin.setrSenha(resultado.getString("senha"));
 			modelLogin.setNome(resultado.getString("nome"));

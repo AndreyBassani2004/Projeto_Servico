@@ -33,7 +33,7 @@
 
 
 	<div class="container">
-		<form action="<%=request.getContextPath()%>/ServletSDenunciaAvaliacao"
+		<form action="<%=request.getContextPath()%>/ServletProvidenciaDenunciaAvaliacao"
 			method="post">
 			<h5>Dados</h5>
 			<hr>
@@ -43,7 +43,7 @@
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>ID Avaliação:</b>
+							<b>ID:</b>
 						</p>
 						<input type="text" class="form-control"
 							value="${modelDenunciaAvaliacao.id}" name="id_avaliacao"
@@ -99,7 +99,7 @@
 						</p>
 						<input type="text" class="form-control"
 							placeholder="Digite o Titulo" name="nota" id="nota"
-							value="${modelAvaliacao.nota}" readonly="readonly">
+							value="${modelDenunciaAvaliacao.nota}" readonly="readonly">
 					</div>
 					<br />
 				</div>
@@ -110,7 +110,7 @@
 						</p>
 						<input type="text" class="form-control"
 							placeholder="Digite o Titulo" name="titulo" id="titulo"
-							value="${modelAvaliacao.titulo}" readonly="readonly">
+							value="${modelDenunciaAvaliacao.titulo}" readonly="readonly">
 					</div>
 					<br />
 				</div>
@@ -121,7 +121,7 @@
 						<p>
 							<b>Descrição:</b>
 						</p>
-						<textarea class="form-control" readonly="readonly">${modelAvaliacao.descricao}</textarea>
+						<textarea class="form-control" readonly="readonly">${modelDenunciaAvaliacao.descricao_avaliacao}</textarea>
 
 					</div>
 				</div>
@@ -224,9 +224,9 @@
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>Motivo:</b>
+							<b>Providencia:</b>
 						</p>
-						<select class="form-control" name="motivo" id="motivo"
+						<select class="form-control" name="providencia" id="providencia"
 							required="required">
 							<option value="">Selecione</option>
 							<option value="Aprovar">Aprovar</option>
@@ -240,7 +240,7 @@
 							<b>ID do administrador:</b>
 						</p>
 						<input type="text" class="form-control" name="id_adm" id="id_adm"
-							value="" readonly="readonly">
+							value="<%= request.getSession().getAttribute("id").toString() %>" readonly="readonly">
 					</div>
 				</div>
 			</div>
@@ -250,9 +250,9 @@
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>Descrição:</b>
+							<b>Relatório:</b>
 						</p>
-						<textarea class="form-control" maxlength="150" required="required"></textarea>
+						<textarea class="form-control" maxlength="150" id="relatorio" name="relatorio" required="required"></textarea>
 					</div>
 					<br />
 				</div>
@@ -266,8 +266,8 @@
 					<spam style="margin-left: 5em;">${msg}</spam>
 				</div>
 				<div class="col">
-					<button type="submit" class="btn btn-warning"
-						style="margin-left: 20em;">Denunciar</button>
+					<button type="submit" class="btn btn-primary"
+						style="margin-left: 20em;">Finalizar Analise</button>
 				</div>
 			</div>
 		</form>

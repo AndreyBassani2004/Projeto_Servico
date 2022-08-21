@@ -10,7 +10,19 @@
 <body>
 	<%@include file="/principal/Componente/header2.jsp"%>
 	<div id="titulo">
-	<h1>Seja, Bem Vindo!</h1>
+	<h1><% 
+		
+		String situacao = request.getSession().getAttribute("situacao_user").toString();		 
+	
+		if(situacao.equals("ATIVO")){
+			out.print("Seja, Bem Vindo(a)!");
+		}else if(situacao.equals("DESATIVADO")){
+			out.print("Sua conta foi banido, por violações as regras.");
+		}else{
+			out.print("Seja, Bem Vindo!");
+		}
+	
+	%></h1>
 	</div>
 	<%@include file="/Componentes/rodape.jsp"%>
 </body>

@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import Dao.DAOAnuncioRepository;
 import Dao.DAOUsuarioPosLogin;
 import Model.ModelAnuncio;
-import Model.ModelLogin;
 
 @WebServlet(urlPatterns = { "/ServletCadastraAnuncio" })
 public class ServletCadastraAnuncio extends ServletGenericUtil {

@@ -4,6 +4,7 @@
     
     <c:set scope="session" var="perfil" value='<%= request.getSession().getAttribute("perfil").toString() %>'></c:set>
     <c:set scope="session" var="isAdmin" value='<%= request.getSession().getAttribute("isAdmin").toString() %>'></c:set>
+    <c:set scope="session" var="situacao_user" value='<%= request.getSession().getAttribute("situacao_user").toString() %>'></c:set>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -26,19 +27,21 @@
             <ul>
                 <li id="menu-cr"><a href="<%=request.getContextPath()%>/principal/principal.jsp">Menu</a>
                     <ul>
-                    	<c:if test="${perfil == 'PRESTADOR'}">
+                    	<c:if test="${perfil == 'PRESTADOR' && situacao_user == 'ATIVO'}">
+                    	<c:if test="${perfil == 'PRESTADOR' && situacao_user == 'ATIVO'}">
                         <li><a href="<%=request.getContextPath()%>\principal\perfil.jsp" id="opcao">Perfil</a></li>
+                          </c:if>
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarCriarAnuncio&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Criar Anuncio</a></li>
                         <li><a href="<%=request.getContextPath()%>\ServletCarregaAnuncio?acao=listarAnuncio&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Meus Anuncios</a></li>
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarMinhasAvaliacoes&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Avaliações</a></li>
                         </c:if>  
-                        <c:if test="${perfil == 'ADMIN'}">
+                        <c:if test="${perfil == 'ADMIN' && situacao_user == 'ATIVO'}">
                         <li><a href="<%=request.getContextPath()%>\principal\perfilAdm.jsp" id="opcao">Perfil</a></li>
                         </c:if>
                         <c:if test="${isAdmin}">
                         <li><a href="<%=request.getContextPath()%>\principal\cadastroUser.jsp" id="opcao">Cadastra usuarios (ADM)</a></li>
                         </c:if>
-                        <c:if test="${perfil == 'ADMIN'}">
+                        <c:if test="${perfil == 'ADMIN' && situacao_user == 'ATIVO'}">
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarAvaliacoes&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Validar Avaliações</a></li>
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarDenunciaAvaliacoes&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Avaliações Denunciadas</a></li>
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarDenuncias&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Anuncio Denunciados</a></li>

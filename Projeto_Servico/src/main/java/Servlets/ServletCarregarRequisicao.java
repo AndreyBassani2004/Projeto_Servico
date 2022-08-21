@@ -236,6 +236,7 @@ public class ServletCarregarRequisicao extends HttpServlet {
 				
 			}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("AvaliarDenunciaAvaliacao")) {	
 				
+				String id_avaliacao = request.getParameter("id_anuncio");
 				
 				String id_user = request.getParameter("id_user");
 
@@ -251,6 +252,9 @@ public class ServletCarregarRequisicao extends HttpServlet {
 
 				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
 					
+					ModelDenunciaAvaliacao modelDenunciaAvaliacao = daoAvaliarRequisicao.carregarDenunciaAvaliação(Long.parseLong(id_avaliacao));
+					
+					request.setAttribute("modelDenunciaAvaliacao", modelDenunciaAvaliacao);	
 					request.getRequestDispatcher("principal/CarregarDenunciaAvaliacao.jsp").forward(request, response);
 				} else {
 

@@ -21,10 +21,19 @@ public class ModelLogin implements Serializable {
 	private String telefone_adm;
 	private String cidade_adm;
 	private String logradouro_adm;
+	private String situacao_user;
 	
 	private boolean Useradmin;
 	
 	
+	public String getSituacao_user() {
+		return situacao_user;
+	}
+
+	public void setSituacao_user(String situacao_user) {
+		this.situacao_user = situacao_user;
+	}
+
 	public String getTelefone_adm() {
 		return telefone_adm;
 	}
