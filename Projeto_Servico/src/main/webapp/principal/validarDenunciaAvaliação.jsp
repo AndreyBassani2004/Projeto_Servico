@@ -1,4 +1,5 @@
 <%@page import="Model.ModelDenunciaAvaliacao"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,6 +21,7 @@
 
 	<div class="container">
 		<h1 style="text-align: center;">Avaliar Denuncia avaliações</h1>
+		<span>${msg}</span>
 	</div>
 	
 		<br/><br/><br/>

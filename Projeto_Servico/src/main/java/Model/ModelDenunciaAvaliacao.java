@@ -24,8 +24,15 @@ public class ModelDenunciaAvaliacao implements Serializable{
 	private Long nota;
 	private String titulo;
 	private String descricao_avaliacao;
+	private Long id_adm;
 	 
 	
+	public Long getId_adm() {
+		return id_adm;
+	}
+	public void setId_adm(Long id_adm) {
+		this.id_adm = id_adm;
+	}
 	public String getMotivo() {
 		return motivo;
 	}

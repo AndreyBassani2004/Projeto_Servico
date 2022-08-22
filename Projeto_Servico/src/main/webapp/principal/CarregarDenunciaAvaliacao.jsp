@@ -51,6 +51,16 @@
 					</div>
 					<br />
 
+					<div id="textcampo">
+						<p>
+							<b>ID Avaliação:</b>
+						</p>
+						<input type="text" class="form-control"
+							value="${modelDenunciaAvaliacao.id_avaliacao}" name="id_avaliacao2"
+							id="id_avaliacao2" readonly="readonly">
+					</div>
+					<br />
+					
 
 					<div id="textcampo">
 						<p>

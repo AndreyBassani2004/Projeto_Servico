@@ -51,7 +51,7 @@ public class DAOAvaliarRequisicao {
 		
 		List<ModelDenunciaAvaliacao> retorno = new ArrayList<ModelDenunciaAvaliacao>();
 		
-		String sql = "SELECT * FROM denuncia_avaliacao  offset " + offset + " limit 5;";
+		String sql = "SELECT * FROM denuncia_avaliacao where estado_denuncia = 'ANALISE' offset " + offset + " limit 5;";
 		PreparedStatement statement = connection.prepareStatement(sql);
 		
 		ResultSet rs = statement.executeQuery();
@@ -223,6 +223,37 @@ public class DAOAvaliarRequisicao {
 		return modelDenunciaAvaliacao;
 	}
 	
-
+	
+	public void providenciaDenunciaAvaliacao(ModelDenunciaAvaliacao objeto) throws Exception{
+		
+		String sql = "UPDATE denuncia_avaliacao SET  estado_denuncia=?, relatorio=?, id_adm_situacao=? WHERE id=?;";
+		
+		connection.setAutoCommit(false);
+		PreparedStatement preparedSql = connection.prepareStatement(sql);
+		preparedSql.setString(1, objeto.getEstado_denuncia());
+		preparedSql.setString(2, objeto.getRelatorio());
+		preparedSql.setLong(3, objeto.getId_adm());
+		preparedSql.setLong(4, objeto.getId());
+		
+		preparedSql.execute();
+		connection.commit();
+		
+	}
+	
+	public void desativarAvaliacao(Long id_avaliacao) throws Exception{
+		
+		String sql = "UPDATE avaliacao_anuncio SET situacao=? WHERE id = ?;";
+		
+		connection.setAutoCommit(false);
+		PreparedStatement preparedSql = connection.prepareStatement(sql);
+		preparedSql.setString(1, "DESATIVADO");
+		preparedSql.setLong(2, id_avaliacao);
+		
+		
+		preparedSql.execute();
+		connection.commit();
+		
+	}
+	
 	
 }
