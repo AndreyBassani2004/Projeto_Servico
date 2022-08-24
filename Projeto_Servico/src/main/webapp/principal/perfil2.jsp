@@ -48,6 +48,7 @@
 									readonly="readonly">
 							</div>
 						</td>
+						
 					</tr>
 					<tr>
 						<td>
@@ -71,7 +72,28 @@
 									id="Rsenha">
 							</div>
 						</td>
+						
 					</tr>
+					<tr>
+					<td>
+							<div id="textcampo">
+								<p>
+									<b>Foto Usuário:</b>
+								</p>
+									<br/><br/>					
+								 <div id="fotoNome">
+       	 <c:if test="${modelLogin.fotouser != '' && modelLogin.fotouser != null}">
+															<img alt="Imagen User" id="fotoembase64" src="${modelLogin.fotouser}" width="70px">
+															</c:if>
+															<c:if test="${modelLogin.fotouser == '' || modelLogin.fotouser == null}">
+															<img alt="Imagen User" id="fotoembase64" src="<%=request.getContextPath()%>/principal/img/user.jpg" width="70px">
+															</c:if>
+        
+        <br><br>
+        </div>
+							</div>
+						</td>
+						</tr>
 				</table>
 			</div>
 
@@ -388,6 +410,25 @@ if (modelLogin != null && modelLogin.getEstado().equals("TO")) {
 			window.location.href = urlAction + '?acao=buscarEditar&login='
 					+ login;
 
+		}
+		
+		function visualizarImg(fotoembase64, filefoto) {
+			
+			
+			var preview = document.getElementById(fotoembase64);
+			var fileUser = document.getElementById(filefoto).files[0];
+			var reader = new FileReader();
+			
+			reader.onloadend = function (){
+				preview.src = reader.result /*Carregar foto na tela*/
+			}
+			
+			if(fileUser){
+				reader.readAsDataURL(fileUser);
+			}else{
+				preview.src= '';
+			}
+			
 		}
 	</script>
 

@@ -72,8 +72,8 @@
 								<p>
 									<b>Foto Usuário:</b>
 								</p>
-								<img alt="Imagen User" id="fotoembase64" src="" width="70px">
-									<br/><br/>					
+							
+									<br><br>					
 								<input type="file" id="fileFoto" name="fileFoto" accept="image/*" onchange="visualizarImg('fotoembase64', 'fileFoto');" class="form-control-file" style="margin-top: 15px; margin-left: 5px;">
 							</div>
 						</td>
