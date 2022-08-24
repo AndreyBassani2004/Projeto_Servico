@@ -17,7 +17,7 @@
 
 	<div id="formulario">
 		<form action="<%= request.getContextPath() %>/ServletPosLoginAdm" method="post"
-			id="cadastroCliente">
+			id="cadastroCliente" enctype="multipart/form-data">
 			<input type="hidden" name="acao" id="acao" value="">
 			<div id="formulario1">
 				<h5>Cadastro do login</h5>
@@ -147,6 +147,18 @@
 							</div>
 						</td>
 					</tr>
+					<tr>
+					<td>
+							<div id="textcampo">
+								<p>
+									<b>Foto Usuário:</b>
+								</p>
+							
+									<br><br>					
+								<input type="file" id="fileFoto" name="fileFoto" accept="image/*" onchange="visualizarImg('fotoembase64', 'fileFoto');" class="form-control-file" style="margin-top: 15px; margin-left: 5px;">
+							</div>
+						</td>
+					</tr>
 				</table>
 			</div>
 			<div id="linha1"></div>
@@ -168,6 +180,25 @@
 		
 		window.location.href = urlAction + '?acao=buscarEditar&login=' + login;
 		
+		
+	}
+	
+	function visualizarImg(fotoembase64, filefoto) {
+		
+		
+		var preview = document.getElementById(fotoembase64);
+		var fileUser = document.getElementById(filefoto).files[0];
+		var reader = new FileReader();
+		
+		reader.onloadend = function (){
+			preview.src = reader.result /*Carregar foto na tela*/
+		}
+		
+		if(fileUser){
+			reader.readAsDataURL(fileUser);
+		}else{
+			preview.src= '';
+		}
 		
 	}
 	</script>

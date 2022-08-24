@@ -117,6 +117,19 @@ public class DAOCadastroAdm {
 		preparedSql2.execute();
 		connection.commit();
 		
+		if(objeto.getFotouser() != null && !objeto.getFotouser().isEmpty()) {
+			String sql3 = "UPDATE usuario SET fotouser=?, extensaofotouser=? where email=?";
+			
+			connection.setAutoCommit(false);
+			PreparedStatement prepareSql3 = connection.prepareStatement(sql3);
+			prepareSql3 = connection.prepareStatement(sql3);
+			prepareSql3.setString(1, objeto.getFotouser());
+			prepareSql3.setString(2, objeto.getExtencaofotouser());
+			prepareSql3.setString(3, objeto.getLogin());
+
+			prepareSql3.execute();
+			connection.commit();
+		}
 		
 	}
 }

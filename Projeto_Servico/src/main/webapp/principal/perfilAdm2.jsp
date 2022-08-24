@@ -18,7 +18,7 @@
 	<div id="linha1"></div>
 
 	<div id="formulario">
-		<form action="<%=request.getContextPath()%>/ServletPosLoginAdm"
+		<form action="<%=request.getContextPath()%>/ServletPosLoginAdm" enctype="multipart/form-data"
 			method="post" id="cadastroCliente">
 			<input type="hidden" name="acao" id="acao" value="">
 			<div id="formulario1">
@@ -342,6 +342,7 @@ if (modelLogin != null && modelLogin.getEstado().equals("TO")) {
 							</div>
 						</td>
 					</tr>
+					
 				</table>
 			</div>
 			<div id="linha1"></div>

@@ -19,7 +19,7 @@
 
 	<div id="formulario">
 		<form action="<%=request.getContextPath()%>/ServletPosLoginPrestador"
-			method="post" id="cadastroCliente">
+			method="post" id="cadastroCliente" enctype="multipart/form-data">
 			<input type="hidden" name="acao" id="acao" value="">
 			<div id="formulario1">
 				<h5>Cadastro do login</h5>
