@@ -256,4 +256,20 @@ public class DAOAvaliarRequisicao {
 	}
 	
 	
+	public void providenciaDenunciaAnuncio(ModelDenunciaAnuncio objeto) throws Exception{
+		
+		String sql = "UPDATE denuncia_anuncio SET estado_denuncia=?, relatorio=?, id_adm_situacao=? WHERE id=?;";
+		
+		connection.setAutoCommit(false);
+		PreparedStatement preparedSql = connection.prepareStatement(sql);
+		preparedSql.setString(1, objeto.getSituacao());
+		preparedSql.setString(2, objeto.getRelatorio());
+		preparedSql.setLong(3, objeto.getId_adm());
+		preparedSql.setLong(4, objeto.getId());
+		
+		preparedSql.execute();
+		connection.commit();
+		
+	}
+	
 }
