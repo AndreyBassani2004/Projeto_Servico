@@ -40,7 +40,7 @@ public class DAOLoginRepository {
 		
 		ModelLogin modelLogin = new ModelLogin();
 		
-		String sql = "select usuario.id usuario.nome, usuario.email, usuario.perfil, usuario.senha, usuario.estado, usuario.situacao_user, dados_prestador.telefone_contato, \r\n"
+		String sql = "select usuario.id usuario.nome, usuario.email, usuario.perfil, usuario.senha, usuario.estado, usuario.situacao_user, usuario.extensaofotouser, usuario.fotouser, dados_prestador.telefone_contato, \r\n"
 				+ "dados_prestador.estado, dados_prestador.cep, dados_prestador.email_user, dados_prestador.cidade\r\n"
 				+ "from usuario\r\n"
 				+ "	inner join dados_prestador\r\n"
@@ -61,6 +61,8 @@ public class DAOLoginRepository {
 			modelLogin.setCidade(resultado.getString("cidade"));
 			modelLogin.setLogradouro(resultado.getString("cep"));
 			modelLogin.setTelefone(resultado.getString("telefone_contato"));
+			modelLogin.setFotouser(resultado.getString("fotouser"));
+			modelLogin.setExtencaofotouser(resultado.getString("extensaofotouser"));
 		}
 		
 

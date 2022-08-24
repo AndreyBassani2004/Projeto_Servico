@@ -41,6 +41,8 @@ public class DAOUsuarioPosLogin {
 			modelLogin.setPerfil(resultado.getString("perfil"));
 			modelLogin.setEstado(resultado.getString("estado"));
 			modelLogin.setSituacao_user(resultado.getString("situacao_user"));
+			modelLogin.setFotouser(resultado.getString("fotouser"));
+			modelLogin.setExtencaofotouser(resultado.getString("extensaofotouser"));
 		}
 		
 		String sql2 = "select * from dados_prestador where upper(email_user) = upper('"+login+"');";

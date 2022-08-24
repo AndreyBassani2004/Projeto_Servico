@@ -16,7 +16,7 @@
 	<div id="linha1"></div>
 
 	<div id="formulario">
-		<form action="<%= request.getContextPath() %>/ServletPosLoginPrestador" method="post"
+		<form action="<%= request.getContextPath() %>/ServletPosLoginPrestador" method="post" enctype="multipart/form-data"
 			id="cadastroCliente">
 			<input type="hidden" name="acao" id="acao" value="">
 			<div id="formulario1">
@@ -63,6 +63,18 @@
 								</p>
 								<input type="password" class="form-control" value="${modelLogin.rSenha}"
 									placeholder="Digite sua senha novamente" name="Rsenha" id="Rsenha">
+							</div>
+						</td>
+					</tr>
+					<tr>
+					<td>
+							<div id="textcampo">
+								<p>
+									<b>Foto Usuário:</b>
+								</p>
+								<img alt="Imagen User" id="fotoembase64" src="" width="70px">
+									<br/><br/>					
+								<input type="file" id="fileFoto" name="fileFoto" accept="image/*" onchange="visualizarImg('fotoembase64', 'fileFoto');" class="form-control-file" style="margin-top: 15px; margin-left: 5px;">
 							</div>
 						</td>
 					</tr>
@@ -169,6 +181,25 @@
 		
 		window.location.href = urlAction + '?acao=buscarEditar&login=' + login;
 		
+		
+	}
+	
+	function visualizarImg(fotoembase64, filefoto) {
+		
+		
+		var preview = document.getElementById(fotoembase64);
+		var fileUser = document.getElementById(filefoto).files[0];
+		var reader = new FileReader();
+		
+		reader.onloadend = function (){
+			preview.src = reader.result /*Carregar foto na tela*/
+		}
+		
+		if(fileUser){
+			reader.readAsDataURL(fileUser);
+		}else{
+			preview.src= '';
+		}
 		
 	}
 	</script>

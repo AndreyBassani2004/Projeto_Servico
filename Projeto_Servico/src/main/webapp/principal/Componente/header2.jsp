@@ -1,10 +1,12 @@
+<%@page import="Model.ModelLogin"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     
     <c:set scope="session" var="perfil" value='<%= request.getSession().getAttribute("perfil").toString() %>'></c:set>
     <c:set scope="session" var="isAdmin" value='<%= request.getSession().getAttribute("isAdmin").toString() %>'></c:set>
-    <c:set scope="session" var="situacao_user" value='<%= request.getSession().getAttribute("situacao_user").toString() %>'></c:set>
+   
+    
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -21,7 +23,14 @@
 <body>
     <div id="barra">
         <div id="fotoNome">
-        <img src="<%=request.getContextPath()%>/principal/img/user.jpg" alt="foto user"><br><br>
+        <c:if test="${fotouser != '' && fotouser != null}">
+															<img alt="Imagen User" id="fotoembase64" src="${fotouser}" width="70px">
+															</c:if>
+															<c:if test="${fotouser == '' || fotouser == null}">
+															<img alt="Imagen User" id="fotoembase64" src="/principal/img/user.jpg" width="70px">
+															</c:if>
+        
+        <br><br>
         <p><%= session.getAttribute("nome") %></p>
         <nav class="dp-menu">
             <ul>
@@ -60,5 +69,26 @@
             </div>
     </div>
     <div id="barraDiv"></div>
+    
+    <script type="text/javascript">
+	function visualizarImg(fotoembase64, filefoto) {
+		
+		
+		var preview = document.getElementById(fotoembase64);
+		var fileUser = document.getElementById(filefoto).files[0];
+		var reader = new FileReader();
+		
+		reader.onloadend = function (){
+			preview.src = reader.result /*Carregar foto na tela*/
+		}
+		
+		if(fileUser){
+			reader.readAsDataURL(fileUser);
+		}else{
+			preview.src= '';
+		}
+		
+}
+    </script>
 </body>
 </html>
