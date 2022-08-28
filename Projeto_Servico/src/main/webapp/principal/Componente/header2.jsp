@@ -39,6 +39,7 @@
                     	<c:if test="${perfil == 'PRESTADOR' && situacao_user == 'ATIVO'}">
                     	<c:if test="${perfil == 'PRESTADOR' && situacao_user == 'ATIVO'}">
                         <li><a href="<%=request.getContextPath()%>\principal\perfil.jsp" id="opcao">Perfil</a></li>
+                        <li><a href="<%=request.getContextPath()%>\principal\mensagens.jsp" id="opcao">Mensagens</a></li>
                           </c:if>
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarCriarAnuncio&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Criar Anuncio</a></li>
                         <li><a href="<%=request.getContextPath()%>\ServletCarregaAnuncio?acao=listarAnuncio&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Meus Anuncios</a></li>
@@ -46,11 +47,13 @@
                         </c:if>  
                         <c:if test="${perfil == 'ADMIN' && situacao_user == 'ATIVO'}">
                         <li><a href="<%=request.getContextPath()%>\principal\perfilAdm.jsp" id="opcao">Perfil</a></li>
+                        <li><a href="<%=request.getContextPath()%>\principal\mensagens.jsp" id="opcao">Mensagens</a></li>
                         </c:if>
                         <c:if test="${isAdmin}">
                         <li><a href="<%=request.getContextPath()%>\principal\cadastroUser.jsp" id="opcao">Cadastra usuarios (ADM)</a></li>
                         </c:if>
                         <c:if test="${perfil == 'ADMIN' && situacao_user == 'ATIVO'}">
+                        <li><a href="<%=request.getContextPath()%>\principal\ProvidenciaDenunciaAnuncio.jsp" id="opcao">Providencia denuncias anuncio aprovado</a></li>
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarAvaliacoes&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Validar Avaliações</a></li>
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarDenunciaAvaliacoes&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Avaliações Denunciadas</a></li>
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarDenuncias&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Anuncio Denunciados</a></li>
