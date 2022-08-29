@@ -12,6 +12,8 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
+	
+	
 </head>
 <body>
 
@@ -49,8 +51,8 @@
 						<b>ID Anuncio:</b>
 					</p>
 					<input type="text" class="form-control"
-						value="${modelDenunciaAnuncio.id_anuncio}" name="id_avaliacao"
-						id="id_avaliacao" readonly="readonly">
+						value="${modelDenunciaAnuncio.id_anuncio}" name="id_anuncio"
+						id="id_anuncio" readonly="readonly">
 				</div>
 				<br />
 
@@ -192,6 +194,7 @@
 						<select class="form-control" name="providencia" id="providencia"
 							required="required">
 							<option value="">Selecione</option>
+							<option value="NenhumaMedida">Nenhuma medida</option>
 							<option value="MensagemAlerta">Mandar Mensagen de alerta</option>
 							<option value="ExcluirAnuncio">Excluir Anuncio</option>
 							<option value="BanirConta">Banir Conta</option>
@@ -210,8 +213,8 @@
 			</div>
 			<br />
 			<br />
-			<div class="row">
-				<div class="col">
+			<div class="row" >
+				<div class="col" id="mensagem" >
 					<div id="textcampo">
 						<p>
 							<b>Mensagem para o prestador (Obrigatório):</b>
@@ -244,6 +247,7 @@
 	<br />
 
 	<%@include file="/Componentes/rodape.jsp"%>
+	
 
 
 </body>
