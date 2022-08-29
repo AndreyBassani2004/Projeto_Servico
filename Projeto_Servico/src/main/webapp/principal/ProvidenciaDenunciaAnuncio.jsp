@@ -28,6 +28,7 @@
 			<div class="col">
 				<h1>Denuncias aprovadas</h1>
 				<h2><i>Providencia a ser tomada</i></h2>
+				<h3><spam>${msg}</spam></h3>
 			</div>
 		</div>
 	</div>
@@ -54,7 +55,7 @@
 							<td><c:out value="${md.nome_cliente}"></c:out></td>
 							<td><c:out value="${md.motivo}"></c:out></td>
 							<td><c:out value="${md.situacao}"></c:out></td>
-							<td><a href="#"><button class="btn btn-primary">Ver</button></a></td>
+							<td><a href="<%=request.getContextPath()%>/ServletCarregarRequisicao?acao=CarregarProvidenciaDenunciaAnuncio&id_denuncia=${md.id}&id_user=<%= session.getAttribute("id")%>"><button class="btn btn-primary">Ver</button></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

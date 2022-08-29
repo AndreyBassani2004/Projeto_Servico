@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import Dao.DAOAnuncioRepository;
 import Dao.DAOAvaliarRequisicao;
 import Dao.DAOCarregarPublicoRepository;
+import Dao.DAOSistemaAdmRepository;
 import Dao.DAOUsuarioPosLogin;
 import Model.ModelAnuncio;
 import Model.ModelAvaliacao;
@@ -28,6 +29,7 @@ public class ServletCarregarRequisicao extends HttpServlet {
 	DAOUsuarioPosLogin daoUsuarioPosLogin = new DAOUsuarioPosLogin();
 	DAOAnuncioRepository daoAnuncioRepository = new DAOAnuncioRepository();
 	DAOCarregarPublicoRepository daoCarregarPublicoRepository = new DAOCarregarPublicoRepository();
+	DAOSistemaAdmRepository daoSistemaAdmRepository = new DAOSistemaAdmRepository();
 
 	public ServletCarregarRequisicao() {
 		super();
@@ -284,6 +286,32 @@ public class ServletCarregarRequisicao extends HttpServlet {
 					request.getRequestDispatcher("principal/CarregarDenunciaAvaliacao.jsp").forward(request, response);
 				} else {
 
+					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);
+				}
+			
+			}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("CarregarProvidenciaDenunciaAnuncio")) {	
+			
+				
+				String id_user = request.getParameter("id_user");
+
+				String id_denuncia = request.getParameter("id_denuncia");
+
+				HttpSession session = request.getSession();
+
+				String usuarioLogado = (String) session.getAttribute("usuario");
+
+				Long id_usuario = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId();
+
+				String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
+
+				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
+
+					ModelDenunciaAnuncio modelDenunciaAnuncio = daoSistemaAdmRepository
+							.consultaDenunciaProvidencia(Long.parseLong(id_denuncia));
+
+					request.setAttribute("modelDenunciaAnuncio", modelDenunciaAnuncio);
+					request.getRequestDispatcher("/principal/carregarProvidenciaDenuncia.jsp").forward(request, response);
+				} else {
 					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);
 				}
 				
