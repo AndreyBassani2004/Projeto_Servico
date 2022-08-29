@@ -1,3 +1,4 @@
+<%@page import="Model.ModelDenunciaAnuncio"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -30,6 +31,56 @@
 			</div>
 		</div>
 	</div>
+	
+		<br/><br/><br/>
+	<div id="linha1"></div>
+	
+	<div class="container">
+		<div id="tabela">
+			<table class="table table-striped" id="tabelaResultado">
+				<thead>
+					<tr>
+						<th scolpe="col">ID</th>
+						<th scolpe="col">Cliente</th>
+						<th scope="col">Motivo</th>
+						<th scope="col">Estado</th>
+						<th scope="col">Ver</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${modelDenunciaAnuncios}" var="md">
+						<tr>
+							<td><c:out value="${md.id}"></c:out></td>
+							<td><c:out value="${md.nome_cliente}"></c:out></td>
+							<td><c:out value="${md.motivo}"></c:out></td>
+							<td><c:out value="${md.situacao}"></c:out></td>
+							<td><a href="#"><button class="btn btn-primary">Ver</button></a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+		
+		<nav aria-label="Page navigation example" style="">
+			<ul class="pagination">
+				<%
+				int totalPagina = (int) request.getAttribute("totalPagina");
+
+				for (int p = 0; p < totalPagina; p++) {
+					String url = request.getContextPath() + "/ServletCarregarRequisicao?acao=carregarDenunciasAprovada&id_user="
+					+ request.getSession().getAttribute("id") + "&paginar=" + (p * 5);
+					out.print("<li class=\"page-item\"><a class=\"page-link\" href=\"" + url + "\">" + (p + 1) + " </a></li>");
+				}
+				%>
+			</ul>
+		</nav>
+		
+	</div>
+	
+	
+	<br/><br/><br/><br/><br/><br/>
+
+	<%@include file="/Componentes/rodape.jsp"%>
 
 </body>
 </html>

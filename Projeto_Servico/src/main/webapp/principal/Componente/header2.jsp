@@ -53,7 +53,7 @@
                         <li><a href="<%=request.getContextPath()%>\principal\cadastroUser.jsp" id="opcao">Cadastra usuarios (ADM)</a></li>
                         </c:if>
                         <c:if test="${perfil == 'ADMIN' && situacao_user == 'ATIVO'}">
-                        <li><a href="<%=request.getContextPath()%>\principal\ProvidenciaDenunciaAnuncio.jsp" id="opcao">Providencia denuncias anuncio aprovado</a></li>
+                        <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarDenunciasAprovada&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Providencia denuncias anuncio aprovado</a></li>
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarAvaliacoes&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Validar Avaliações</a></li>
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarDenunciaAvaliacoes&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Avaliações Denunciadas</a></li>
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarDenuncias&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Anuncio Denunciados</a></li>

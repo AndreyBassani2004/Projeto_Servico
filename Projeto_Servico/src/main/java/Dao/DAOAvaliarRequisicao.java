@@ -47,6 +47,33 @@ public class DAOAvaliarRequisicao {
 		return retorno;
 	}
 	
+	
+	public List<ModelDenunciaAnuncio> lisarDenunciaAnuncioAprovado(Long offset) throws Exception{
+		
+		List<ModelDenunciaAnuncio> retorno = new ArrayList<ModelDenunciaAnuncio>();
+		
+		String sql = "SELECT * FROM denuncia_anuncio WHERE estado_denuncia = 'Aprovar' offset " + offset + " limit 5; ";
+		PreparedStatement statement = connection.prepareStatement(sql);
+		
+		ResultSet rs = statement.executeQuery();
+
+		while (rs.next()) {
+			
+			ModelDenunciaAnuncio modelDenunciaAnuncio = new ModelDenunciaAnuncio();
+			
+			modelDenunciaAnuncio.setId(rs.getLong("id"));
+			modelDenunciaAnuncio.setId_anuncio(rs.getLong("id_anuncio"));
+			modelDenunciaAnuncio.setNome_cliente(rs.getString("nome_cliente"));
+			modelDenunciaAnuncio.setSituacao(rs.getString("estado_denuncia"));;
+			modelDenunciaAnuncio.setMotivo(rs.getString("motivo"));
+			
+			retorno.add(modelDenunciaAnuncio);
+		}
+		
+		return retorno;
+	}
+	
+	
 	public List<ModelDenunciaAvaliacao> listarDenunciaAvaliacao(Long offset) throws Exception{
 		
 		List<ModelDenunciaAvaliacao> retorno = new ArrayList<ModelDenunciaAvaliacao>();
@@ -176,6 +203,30 @@ public class DAOAvaliarRequisicao {
 
 	}
 	
+	public int totalPaginaDenunciaAnuncioAprovado() throws Exception {
+
+		String sql = "select count(1) as total from denuncia_anuncio where estado_denuncia = 'Aprovar';";
+		PreparedStatement statement = connection.prepareStatement(sql);
+
+		ResultSet resultado = statement.executeQuery();
+
+		resultado.next();
+
+		Double cadastros = resultado.getDouble("total");
+
+		Double porpagina = 5.0;
+
+		Double pagina = cadastros / porpagina;
+
+		Double resto = pagina % 2;
+
+		if (resto > 0) {
+			pagina++;
+		}
+
+		return pagina.intValue();
+
+	}
 	
 
 
