@@ -12,6 +12,7 @@ import Model.ModelAvaliacao;
 import Model.ModelDenunciaAnuncio;
 import Model.ModelDenunciaAvaliacao;
 import Model.ModelMensagem;
+import javassist.expr.NewArray;
 
 public class DAOAvaliarRequisicao {
 	
@@ -39,7 +40,7 @@ public class DAOAvaliarRequisicao {
 			modelDenunciaAnuncio.setId(rs.getLong("id"));
 			modelDenunciaAnuncio.setId_anuncio(rs.getLong("id_anuncio"));
 			modelDenunciaAnuncio.setNome_cliente(rs.getString("nome_cliente"));
-			modelDenunciaAnuncio.setSituacao(rs.getString("estado_denuncia"));;
+			modelDenunciaAnuncio.setSituacao(rs.getString("estado_denuncia"));
 			modelDenunciaAnuncio.setMotivo(rs.getString("motivo"));
 			
 			retorno.add(modelDenunciaAnuncio);
@@ -366,6 +367,58 @@ public class DAOAvaliarRequisicao {
 	}
 	
 	public void desativarConta(Long id_user) throws Exception{
+		
+		String sql = "UPDATE anuncio SET situacao='BANIDO' WHERE id_prestador = ?;";
+		
+		connection.setAutoCommit(false);
+		PreparedStatement preparedSql = connection.prepareStatement(sql);
+		preparedSql.setLong(1, id_user);
+		
+		preparedSql.execute();
+		connection.commit();
+		
+		String sql2 = "UPDATE usuario SET situacao_user='DESATIVADO' WHERE id= ?;";
+		
+		connection.setAutoCommit(false);
+		PreparedStatement preparedSql2 = connection.prepareStatement(sql2);
+		preparedSql2.setLong(1, id_user);
+		
+		preparedSql2.execute();
+		connection.commit();
+	}
+	
+	public void ignorarDenunciaAnuncio(Long id_denuncia) throws Exception{
+		
+		String sql = "UPDATE denuncia_anuncio SET estado_denuncia=? WHERE id=?;";
+		
+		connection.setAutoCommit(false);
+		PreparedStatement preparedSql = connection.prepareStatement(sql);
+		preparedSql.setString(1, "IGNORADO");
+		preparedSql.setLong(2, id_denuncia);
+		
+		preparedSql.execute();
+		connection.commit();
+	}
+	
+	public List<ModelMensagem> listarMensagensUser(Long id_user, Long offset) throws Exception{
+		
+		List<ModelMensagem> retorno = new ArrayList<ModelMensagem>();
+		String sql = "SELECT*FROM mensagem where id_destinatario= "+ id_user +" offset "+ offset +" limit 5;";
+		
+		PreparedStatement statement = connection.prepareStatement(sql);
+		
+		ResultSet rs = statement.executeQuery();
+
+		while (rs.next()) {
+			
+			ModelMensagem modelMensagem = new ModelMensagem();
+			
+			modelMensagem.setId(rs.getLong("id"));
+			modelMensagem.setMensagem(rs.getString("msg"));
+			modelMensagem.setTitulo(rs.getString("titulo"));	
+		}
+		
+		return retorno;
 		
 	}
 	

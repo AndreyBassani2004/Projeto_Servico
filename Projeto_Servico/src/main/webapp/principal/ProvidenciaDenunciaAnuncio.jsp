@@ -57,7 +57,7 @@
 							<td><c:out value="${md.motivo}"></c:out></td>
 							<td><c:out value="${md.situacao}"></c:out></td>
 							<td><a href="<%=request.getContextPath()%>/ServletCarregarRequisicao?acao=CarregarProvidenciaDenunciaAnuncio&id_denuncia=${md.id}&id_user=<%= session.getAttribute("id")%>"><button class="btn btn-primary">Ver</button></a></td>
-							<td><a href="#"><button class="btn btn-warning">Ignorar</button></a></td>
+							<td><a href="<%=request.getContextPath()%>/ServletCarregarRequisicao?acao=ignorarDenunciaAnuncio&id_denuncia=${md.id}&id_user=<%= session.getAttribute("id")%>"><button class="btn btn-warning">Ignorar</button></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

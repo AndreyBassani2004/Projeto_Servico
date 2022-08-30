@@ -127,7 +127,17 @@ public class ServletMedidasDenunciaAnuncio extends HttpServlet {
 				
 				daoAvaliarRequisicao.desativarAnuncio(Long.parseLong(id_anuncio));
 				
+				daoAvaliarRequisicao.desativarConta(Long.parseLong(id_prestador));
 				
+				String paginar = "0";
+				
+				List<ModelDenunciaAnuncio> modelDenunciaAnuncios = daoAvaliarRequisicao
+						.lisarDenunciaAnuncioAprovado(Long.parseLong(paginar));
+
+				request.setAttribute("modelDenunciaAnuncios", modelDenunciaAnuncios);
+				request.setAttribute("msg", "Operação efetuada com sucesso!");
+				request.setAttribute("totalPagina", daoAvaliarRequisicao.totalPaginaDenunciaAnuncioAprovado());
+				request.getRequestDispatcher("principal/ProvidenciaDenunciaAnuncio.jsp").forward(request, response);
 				
 			}else {
 				request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);

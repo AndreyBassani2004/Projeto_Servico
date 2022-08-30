@@ -47,7 +47,6 @@
                         </c:if>  
                         <c:if test="${perfil == 'ADMIN' && situacao_user == 'ATIVO'}">
                         <li><a href="<%=request.getContextPath()%>\principal\perfilAdm.jsp" id="opcao">Perfil</a></li>
-                        <li><a href="<%=request.getContextPath()%>\principal\mensagens.jsp" id="opcao">Mensagens</a></li>
                         </c:if>
                         <c:if test="${isAdmin}">
                         <li><a href="<%=request.getContextPath()%>\principal\cadastroUser.jsp" id="opcao">Cadastra usuarios (ADM)</a></li>

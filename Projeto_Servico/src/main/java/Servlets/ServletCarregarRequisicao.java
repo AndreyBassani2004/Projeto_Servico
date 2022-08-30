@@ -315,6 +315,61 @@ public class ServletCarregarRequisicao extends HttpServlet {
 					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);
 				}
 				
+			}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("ignorarDenunciaAnuncio")) {
+				
+				String id_user = request.getParameter("id_user");
+
+				String paginar = "0";
+				
+				String id_denuncia = request.getParameter("id_denuncia");
+
+				HttpSession session = request.getSession();
+
+				String usuarioLogado = (String) session.getAttribute("usuario");
+
+				Long id_usuario = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId();
+
+				String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
+
+				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
+					
+					daoAvaliarRequisicao.ignorarDenunciaAnuncio(Long.parseLong(id_denuncia));
+					
+					List<ModelDenunciaAnuncio> modelDenunciaAnuncios = daoAvaliarRequisicao
+							.lisarDenunciaAnuncioAprovado(Long.parseLong(paginar));
+
+					request.setAttribute("modelDenunciaAnuncios", modelDenunciaAnuncios);
+					request.setAttribute("msg", "Operação efetuada com sucesso!");
+					request.setAttribute("totalPagina", daoAvaliarRequisicao.totalPaginaDenunciaAnuncioAprovado());
+					request.getRequestDispatcher("principal/ProvidenciaDenunciaAnuncio.jsp").forward(request, response);
+				} else {
+
+					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);
+				}
+			
+			}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("carregarMensagem")) {
+				
+				
+				String id_user = request.getParameter("id_user");
+
+				String id_denuncia = request.getParameter("id_denuncia");
+
+				HttpSession session = request.getSession();
+
+				String usuarioLogado = (String) session.getAttribute("usuario");
+
+				Long id_usuario = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId();
+
+				String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
+
+				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("PRESTADOR")) {
+				
+					
+					
+				}else {
+					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);
+				}
+				
 			}else {
 				request.getRequestDispatcher("principal/principal.jsp").forward(request, response);
 
