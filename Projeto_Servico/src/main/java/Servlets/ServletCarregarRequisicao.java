@@ -20,6 +20,7 @@ import Model.ModelAnuncio;
 import Model.ModelAvaliacao;
 import Model.ModelDenunciaAnuncio;
 import Model.ModelDenunciaAvaliacao;
+import Model.ModelMensagem;
 
 @WebServlet("/ServletCarregarRequisicao")
 public class ServletCarregarRequisicao extends HttpServlet {
@@ -349,6 +350,7 @@ public class ServletCarregarRequisicao extends HttpServlet {
 			
 			}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("carregarMensagem")) {
 				
+				String paginar = request.getParameter("paginar");
 				
 				String id_user = request.getParameter("id_user");
 
@@ -364,7 +366,12 @@ public class ServletCarregarRequisicao extends HttpServlet {
 
 				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("PRESTADOR")) {
 				
+					List<ModelMensagem> modelMensagems =
+					daoAvaliarRequisicao.listarMensagensUser(id_usuario, Long.parseLong(paginar));
 					
+					request.setAttribute("ModelMensagems", modelMensagems);
+					request.setAttribute("totalPagina", daoAvaliarRequisicao.totalPaginaMensagem(id_usuario));
+					request.getRequestDispatcher("principal/mensagens.jsp").forward(request, response);
 					
 				}else {
 					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);

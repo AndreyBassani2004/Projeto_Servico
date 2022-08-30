@@ -40,15 +40,18 @@
 	<br />
 	<br />
 	<div class="container">
+	
 		<div style="min-height: 800px; min-width: 700px;">
 			<div class="row g-0">
-				<c:forEach items="#" var="an">
+				
+						<div style="min-height: 800px; min-width: 700px;">
+			<div class="row g-0">
+				<c:forEach items="${ModelMensagems}" var="an">
 						
 						<div class="p-5 mb-4 bg-light rounded-3" style="min-height: 200px; min-width: 900px; border: 0.1em; border-color: black;">
 							<div class="container-fluid py-5">
-								<h1 class="display-5 fw-bold">Titulo</h1>
-								<p class="col-md-8 fs-4">Msg</p>
-								<p class="col-md-8 fs-4"><i>DATA</i></p>
+								<h1 class="display-5 fw-bold">${an.titulo}</h1>
+								<p class="col-md-8 fs-4">${an.mensagem}</p>
 							</div>
 						</div>
 						<br/> <br/> <br/>
@@ -56,24 +59,35 @@
 
 			</div>
 		</div>
-	</div>
+						<br/> <br/> <br/>
+						
+
+			</div>
+		</div>
+		
+	
 	
 	<nav aria-label="Page navigation example" style="">
 							<ul class="pagination">
 								
 								<%	
 								
-								//	int totalPagina = (int) request.getAttribute("totalPagina");
-									
-								//	for (int p = 0; p < totalPagina; p++){
-								//		String url = request.getContextPath()+ "/ServletPrestadores?acao=paginar2&pagina=" + (p * 5) + "&categoria=eletricista";
-								//		out.print("<li class=\"page-item\"><a class=\"page-link\" href=\""+url+"\">"+(p + 1)+" </a></li>");									}
 								
-								%>
-								
+									int totalPagina = (int) request.getAttribute("totalPagina");
+
+				for (int p = 0; p < totalPagina; p++) {
+					String url = request.getContextPath() + "/ServletCarregarRequisicao?acao=carregarMensagem&id_user="
+					+ request.getSession().getAttribute("id") + "&paginar=" + (p * 5);
+					out.print("<li class=\"page-item\"><a class=\"page-link\" href=\"" + url + "\">" + (p + 1) + " </a></li>");
+				}
+							%>	
 								
 							</ul>
 						</nav>
-
+		</div>
+		<br/> <br/> <br/>		<br/> <br/> <br/>
+		
+			<%@include file="/Componentes/rodape.jsp"%>
+		
 </body>
 </html>

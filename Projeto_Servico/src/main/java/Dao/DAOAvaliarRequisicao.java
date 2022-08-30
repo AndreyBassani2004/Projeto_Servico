@@ -416,10 +416,38 @@ public class DAOAvaliarRequisicao {
 			modelMensagem.setId(rs.getLong("id"));
 			modelMensagem.setMensagem(rs.getString("msg"));
 			modelMensagem.setTitulo(rs.getString("titulo"));	
+			
+			retorno.add(modelMensagem);
 		}
 		
 		return retorno;
 		
+	}
+	
+	
+	public int totalPaginaMensagem(Long id_user) throws Exception {
+
+		String sql = "select count(1) as total from mensagem where id_destinatario = "+ id_user +";";
+		PreparedStatement statement = connection.prepareStatement(sql);
+
+		ResultSet resultado = statement.executeQuery();
+
+		resultado.next();
+
+		Double cadastros = resultado.getDouble("total");
+
+		Double porpagina = 5.0;
+
+		Double pagina = cadastros / porpagina;
+
+		Double resto = pagina % 2;
+
+		if (resto > 0) {
+			pagina++;
+		}
+
+		return pagina.intValue();
+
 	}
 	
 }
