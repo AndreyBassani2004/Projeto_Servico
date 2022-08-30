@@ -46,6 +46,7 @@
 						<th scope="col">Motivo</th>
 						<th scope="col">Estado</th>
 						<th scope="col">Ver</th>
+						<th scope="col">Ignorar</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -56,6 +57,7 @@
 							<td><c:out value="${md.motivo}"></c:out></td>
 							<td><c:out value="${md.situacao}"></c:out></td>
 							<td><a href="<%=request.getContextPath()%>/ServletCarregarRequisicao?acao=CarregarProvidenciaDenunciaAnuncio&id_denuncia=${md.id}&id_user=<%= session.getAttribute("id")%>"><button class="btn btn-primary">Ver</button></a></td>
+							<td><a href="#"><button class="btn btn-warning">Ignorar</button></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

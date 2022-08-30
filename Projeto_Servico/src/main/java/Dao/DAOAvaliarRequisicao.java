@@ -11,6 +11,7 @@ import Model.ModelAnuncio;
 import Model.ModelAvaliacao;
 import Model.ModelDenunciaAnuncio;
 import Model.ModelDenunciaAvaliacao;
+import Model.ModelMensagem;
 
 public class DAOAvaliarRequisicao {
 	
@@ -291,6 +292,19 @@ public class DAOAvaliarRequisicao {
 		
 	}
 	
+	public void providenciaDenunciaAnuncioAtualizar(ModelDenunciaAnuncio objeto) throws Exception{
+		
+		String sql = "UPDATE denuncia_anuncio SET estado_denuncia = ? WHERE id=?;";
+		connection.setAutoCommit(false);
+		PreparedStatement preparedSql = connection.prepareStatement(sql);
+		preparedSql.setString(1, objeto.getSituacao());
+		preparedSql.setLong(2, objeto.getId());
+		
+		
+		preparedSql.execute();
+		connection.commit();
+	}
+	
 	public void desativarAvaliacao(Long id_avaliacao) throws Exception{
 		
 		String sql = "UPDATE avaliacao_anuncio SET situacao=? WHERE id = ?;";
@@ -320,6 +334,38 @@ public class DAOAvaliarRequisicao {
 		
 		preparedSql.execute();
 		connection.commit();
+		
+	}
+	
+	public void EnviarMensagem(ModelMensagem objeto) throws Exception{
+		
+		String sql = "INSERT INTO mensagem(msg, id_remetente, id_destinatario, titulo) VALUES (?, ?, ?, ?);";
+		
+		connection.setAutoCommit(false);
+		PreparedStatement preparedSql = connection.prepareStatement(sql);
+		preparedSql.setString(1, objeto.getMensagem());
+		preparedSql.setLong(2, objeto.getId_remetente());
+		preparedSql.setLong(3, objeto.getId_destinatario());
+		preparedSql.setString(4, objeto.getTitulo());
+		
+		preparedSql.execute();
+		connection.commit();
+	}
+	
+	public void desativarAnuncio(Long id_anuncio) throws Exception{
+		
+		String sql = "UPDATE anuncio SET situacao=? WHERE id=?;";
+		
+		connection.setAutoCommit(false);
+		PreparedStatement preparedSql = connection.prepareStatement(sql);
+		preparedSql.setString(1, "BANIDO");
+		preparedSql.setLong(2, id_anuncio);
+		
+		preparedSql.execute();
+		connection.commit();
+	}
+	
+	public void desativarConta(Long id_user) throws Exception{
 		
 	}
 	

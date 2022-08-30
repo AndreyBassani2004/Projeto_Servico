@@ -38,7 +38,7 @@
 
 	<div id="linha1"></div>
 
-	<form action="<%=request.getContextPath()%>/ServletProvidenciaDenunciaAnuncio" method="post">
+	<form action="<%=request.getContextPath()%>/ServletMedidasDenunciaAnuncio" method="post">
 	<div class="container">
 		<h5>Dados</h5>
 		<hr>
@@ -53,6 +53,16 @@
 					<input type="text" class="form-control"
 						value="${modelDenunciaAnuncio.id_anuncio}" name="id_anuncio"
 						id="id_anuncio" readonly="readonly">
+				</div>
+				<br />
+				
+				<div id="textcampo">
+					<p>
+						<b>ID prestador:</b>
+					</p>
+					<input type="text" class="form-control"
+						value="${modelDenunciaAnuncio.id_prestador}" name="id_prestador"
+						id="id_prestador" readonly="readonly">
 				</div>
 				<br />
 
@@ -194,7 +204,6 @@
 						<select class="form-control" name="providencia" id="providencia"
 							required="required">
 							<option value="">Selecione</option>
-							<option value="NenhumaMedida">Nenhuma medida</option>
 							<option value="MensagemAlerta">Mandar Mensagen de alerta</option>
 							<option value="ExcluirAnuncio">Excluir Anuncio</option>
 							<option value="BanirConta">Banir Conta</option>
@@ -213,6 +222,18 @@
 			</div>
 			<br />
 			<br />
+			<div class="row" >
+				<div class="col" id="mensagem" >
+					<div id="textcampo">
+						<p>
+							<b>Titulo Mensagem (Obrigatório):</b>
+						</p>
+						<input type="text" class="form-control" name="tituloMensagem" id="tituloMensagem" required="required">
+					</div>
+					<br />
+				</div>
+			</div>
+			
 			<div class="row" >
 				<div class="col" id="mensagem" >
 					<div id="textcampo">
