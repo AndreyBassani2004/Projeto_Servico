@@ -33,7 +33,7 @@
 	<br />
 	
 	<div class="container">
-	<form action="<%=request.getContextPath()%>/ServletSDenunciaAvaliacao" method="post">
+	<form action="<%=request.getContextPath()%>/ServletSDenunciaAvaliacao" method="post" enctype="multipart/form-data">
 		<h5>Dados</h5>
 		<hr>
 		<br />
@@ -196,6 +196,8 @@
 						</p>
 						<p>Ultilize este campo caso seja necessário</p>
 						<p>(Essa imagen sera mandida em sigilo)</p>
+						<input type="file" id="fileFoto" name="fileFoto" accept="image/*" class="form-control-file" style="margin-top: 15px; margin-left: 5px;">
+						
 					</div>
 
 				</div>

@@ -98,7 +98,7 @@ public class DAOUsuarioPosLogin {
 	
 	public void gravarDenunciaAvaliacao(ModelDenunciaAvaliacao objeto) throws Exception{
 		
-		String sql = "INSERT INTO denuncia_avaliacao(id_anuncio, id_prestador, descricao, estado_denuncia, id_avaliacao, motivo) VALUES (?, ?, ?, ?, ?, ?);";
+		String sql = "INSERT INTO denuncia_avaliacao(id_anuncio, id_prestador, descricao, estado_denuncia, id_avaliacao, motivo, foto, extensaofoto) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
 		
 		connection.setAutoCommit(false);
 		PreparedStatement preparedSql = connection.prepareStatement(sql);		
@@ -108,6 +108,8 @@ public class DAOUsuarioPosLogin {
 		preparedSql.setString(4, "ANALISE");
 		preparedSql.setLong(5, objeto.getId_avaliacao());
 		preparedSql.setString(6, objeto.getMotivo());
+		preparedSql.setString(7, objeto.getFoto());
+		preparedSql.setString(8, objeto.getExtfoto());
 		
 		preparedSql.execute();
 		connection.commit();
