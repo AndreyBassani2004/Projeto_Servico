@@ -45,8 +45,8 @@
 						<td><c:out value="${ma.situacao}"></c:out></td>
 
 						<c:if test="${ma.situacao == 'BANIDO'}">
-							<td>INDISPONIVEL</td>
-							<td>INDISPONIVEL</td>
+							<td style="color:red;">INDISPONIVEL</td>
+							<td style="color:red;">INDISPONIVEL</td>
 						</c:if>
 
 						<c:if test="${ma.situacao == 'ATIVO' || ma.situacao == 'PAUSADO'}">
