@@ -37,9 +37,12 @@
 
 								<c:forEach items="${modelAnuncios}" var="an">
 									<div class="col-md-4">
-										<img
-											src="<%=request.getContextPath()%>/principal/img/user.jpg"
-											class="img-fluid rounded-start" alt="Imagem Prestador">
+										<c:if test="${an.foto != '' && an.foto != null}">
+															<img alt="Imagen User" id="fotoembase64" src="${an.foto}" width="70px">
+															</c:if>
+															<c:if test="${an.foto == '' || an.foto == null}">
+															<img alt="Imagen User" id="fotoembase64" src="<%=request.getContextPath()%>/Img/semImg.png" width="70px">
+															</c:if>
 									</div>
 									<div class="col-md-8">
 										<div class="card-body">
@@ -140,5 +143,26 @@
 	<div id="linha1"></div>
 
 	<%@include file="/Componentes/rodape.jsp"%>
+	
+	<script type="text/javascript">
+	function visualizarImg(fotoembase64, filefoto) {
+		
+		
+		var preview = document.getElementById(fotoembase64);
+		var fileUser = document.getElementById(filefoto).files[0];
+		var reader = new FileReader();
+		
+		reader.onloadend = function (){
+			preview.src = reader.result /*Carregar foto na tela*/
+		}
+		
+		if(fileUser){
+			reader.readAsDataURL(fileUser);
+		}else{
+			preview.src= '';
+		}
+		
+}
+    </script>
 </body>
 </html>

@@ -26,7 +26,27 @@ public class ModelAnuncio {
 	private ModelLogin id_prestador;
 
 	
+	//Imagem
+	private String foto;
+	private String extFoto;
 	
+	
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public String getExtFoto() {
+		return extFoto;
+	}
+
+	public void setExtFoto(String extFoto) {
+		this.extFoto = extFoto;
+	}
+
 	public String getEmail_prestador_perfil() {
 		return email_prestador_perfil;
 	}
