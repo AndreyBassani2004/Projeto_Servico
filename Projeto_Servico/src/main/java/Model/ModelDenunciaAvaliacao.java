@@ -25,8 +25,24 @@ public class ModelDenunciaAvaliacao implements Serializable{
 	private String titulo;
 	private String descricao_avaliacao;
 	private Long id_adm;
-	 
 	
+	//Imagens
+	private String fotoAvaliacao;
+	private String extfotoAvaliacao;
+	
+	
+	public String getFotoAvaliacao() {
+		return fotoAvaliacao;
+	}
+	public void setFotoAvaliacao(String fotoAvaliacao) {
+		this.fotoAvaliacao = fotoAvaliacao;
+	}
+	public String getExtfotoAvaliacao() {
+		return extfotoAvaliacao;
+	}
+	public void setExtfotoAvaliacao(String extfotoAvaliacao) {
+		this.extfotoAvaliacao = extfotoAvaliacao;
+	}
 	public Long getId_adm() {
 		return id_adm;
 	}

@@ -345,6 +345,8 @@ public class DAOCarregarPublicoRepository {
 			modelDenunciaAvaliacao.setNota(resultado.getLong("nota"));
 			modelDenunciaAvaliacao.setTitulo(resultado.getString("titulo"));
 			modelDenunciaAvaliacao.setData_prestacao(resultado.getString("data_prestacao"));
+			modelDenunciaAvaliacao.setFotoAvaliacao(resultado.getString("foto"));
+			modelDenunciaAvaliacao.setExtfotoAvaliacao(resultado.getString("fotoExtencao"));
 		}
 		
 		
