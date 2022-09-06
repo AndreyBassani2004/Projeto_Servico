@@ -248,6 +248,8 @@ public class DAOAvaliarRequisicao {
 			modelDenunciaAvaliacao.setDescricao(resultado.getString("estado_denuncia"));
 			modelDenunciaAvaliacao.setId_avaliacao(resultado.getLong("id_avaliacao"));
 			modelDenunciaAvaliacao.setMotivo(resultado.getString("motivo"));
+			modelDenunciaAvaliacao.setFotoAvaliacao(resultado.getString("foto"));
+			modelDenunciaAvaliacao.setExtfotoAvaliacao(resultado.getString("extensaofoto"));
 		}
 		
 		String sql2 = "SELECT*FROM avaliacao_anuncio where id = "+ modelDenunciaAvaliacao.getId_avaliacao() +";";
@@ -262,6 +264,8 @@ public class DAOAvaliarRequisicao {
 			modelDenunciaAvaliacao.setNota(resultado2.getLong("nota"));
 			modelDenunciaAvaliacao.setTitulo(resultado2.getString("titulo"));
 			modelDenunciaAvaliacao.setData_prestacao(resultado2.getString("data_prestacao"));
+			modelDenunciaAvaliacao.setFoto(resultado2.getString("foto"));
+			modelDenunciaAvaliacao.setExtfoto(resultado2.getString("fotoExtencao"));
 			}
 		
 		String sql3 = "SELECT*FROM usuario where id = "+ modelDenunciaAvaliacao.getId_prestador() +";";
