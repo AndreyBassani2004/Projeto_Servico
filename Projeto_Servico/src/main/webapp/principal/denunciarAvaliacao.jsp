@@ -111,10 +111,10 @@
 							<b>Foto comprovação:</b>
 						</p>
 						 <c:if test="${modelDenunciaAvaliacao.fotoAvaliacao != '' && modelDenunciaAvaliacao.fotoAvaliacao != null}">
-						<img alt="Imagen User" id="fotoembase64" src="${modelDenunciaAvaliacao.fotoAvaliacao}" width="70px">
+						<img alt="Imagen User" id="fotoembase64" src="${modelDenunciaAvaliacao.fotoAvaliacao}" width="400px" height="250px">
 															</c:if>
 															<c:if test="${modelDenunciaAvaliacao.fotoAvaliacao == '' || modelDenunciaAvaliacao.fotoAvaliacao == null}">
-															<img alt="Imagen User" id="fotoembase64" src="<%=request.getContextPath()%>/principal/img/user.jpg" width="70px">
+															<img alt="Imagen User" id="fotoembase64" src="<%=request.getContextPath()%>/principal/img/semImg.jpg" width="200px" height="100px">
 															</c:if>	
 					</div>
 					<br />
@@ -195,7 +195,7 @@
 							<b>Foto</b>
 						</p>
 						<p>Ultilize este campo caso seja necessário</p>
-						<input type="file" id="fileFoto" name="fileFoto" accept="image/*" class="form-control-file" style="margin-top: 15px; margin-left: 5px;" required="required">
+						<input type="file" id="fileFoto" name="fileFoto" accept="image/*" class="form-control-file" style="margin-top: 15px; margin-left: 5px;"  required="required">
 						
 					</div>
 

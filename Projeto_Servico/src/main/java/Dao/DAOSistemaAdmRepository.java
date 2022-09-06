@@ -35,6 +35,8 @@ public class DAOSistemaAdmRepository {
 			modelAvaliacao.setTitulo(resultado.getString("titulo"));
 			modelAvaliacao.setDescricao(resultado.getString("descricao"));
 			modelAvaliacao.setData_prestacao(resultado.getString("data_prestacao"));
+			modelAvaliacao.setFoto(resultado.getString("foto"));
+			modelAvaliacao.setExtfoto(resultado.getString("fotoExtencao"));
 		}
 
 		String sql2 = "SELECT*FROM anuncio where id = " + modelAvaliacao.getId_anuncio() + ";";

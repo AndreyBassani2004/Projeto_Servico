@@ -28,7 +28,7 @@
 
 	<div id="linha1"></div>
 
-	<form>
+	<form enctype="multipart/form-data">
 		<div class="container">
 			<h5>Cadastro do login</h5>
 			<hr>
@@ -122,6 +122,12 @@
 						<p>
 							<b>Foto comprovação:</b>
 						</p>
+						 <c:if test="${modelAvaliacao.foto != '' && modelAvaliacao.foto != null}">
+						<img alt="Imagem" id="fotoembase64" src="${modelAvaliacao.foto}" width="400px" height="250px">
+															</c:if>
+															<c:if test="${modelAvaliacao.foto == '' || modelAvaliacao.foto == null}">
+															<img alt="Imagen User" id="fotoembase64" src="<%=request.getContextPath()%>/principal/img/semImg.jpg" width="200px" height="100px">
+															</c:if>	
 
 					</div>
 					<br />
@@ -190,6 +196,27 @@
 	<div id="linha1"></div>
 
 	<%@include file="/Componentes/rodape.jsp"%>
+	
+	<script type="text/javascript">
+	function visualizarImg(fotoembase64, filefoto) {
+		
+		
+		var preview = document.getElementById(fotoembase64);
+		var fileUser = document.getElementById(filefoto).files[0];
+		var reader = new FileReader();
+		
+		reader.onloadend = function (){
+			preview.src = reader.result /*Carregar foto na tela*/
+		}
+		
+		if(fileUser){
+			reader.readAsDataURL(fileUser);
+		}else{
+			preview.src= '';
+		}
+		
+}
+    </script>
 
 </body>
 </html>
