@@ -1,7 +1,8 @@
 <%@page import="Model.ModelAnuncio"%>
 <%@page import="Model.ModelLogin"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -42,12 +43,21 @@
 						<td><c:out value="${ma.titulo}"></c:out></td>
 						<td><c:out value="${ma.servico}"></c:out></td>
 						<td><c:out value="${ma.situacao}"></c:out></td>
-						<td><a
-							href="<%=request.getContextPath()%>\ServletCarregaAnuncio?acao=carregarAnuncio&id_anuncio=${ma.id}&id=<%= session.getAttribute("id")%>"><button
-									type="button" class="btn btn-primary">Ver/Editar</button></a></td>
-						<td><a
-							href="<%=request.getContextPath()%>\ServletCarregaAnuncio?acao=deletarajax&id=${ma.id}&id_user=<%= session.getAttribute("id")%>"><button
-									type="button" class="btn btn-danger">Excluir</button></a></td>
+
+						<c:if test="${ma.situacao == 'BANIDO'}">
+							<td>INDISPONIVEL</td>
+							<td>INDISPONIVEL</td>
+						</c:if>
+
+						<c:if test="${ma.situacao == 'ATIVO' || ma.situacao == 'PAUSADO'}">
+							<td><a
+								href="<%=request.getContextPath()%>\ServletCarregaAnuncio?acao=carregarAnuncio&id_anuncio=${ma.id}&id=<%= session.getAttribute("id")%>">
+									<button type="button" class="btn btn-primary">Ver/Editar</button>
+							</a></td>
+							<td><a
+								href="<%=request.getContextPath()%>\ServletCarregaAnuncio?acao=deletarajax&id=${ma.id}&id_user=<%= session.getAttribute("id")%>"><button
+										type="button" class="btn btn-danger">Excluir</button></a></td>
+						</c:if>
 					</tr>
 				</c:forEach>
 			</tbody>

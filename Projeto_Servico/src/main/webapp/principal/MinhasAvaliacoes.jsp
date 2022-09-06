@@ -62,7 +62,14 @@
 						<td><c:out value="${ma.titulo}"></c:out></td>
 						<td><c:out value="${ma.servico}"></c:out></td>
 						<td><c:out value="${ma.situacao}"></c:out></td>
+						
+						<c:if test="${ma.situacao == 'BANIDO'}">
+							<td>INDISPONIVEL</td>
+						</c:if>
+						
+						<c:if test="${ma.situacao != 'BANIDO'}">
 						<td><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarVisualizacaoAnuncio&id_user=<%= session.getAttribute("id")%>&paginar=0&id_anuncio=${ma.id}"><button type="button" class="btn btn-primary">Ver Avaliações</button></a></td>
+						</c:if>
 					</tr>
 				</c:forEach>
 			</tbody>
