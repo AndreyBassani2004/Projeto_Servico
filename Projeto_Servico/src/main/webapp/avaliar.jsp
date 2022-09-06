@@ -25,7 +25,7 @@
 	<br />
 	<br />
 	<div class="container">
-		<form method="post" action="<%=request.getContextPath()%>/ServletCadastrarAvaliacao" >
+		<form method="post" action="<%=request.getContextPath()%>/ServletCadastrarAvaliacao" enctype="multipart/form-data">
 			<h3>Anuncio</h3>
 			<hr>
 			<div class="row">
@@ -149,6 +149,8 @@
 						</p>
 						<p>Tire um print ou foto da concersa você e o prestador</p>
 						<p>(Essa imagen sera mandida em sigilo)</p>
+					<input type="file" id="fileFoto" name="fileFoto" accept="image/*" class="form-control-file" style="margin-top: 15px; margin-left: 5px;" required="required">
+						
 					</div>
 
 				</div>
@@ -219,6 +221,27 @@
 
 
 	<%@include file="/Componentes/rodape.jsp"%>
+	
+	<script type="text/javascript">
+	function visualizarImg(fotoembase64, filefoto) {
+		
+		
+		var preview = document.getElementById(fotoembase64);
+		var fileUser = document.getElementById(filefoto).files[0];
+		var reader = new FileReader();
+		
+		reader.onloadend = function (){
+			preview.src = reader.result /*Carregar foto na tela*/
+		}
+		
+		if(fileUser){
+			reader.readAsDataURL(fileUser);
+		}else{
+			preview.src= '';
+		}
+		
+}
+    </script>
 
 </body>
 </html>

@@ -241,8 +241,8 @@ public class DAOCarregarPublicoRepository {
 	public void gravarAvaliacao(ModelAvaliacao objeto) throws Exception {
 
 		String sql = "INSERT INTO public.avaliacao_anuncio(\r\n"
-				+ "	id_anuncio, nome_cliente, email_cliente, descricao_servico, data_prestacao, nota, titulo, descricao)\r\n"
-				+ "	VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+				+ "	id_anuncio, nome_cliente, email_cliente, descricao_servico, data_prestacao, nota, titulo, descricao, foto, \"fotoExtencao\")\r\n"
+				+ "	VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
 		PreparedStatement preparedSql = connection.prepareStatement(sql);
 		preparedSql.setLong(1, objeto.getId_anuncio());
@@ -253,6 +253,8 @@ public class DAOCarregarPublicoRepository {
 		preparedSql.setDouble(6, objeto.getNota());
 		preparedSql.setString(7, objeto.getTitulo());
 		preparedSql.setString(8, objeto.getDescricao());
+		preparedSql.setString(9, objeto.getFoto());
+		preparedSql.setString(10, objeto.getExtfoto());
 
 		preparedSql.execute();
 		connection.commit();

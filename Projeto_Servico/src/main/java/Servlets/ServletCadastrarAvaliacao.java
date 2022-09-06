@@ -4,14 +4,21 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+
+import org.apache.commons.io.IOUtils;
+import org.apache.tomcat.util.codec.binary.Base64;
+import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 
 import Dao.DAOCarregarPublicoRepository;
 import Model.ModelAvaliacao;
 
+@MultipartConfig
 @WebServlet("/ServletCadastrarAvaliacao")
 public class ServletCadastrarAvaliacao extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -57,6 +64,16 @@ public class ServletCadastrarAvaliacao extends HttpServlet {
 				modelAvaliacao.setNota(Double.parseDouble(nota));
 				modelAvaliacao.setTitulo(titulo_avaliacao);
 				modelAvaliacao.setDescricao(descricao);
+				
+				if (ServletFileUpload.isMultipartContent(request)) {
+
+					Part part = request.getPart("fileFoto"); /*Pega foto da tela*/
+					byte[] foto = IOUtils.toByteArray(part.getInputStream());/*Converte imagem para byte*/
+					String imagemBase64 = "data:image/"+ part.getContentType().split("\\/")[1] + ";base64," + new Base64().encodeBase64String(foto);
+
+					modelAvaliacao.setFoto(imagemBase64);
+					modelAvaliacao.setExtfoto(part.getContentType().split("\\/")[1]);
+				}
 
 				daoCarregarPublicoRepository.gravarAvaliacao(modelAvaliacao);
 

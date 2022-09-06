@@ -192,11 +192,10 @@
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>Foto (Não obrigatório)</b>
+							<b>Foto</b>
 						</p>
 						<p>Ultilize este campo caso seja necessário</p>
-						<p>(Essa imagen sera mandida em sigilo)</p>
-						<input type="file" id="fileFoto" name="fileFoto" accept="image/*" class="form-control-file" style="margin-top: 15px; margin-left: 5px;">
+						<input type="file" id="fileFoto" name="fileFoto" accept="image/*" class="form-control-file" style="margin-top: 15px; margin-left: 5px;" required="required">
 						
 					</div>
 

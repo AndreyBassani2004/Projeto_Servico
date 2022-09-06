@@ -31,9 +31,27 @@ public class ModelAvaliacao implements Serializable{
 	private String email_prestador;
 	private Long id_adm_alterador;
 	
+	//Imagem
+	private String foto;
+	private String extfoto;
 	
 	
 	
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public String getExtfoto() {
+		return extfoto;
+	}
+
+	public void setExtfoto(String extfoto) {
+		this.extfoto = extfoto;
+	}
 
 	public Long getNota_media() {
 		return nota_media;
