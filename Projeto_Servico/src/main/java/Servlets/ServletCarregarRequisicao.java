@@ -227,12 +227,17 @@ public class ServletCarregarRequisicao extends HttpServlet {
 					
 					List<ModelAvaliacao> modelAvaliacaos = daoCarregarPublicoRepository.listAvaliacaoPaginada(Long.parseLong(id), Integer.parseInt(paginar));
 					
+					if(modelAnuncio.getSituacao().equals("BANIDO")) {
+						request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);
+					}else {
+					
 					request.setAttribute("modelAvaliacaos", modelAvaliacaos);												
 					request.setAttribute("modelAvaliacao", modelAvaliacao);												
 					request.setAttribute("modelAnuncio", modelAnuncio);	
 					request.setAttribute("totalPagina", daoCarregarPublicoRepository.totalPagina2(Long.parseLong(id)));
 					
 					request.getRequestDispatcher("principal/AnuncioVisualizar.jsp").forward(request, response);
+					}
 				}else {
 					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);
 				}

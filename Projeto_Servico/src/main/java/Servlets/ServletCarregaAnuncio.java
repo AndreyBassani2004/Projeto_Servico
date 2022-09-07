@@ -122,8 +122,14 @@ public class ServletCarregaAnuncio extends HttpServlet {
 					ModelAnuncio modelAnuncio = daoAnuncioRepository.consultarAnuncioID(id_usuario,
 							Long.parseLong(id_Anuncio));
 
+					if(modelAnuncio.getSituacao().equals("BANIDO")) {
+						RequestDispatcher redirecionar = request.getRequestDispatcher("principal/erro404.jsp");
+						redirecionar.forward(request, response);
+					}else {
+					
 					request.setAttribute("modelAnuncio", modelAnuncio);
 					request.getRequestDispatcher("principal/carregarAnuncio.jsp").forward(request, response);
+					}
 				}else {
 					RequestDispatcher redirecionar = request.getRequestDispatcher("principal/erro404.jsp");
 					redirecionar.forward(request, response);
