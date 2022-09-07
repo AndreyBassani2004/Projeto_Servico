@@ -30,7 +30,7 @@
 
 	<div class="container">
 		<form method="post"
-			action="<%=request.getContextPath()%>/ServletDenunciaAnuncio">
+			action="<%=request.getContextPath()%>/ServletCadastraDenunciaAnuncio" enctype="multipart/form-data">
 			<h3>Anuncio</h3>
 			<hr>
 			<div class="row">
@@ -162,10 +162,12 @@
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>Foto (Não obrigatório)</b>
+							<b>Foto:</b>
 						</p>
-						<p>Ultilize este campo caso seja necessário</p>
 						<p>(Essa imagen sera mandida em sigilo)</p>
+						<br><br>					
+						<input type="file" id="fileFoto" name="fileFoto" accept="image/*" onchange="visualizarImg('fotoembase64', 'fileFoto');" class="form-control-file" style="margin-top: 15px; margin-left: 5px;" required="required">
+							
 					</div>
 
 				</div>
@@ -190,6 +192,36 @@
 
 
 	<%@include file="/Componentes/rodape.jsp"%>
+
+<script type="text/javascript">
+	function verEditar(login){
+		
+		var urlAction = document.getElementById('cadastroCliente').action;
+		
+		window.location.href = urlAction + '?acao=buscarEditar&login=' + login;
+		
+		
+	}
+	
+	function visualizarImg(fotoembase64, filefoto) {
+		
+		
+		var preview = document.getElementById(fotoembase64);
+		var fileUser = document.getElementById(filefoto).files[0];
+		var reader = new FileReader();
+		
+		reader.onloadend = function (){
+			preview.src = reader.result /*Carregar foto na tela*/
+		}
+		
+		if(fileUser){
+			reader.readAsDataURL(fileUser);
+		}else{
+			preview.src= '';
+		}
+		
+	}
+	</script>
 
 </body>
 </html>

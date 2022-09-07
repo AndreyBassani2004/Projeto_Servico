@@ -27,8 +27,23 @@ public class ModelDenunciaAnuncio implements Serializable {
 	private String email_prestador;
 	private Long id_adm;
 
+	//Imagem
+	private String foto;
+	private String extFoto;
 	
 	
+	public String getFoto() {
+		return foto;
+	}
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+	public String getExtFoto() {
+		return extFoto;
+	}
+	public void setExtFoto(String extFoto) {
+		this.extFoto = extFoto;
+	}
 	public Long getId_adm() {
 		return id_adm;
 	}

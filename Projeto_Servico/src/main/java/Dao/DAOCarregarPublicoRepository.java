@@ -303,8 +303,8 @@ public class DAOCarregarPublicoRepository {
 	
 	public void cadastrarDenuncia(ModelDenunciaAnuncio objeto) throws Exception{
 		String sql = "INSERT INTO public.denuncia_anuncio(\r\n"
-				+ "	id_anuncio, nome_cliente, email_cliente, descricao_denuncia, estado_denuncia, motivo)\r\n"
-				+ "	VALUES (?, ?, ?, ?, ?, ?);";
+				+ "	id_anuncio, nome_cliente, email_cliente, descricao_denuncia, estado_denuncia, motivo, foto, extensaofoto)\r\n"
+				+ "	VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
 		
 		PreparedStatement preparedSql = connection.prepareStatement(sql);
 		preparedSql.setLong(1, objeto.getId_anuncio());
@@ -313,6 +313,8 @@ public class DAOCarregarPublicoRepository {
 		preparedSql.setString(4, objeto.getDescricao_denuncia());
 		preparedSql.setString(5, "ANALISE");
 		preparedSql.setString(6, objeto.getMotivo());
+		preparedSql.setString(7, objeto.getFoto());
+		preparedSql.setString(8, objeto.getExtFoto());
 		
 		preparedSql.execute();
 		connection.commit();
