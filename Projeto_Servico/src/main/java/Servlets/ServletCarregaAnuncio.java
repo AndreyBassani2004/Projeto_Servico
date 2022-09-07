@@ -5,16 +5,23 @@ import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
+
+import org.apache.commons.io.IOUtils;
+import org.apache.tomcat.util.codec.binary.Base64;
+import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 
 import Dao.DAOAnuncioRepository;
 import Dao.DAOUsuarioPosLogin;
 import Model.ModelAnuncio;
 
+@MultipartConfig
 @WebServlet(urlPatterns = { "/ServletCarregaAnuncio" })
 public class ServletCarregaAnuncio extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -179,9 +186,22 @@ public class ServletCarregaAnuncio extends HttpServlet {
 				modelAnuncio.setDescricao(descricao);
 				modelAnuncio.setEmail_contato(emailContato);
 				modelAnuncio.setSituacao(situacao);
+				
+				if (ServletFileUpload.isMultipartContent(request)) {
+
+					Part part = request.getPart("fileFoto"); /*Pega foto da tela*/
+					byte[] foto = IOUtils.toByteArray(part.getInputStream());/*Converte imagem para byte*/
+					String imagemBase64 = "data:image/"+ part.getContentType().split("\\/")[1] + ";base64," + new Base64().encodeBase64String(foto);
+					
+					modelAnuncio.setFoto(imagemBase64);
+					modelAnuncio.setExtFoto(part.getContentType().split("\\/")[1]);
+
+				}
 
 				daoAnuncioRepository.updateAnuncio(modelAnuncio);
 
+				modelAnuncio = daoAnuncioRepository.consultarAnuncioID2(Long.parseLong(id));
+				
 				msg = "Alterado com sucesso !";
 
 				request.setAttribute("msg", msg);

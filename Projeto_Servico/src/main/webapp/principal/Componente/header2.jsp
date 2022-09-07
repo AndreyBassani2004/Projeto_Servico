@@ -63,12 +63,13 @@
             </ul>
         </nav>      
         </div>
+        <!--
         <div id="t1">
                 <br>
                 <div id="imgt1"><img src="#" alt="Logo"></div><br><br><br>
                 <h2>CENTRAL DE ATENDIMENTO</h2>
                <h3>(11)12345-6789</h3>
-            </div>
+            </div>  -->
     </div>
     <div id="barraDiv"></div>
     

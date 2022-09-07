@@ -53,7 +53,19 @@ public class DAOAnuncioRepository {
 		preparedStatement.execute();
 
 		connection.commit();
+		
+		if(modelAnuncio.getFoto() != null && !modelAnuncio.getFoto().isEmpty() && !modelAnuncio.getFoto().equals("data:image/octet-stream;base64,")) {
+			String sql2 = "UPDATE public.anuncio SET extensaofotoanuncio=?, fotoanuncio=? WHERE id=?;";
+			
+			PreparedStatement preparedStatement2 = connection.prepareStatement(sql2);
+			preparedStatement2.setString(1, modelAnuncio.getExtFoto());
+			preparedStatement2.setString(2, modelAnuncio.getFoto());
+			preparedStatement2.setLong(3, modelAnuncio.getId());
+			
+			preparedStatement2.execute();
 
+			connection.commit();
+		}
 	}
 
 	public void deleteAnuncio(Long id, Long id_prestador) throws Exception {
@@ -183,6 +195,35 @@ public class DAOAnuncioRepository {
 			modelAnuncio.setServico(resultado.getString("servico"));
 			modelAnuncio.setEmail_contato(resultado.getString("email_contato"));
 			modelAnuncio.setSituacao(resultado.getString("situacao"));
+			modelAnuncio.setExtFoto(resultado.getString("extensaofotoanuncio"));
+			modelAnuncio.setFoto(resultado.getString("fotoanuncio"));
+		}
+
+		return modelAnuncio;
+
+	}
+	
+	public ModelAnuncio consultarAnuncioID2(Long id_anuncio) throws Exception {
+
+		ModelAnuncio modelAnuncio = new ModelAnuncio();
+
+		String sql = "SELECT * FROM anuncio where id = ?;";
+		PreparedStatement statement = connection.prepareStatement(sql);
+		statement.setLong(1, id_anuncio);
+
+		ResultSet resultado = statement.executeQuery();
+
+		while (resultado.next()) {
+			modelAnuncio.setId(resultado.getLong("id"));
+			modelAnuncio.setRegiao(resultado.getString("regiao"));
+			modelAnuncio.setEstado(resultado.getString("estado"));
+			modelAnuncio.setTitulo(resultado.getString("titulo"));
+			modelAnuncio.setDescricao(resultado.getString("descricao"));
+			modelAnuncio.setServico(resultado.getString("servico"));
+			modelAnuncio.setEmail_contato(resultado.getString("email_contato"));
+			modelAnuncio.setSituacao(resultado.getString("situacao"));
+			modelAnuncio.setExtFoto(resultado.getString("extensaofotoanuncio"));
+			modelAnuncio.setFoto(resultado.getString("fotoanuncio"));
 		}
 
 		return modelAnuncio;

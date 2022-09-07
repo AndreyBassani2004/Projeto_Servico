@@ -20,7 +20,7 @@
 		<h1>Fazer alteração anuncio</h1>
 	</div>
 	<form action="<%=request.getContextPath()%>/ServletCarregaAnuncio"
-		method="post" id="cadastroAnuncio">
+		method="post" id="cadastroAnuncio" enctype="multipart/form-data">
 		<div id="formulario">
 			<div id="formulario0">
 				<h5>Dados do prestador (conta):</h5>
@@ -194,9 +194,45 @@
 
 
 			</div>
+			<br><br>
+			<div id="formulario4">
+				<h5>Foto do anuncio</h5>
+				<br>
+				<div id="linha2"></div>
+				<table id="tabelafrom1">
+					<tr>
+						<td>
+							<div id="textcampo">
+								<p>
+									<b>Foto Anuncio:</b>
+								</p>
+								 <c:if test="${modelAnuncio.foto != '' && modelAnuncio.foto != null}">
+															<img alt="Imagen User" id="fotoembase64" src="${modelAnuncio.foto}" width="480px" height="350px">
+															</c:if>
+															<c:if test="${modelAnuncio.foto == '' || modelAnuncio.foto == null}">
+															<img alt="Imagen User" id="fotoembase64" src="<%=request.getContextPath()%>/principal/img/semImg.png" width="480px" height="350px">
+															</c:if>
+							</div>
+						</td>
+						<td>
+							<div id="textcampo">
+								<p>
+									<b>Alterar Arquivo:</b>
+								</p>
+	<input type="file" id="fileFoto" name="fileFoto" accept="image/*" onchange="visualizarImg('fotoembase64', 'fileFoto');" class="form-control-file" style="margin-top: 15px; margin-left: 5px;">
+								
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			
 			<div id="linha1"></div>
 
-
+			<br>
+				<div id="linha2"></div>
+			
 			<div id="button">
 				<button type="submit"
 					class="btn btn-warning">Alterar</button>
@@ -211,5 +247,26 @@
 	
 	
 	<%@include file="/Componentes/rodape.jsp"%>
+	
+	<script type="text/javascript">
+	function visualizarImg(fotoembase64, filefoto) {
+		
+		
+		var preview = document.getElementById(fotoembase64);
+		var fileUser = document.getElementById(filefoto).files[0];
+		var reader = new FileReader();
+		
+		reader.onloadend = function (){
+			preview.src = reader.result /*Carregar foto na tela*/
+		}
+		
+		if(fileUser){
+			reader.readAsDataURL(fileUser);
+		}else{
+			preview.src= '';
+		}
+		
+}
+    </script>
 </body>
 </html>
