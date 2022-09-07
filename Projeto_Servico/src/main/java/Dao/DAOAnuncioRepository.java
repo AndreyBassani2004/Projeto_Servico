@@ -20,7 +20,7 @@ public class DAOAnuncioRepository {
 	}
 
 	public void gravaAnuncio(ModelAnuncio modelAnuncio) throws Exception {
-		String sql = "INSERT INTO anuncio(regiao, estado, titulo, descricao, servico, email_contato, id_prestador) VALUES (?, ?, ?, ?, ?, ?, ?);";
+		String sql = "INSERT INTO anuncio(regiao, estado, titulo, descricao, servico, email_contato, id_prestador, extensaofotoanuncio, fotoanuncio) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
 		preparedStatement.setString(1, modelAnuncio.getRegiao());
@@ -30,6 +30,8 @@ public class DAOAnuncioRepository {
 		preparedStatement.setString(5, modelAnuncio.getServico());
 		preparedStatement.setString(6, modelAnuncio.getEmail_contato());
 		preparedStatement.setLong(7, modelAnuncio.getId_prestador().getId());
+		preparedStatement.setString(8, modelAnuncio.getExtFoto());
+		preparedStatement.setString(9, modelAnuncio.getFoto());
 
 		preparedStatement.execute();
 
