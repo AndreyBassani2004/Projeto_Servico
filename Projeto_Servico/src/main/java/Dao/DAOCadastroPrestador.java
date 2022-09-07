@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import javax.servlet.RequestDispatcher;
 
 import Connection.SingleConnectionBanco;
 import Model.ModelLogin;

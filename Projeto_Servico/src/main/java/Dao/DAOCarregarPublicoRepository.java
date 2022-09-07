@@ -11,7 +11,6 @@ import Model.ModelAnuncio;
 import Model.ModelAvaliacao;
 import Model.ModelDenunciaAnuncio;
 import Model.ModelDenunciaAvaliacao;
-import Model.ModelLogin;
 
 public class DAOCarregarPublicoRepository {
 

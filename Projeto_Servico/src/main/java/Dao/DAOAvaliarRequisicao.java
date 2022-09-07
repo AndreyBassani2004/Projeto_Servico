@@ -7,12 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Connection.SingleConnectionBanco;
-import Model.ModelAnuncio;
 import Model.ModelAvaliacao;
 import Model.ModelDenunciaAnuncio;
 import Model.ModelDenunciaAvaliacao;
 import Model.ModelMensagem;
-import javassist.expr.NewArray;
 
 public class DAOAvaliarRequisicao {
 	

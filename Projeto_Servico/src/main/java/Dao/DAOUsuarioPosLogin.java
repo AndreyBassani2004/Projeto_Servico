@@ -13,9 +13,6 @@ public class DAOUsuarioPosLogin {
 
 	private Connection connection;
 	
-	private DAOLoginRepository daoLoginRepository = new DAOLoginRepository();
-	
-
 	public DAOUsuarioPosLogin() {
 		connection = SingleConnectionBanco.getConnection();
 	}
