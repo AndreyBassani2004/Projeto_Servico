@@ -36,14 +36,17 @@
 
 
 								<c:forEach items="${modelAnuncios}" var="an">
+										
 									<div class="col-md-4">
-										<c:if test="${an.foto != '' && an.foto != null}">
-															<img alt="Imagen User" id="fotoembase64" src="${an.foto}" width="70px">
+										 <c:if test="${an.foto != '' && an.foto != null}">
+															<img alt="Imagen User" id="fotoembase64" src="${an.foto}" width="250px" height="140px" >
 															</c:if>
 															<c:if test="${an.foto == '' || an.foto == null}">
-															<img alt="Imagen User" id="fotoembase64" src="<%=request.getContextPath()%>/principal/img/semImg.png" width="70px">
+															<img alt="Imagen User" id="fotoembase64" src="<%=request.getContextPath()%>/Img/semImg.png" width="250px" height="140px">
 															</c:if>
+									
 									</div>
+	
 									<div class="col-md-8">
 										<div class="card-body">
 											<h5 class="card-title">

@@ -68,7 +68,9 @@ public class DAOCarregarPublicoRepository {
 			modelAnuncio.setServico(rs.getString("servico"));
 			modelAnuncio.setSituacao(rs.getString("situacao"));
 			modelAnuncio.setEmail_contato(rs.getString("email_contato"));
-
+			modelAnuncio.setFoto(rs.getString("fotoanuncio"));
+			modelAnuncio.setExtFoto(rs.getString("extensaofotoanuncio"));
+			
 			retorno.add(modelAnuncio);
 
 		}
