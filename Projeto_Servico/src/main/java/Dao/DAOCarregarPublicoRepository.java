@@ -183,6 +183,8 @@ public class DAOCarregarPublicoRepository {
 			modelAnuncio.setServico(resultado.getString("servico"));
 			modelAnuncio.setEmail_contato(resultado.getString("email_contato"));
 			modelAnuncio.setSituacao(resultado.getString("situacao"));
+			modelAnuncio.setFoto(resultado.getString("fotoanuncio"));
+			modelAnuncio.setExtFoto(resultado.getString("extensaofotoanuncio"));
 		}
 
 		String sql2 = "select*from usuario where id = ?;";

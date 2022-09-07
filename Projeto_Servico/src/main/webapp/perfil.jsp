@@ -25,9 +25,22 @@
 				<h2>
 					<spam>${modelAnuncio.nome_prestador}</spam>
 				</h2>
-				<br /> <br /> <img alt="Prestador"
+				<br /> <br /> 
+				
+				<!--  <img alt="Prestador"
 					src="<%=request.getContextPath()%>/Img/user.jpg" width="519px"
+					height="459px">-->
+					
+					 <c:if test="${modelAnuncio.foto != '' && modelAnuncio.foto != null}">
+										<img alt="Imagen User" id="fotoembase64" src="${modelAnuncio.foto}" width="519px"
 					height="459px">
+															</c:if>
+															<c:if test="${modelAnuncio.foto == '' || modelAnuncio.foto == null}">
+															<img alt="Imagen User" id="fotoembase64" src="<%=request.getContextPath()%>/principal/img/semImg.png" width="519px"
+					height="459px">
+															</c:if>
+															<br><br>
+				<h6>Descrição:</h6>
 				<p>
 					<spam>${modelAnuncio.descricao}</spam>
 				</p>
