@@ -66,6 +66,8 @@ public class DAOSistemaAdmRepository {
 			modelDenunciaAnuncio.setEmail_cliente(resultado.getString("email_cliente"));
 			modelDenunciaAnuncio.setDescricao_denuncia(resultado.getString("descricao_denuncia"));
 			modelDenunciaAnuncio.setMotivo(resultado.getString("motivo"));
+			modelDenunciaAnuncio.setFoto(resultado.getString("foto"));
+			modelDenunciaAnuncio.setExtFoto(resultado.getString("extensaofoto"));
 		}
 
 		String sql2 = "SELECT*FROM anuncio where id = " + modelDenunciaAnuncio.getId_anuncio() + ";";
@@ -121,6 +123,8 @@ public class DAOSistemaAdmRepository {
 			modelDenunciaAnuncio.setId_adm(resultado.getLong("id_adm_situacao"));
 			modelDenunciaAnuncio.setRelatorio(resultado.getString("relatorio"));
 			modelDenunciaAnuncio.setSituacao(resultado.getString("estado_denuncia"));
+			modelDenunciaAnuncio.setFoto(resultado.getString("foto"));
+			modelDenunciaAnuncio.setExtFoto(resultado.getString("extensaofoto"));
 		}
 
 		String sql2 = "SELECT*FROM anuncio where id = " + modelDenunciaAnuncio.getId_anuncio() + ";";

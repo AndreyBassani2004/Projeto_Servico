@@ -122,8 +122,17 @@
 			<div class="col">
 				<div id="textcampo">
 					<p>
-						<b>Foto comprovação (Não Obrigatório):</b>
+						<b>Foto comprovação:</b>
 					</p>
+					<c:if test="${modelDenunciaAnuncio.foto != '' && modelDenunciaAnuncio.foto != null}">
+										<img alt="Imagen User" id="fotoembase64" src="${modelDenunciaAnuncio.foto}" width="319px"
+					height="259px">
+															</c:if>
+															<c:if test="${modelDenunciaAnuncio.foto == '' || modelDenunciaAnuncio.foto == null}">
+															<img alt="Imagen User" id="fotoembase64" src="<%=request.getContextPath()%>/principal/img/semImg.png" width="319px"
+					height="259px">
+															</c:if>
+															<br><br>
 				</div>
 			</div>
 		</div>
