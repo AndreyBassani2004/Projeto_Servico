@@ -75,7 +75,7 @@
 									int totalPagina = (int) request.getAttribute("totalPagina");
 									
 									for (int p = 0; p < totalPagina; p++){
-										String url = request.getContextPath()+ "/ServletPrestadores?acao=pagina&paginar=" + (p * 5) + "&categoria=" + modelAnuncio.getCategoria_pesquisa() + "&cidade=" + 
+										String url = request.getContextPath()+ "/ServletPesquisaPrestadorPublic?acao=pagina&paginar=" + (p * 5) + "&categoria=" + modelAnuncio.getCategoria_pesquisa() + "&cidade=" + 
 									    modelAnuncio.getCidade_pesquisa() + "&uf=" + modelAnuncio.getEstado_pesquisa();
 										out.print("<li class=\"page-item\"><a class=\"page-link\" href=\""+url+"\">"+(p + 1)+" </a></li>");									}
 								
