@@ -8,6 +8,8 @@
 <title>PresTec</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/principal/css/perfilCSS.css">
+	 <link rel="icon" type="image/png" href="<%= request.getContextPath() %>/Img/logo_superior.png"/>
+	
 </head>
 <body>
 	<%@include file="/principal/Componente/header2.jsp"%>

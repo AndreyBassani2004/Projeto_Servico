@@ -10,6 +10,8 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/cadastroSuc.css">
+	 <link rel="icon" type="image/png" href="<%= request.getContextPath() %>/Img/logo_superior.png"/>
+	
 </head>
 <body>
  	<%@include file="/Componentes/header.jsp"%>
