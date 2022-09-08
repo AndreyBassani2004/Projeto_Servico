@@ -66,11 +66,17 @@
 							<ul class="pagination">
 								
 								<%	
-								
+									//ServletPesquisaPrestadorPublic?acao=pesquisa&paginar=0&categoria=alvenaria&cidade=abc&uf=AC	
+									
+									ModelAnuncio modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+									
+								 	String categoria_pesquisa = request.getParameter("modelAnuncio.categoria_pesquisa");
+ 									
 									int totalPagina = (int) request.getAttribute("totalPagina");
 									
 									for (int p = 0; p < totalPagina; p++){
-										String url = request.getContextPath()+ "/ServletPrestadores?acao=paginar&pagina=" + (p * 5) + "&categoria=alvenaria";
+										String url = request.getContextPath()+ "/ServletPrestadores?acao=pagina&paginar=" + (p * 5) + "&categoria=" + modelAnuncio.getCategoria_pesquisa() + "&cidade=" + 
+									    modelAnuncio.getCidade_pesquisa() + "&uf=" + modelAnuncio.getEstado_pesquisa();
 										out.print("<li class=\"page-item\"><a class=\"page-link\" href=\""+url+"\">"+(p + 1)+" </a></li>");									}
 								
 								%>
@@ -85,14 +91,14 @@
 							<div class="row g-0">
 								<form action="<%=request.getContextPath()%>/ServletPesquisaPrestadorPublic?" method="get" class="col-md-4" id="form_pesquisa">
 									<input type="hidden" id="acao" name="acao" value="pesquisa">
-									<input type="hidden" id="paginar" name="paginar" value="0">  
+									<input type="hidden" id="paginar" name="paginar" value="0">   
 									<h5>
 										<b>Pesquisar</b>
 									</h5>
 									<br /> <br /> <br />
 									  <input type="hidden" id="categoria" name="categoria" value="alvenaria"> 
 									<div id="text_campo">
-										<label>Cidade:</label><input type="text" class="form-control" name="cidade" id="cidade"
+										<label>Cidade:</label><input type="text" class="form-control" name="cidade" id="cidade" value="${modelAnuncio.cidade_pesquisa}"
 											placeholder="Digite o nome da cidade." style="width: 250px;" required="required">
 									</div>
 									<br />

@@ -112,6 +112,67 @@ public class DAOCarregarPublicoRepository {
 
 	}
 	
+	
+	public List<ModelAnuncio> listAnuncioPaginadaPesquisa(String servico, Integer offset, String cidade, String estado) throws Exception {
+
+		List<ModelAnuncio> retorno = new ArrayList<ModelAnuncio>();
+
+		String sql = "select*from anuncio where servico = ? and estado like '%"+estado+"%' and regiao like '%"+cidade+"%' and situacao = 'ATIVO' offset " + offset + " limit 5; ";
+		PreparedStatement statement = connection.prepareStatement(sql);
+		statement.setString(1, servico);
+
+		ResultSet rs = statement.executeQuery();
+
+		while (rs.next()) {
+
+			ModelAnuncio modelAnuncio = new ModelAnuncio();
+
+			modelAnuncio.setId(rs.getLong("id"));
+			modelAnuncio.setRegiao(rs.getString("regiao"));
+			modelAnuncio.setEstado(rs.getString("estado"));
+			modelAnuncio.setTitulo(rs.getString("titulo"));
+			modelAnuncio.setDescricao(rs.getString("descricao"));
+			modelAnuncio.setServico(rs.getString("servico"));
+			modelAnuncio.setSituacao(rs.getString("situacao"));
+			modelAnuncio.setEmail_contato(rs.getString("email_contato"));
+			modelAnuncio.setExtFoto(rs.getString("extensaofotoanuncio"));
+			modelAnuncio.setFoto(rs.getString("fotoanuncio"));
+			
+
+			retorno.add(modelAnuncio);
+
+		}
+
+		return retorno;
+
+	}
+	
+	public int totalPaginaPesquisa(String servico, String cidade, String estado) throws Exception {
+
+		String sql = "select count(1) as total from anuncio where servico = '" + servico + "' and estado like '%"+estado+"%' and regiao like '%"+cidade+"%' and situacao = 'ATIVO';";
+		PreparedStatement statement = connection.prepareStatement(sql);
+
+		ResultSet resultado = statement.executeQuery();
+
+		resultado.next();
+
+		Double cadastros = resultado.getDouble("total");
+
+		Double porpagina = 5.0;
+
+		Double pagina = cadastros / porpagina;
+
+		Double resto = pagina % 2;
+
+		if (resto > 0) {
+			pagina++;
+		}
+
+		return pagina.intValue();
+
+	}
+	
+	
 	public List<ModelAvaliacao> listAvaliacaoPaginada(Long id_anuncio, Integer offset) throws Exception{
 		
 		List<ModelAvaliacao> retorno = new ArrayList<ModelAvaliacao>();

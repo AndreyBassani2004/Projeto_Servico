@@ -29,7 +29,36 @@ public class ModelAnuncio {
 	private String foto;
 	private String extFoto;
 	
+	//Pesquisa Dados
+	private String categoria_pesquisa;
+	private String cidade_pesquisa;
+	private String estado_pesquisa;
 	
+	
+	public String getCategoria_pesquisa() {
+		return categoria_pesquisa;
+	}
+
+	public void setCategoria_pesquisa(String categoria_pesquisa) {
+		this.categoria_pesquisa = categoria_pesquisa;
+	}
+
+	public String getCidade_pesquisa() {
+		return cidade_pesquisa;
+	}
+
+	public void setCidade_pesquisa(String cidade_pesquisa) {
+		this.cidade_pesquisa = cidade_pesquisa;
+	}
+
+	public String getEstado_pesquisa() {
+		return estado_pesquisa;
+	}
+
+	public void setEstado_pesquisa(String estado_pesquisa) {
+		this.estado_pesquisa = estado_pesquisa;
+	}
+
 	public String getFoto() {
 		return foto;
 	}
