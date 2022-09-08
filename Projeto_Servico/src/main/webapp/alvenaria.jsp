@@ -83,13 +83,15 @@
 						<div class="card mb-3"
 							style="min-width: 360px; min-height: 800px;">
 							<div class="row g-0">
-								<form action="#" class="col-md-4" id="form_pesquisa">
+								<form action="<%=request.getContextPath()%>/ServletPesquisaPrestadorPublic?" method="get" class="col-md-4" id="form_pesquisa">
+																		  <input type="hidden" id="acao" name="acao" value="pesquisa"> 
 									<h5>
 										<b>Pesquisar</b>
 									</h5>
 									<br /> <br /> <br />
+									  <input type="hidden" id="categoria" name="categoria" value="alvenaria"> 
 									<div id="text_campo">
-										<label>Cidade:</label><input type="text" class="form-control"
+										<label>Cidade:</label><input type="text" class="form-control" name="cidade" id="cidade"
 											placeholder="Digite o nome da cidade." style="width: 250px;" required="required">
 									</div>
 									<br />
