@@ -52,6 +52,69 @@ public class ServletPesquisaPrestadorPublic extends HttpServlet {
 			request.setAttribute("totalPagina", daoCarregarPublicoRepository.totalPaginaPesquisa(categoria, cidade, estado));
 			request.getRequestDispatcher("/alvenariaPesquisa.jsp").forward(request, response);
 			
+		}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("pesquisa2")) {	
+			
+			String categoria = request.getParameter("categoria");
+			String cidade = request.getParameter("cidade");
+			String estado = request.getParameter("uf");
+			
+			ModelAnuncio modelAnuncio = new ModelAnuncio();
+			
+			modelAnuncio.setCategoria_pesquisa(categoria);
+			modelAnuncio.setCidade_pesquisa(cidade);
+			modelAnuncio.setEstado_pesquisa(estado);
+			
+			Integer offset = 0;
+
+			List<ModelAnuncio> modelAnuncios = daoCarregarPublicoRepository.listAnuncioPaginadaPesquisa(categoria, offset, cidade, estado);
+
+			request.setAttribute("modelAnuncio", modelAnuncio);
+			request.setAttribute("modelAnuncios", modelAnuncios);
+			request.setAttribute("totalPagina", daoCarregarPublicoRepository.totalPaginaPesquisa(categoria, cidade, estado));
+			request.getRequestDispatcher("/encanadorPesquisa.jsp").forward(request, response);
+			
+		}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("pesquisa3")) {	
+	
+			String categoria = request.getParameter("categoria");
+			String cidade = request.getParameter("cidade");
+			String estado = request.getParameter("uf");
+			
+			ModelAnuncio modelAnuncio = new ModelAnuncio();
+			
+			modelAnuncio.setCategoria_pesquisa(categoria);
+			modelAnuncio.setCidade_pesquisa(cidade);
+			modelAnuncio.setEstado_pesquisa(estado);
+			
+			Integer offset = 0;
+
+			List<ModelAnuncio> modelAnuncios = daoCarregarPublicoRepository.listAnuncioPaginadaPesquisa(categoria, offset, cidade, estado);
+
+			request.setAttribute("modelAnuncio", modelAnuncio);
+			request.setAttribute("modelAnuncios", modelAnuncios);
+			request.setAttribute("totalPagina", daoCarregarPublicoRepository.totalPaginaPesquisa(categoria, cidade, estado));
+			request.getRequestDispatcher("/faztudoPesquisa.jsp").forward(request, response);
+			
+		}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("pesquisa4")) {	
+					
+			String categoria = request.getParameter("categoria");
+			String cidade = request.getParameter("cidade");
+			String estado = request.getParameter("uf");
+			
+			ModelAnuncio modelAnuncio = new ModelAnuncio();
+			
+			modelAnuncio.setCategoria_pesquisa(categoria);
+			modelAnuncio.setCidade_pesquisa(cidade);
+			modelAnuncio.setEstado_pesquisa(estado);
+			
+			Integer offset = 0;
+
+			List<ModelAnuncio> modelAnuncios = daoCarregarPublicoRepository.listAnuncioPaginadaPesquisa(categoria, offset, cidade, estado);
+
+			request.setAttribute("modelAnuncio", modelAnuncio);
+			request.setAttribute("modelAnuncios", modelAnuncios);
+			request.setAttribute("totalPagina", daoCarregarPublicoRepository.totalPaginaPesquisa(categoria, cidade, estado));
+			request.getRequestDispatcher("/eletricistaPesquisa.jsp").forward(request, response);
+			
 		}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("pagina")) {
 			
 			String categoria = request.getParameter("categoria");
@@ -73,6 +136,68 @@ public class ServletPesquisaPrestadorPublic extends HttpServlet {
 			request.setAttribute("totalPagina", daoCarregarPublicoRepository.totalPaginaPesquisa(categoria, cidade, estado));
 			request.getRequestDispatcher("/alvenariaPesquisa.jsp").forward(request, response);
 			
+		}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("pagina2")) { 	
+			
+			String categoria = request.getParameter("categoria");
+			String cidade = request.getParameter("cidade");
+			String estado = request.getParameter("uf");
+			
+			ModelAnuncio modelAnuncio = new ModelAnuncio();
+			
+			modelAnuncio.setCategoria_pesquisa(categoria);
+			modelAnuncio.setCidade_pesquisa(cidade);
+			modelAnuncio.setEstado_pesquisa(estado);
+			
+			Integer offset = Integer.parseInt(request.getParameter("paginar"));
+
+			List<ModelAnuncio> modelAnuncios = daoCarregarPublicoRepository.listAnuncioPaginadaPesquisa(categoria, offset, cidade, estado);
+
+			request.setAttribute("modelAnuncio", modelAnuncio);
+			request.setAttribute("modelAnuncios", modelAnuncios);
+			request.setAttribute("totalPagina", daoCarregarPublicoRepository.totalPaginaPesquisa(categoria, cidade, estado));
+			request.getRequestDispatcher("/encanadorPesquisa.jsp").forward(request, response);
+			
+		}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("pagina3")) { 	
+	
+			String categoria = request.getParameter("categoria");
+			String cidade = request.getParameter("cidade");
+			String estado = request.getParameter("uf");
+			
+			ModelAnuncio modelAnuncio = new ModelAnuncio();
+			
+			modelAnuncio.setCategoria_pesquisa(categoria);
+			modelAnuncio.setCidade_pesquisa(cidade);
+			modelAnuncio.setEstado_pesquisa(estado);
+			
+			Integer offset = Integer.parseInt(request.getParameter("paginar"));
+
+			List<ModelAnuncio> modelAnuncios = daoCarregarPublicoRepository.listAnuncioPaginadaPesquisa(categoria, offset, cidade, estado);
+
+			request.setAttribute("modelAnuncio", modelAnuncio);
+			request.setAttribute("modelAnuncios", modelAnuncios);
+			request.setAttribute("totalPagina", daoCarregarPublicoRepository.totalPaginaPesquisa(categoria, cidade, estado));
+			request.getRequestDispatcher("/faztudoPesquisa.jsp").forward(request, response);
+		
+		}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("pagina4")) { 	
+
+			String categoria = request.getParameter("categoria");
+			String cidade = request.getParameter("cidade");
+			String estado = request.getParameter("uf");
+			
+			ModelAnuncio modelAnuncio = new ModelAnuncio();
+			
+			modelAnuncio.setCategoria_pesquisa(categoria);
+			modelAnuncio.setCidade_pesquisa(cidade);
+			modelAnuncio.setEstado_pesquisa(estado);
+			
+			Integer offset = Integer.parseInt(request.getParameter("paginar"));
+
+			List<ModelAnuncio> modelAnuncios = daoCarregarPublicoRepository.listAnuncioPaginadaPesquisa(categoria, offset, cidade, estado);
+
+			request.setAttribute("modelAnuncio", modelAnuncio);
+			request.setAttribute("modelAnuncios", modelAnuncios);
+			request.setAttribute("totalPagina", daoCarregarPublicoRepository.totalPaginaPesquisa(categoria, cidade, estado));
+			request.getRequestDispatcher("/eletricistaPesquisa.jsp").forward(request, response);
 			
 		}else {
 			request.getRequestDispatcher("index.jsp").forward(request, response);
