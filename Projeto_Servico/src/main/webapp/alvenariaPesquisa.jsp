@@ -104,37 +104,226 @@
 									<br />
 									<div id="textcampo">
 										<p>Estado:</p>
-										<select class="form-control" name="uf" id="uf"
-											style="width: 250px;" required="required">
-											<option value="">Selecione</option>
-											<option value="AC">AC</option>
-											<option value="AL">AL</option>
-											<option value="AP">AP</option>
-											<option value="AM">AM</option>
-											<option value="BA">BA</option>
-											<option value="CE">CE</option>
-											<option value="DF">DF</option>
-											<option value="ES">ES</option>
-											<option value="GO">GO</option>
-											<option value="MA">MA</option>
-											<option value="MT">MT</option>
-											<option value="MS">MS</option>
-											<option value="MG">MG</option>
-											<option value="PA">PA</option>
-											<option value="PB">PB</option>
-											<option value="PR">PR</option>
-											<option value="PE">PE</option>
-											<option value="PI">PI</option>
-											<option value="RJ">RJ</option>
-											<option value="RN">RN</option>
-											<option value="RS">RS</option>
-											<option value="RO">RO</option>
-											<option value="RR">RR</option>
-											<option value="SC">SC</option>
-											<option value="SP">SP</option>
-											<option value="SE">SE</option>
-											<option value="TO">TO</option>
-										</select>
+										<select class="form-control" name="uf" id="uf">
+									<option value="">Selecione</option>
+									<option value="AC"
+										<% modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("AC")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>AC</option>
+									<option value="AL"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("AL")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>AL</option>
+									<option value="AP"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("AP")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>AP</option>
+									<option value="AM"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("AM")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>AM</option>
+									<option value="BA"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("BA")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>BA</option>
+									<option value="CE"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("CE")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>CE</option>
+									<option value="DF"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("DF")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>DF</option>
+									<option value="ES"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("ES")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>ES</option>
+									<option value="GO"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("GO")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>GO</option>
+									<option value="MA"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("MA")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>MA</option>
+									<option value="MT"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("MT")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>MT</option>
+									<option value="MS"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("MS")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>MS</option>
+									<option value="MG"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("MG")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>MG</option>
+									<option value="PA"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("PA")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>PA</option>
+									<option value="PB"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("PB")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>PB</option>
+									<option value="PR"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("PR")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>PR</option>
+									<option value="PE"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("PE")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>PE</option>
+									<option value="PI"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("PI")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>PI</option>
+									<option value="RJ"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("RJ")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>RJ</option>
+									<option value="RN"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("RN")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>RN</option>
+									<option value="RS"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("RS")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>RS</option>
+									<option value="RO"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("RO")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>RO</option>
+									<option value="RR"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("RR")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>RR</option>
+									<option value="SC"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("SC")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>SC</option>
+									<option value="SP"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("SP")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>SP</option>
+									<option value="SE"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("SE")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>SE</option>
+									<option value="TO"
+										<%modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("TO")) {
+	out.print(" ");
+	out.print("selected=\"selected\"");
+	out.print(" ");
+}%>>TO</option>
+								</select>
 									</div>
 									<div id="linha2"></div>
 									<div id="textcampo">
