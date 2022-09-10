@@ -4,7 +4,7 @@
     
 <link href="<%= request.getContextPath() %>/css/header.css" rel="stylesheet" type="text/css">
  <header>
-        <div id="img"><img src="./img/#" alt="Logo" width="320" height="=240"></div>
+        <div id="img"><img src="<%= request.getContextPath() %>/Img/logo.png" alt="Logo" width="150" height="=150" style="margin: 0.01em"></div>
         <div id="t1">
             <h2>CENTRAL DE ATENDIMENTO</h2>
            <h3>(11)12345-6789</h3>
