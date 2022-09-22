@@ -1,8 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 <title>PresTec</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/principal/css/principalpag.css">
@@ -19,7 +19,7 @@
 		if(situacao.equals("ATIVO")){
 			out.print("Seja, Bem Vindo(a)!");
 		}else if(situacao.equals("DESATIVADO")){
-			out.print("Sua conta foi banido, por violaÃ§Ãµes as regras.");
+			out.print("Sua conta foi banido, por violações as regras.");
 		}else{
 			out.print("Seja, Bem Vindo!");
 		}

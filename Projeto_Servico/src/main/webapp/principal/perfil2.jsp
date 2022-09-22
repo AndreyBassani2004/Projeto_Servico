@@ -1,10 +1,10 @@
 <%@page import="Model.ModelLogin"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 <title>PresTec</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/principal/css/perfilCSS.css">
@@ -80,7 +80,7 @@
 					<td>
 							<div id="textcampo">
 								<p>
-									<b>Foto UsuÃ¡rio:</b>
+									<b>Foto Usuário:</b>
 								</p>
 									<br/><br/>					
 								 <div id="fotoNome">
@@ -386,7 +386,7 @@ if (modelLogin != null && modelLogin.getEstado().equals("TO")) {
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<h5>Para Finalizar as alteraÃ§Ãµes deverar ser realizado lagout.</h5>
+					<h5>Para Finalizar as alterações deverar ser realizado lagout.</h5>
 				</div>
 			</div>
 			<br/> <br/>
@@ -403,7 +403,7 @@ if (modelLogin != null && modelLogin.getEstado().equals("TO")) {
 	<div id="linha1"></div>
 	<script type="text/javascript">
 		function finalizar() {
-			alert("Para finalizar as alteraÃ§Ãµes sera feito logout!");
+			alert("Para finalizar as alterações sera feito logout!");
 		}
 		function verEditar(login) {
 

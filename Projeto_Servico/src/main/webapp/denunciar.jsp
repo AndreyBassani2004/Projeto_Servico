@@ -2,11 +2,11 @@
 <%@page import="Model.ModelLogin"%>
 <%@page import="Model.ModelAvaliacao"%>
 <%@page import="Model.ModelDenunciaAnuncio"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 <title>PresTec</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/denunciarStyle.css">
@@ -24,8 +24,8 @@
 	<div id="linha1"></div>
 
 	<div class="container">
-		<h1 style="text-align: center;">Denunciar anuncio prestaÃ§Ã£o de
-			serviÃ§o</h1>
+		<h1 style="text-align: center;">Denunciar anuncio prestação de
+			serviço</h1>
 	</div>
 	<br />
 	<br />
@@ -60,7 +60,7 @@
 					<br />
 					<div id="textcampo">
 						<p>
-							<b>ServiÃ§o do prestador:</b>
+							<b>Serviço do prestador:</b>
 						</p>
 						<input type="text" class="form-control"
 							placeholder="Digite seu nome completo" name="servico_prestador"
@@ -94,7 +94,7 @@
 					<br />
 					<div id="textcampo">
 						<p>
-							<b>DescriÃ§Ã£o:</b>
+							<b>Descrição:</b>
 						</p>
 					<textarea class="form-control" readonly="readonly">${modelDenunciaAnuncio.descricao_anuncio}</textarea>
 					</div>
@@ -132,7 +132,7 @@
 				</div>
 			</div>
 			<br /> <br />
-			<h3>DescriÃ§Ã£o denuncia</h3>
+			<h3>Descrição denuncia</h3>
 			<hr>
 			<div class="row">
 				<div class="col">
@@ -153,7 +153,7 @@
 					<br />
 					<div id="textcampo">
 						<p>
-							<b>DescriÃ§Ã£o:</b>
+							<b>Descrição:</b>
 						</p>
 						<textarea class="form-control" maxlength="150" id="descricao" name="descricao" required="required"></textarea>
 

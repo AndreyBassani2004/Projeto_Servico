@@ -1,6 +1,7 @@
 package Servlets;
 
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,6 +18,10 @@ import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 import Dao.DAOAnuncioRepository;
 import Dao.DAOUsuarioPosLogin;
 import Model.ModelAnuncio;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 
 @MultipartConfig
 @WebServlet(urlPatterns = { "/ServletCadastraAnuncio" })
@@ -44,6 +49,8 @@ public class ServletCadastraAnuncio extends ServletGenericUtil {
 			throws ServletException, IOException {
 		try {
 
+			BufferedReader arqIn = new BufferedReader(new InputStreamReader(new FileInputStream("UTF-8"), "UTF-8"));
+			
 			String id_prestador = request.getParameter("id");
 			String servico = request.getParameter("servico");
 			String estado = request.getParameter("uf2");

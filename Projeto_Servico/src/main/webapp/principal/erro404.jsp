@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +16,7 @@ body {
 	padding: 3em;
 }
 </style>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 <title>PresTec</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -33,7 +33,7 @@ body {
 				<h2>ERRO 404!</h2>
 				<hr>
 				<br />
-				<h4>Pagina n√£o existe.</h4>
+				<h4>Pagina n„o existe.</h4>
 			<!-- <br /><a href="/index.jsp">Voltar ao Inicio</a> -->
 			</div>
 		</div>

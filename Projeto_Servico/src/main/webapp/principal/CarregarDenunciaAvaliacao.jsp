@@ -1,9 +1,9 @@
 <%@page import="Model.ModelDenunciaAvaliacao"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 <title>PresTec</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/principal/css/carregarDenAnuStyle.css">
@@ -28,7 +28,7 @@
 	<div class="container">
 		<div class="row" style="align-items: center; text-align: center;">
 			<div class="col">
-				<h1>Avaliar denuncia da avaliaÃ§Ã£o</h1>
+				<h1>Avaliar denuncia da avaliação</h1>
 			</div>
 		</div>
 	</div>
@@ -55,7 +55,7 @@
 
 					<div id="textcampo">
 						<p>
-							<b>ID AvaliaÃ§Ã£o:</b>
+							<b>ID Avaliação:</b>
 						</p>
 						<input type="text" class="form-control"
 							value="${modelDenunciaAvaliacao.id_avaliacao}" name="id_avaliacao2"
@@ -101,7 +101,7 @@
 			<br />
 			<br />
 
-			<h5>Nota da prestaÃ§Ã£o</h5>
+			<h5>Nota da prestação</h5>
 			<hr>
 			<div class="row">
 				<div class="col">
@@ -131,7 +131,7 @@
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>DescriÃ§Ã£o:</b>
+							<b>Descrição:</b>
 						</p>
 						<textarea class="form-control" readonly="readonly">${modelDenunciaAvaliacao.descricao_avaliacao}</textarea>
 
@@ -145,14 +145,14 @@
 			<br />
 
 
-			<h5>Prova da prestaÃ§Ã£o</h5>
+			<h5>Prova da prestação</h5>
 			<hr>
 			<br>
 			<div class="row">
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>Data da prestaÃ§Ã£o:</b>
+							<b>Data da prestação:</b>
 						</p>
 						<input type="text" class="form-control"
 							value="${modelDenunciaAvaliacao.data_prestacao}"
@@ -161,7 +161,7 @@
 					<br />
 					<div id="textcampo">
 						<p>
-							<b>Email do prestador de serviÃ§o:</b>
+							<b>Email do prestador de serviço:</b>
 						</p>
 						<input type="text" class="form-control"
 							value="${modelDenunciaAvaliacao.email_prestador}"
@@ -172,7 +172,7 @@
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>Foto comprovaÃ§Ã£o:</b>
+							<b>Foto comprovação:</b>
 						</p>
 						<c:if test="${modelDenunciaAvaliacao.foto != '' && modelDenunciaAvaliacao.foto != null}">
 						<img alt="Imagem" id="fotoembase64" src="${modelDenunciaAvaliacao.foto}" width="400px" height="250px">
@@ -192,7 +192,7 @@
 			<br />
 
 
-			<h5>DescriÃ§Ã£o denuncia</h5>
+			<h5>Descrição denuncia</h5>
 			<hr>
 			<div class="row">
 				<div class="col">
@@ -227,7 +227,7 @@
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>DescriÃ§Ã£o:</b>
+							<b>Descrição:</b>
 						</p>
 						<textarea id="descricao_denuncia" name="descricao_denuncia"
 							class="form-control" maxlength="150" readonly="readonly">${modelDenunciaAvaliacao.descricao}</textarea>
@@ -273,7 +273,7 @@
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>RelatÃ³rio:</b>
+							<b>Relatório:</b>
 						</p>
 						<textarea class="form-control" maxlength="150" id="relatorio" name="relatorio" required="required"></textarea>
 					</div>

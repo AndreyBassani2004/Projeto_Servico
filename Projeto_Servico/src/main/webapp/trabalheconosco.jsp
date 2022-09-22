@@ -1,8 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
     
 <!DOCTYPE html>
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 <title>PresTec</title>
 	 <link rel="icon" type="image/png" href="<%= request.getContextPath() %>/Img/logo_superior.png"/>
 	 <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/trabalhe.css">
@@ -16,12 +16,12 @@
  	</div>
  	    <div id="linha1"></div>
  	<div id="texto">
- 		  <p>Se quer uma maneira fÃ¡cil de solucionar seus problemas do dia a dia ou uma maneira de arranjar serviÃ§o,<br/> 
+ 		  <p>Se quer uma maneira fácil de solucionar seus problemas do dia a dia ou uma maneira de arranjar serviço,<br/> 
  		  na <i>PresTec</i> facilitamos a sua procura, contando com profissionais especializados para atender suas <br/>
- 		  necessidades diÃ¡rias, atravÃ©s de uma navegaÃ§Ã£o simples fÃ¡cil e gratuita.</p><br/>  
+ 		  necessidades diárias, através de uma navegação simples fácil e gratuita.</p><br/>  
 
-          <p>TambÃ©m ao profissional facilitamos as oportunidades de serviÃ§o, com uma pÃ¡gina somente de anÃºncio sobre<br/>
-           seu trabalho, alÃ©m disso o site conta com uma maneira muito fÃ¡cil de se cadastrar rÃ¡pido prÃ¡tico e seguro.<p/>  
+          <p>Também ao profissional facilitamos as oportunidades de serviço, com uma página somente de anúncio sobre<br/>
+           seu trabalho, além disso o site conta com uma maneira muito fácil de se cadastrar rápido prático e seguro.<p/>  
  	</div>
  	
  	    <div id="linha1"></div>

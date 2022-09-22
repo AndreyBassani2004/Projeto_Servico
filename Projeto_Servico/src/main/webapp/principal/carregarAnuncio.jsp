@@ -1,11 +1,11 @@
 <%@page import="Model.ModelAnuncio"%>
 <%@page import="Model.ModelLogin"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 <title>PresTec</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>\principal\css\carregarAnuncio.css">
@@ -19,7 +19,7 @@
 <body>
 	<%@include file="/principal/Componente/header2.jsp"%>
 	<div id="titulo">
-		<h1>Fazer alteraÃ§Ã£o anuncio</h1>
+		<h1>Fazer alteração anuncio</h1>
 	</div>
 	<form action="<%=request.getContextPath()%>/ServletCarregaAnuncio"
 		method="post" id="cadastroAnuncio" enctype="multipart/form-data">
@@ -62,7 +62,7 @@
 						<td>
 							<div id="textcampo">
 								<p>
-									<b>SituaÃ§Ã£o:</b>
+									<b>Situação:</b>
 								</p>
 								<select class="form-control" name="situacao" id="situacao">
 												<option value="">Selecione</option>
@@ -98,7 +98,7 @@
 			</div>
 			<br><br>
 			<div id="formulario1">
-				<h5>Sobre regiÃ£o e serviÃ§o</h5>
+				<h5>Sobre região e serviço</h5>
 				<br>
 				<div id="linha2"></div>
 				<br>
@@ -107,7 +107,7 @@
 						<td>
 							<div id="textcampo">
 								<p>
-									<b>Tipo de ServiÃ§o:</b>
+									<b>Tipo de Serviço:</b>
 								</p>
 								<input type="text" class="form-control"
 						 name="servico" id="servico"
@@ -132,7 +132,7 @@
 				<div id="textcampo2">
 
 					<p>
-						<b>Descreva as cidades que vocÃª atende:</b>
+						<b>Descreva as cidades que você atende:</b>
 					</p>
 					<input type="text" class="form-control"
 						placeholder="Nome das cidades completo" name="regiao" id="regiao"
@@ -142,7 +142,7 @@
 				<br> <br>
 			</div>
 			<div id="fomulario2">
-				<h5>DescriÃ§Ã£o e titulo</h5>
+				<h5>Descrição e titulo</h5>
 				<br>
 				<div id="linha2"></div>
 
@@ -158,7 +158,7 @@
 
 				<div id="textcampo2">
 					<p>
-						<b>DescriÃ§Ã£o:</b>
+						<b>Descrição:</b>
 					</p>
 					<textarea class="form-control" id="descricao" name="descricao"
 						 rows="3">${modelAnuncio.descricao}</textarea>

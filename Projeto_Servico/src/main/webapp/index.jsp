@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 <title>PresTec</title>
  <link rel="icon" type="image/png" href="<%= request.getContextPath() %>/Img/logo_superior.png"/>
  <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/index.css">
@@ -24,9 +24,9 @@
         </div>       
         <div id="text1">
         <h5>Alvenaria</h5>        
-        <p>O Pedreiro Ã© o profissional que constrÃ³i ou reveste muros, </br>
-        paredes, escadas, vigas, lajes, tectos, telhados, chaminÃ©s,</br>
-        etc., em edifÃ­cios e outras obras de construÃ§Ã£o geralmente </br>
+        <p>O Pedreiro é o profissional que constrói ou reveste muros, </br>
+        paredes, escadas, vigas, lajes, tectos, telhados, chaminés,</br>
+        etc., em edifícios e outras obras de construção geralmente </br>
         orientado pelo engenheiro ou Mestre de obras.</p>
         <br>
        <a href="<%= request.getContextPath() %>/ServletPrestadores?acao=listar&categoria=alvenaria"><button type="button" class="btn btn-outline-warning">VER PROFISSIONAIS</button></a> <br><br>     
@@ -38,7 +38,7 @@
     <div id="servico2">
         <div id="text2">
         <h5>Eletricista</h5>
-        <p>O eletricista Ã© o profissional responsavel pela implementaÃ§Ã£o, </br>
+        <p>O eletricista é o profissional responsavel pela implementação, </br>
         manutencao e reparacao de instalacoes eletricas tanto resi-</br>
         denciais quanto industrias alem disso o eletricista realiza a </br>
         instalacao, vistoria e reparo de aparelhos eletricos eletronicos</br>
@@ -61,9 +61,9 @@
         
         <div id="text1">
         <h5>FazTudo</h5>
-        <p>O FazTudo Ã© o profissional da manutenÃ§Ã£o basica e intermediaria<br>
-        na casa, cuja o trabalho Ã© trocar lampada, trocar e instalar chuve-<br>
-        etc., em edifÃ­cios e outras obras de construÃ§Ã£o geralmente <br>
+        <p>O FazTudo é o profissional da manutenção basica e intermediaria<br>
+        na casa, cuja o trabalho é trocar lampada, trocar e instalar chuve-<br>
+        etc., em edifícios e outras obras de construção geralmente <br>
         iro, desentupir encanamento entre outros.</p>
        
 
@@ -77,7 +77,7 @@
     <div id="servico2">  
         <div id="text2">
         <h5>Encanador</h5>
-        <p>O encanador Ã© o profissional da construcao civil<br>
+        <p>O encanador é o profissional da construcao civil<br>
         cujo trabalho e instalar e prover a manutencao de <br>
         siestemas hidraulicos de residencias estabelecimentos<br>
         e industrias.</p>

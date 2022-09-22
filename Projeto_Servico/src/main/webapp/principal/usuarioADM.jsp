@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 <title>PresTec</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/principal/css/usuarioADMStyle.css">
@@ -47,9 +47,9 @@
 				<tr>
 					<th scolpe="col">ID</th>
 					<th scolpe="col">Titulo</th>
-					<th scope="col">ServiÃ§o</th>
-					<th scope="col">SituaÃ§Ã£o</th>
-					<th scope="col">Ver AvaliaÃ§Ãµes</th>
+					<th scope="col">Serviço</th>
+					<th scope="col">Situação</th>
+					<th scope="col">Ver Avaliações</th>
 
 				</tr>
 			</thead>

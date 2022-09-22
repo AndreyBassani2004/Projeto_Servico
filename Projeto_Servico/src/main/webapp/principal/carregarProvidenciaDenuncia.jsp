@@ -1,10 +1,10 @@
 <%@page import="Model.ModelDenunciaAnuncio"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 <title>PresTec</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/principal/css/carregarProvideniciaDenStyle.css">
@@ -69,7 +69,7 @@
 
 				<div id="textcampo">
 					<p>
-						<b>Nome do prestador de serviÃ§o:</b>
+						<b>Nome do prestador de serviço:</b>
 					</p>
 					<input type="text" class="form-control"
 						value="${modelDenunciaAnuncio.nome_prestador}"
@@ -108,7 +108,7 @@
 				<br />
 				<div id="textcampo">
 					<p>
-						<b>Email do prestador de serviÃ§o:</b>
+						<b>Email do prestador de serviço:</b>
 					</p>
 					<input type="text" class="form-control"
 						value="${modelDenunciaAnuncio.email_prestador}"
@@ -136,7 +136,7 @@
 			<div class="col">
 				<div id="textcampo">
 					<p>
-						<b>Foto comprovaÃ§Ã£o:</b>
+						<b>Foto comprovação:</b>
 					</p>
 					 <c:if test="${modelDenunciaAnuncio.foto != '' && modelDenunciaAnuncio.foto != null}">
 										<img alt="Imagen User" id="fotoembase64" src="${modelDenunciaAnuncio.foto}" width="319px"
@@ -154,7 +154,7 @@
 			<div class="col">
 				<div id="textcampo">
 					<p>
-						<b>DescriÃ§Ã£o da denucia:</b>
+						<b>Descrição da denucia:</b>
 					</p>
 					<textarea class="form-control" id="descricao_cliente"
 						name="descricao_cliente" readonly="readonly">${modelDenunciaAnuncio.descricao_denuncia}
@@ -163,7 +163,7 @@
 			</div>
 		</div>
 		<br> <br>
-		<h5>RelatÃ³rio sobre denuncia</h5>
+		<h5>Relatório sobre denuncia</h5>
 		<hr>
 		<br>
 		<div class="row">
@@ -192,7 +192,7 @@
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>RelatÃ³rio:</b>
+							<b>Relatório:</b>
 						</p>
 						<textarea class="form-control" maxlength="150" id="relatorio" name="relatorio" readonly="readonly">${modelDenunciaAnuncio.relatorio}</textarea>
 					</div>
@@ -236,7 +236,7 @@
 				<div class="col" id="mensagem" >
 					<div id="textcampo">
 						<p>
-							<b>Titulo Mensagem (ObrigatÃ³rio):</b>
+							<b>Titulo Mensagem (Obrigatório):</b>
 						</p>
 						<input type="text" class="form-control" name="tituloMensagem" id="tituloMensagem" required="required">
 					</div>
@@ -248,7 +248,7 @@
 				<div class="col" id="mensagem" >
 					<div id="textcampo">
 						<p>
-							<b>Mensagem para o prestador (ObrigatÃ³rio):</b>
+							<b>Mensagem para o prestador (Obrigatório):</b>
 						</p>
 						<textarea class="form-control" maxlength="150" id="mensagem" name="mensagem" required="required"></textarea>
 					</div>

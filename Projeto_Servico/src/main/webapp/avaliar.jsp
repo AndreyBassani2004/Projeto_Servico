@@ -1,11 +1,11 @@
 <%@page import="Model.ModelAnuncio"%>
 <%@page import="Model.ModelLogin"%>
 <%@page import="Model.ModelAvaliacao"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/avaliarStyle.css">
 <link rel="stylesheet"
@@ -22,7 +22,7 @@
 	<div id="linha1"></div>
 
 	<div class="container">
-		<h1 style="text-align: center;">Avaliar prestaÃ§Ã£o de serviÃ§o</h1>
+		<h1 style="text-align: center;">Avaliar prestação de serviço</h1>
 	</div>
 	<br />
 	<br />
@@ -54,7 +54,7 @@
 					<br />
 					<div id="textcampo">
 						<p>
-							<b>ServiÃ§o do prestador:</b>
+							<b>Serviço do prestador:</b>
 						</p>
 						<input type="text" class="form-control"
 							placeholder="Digite seu nome completo" name="servico_prestador"
@@ -85,7 +85,7 @@
 					<br />
 					<div id="textcampo">
 						<p>
-							<b>DescriÃ§Ã£o:</b>
+							<b>Descrição:</b>
 						</p>
 						<input type="text" class="form-control" style="height: 244px;"
 							value="${modelAvaliacao.descricao}" id="descricao2"
@@ -125,13 +125,13 @@
 				</div>
 			</div>
 			<br /> <br />
-			<h3>Prova da prestaÃ§Ã£o</h3>
+			<h3>Prova da prestação</h3>
 			<hr>
 			<div class="row">
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>Data PrestaÃ§Ã£o:</b>
+							<b>Data Prestação:</b>
 						</p>
 						<input type="date" class="form-control" name="data" id="data"
 							value="${modelAvaliacao.data_prestacao}" required="required">
@@ -139,7 +139,7 @@
 					<br />
 					<div id="textcampo">
 						<p>
-							<b>Como foi a prestaÃ§Ã£o:</b>
+							<b>Como foi a prestação:</b>
 						</p>
 						<textarea class="form-control" maxlength="150" required="required" id="descricao_cliente" name="descricao_cliente">${modelAvaliacao.descricao_cliente}</textarea>
 					</div>
@@ -147,9 +147,9 @@
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>Foto comprovaÃ§Ã£o</b>
+							<b>Foto comprovação</b>
 						</p>
-						<p>Tire um print ou foto da concersa vocÃª e o prestador</p>
+						<p>Tire um print ou foto da concersa você e o prestador</p>
 						<p>(Essa imagen sera mandida em sigilo)</p>
 					<input type="file" id="fileFoto" name="fileFoto" accept="image/*" class="form-control-file" style="margin-top: 15px; margin-left: 5px;" required="required">
 						
@@ -158,7 +158,7 @@
 				</div>
 			</div>
 			<br /> <br />
-			<h3>Nota da prestaÃ§Ã£o</h3>
+			<h3>Nota da prestação</h3>
 			<hr>
 			<div class="row">
 				<div class="col">
@@ -200,7 +200,7 @@
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>DescriÃ§Ã£o:</b>
+							<b>Descrição:</b>
 						</p>
 						<textarea class="form-control" maxlength="150" required="required">${modelAvaliacao.descricao}</textarea>
 					</div>

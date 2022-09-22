@@ -1,9 +1,9 @@
 <%@page import="Model.ModelDenunciaAvaliacao"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/principal/css/denunciarAvaliacaoStyle.css">
 <link rel="stylesheet"
@@ -27,7 +27,7 @@
 
 	<div class="container">
 		<div class="row">
-			<h2>Denunciar Avalia√ß√£o</h2>
+			<h2>Denunciar AvaliaÁ„o</h2>
 		</div>
 	</div>
 	<br />
@@ -44,7 +44,7 @@
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>ID Avalia√ß√£o:</b>
+							<b>ID AvaliaÁ„o:</b>
 						</p>
 						<input type="text" class="form-control"
 							value="${modelDenunciaAvaliacao.id}" name="id_avaliacao"
@@ -83,14 +83,14 @@
 					<br />
 				</div>
 			</div>
-			<h5>Prova da presta√ß√£o</h5>
+			<h5>Prova da prestaÁ„o</h5>
 			<hr>
 			<br>
 			<div class="row">
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>Data da presta√ß√£o:</b>
+							<b>Data da prestaÁ„o:</b>
 						</p>
 						<input type="text" class="form-control"
 							value="${modelDenunciaAvaliacao.data_prestacao}" name="data_prestacao"
@@ -99,7 +99,7 @@
 					<br />
 					<div id="textcampo">
 						<p>
-							<b>Email do prestador de servi√ßo:</b>
+							<b>Email do prestador de serviÁo:</b>
 						</p>
 						<input type="text" class="form-control"
 							value="${modelDenunciaAvaliacao.email_prestador}" name="email_prestador"
@@ -110,7 +110,7 @@
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>Foto comprova√ß√£o:</b>
+							<b>Foto comprovaÁ„o:</b>
 						</p>
 						 <c:if test="${modelDenunciaAvaliacao.fotoAvaliacao != '' && modelDenunciaAvaliacao.fotoAvaliacao != null}">
 						<img alt="Imagen User" id="fotoembase64" src="${modelDenunciaAvaliacao.fotoAvaliacao}" width="400px" height="250px">
@@ -125,7 +125,7 @@
 
 
 
-			<h5>Nota da presta√ß√£o</h5>
+			<h5>Nota da prestaÁ„o</h5>
 			<hr>
 			<div class="row">
 				<div class="col">
@@ -155,7 +155,7 @@
 				<div class="col">
 					<div id="textcampo">
 						<p>
-							<b>Descri√ß√£o:</b>
+							<b>DescriÁ„o:</b>
 						</p>
 						<textarea class="form-control" readonly="readonly">${modelDenunciaAvaliacao.descricao_avaliacao}</textarea>
 
@@ -163,7 +163,7 @@
 				</div>
 			</div>
 			<br/><br/>
-			<h5>Descri√ß√£o denuncia</h5>
+			<h5>DescriÁ„o denuncia</h5>
 			<hr>
 			<div class="row">
 				<div class="col">
@@ -175,7 +175,7 @@
 							required="required">
 							<option value="">Selecione</option>
 							<option value="Spam">Spam</option>
-							<option value="Falso">Avalia√ß√£o Falsa</option>
+							<option value="Falso">AvaliaÁ„o Falsa</option>
 							<option value="ConteudoInapropriado">Conteudo
 								Inapropriado</option>
 							<option value="Outro">Outro</option>
@@ -184,7 +184,7 @@
 					<br />
 					<div id="textcampo">
 						<p>
-							<b>Descri√ß√£o:</b>
+							<b>DescriÁ„o:</b>
 						</p>
 						<textarea id="descricao_denuncia" name="descricao_denuncia" class="form-control" maxlength="150" required="required"></textarea>
 					</div>
@@ -196,7 +196,7 @@
 						<p>
 							<b>Foto</b>
 						</p>
-						<p>Ultilize este campo caso seja necess√°rio</p>
+						<p>Ultilize este campo caso seja necess·rio</p>
 						<input type="file" id="fileFoto" name="fileFoto" accept="image/*" class="form-control-file" style="margin-top: 15px; margin-left: 5px;"  required="required">
 						
 					</div>

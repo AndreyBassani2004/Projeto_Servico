@@ -1,8 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 <title>PresTec</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -16,7 +16,7 @@
 <body>
  	<%@include file="/Componentes/header.jsp"%>
  	<div id="text">
- 	<h1>AvaliaÃ§Ã£o efetuado com sucesso!</h1>
+ 	<h1>Avaliação efetuado com sucesso!</h1>
  	<br><br>
  	<h3>Voltar ao inicio</h3>
  	<br><br>
