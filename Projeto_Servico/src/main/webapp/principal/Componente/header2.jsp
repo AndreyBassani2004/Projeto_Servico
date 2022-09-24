@@ -48,6 +48,7 @@
                         </c:if>
                         <c:if test="${isAdmin}">
                         <li><a href="<%=request.getContextPath()%>\principal\cadastroUser.jsp" id="opcao">Cadastra usuarios (ADM)</a></li>
+                        <li><a href="<%=request.getContextPath()%>\ServletGerenciarConta?acao=carregarUsuariosAdms&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Gerenciar usuarios Administradores</a></li>
                         </c:if>
                         <c:if test="${perfil == 'ADMIN' && situacao_user == 'ATIVO'}">
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarDenunciasAprovada&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Providencia denuncias anuncio aprovado</a></li>

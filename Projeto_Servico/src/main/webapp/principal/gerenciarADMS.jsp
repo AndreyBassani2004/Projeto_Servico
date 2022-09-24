@@ -1,3 +1,4 @@
+<%@page import="Model.ModelLogin"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -46,10 +47,10 @@
 			<thead>
 				<tr>
 					<th scolpe="col">ID</th>
-					<th scolpe="col">Titulo</th>
-					<th scope="col">Serviço</th>
-					<th scope="col">Situação</th>
-					<th scope="col">Ver Avaliações</th>
+					<th scolpe="col">Nome</th>
+					<th scope="col">Email</th>
+					<th scope="col">Estado</th>
+					<th scope="col">Ver Conta</th>
 
 				</tr>
 			</thead>
@@ -60,15 +61,39 @@
 						<td><c:out value="#"></c:out></td>
 						<td><c:out value="#"></c:out></td>
 						<td><c:out value="#"></c:out></td>
-						
-						
+						<td><c:out value="#"></c:out></td>			
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 
 	</div>
-	</div>
+	<nav aria-label="Page navigation example" >
+			<li class="pagination"><a class="page-link" href="#">1</a></li>
+			<ul class="pagination">
+				<%
+				//int totalPagina = (int) request.getAttribute("totalPagina");
 
+				//for (int p = 0; p < totalPagina; p++) {
+				//	String url = request.getContextPath() + "/ServletCarregarRequisicao?acao=carregarDenuncias&id_user="
+				//	+ request.getSession().getAttribute("id") + "&paginar=" + (p * 5);
+				//	out.print("<li class=\"page-item\"><a class=\"page-link\" href=\"" + url + "\">" + (p + 1) + " </a></li>");
+				//}
+				%>
+			</ul>
+		</nav>
+	</div>
+	
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	
+		<%@include file="/Componentes/rodape.jsp"%>
+	
 </body>
 </html>
