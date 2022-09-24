@@ -6,17 +6,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="ISO-8859-1">
 <title>PresTec</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/principal/css/meus_anuncios.css">
-	 <link rel="icon" type="image/png" href="<%= request.getContextPath() %>/Img/logo_superior.png"/>
-	
+<link rel="icon" type="image/png"
+	href="<%=request.getContextPath()%>/Img/logo_superior.png" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
 </head>
 <body>
+
 	<%@include file="/principal/Componente/header2.jsp"%>
 
-	<div id="linha2"></div>
-	<div id="titulo">
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+
+	<div class="container">
 		<h1>Anuncios</h1>
 		<h2>Edite o anuncio</h2>
 		<br></br>
@@ -24,15 +36,21 @@
 			<spam>${msg}</spam>
 		</h5>
 	</div>
-	<div id="linha1"></div>
-	<div id="tabela">
+	
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	
+	<div class="container">
 		<table class="table table-striped" id="tabelaResultado">
 			<thead>
 				<tr>
 					<th scolpe="col">ID</th>
 					<th scolpe="col">Titulo</th>
-					<th scope="col">ServiÃ§o</th>
-					<th scope="col">SituaÃ§Ã£o</th>
+					<th scope="col">Serviço</th>
+					<th scope="col">Situação</th>
 					<th scope="col">Ver/Editar</th>
 					<th scope="col">Excluir</th>
 				</tr>
@@ -63,14 +81,15 @@
 				</c:forEach>
 			</tbody>
 		</table>
-
 	</div>
-	<div id="linha1"></div>
+
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
 
 	<%@include file="/Componentes/rodape.jsp"%>
 
-	<script type="text/javascript">
-		
-	</script>
 </body>
 </html>
