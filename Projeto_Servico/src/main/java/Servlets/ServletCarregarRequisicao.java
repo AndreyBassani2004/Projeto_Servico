@@ -139,7 +139,7 @@ public class ServletCarregarRequisicao extends HttpServlet {
 
 					request.setAttribute("modelDenunciaAvaliacaos", modelDenunciaAvaliacaos);
 					request.setAttribute("totalPagina", daoAvaliarRequisicao.totalPaginaDenunciaAvaliacao());
-					request.getRequestDispatcher("principal/validarDenunciaAvaliação.jsp").forward(request, response);
+					request.getRequestDispatcher("principal/validarDenunciaAvaliacao.jsp").forward(request, response);
 
 				} else {
 					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);
@@ -286,7 +286,7 @@ public class ServletCarregarRequisicao extends HttpServlet {
 
 				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
 					
-					ModelDenunciaAvaliacao modelDenunciaAvaliacao = daoAvaliarRequisicao.carregarDenunciaAvaliação(Long.parseLong(id_avaliacao));
+					ModelDenunciaAvaliacao modelDenunciaAvaliacao = daoAvaliarRequisicao.carregarDenunciaAvaliacao(Long.parseLong(id_avaliacao));
 					
 					request.setAttribute("modelDenunciaAvaliacao", modelDenunciaAvaliacao);	
 					request.getRequestDispatcher("principal/CarregarDenunciaAvaliacao.jsp").forward(request, response);
@@ -345,7 +345,7 @@ public class ServletCarregarRequisicao extends HttpServlet {
 							.lisarDenunciaAnuncioAprovado(Long.parseLong(paginar));
 
 					request.setAttribute("modelDenunciaAnuncios", modelDenunciaAnuncios);
-					request.setAttribute("msg", "Operação efetuada com sucesso!");
+					request.setAttribute("msg", "OperaÃ§Ã£o efetuada com sucesso!");
 					request.setAttribute("totalPagina", daoAvaliarRequisicao.totalPaginaDenunciaAnuncioAprovado());
 					request.getRequestDispatcher("principal/ProvidenciaDenunciaAnuncio.jsp").forward(request, response);
 				} else {

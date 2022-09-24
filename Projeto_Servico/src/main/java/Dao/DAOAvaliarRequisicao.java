@@ -230,7 +230,7 @@ public class DAOAvaliarRequisicao {
 	
 
 
-	public ModelDenunciaAvaliacao carregarDenunciaAvaliação(Long id_avaliacao) throws Exception {
+	public ModelDenunciaAvaliacao carregarDenunciaAvaliacao(Long id_avaliacao) throws Exception {
 		
 		ModelDenunciaAvaliacao modelDenunciaAvaliacao = new ModelDenunciaAvaliacao();
 		
