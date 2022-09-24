@@ -59,6 +59,9 @@
                         <li><a href="<%=request.getContextPath()%>\ServletLogin?acao=logout" id="sair">Sair</a></li>
                     </ul>
                 </li>
+                                <c:if test="${isAdmin}">
+                                <li id="menu-cr"><a href="#">Biblioteca</a></li>
+               	</c:if>
             </ul>
         </nav>      
         </div>
