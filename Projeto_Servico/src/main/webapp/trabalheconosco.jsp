@@ -12,7 +12,7 @@
 
 	<%@include file="/Componentes/header.jsp"%>
 	<div id="titulo">
- 	<h1>Trabalhe Conosco</h1>
+ 	<h1><b>Trabalhe Conosco</b></h1>
  	</div>
  	    <div id="linha1"></div>
  	<div id="texto">

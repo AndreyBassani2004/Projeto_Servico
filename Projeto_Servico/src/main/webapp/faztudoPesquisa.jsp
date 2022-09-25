@@ -40,10 +40,10 @@
 								<c:forEach items="${modelAnuncios}" var="an">
 									<div class="col-md-4">
 										 <c:if test="${an.foto != '' && an.foto != null}">
-															<img alt="Imagen User" id="fotoembase64" src="${an.foto}" width="250px" height="140px" >
+															<img alt="Imagen User" id="fotoembase64" src="${an.foto}" width="247px" height="137px" style="border-radius: 8px; margin: 5px;">
 															</c:if>
 															<c:if test="${an.foto == '' || an.foto == null}">
-															<img alt="Imagen User" id="fotoembase64" src="<%=request.getContextPath()%>/Img/semImg.png" width="250px" height="140px">
+															<img alt="Imagen User" id="fotoembase64" src="<%=request.getContextPath()%>/Img/semImg.png" width="247px" height="137px" style="border-radius: 8px; margin: 5px;">
 															</c:if>
 									</div>
 									<div class="col-md-8">

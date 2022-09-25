@@ -47,7 +47,7 @@
                         <li><a href="<%=request.getContextPath()%>\principal\perfilAdm.jsp" id="opcao">Perfil</a></li>
                         </c:if>
                         <c:if test="${isAdmin}">
-                       <li id="menu-cr"><a href="<%=request.getContextPath()%>/principal/biblioteca.jsp">Biblioteca</a></li>
+                       <li id="menu-cr"><a href="<%=request.getContextPath()%>/principal/biblioteca.jsp">Biblioteca do Sistema</a></li>
                         </c:if>
                         <c:if test="${perfil == 'ADMIN' && situacao_user == 'ATIVO'}">
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarDenunciasAprovada&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Providencia denuncias anuncio aprovado</a></li>

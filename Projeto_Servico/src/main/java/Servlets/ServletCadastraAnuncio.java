@@ -48,8 +48,6 @@ public class ServletCadastraAnuncio extends ServletGenericUtil {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-
-			BufferedReader arqIn = new BufferedReader(new InputStreamReader(new FileInputStream("UTF-8"), "UTF-8"));
 			
 			String id_prestador = request.getParameter("id");
 			String servico = request.getParameter("servico");

@@ -26,24 +26,46 @@
 	<c:if test="${isAdmin}">
 
 
-		
+
 		<div class="container">
-		<div class="row">
-			<h1>Biblioteca do sistema</h1>
-		</div>
-		<br />
-		<br />
-		<br />
 			<div class="row">
-			<h5>Administradores</h5>
-			<hr style="background-color:#F3F3F3; padding: 0.05em; width: 100%;">	
+				<h1>Biblioteca do sistema</h1>
+			</div>
+			<br /> <br /> <br />
+			<div class="row">
+				<h5>Administradores</h5>
+				<hr style="background-color: #F3F3F3; padding: 0.05em; width: 100%;">
 			</div>
 			<div class="row">
 				<a href="<%=request.getContextPath()%>\principal\cadastroUser.jsp">Cadastra
-					usuário Administrador</a><br /> 
+					usuário Administrador</a><br />
 			</div>
 			<div class="row">
-			<a href="<%=request.getContextPath()%>\ServletGerenciarConta?acao=carregarUsuariosAdms&id_user=<%=session.getAttribute("id")%>&paginar=0">Usuários Adminstradores</a>
+				<a
+					href="<%=request.getContextPath()%>\ServletGerenciarConta?acao=carregarUsuariosAdms&id_user=<%=session.getAttribute("id")%>&paginar=0">Usuários
+					Adminstradores</a>
+			</div>
+			<br /> <br /> <br /> <br />
+			<div class="row">
+				<h5>Gerenciar Banimentos</h5>
+				<hr style="background-color: #F3F3F3; padding: 0.05em; width: 100%;">
+			</div>
+			<div class="row">
+				<a href="#">Gerenciar Anuncios Banido</a><br />
+			</div>
+			<div class="row">
+				<a href="#">Gerenciar Avaliações Banido</a><br />
+			</div>
+			<div class="row">
+				<a href="#">Gerenciar Perfil de prestadores Banido</a><br />
+			</div>
+			<br /> <br /> <br /> <br />
+			<div class="row">
+				<h5>Mensagens</h5>
+				<hr style="background-color: #F3F3F3; padding: 0.05em; width: 100%;">
+			</div>
+			<div class="row">
+				<a href="#">Gerenciar Mensagens De Alerta Enviado</a><br />
 			</div>
 		</div>
 		<br />
