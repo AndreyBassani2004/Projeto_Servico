@@ -55,13 +55,13 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="#" var="ma">
+				<c:forEach items="${ModelLogins}" var="ml">
 					<tr>
-						<td><c:out value="#"></c:out></td>
-						<td><c:out value="#"></c:out></td>
-						<td><c:out value="#"></c:out></td>
-						<td><c:out value="#"></c:out></td>
-						<td><c:out value="#"></c:out></td>			
+						<td><c:out value="${ml.id}"></c:out></td>
+						<td><c:out value="${ml.nome}"></c:out></td>
+						<td><c:out value="${ml.login}"></c:out></td>
+						<td><c:out value="${ml.situacao_user}"></c:out></td>
+						<td><a href="#"><button type="button" class="btn btn-primary">Gerenciar</button></a></td>		
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -69,16 +69,16 @@
 
 	</div>
 	<nav aria-label="Page navigation example" >
-			<li class="pagination"><a class="page-link" href="#">1</a></li>
+			
 			<ul class="pagination">
 				<%
-				//int totalPagina = (int) request.getAttribute("totalPagina");
+				int totalPagina = (int) request.getAttribute("totalPagina");
 
-				//for (int p = 0; p < totalPagina; p++) {
-				//	String url = request.getContextPath() + "/ServletCarregarRequisicao?acao=carregarDenuncias&id_user="
-				//	+ request.getSession().getAttribute("id") + "&paginar=" + (p * 5);
-				//	out.print("<li class=\"page-item\"><a class=\"page-link\" href=\"" + url + "\">" + (p + 1) + " </a></li>");
-				//}
+				for (int p = 0; p < totalPagina; p++) {
+					String url = request.getContextPath() + "/ServletGerenciarConta?acao=carregarUsuariosAdms&id_user="
+					+ request.getSession().getAttribute("id") + "&paginar=" + (p * 5);
+					out.print("<li class=\"page-item\"><a class=\"page-link\" href=\"" + url + "\">" + (p + 1) + " </a></li>");
+				}
 				%>
 			</ul>
 		</nav>

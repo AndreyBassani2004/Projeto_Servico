@@ -1,6 +1,7 @@
 package Servlets;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Dao.DAOGerenciarContasRepository;
 import Dao.DAOUsuarioPosLogin;
+import Model.ModelLogin;
 
 
 @WebServlet("/ServletGerenciarConta")
@@ -18,6 +21,7 @@ public class ServletGerenciarConta extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	DAOUsuarioPosLogin daoUsuarioPosLogin = new DAOUsuarioPosLogin();
+	DAOGerenciarContasRepository daoGerenciarContasRepository = new DAOGerenciarContasRepository();
    
     public ServletGerenciarConta() {
         super();
@@ -44,6 +48,11 @@ public class ServletGerenciarConta extends HttpServlet {
 			String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
 
 			if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
+				
+				List<ModelLogin> modelLogins = daoGerenciarContasRepository.listarAdms(Long.parseLong(paginar));
+				
+				request.setAttribute("ModelLogins", modelLogins);
+				request.setAttribute("totalPagina", daoGerenciarContasRepository.totalPaginaAdms());
 				request.getRequestDispatcher("principal/gerenciarADMS.jsp").forward(request, response);
 			}else {
 				request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);	
