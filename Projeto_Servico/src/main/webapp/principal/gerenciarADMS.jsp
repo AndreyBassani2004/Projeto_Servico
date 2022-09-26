@@ -61,7 +61,7 @@
 						<td><c:out value="${ml.nome}"></c:out></td>
 						<td><c:out value="${ml.login}"></c:out></td>
 						<td><c:out value="${ml.situacao_user}"></c:out></td>
-						<td><a href="#"><button type="button" class="btn btn-primary">Gerenciar</button></a></td>		
+						<td><a href="<%=request.getContextPath()%>/ServletGerenciarConta?acao=carregarDadosUser&id_user=<%=session.getAttribute("id")%>&id=${ml.id}"><button type="button" class="btn btn-primary">Gerenciar</button></a></td>		
 					</tr>
 				</c:forEach>
 			</tbody>
