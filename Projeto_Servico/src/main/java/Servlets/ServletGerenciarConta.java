@@ -83,7 +83,64 @@ public class ServletGerenciarConta extends HttpServlet {
 			}else {
 				request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);	
 			}
+		
+		}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("AtivarConta")) {
+
+			String id_user = request.getParameter("id_user");
+
+			String id = request.getParameter("id");
+
+			HttpSession session = request.getSession();
+
+			String usuarioLogado = (String) session.getAttribute("usuario");
+
+			Long id_usuario = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId();
+
+			String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
+
+			if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
+				
+				String providencia = "ATIVO";
+				
+				ModelLogin modelLogin = daoGerenciarContasRepository.carregarDadosADM(Long.parseLong(id));
+				
+				daoGerenciarContasRepository.ativarDesativarContaAdm(Long.parseLong(id), providencia);
+				
+				request.setAttribute("msg", "Conta ativada com sucesso!");
+				request.setAttribute("modelLogin", modelLogin);
+				request.getRequestDispatcher("/principal/carregarGerenciarAdm.jsp").forward(request, response);
+			}else {
+				request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);	
+			}
 			
+		}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("DesativarConta")) {
+
+			String id_user = request.getParameter("id_user");
+
+			String id = request.getParameter("id");
+
+			HttpSession session = request.getSession();
+
+			String usuarioLogado = (String) session.getAttribute("usuario");
+
+			Long id_usuario = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId();
+
+			String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
+
+			if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
+				
+				String providencia = "DESATIVADO";
+				
+				ModelLogin modelLogin = daoGerenciarContasRepository.carregarDadosADM(Long.parseLong(id));
+				
+				daoGerenciarContasRepository.ativarDesativarContaAdm(Long.parseLong(id), providencia);
+				
+				request.setAttribute("msg", "Conta desativado com sucesso!");
+				request.setAttribute("modelLogin", modelLogin);
+				request.getRequestDispatcher("/principal/carregarGerenciarAdm.jsp").forward(request, response);
+			}else {
+				request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);	
+			}
 			
 		}else {
 			request.getRequestDispatcher("principal/principal.jsp").forward(request, response);

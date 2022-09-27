@@ -89,4 +89,18 @@ public class DAOGerenciarContasRepository {
 		return modelLogin;
 	}
 	
+	
+	public void ativarDesativarContaAdm(Long id, String providencia) throws Exception{
+		
+		String sql = "UPDATE usuario SET situacao_user=? WHERE id=?;";
+		PreparedStatement statement = connection.prepareStatement(sql);
+		statement.setLong(2, id);
+		statement.setString(1, providencia);
+		
+		statement.execute();
+		connection.commit();
+		
+	}
+	
+	
 }

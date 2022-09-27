@@ -34,6 +34,11 @@
 					<h1>Administrador Dados</h1>
 				</div>
 			</div>
+			<div class="row" style="align-items: center; text-align: center;">
+				<div class="col">
+					<span>${msg}</span>
+				</div>
+			</div>
 		</div>
 
 		<br />
@@ -71,10 +76,10 @@
 			<div class="row">
 				<div class="col"></div>
 				<div class="col">
-					<button class="btn btn-success waves-effect waves-light">Ativar</button>
+					<a href="<%=request.getContextPath()%>/ServletGerenciarConta?acao=AtivarConta&id_user=<%=session.getAttribute("id")%>&id=${modelLogin.id}"><button class="btn btn-success waves-effect waves-light">Ativar</button></a>
 				</div>
 				<div class="col">
-					<button class="btn btn-danger waves-effect waves-light">Desativar</button>
+					<a href="<%=request.getContextPath()%>/ServletGerenciarConta?acao=DesativarConta&id_user=<%=session.getAttribute("id")%>&id=${modelLogin.id}"><button class="btn btn-danger waves-effect waves-light">Desativar</button></a>
 				</div>
 				<div class="col">
 					<button class="btn btn-primary waves-effect waves-light">Emitir <i>PDF</i> de registro</button>
