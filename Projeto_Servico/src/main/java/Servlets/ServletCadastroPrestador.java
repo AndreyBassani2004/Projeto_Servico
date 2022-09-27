@@ -67,7 +67,7 @@ public class ServletCadastroPrestador extends HttpServlet {
 			modelLogin.setrSenha(Rsenha);
 			
 			if(daoCadastroPrestador.validarLogin(modelLogin.getLogin()) && modelLogin.getId() == null) {
-				msg = "J· existe usuario com o mesmo login, informe outro login.";
+				msg = "J√° existe usuario com o mesmo login, informe outro login.";
 			}else {
 				modelLogin = daoCadastroPrestador.gravarUsuario(modelLogin);
 			
@@ -78,7 +78,7 @@ public class ServletCadastroPrestador extends HttpServlet {
 		    request.getRequestDispatcher("cadastroSucesso.jsp").forward(request, response);
 			
 			}else {
-				request.setAttribute("msg", "Senhas n„o identicas!");
+				request.setAttribute("msg", "Senhas n√£o identicas!");
 				request.setAttribute("modelLogin", modelLogin);
 			    request.getRequestDispatcher("cadastrase.jsp").forward(request, response);
 			}

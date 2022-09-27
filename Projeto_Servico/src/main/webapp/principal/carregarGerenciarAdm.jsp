@@ -36,7 +36,7 @@
 			</div>
 			<div class="row" style="align-items: center; text-align: center;">
 				<div class="col">
-					<span>${msg}</span>
+					<span style="color: green;">${msg}</span>
 				</div>
 			</div>
 		</div>

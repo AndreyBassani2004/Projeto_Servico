@@ -37,7 +37,7 @@ public class ServletProvidenciaDenunciaAvaliacao extends HttpServlet {
 		
 		try {
 			
-		String msg = "Operação realizada com sucesso!";
+		String msg = "OperaÃ§Ã£o realizada com sucesso!";
 		
 		String id_denuncia = request.getParameter("id_avaliacao");
 		String providencia = request.getParameter("providencia");
@@ -67,7 +67,7 @@ public class ServletProvidenciaDenunciaAvaliacao extends HttpServlet {
 				request.setAttribute("msg", msg);
 				request.setAttribute("modelDenunciaAvaliacaos", modelDenunciaAvaliacaos);
 				request.setAttribute("totalPagina", daoAvaliarRequisicao.totalPaginaDenunciaAvaliacao());
-				request.getRequestDispatcher("principal/validarDenunciaAvaliação.jsp").forward(request, response);
+				request.getRequestDispatcher("principal/validarDenunciaAvaliacao.jsp").forward(request, response);
 				
 				
 			}else {
@@ -80,7 +80,7 @@ public class ServletProvidenciaDenunciaAvaliacao extends HttpServlet {
 					request.setAttribute("msg", msg);
 					request.setAttribute("modelDenunciaAvaliacaos", modelDenunciaAvaliacaos);
 					request.setAttribute("totalPagina", daoAvaliarRequisicao.totalPaginaDenunciaAvaliacao());
-					request.getRequestDispatcher("principal/validarDenunciaAvaliação.jsp").forward(request, response);
+					request.getRequestDispatcher("principal/validarDenunciaAvaliacao.jsp").forward(request, response);
 
 				
 			}

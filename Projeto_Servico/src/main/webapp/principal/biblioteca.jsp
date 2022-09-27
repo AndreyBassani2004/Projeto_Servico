@@ -24,9 +24,6 @@
 	<br />
 	<br />
 	<c:if test="${isAdmin}">
-
-
-
 		<div class="container">
 			<div class="row">
 				<h1>Biblioteca do sistema</h1>
@@ -51,7 +48,7 @@
 				<hr style="background-color: #F3F3F3; padding: 0.05em; width: 100%;">
 			</div>
 			<div class="row">
-				<a href="#">Gerenciar Anuncios Banido</a><br />
+				<a href="<%=request.getContextPath()%>/ServletGerenciarSistema?acao=carregarAnunciosBanido&id_user=<%=session.getAttribute("id")%>&paginar=0">Gerenciar Anuncios Banido</a><br />
 			</div>
 			<div class="row">
 				<a href="#">Gerenciar Avaliações Banido</a><br />

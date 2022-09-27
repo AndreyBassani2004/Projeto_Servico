@@ -61,7 +61,7 @@ public class ServletCadastroAdm extends ServletGenericUtil{
 			modelLogin.setPerfil(perfil);
 			
 			if(daoCadastroAdm.validarLogin(modelLogin.getLogin()) && modelLogin.getId() == null) {
-				msg = "Já existe usuario com o mesmo login, informe outro login.";
+				msg = "JÃ¡ existe usuario com o mesmo login, informe outro login.";
 			}else {
 				modelLogin = daoCadastroAdm.gravarUsuario(modelLogin, super.getUserLogado(request));
 			

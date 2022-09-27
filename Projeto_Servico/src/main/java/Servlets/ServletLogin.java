@@ -100,7 +100,7 @@ public class ServletLogin extends HttpServlet {
 
 			} else {
 				RequestDispatcher redirecionar = request.getRequestDispatcher("login.jsp");
-				request.setAttribute("msg", "Preencha todos os campos");
+				request.setAttribute("msg", "Preencha todos os campos!");
 				redirecionar.forward(request, response);
 			}
 

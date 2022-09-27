@@ -78,7 +78,7 @@ public class ServletCadastrarAvaliacao extends HttpServlet {
 				daoCarregarPublicoRepository.gravarAvaliacao(modelAvaliacao);
 
 				RequestDispatcher redirecionar = request.getRequestDispatcher("sucessoAvaliacao.jsp");
-				request.setAttribute("msg", "Operacao efetuado com sucesso!");
+				request.setAttribute("msg", "Operação efetuado com sucesso!");
 				redirecionar.forward(request, response);
 			} else {
 
