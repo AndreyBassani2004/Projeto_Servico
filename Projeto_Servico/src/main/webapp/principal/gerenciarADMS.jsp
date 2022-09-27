@@ -26,6 +26,9 @@
 	<br />
 	<br />
 	
+		<c:if test="${isAdmin}">
+	
+	
 	<div class="container">
 		<div class="row">
 			<div class="col" style="align-items: center; text-align: center;">
@@ -92,6 +95,41 @@
 	<br />
 	<br />
 	<br />
+	</c:if>
+	
+	<c:if test="${perfil == 'PRESTADOR' || perfil == 'ADMIN' && !isAdmin}">
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<div class="container"
+			style="align-items: center; text-align: center;">
+			<h1>Função indisponivel</h1>
+			<br> <a
+				href="<%=request.getContextPath()%>/principal/principal.jsp">Voltar
+				ao Inicio</a>
+		</div>
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+	</c:if>
 	
 		<%@include file="/Componentes/rodape.jsp"%>
 	

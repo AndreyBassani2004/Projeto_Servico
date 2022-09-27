@@ -34,9 +34,7 @@ public class ServletMedidasDenunciaAnuncio extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		try {
-			
-			String msg = "Operação realizada com sucesso!";
-			
+						
 			String id_anuncio = request.getParameter("id_anuncio");
 			String id_denuncia = request.getParameter("id");
 			
@@ -71,7 +69,7 @@ public class ServletMedidasDenunciaAnuncio extends HttpServlet {
 						.lisarDenunciaAnuncioAprovado(Long.parseLong(paginar));
 
 				request.setAttribute("modelDenunciaAnuncios", modelDenunciaAnuncios);
-				request.setAttribute("msg", "Operação efetuada com sucesso!");
+				request.setAttribute("msg", "OperaÃ§Ã£o efetuada com sucesso!");
 				request.setAttribute("totalPagina", daoAvaliarRequisicao.totalPaginaDenunciaAnuncioAprovado());
 				request.getRequestDispatcher("principal/ProvidenciaDenunciaAnuncio.jsp").forward(request, response);
 				
@@ -102,7 +100,7 @@ public class ServletMedidasDenunciaAnuncio extends HttpServlet {
 						.lisarDenunciaAnuncioAprovado(Long.parseLong(paginar));
 
 				request.setAttribute("modelDenunciaAnuncios", modelDenunciaAnuncios);
-				request.setAttribute("msg", "Operação efetuada com sucesso!");
+				request.setAttribute("msg", "OperaÃ§Ã£o efetuada com sucesso!");
 				request.setAttribute("totalPagina", daoAvaliarRequisicao.totalPaginaDenunciaAnuncioAprovado());
 				request.getRequestDispatcher("principal/ProvidenciaDenunciaAnuncio.jsp").forward(request, response);
 				
@@ -135,7 +133,7 @@ public class ServletMedidasDenunciaAnuncio extends HttpServlet {
 						.lisarDenunciaAnuncioAprovado(Long.parseLong(paginar));
 
 				request.setAttribute("modelDenunciaAnuncios", modelDenunciaAnuncios);
-				request.setAttribute("msg", "Operação efetuada com sucesso!");
+				request.setAttribute("msg", "OperaÃ§Ã£o efetuada com sucesso!");
 				request.setAttribute("totalPagina", daoAvaliarRequisicao.totalPaginaDenunciaAnuncioAprovado());
 				request.getRequestDispatcher("principal/ProvidenciaDenunciaAnuncio.jsp").forward(request, response);
 				

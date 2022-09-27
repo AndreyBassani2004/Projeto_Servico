@@ -67,4 +67,26 @@ public class DAOGerenciarContasRepository {
 		
 		return retorno;
 	}
+	
+	
+	public ModelLogin carregarDadosADM(Long id_user) throws Exception{
+		
+		
+		ModelLogin modelLogin = new ModelLogin();
+		String sql = "SELECT id, nome, email, situacao_user FROM usuario where id = ?;";
+		PreparedStatement statement = connection.prepareStatement(sql);
+		statement.setLong(1, id_user);
+		
+		ResultSet rs = statement.executeQuery();
+		
+		while (rs.next()) {
+			modelLogin.setId(rs.getLong("id"));
+			modelLogin.setNome(rs.getString("nome"));
+			modelLogin.setLogin(rs.getString("email"));
+			modelLogin.setSituacao_user(rs.getString("situacao_user"));
+		}
+		
+		return modelLogin;
+	}
+	
 }

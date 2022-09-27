@@ -1,3 +1,4 @@
+<%@page import="Model.ModelLogin" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -48,16 +49,16 @@
 			<br /> <br />
 			<div class="row">
 				<div class="col">
-					<label>ID:</label> <input type="text" name="id" id="id"
+					<label>ID:</label> <input type="text" name="id" id="id" value="${modelLogin.id}"
 						class="form-control" readonly="readonly"> <br /> <br />
-					<label>Situação:</label><br /> <input type="text" name="situacao"
+					<label>Situação:</label><br /> <input type="text" name="situacao" value="${modelLogin.situacao_user}"
 						id="situacao" class="form-control" readonly="readonly"> <br />
 					<br />
 				</div>
 				<div class="col">
-					<label>Nome:</label><br /> <input type="text" name="nome"
+					<label>Nome:</label><br /> <input type="text" name="nome" value="${modelLogin.nome}"
 						id="nome" class="form-control" readonly="readonly"> <br />
-					<br /> <label>Email:</label> <input type="text" name="email"
+					<br /> <label>Email:</label> <input type="text" name="email" value="${modelLogin.login}"
 						id="email" class="form-control" readonly="readonly"> <br />
 					<br />
 				</div>

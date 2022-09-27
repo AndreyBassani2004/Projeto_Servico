@@ -76,6 +76,9 @@ public class ServletGerenciarConta extends HttpServlet {
 			if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
 				
 				
+				ModelLogin modelLogin = daoGerenciarContasRepository.carregarDadosADM(Long.parseLong(id));
+				
+				request.setAttribute("modelLogin", modelLogin);
 				request.getRequestDispatcher("/principal/carregarGerenciarAdm.jsp").forward(request, response);
 			}else {
 				request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);	
