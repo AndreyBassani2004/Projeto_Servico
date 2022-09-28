@@ -51,9 +51,6 @@
 				<a href="<%=request.getContextPath()%>/ServletGerenciarSistema?acao=carregarAnunciosBanido&id_user=<%=session.getAttribute("id")%>&paginar=0">Gerenciar Anuncios Banido</a><br />
 			</div>
 			<div class="row">
-				<a href="#">Gerenciar Avaliações Banido</a><br />
-			</div>
-			<div class="row">
 				<a href="#">Gerenciar Perfil de prestadores Banido</a><br />
 			</div>
 			<br /> <br /> <br /> <br />

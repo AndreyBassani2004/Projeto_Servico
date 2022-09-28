@@ -11,7 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Dao.DAOGerenciarSistemaRepository;
 import Dao.DAOUsuarioPosLogin;
+import Model.ModelAnuncio;
+import Model.ModelAvaliacao;
 import Model.ModelLogin;
 
 
@@ -20,6 +23,8 @@ public class ServletGerenciarSistema extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	DAOUsuarioPosLogin daoUsuarioPosLogin = new DAOUsuarioPosLogin();
+	
+	DAOGerenciarSistemaRepository daoGerenciarSistemaRepository = new DAOGerenciarSistemaRepository();
 	
     public ServletGerenciarSistema() {
         super();
@@ -46,8 +51,10 @@ public class ServletGerenciarSistema extends HttpServlet {
 
 				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
 					
+					List<ModelAnuncio> modelAnuncios = daoGerenciarSistemaRepository.listarAnunciosBanido(Long.parseLong(paginar));
 					
-					
+					request.setAttribute("modelAnuncios", modelAnuncios);
+					request.setAttribute("totalPagina", daoGerenciarSistemaRepository.totalPaginaAnunciosBanido());
 					request.getRequestDispatcher("principal/GerenciarAnunciosBanido.jsp").forward(request, response);
 				}else {
 					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);	
@@ -58,6 +65,8 @@ public class ServletGerenciarSistema extends HttpServlet {
 				String id_user = request.getParameter("id_user");
 
 				String paginar = request.getParameter("paginar");
+				
+				String id = request.getParameter("id"); 
 
 				HttpSession session = request.getSession();
 
@@ -69,7 +78,17 @@ public class ServletGerenciarSistema extends HttpServlet {
 
 				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
 					
-					request.getRequestDispatcher("principal/GerenciarAnunciosBanido.jsp").forward(request, response);
+					ModelAnuncio modelAnuncio = daoGerenciarSistemaRepository.consultarAnuncioID(Long.parseLong(id));							
+					
+					ModelAvaliacao modelAvaliacao = daoGerenciarSistemaRepository.carregarNotaMediaAvaliacao(Long.parseLong(id));
+					
+					List<ModelAvaliacao> modelAvaliacaos = daoGerenciarSistemaRepository.listAvaliacaoPaginada(Long.parseLong(id), Integer.parseInt(paginar));					
+					
+					request.setAttribute("modelAvaliacaos", modelAvaliacaos);												
+					request.setAttribute("modelAvaliacao", modelAvaliacao);												
+					request.setAttribute("modelAnuncio", modelAnuncio);
+					request.setAttribute("totalPagina", daoGerenciarSistemaRepository.totalPaginaAvaliacao(Long.parseLong(id)));
+					request.getRequestDispatcher("principal/carregarAnuncioBanido.jsp").forward(request, response);
 			}else {
 				request.getRequestDispatcher("principal/principal.jsp").forward(request, response);
 			}

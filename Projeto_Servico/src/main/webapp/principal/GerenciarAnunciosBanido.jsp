@@ -1,3 +1,4 @@
+<%@page import="Model.ModelAnuncio"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -37,21 +38,21 @@
 			<thead>
 				<tr>
 					<th scolpe="col">ID</th>
-					<th scolpe="col">Nome do prestador</th>
-					<th scope="col">Email</th>
+					<th scolpe="col">ID do Prestador</th>
+					<th scope="col">Email Contato</th>
 					<th scope="col">Estado</th>
 					<th scope="col">Ver Anuncio</th>
 
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="#" var="ml">
+				<c:forEach items="${modelAnuncios}" var="ml">
 					<tr>
-						<td><c:out value="#"></c:out></td>
-						<td><c:out value="#"></c:out></td>
-						<td><c:out value="#"></c:out></td>
-						<td><c:out value="#"></c:out></td>
-						<td><a href="<%=request.getContextPath()%>/ServletGerenciarSistema?acao=carregarAnunciosBanido&id_user=<%=session.getAttribute("id")%>&id="><button type="button" class="btn btn-primary">Gerenciar</button></a></td>		
+						<td><c:out value="${ml.id}"></c:out></td>
+						<td><c:out value="${ml.id_prestador2}"></c:out></td>
+						<td><c:out value="${ml.email_contato}"></c:out></td>
+						<td><c:out value="${ml.situacao}"></c:out></td>
+						<td><a href="<%=request.getContextPath()%>/ServletGerenciarSistema?acao=carregarAnuncioBanido&id_user=<%=session.getAttribute("id")%>&id=${ml.id}&paginar=0"><button type="button" class="btn btn-primary">Gerenciar</button></a></td>		
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -61,14 +62,14 @@
 	<nav aria-label="Page navigation example" >
 			
 			<ul class="pagination">
-				<%
-				//int totalPagina = (int) request.getAttribute("totalPagina");
+				<%	
+				int totalPagina = (int) request.getAttribute("totalPagina");
 
-				//for (int p = 0; p < totalPagina; p++) {
-				//	String url = request.getContextPath() + "/ServletGerenciarConta?acao=carregarUsuariosAdms&id_user="
-				//	+ request.getSession().getAttribute("id") + "&paginar=" + (p * 5);
-				//	out.print("<li class=\"page-item\"><a class=\"page-link\" href=\"" + url + "\">" + (p + 1) + " </a></li>");
-				//}
+				for (int p = 0; p < totalPagina; p++) {
+					String url = request.getContextPath() + "/ServletGerenciarSistema?acao=carregarAnunciosBanido&id_user="
+					+ request.getSession().getAttribute("id") + "&paginar=" + (p * 5);
+					out.print("<li class=\"page-item\"><a class=\"page-link\" href=\"" + url + "\">" + (p + 1) + " </a></li>");
+				}
 				%>
 			</ul>
 		</nav>

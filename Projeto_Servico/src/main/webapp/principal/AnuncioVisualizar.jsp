@@ -1,7 +1,8 @@
 <%@page import="Model.ModelAnuncio"%>
 <%@page import="Model.ModelAvaliacao"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,8 +13,9 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-	 <link rel="icon" type="image/png" href="<%= request.getContextPath() %>/Img/logo_superior.png"/>
-	
+<link rel="icon" type="image/png"
+	href="<%= request.getContextPath() %>/Img/logo_superior.png" />
+
 <title>PresTec</title>
 </head>
 <body>
@@ -22,26 +24,28 @@
 	<div id="linha1"></div>
 
 	<div class="container">
+
 		<div class="row">
 			<div class="col" style="min-height: 500px; min-width: 500px;">
 				<h2>
 					<spam>${modelAnuncio.nome_prestador}</spam>
 				</h2>
-				<br /> <br /> 
+				<br /> <br />
 				<!--  
 				<img alt="Prestador"
 					src="<%=request.getContextPath()%>/Img/user.jpg" width="519px"
 					height="459px">-->
-				
-					 <c:if test="${modelAnuncio.foto != '' && modelAnuncio.foto != null}">
-										<img alt="Imagen User" id="fotoembase64" src="${modelAnuncio.foto}" width="519px"
-					height="459px">
-															</c:if>
-															<c:if test="${modelAnuncio.foto == '' || modelAnuncio.foto == null}">
-															<img alt="Imagen User" id="fotoembase64" src="<%=request.getContextPath()%>/principal/img/semImg.png" width="519px"
-					height="459px">
-															</c:if>
-															<br><br>	
+
+				<c:if test="${modelAnuncio.foto != '' && modelAnuncio.foto != null}">
+					<img alt="Imagen User" id="fotoembase64" src="${modelAnuncio.foto}"
+						width="519px" height="459px">
+				</c:if>
+				<c:if test="${modelAnuncio.foto == '' || modelAnuncio.foto == null}">
+					<img alt="Imagen User" id="fotoembase64"
+						src="<%=request.getContextPath()%>/principal/img/semImg.png"
+						width="519px" height="459px">
+				</c:if>
+				<br> <br>
 				<h6>Descrição:</h6>
 				<p>
 					<spam>${modelAnuncio.descricao}</spam>
@@ -106,95 +110,98 @@
 			</div>
 		</div>
 		<div class="row">
-		 	<div class="col">
-			<!--  	<select class="form-control" name="uf" id="uf" style="width: 250px;"
+			<div class="col">
+				<!--  	<select class="form-control" name="uf" id="uf" style="width: 250px;"
 					required="required">
 					<option value="">Selecione</option>
 					<option value="Recente">Mais recente</option>
 					<option value="Antigos">Mais Antigos</option>
 				</select>-->
-			</div> 
+			</div>
 			<div class="col"></div>
 			<div class="col">
-			<!-- 	<a
+				<!-- 	<a
 					href="<%=request.getContextPath()%>/ServletPrestadores?acao=avaliar&id=${modelAnuncio.id}"><button
 						type="button" class="btn btn-success">Avaliar</button></a> <a
 					href="<%=request.getContextPath()%>/ServletPrestadores?acao=denuncia&id=${modelAnuncio.id}"><button
 						type="button" class="btn btn-danger">Denunciar Anuncio</button></a>
 			</div>
 			<br /> <br /> <br /> -->
-		</div>
-		<div class="row" id="avaliacoes">
-
-			<div class="card " style="width: 1200px; height: 1200px;">
-				<div class="card-body">
-					<c:forEach items="${modelAvaliacaos}" var="av">
-						<h5 class="card-title">
-							Cliente:
-							<i><c:out value="${av.nome_cliente}"></c:out></i>
-							Nota: <i><c:out value="${av.nota}"></c:out></i>
-						</h5>
-						<br>
-						<p class="card-text">
-							Titulo:
-							<c:out value="${av.titulo}"></c:out>
-						</p>
-						<p class="card-text">
-							Descrição:
-							<c:out value="${av.descricao}"></c:out>
-						</p>
-						
-						<p class="card-text">
-							<a href="<%=request.getContextPath()%>/ServletCarregarRequisicao?acao=denunciarAvaliacao&id=${av.id}&id_user=<%= session.getAttribute("id")%>&id_anuncio=${modelAnuncio.id}"><button
-						type="button" class="btn btn-danger">Denunciar</button></a>
-						</p><br><br>
-					</c:forEach>
-				</div>
 			</div>
-			
+			<div class="row" id="avaliacoes">
+
+				<div class="card " style="width: 1200px; height: 1200px;">
+					<div class="card-body">
+						<c:forEach items="${modelAvaliacaos}" var="av">
+							<h5 class="card-title">
+								Cliente: <i><c:out value="${av.nome_cliente}"></c:out></i> Nota:
+								<i><c:out value="${av.nota}"></c:out></i>
+							</h5>
+							<br>
+							<p class="card-text">
+								Titulo:
+								<c:out value="${av.titulo}"></c:out>
+							</p>
+							<p class="card-text">
+								Descrição:
+								<c:out value="${av.descricao}"></c:out>
+							</p>
+
+							<p class="card-text">
+								<a
+									href="<%=request.getContextPath()%>/ServletCarregarRequisicao?acao=denunciarAvaliacao&id=${av.id}&id_user=<%= session.getAttribute("id")%>&id_anuncio=${modelAnuncio.id}"><button
+										type="button" class="btn btn-danger">Denunciar</button></a>
+							</p>
+							<br>
+							<br>
+						</c:forEach>
+					</div>
+				</div>
+
+			</div>
+			<nav aria-label="Page navigation example">
+				<br /> <br />
+				<ul class="pagination">
+
+					<%
+					ModelAnuncio modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+					int totalPagina = (int) request.getAttribute("totalPagina");
+
+					for (int p = 0; p < totalPagina; p++) {
+						String url = request.getContextPath() + "/ServletCarregarRequisicao?acao=carregarVisualizacaoAnuncio&id_user="
+						+ session.getAttribute("id") + "&paginar=" + (p * 5) + "&id_anuncio=" + modelAnuncio.getId();
+						out.print("<li class=\"page-item\"><a class=\"page-link\" href=\"" + url + "\">" + (p + 1) + " </a></li>");
+					}
+					%>
+
+
+				</ul>
+			</nav>
 		</div>
-		<nav aria-label="Page navigation example"><br/><br/>
-			<ul class="pagination">
-				
-				<%	
-			   						ModelAnuncio modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
-				
-									int totalPagina = (int) request.getAttribute("totalPagina");
-				
-									for (int p = 0; p < totalPagina; p++){
-										String url = request.getContextPath()+ "/ServletCarregarRequisicao?acao=carregarVisualizacaoAnuncio&id_user="+ session.getAttribute("id") +"&paginar=" + (p * 5) + "&id_anuncio=" + modelAnuncio.getId();
-										out.print("<li class=\"page-item\"><a class=\"page-link\" href=\""+url+"\">"+(p + 1)+" </a></li>");									}
-								
-								%>
-
-
-			</ul>
-		</nav>
-	</div>
 	</div>
 	<div id="linha1"></div>
 
 	<%@include file="/Componentes/rodape.jsp"%>
 
 	<script type="text/javascript">
-	function visualizarImg(fotoembase64, filefoto) {
-		
-		
-		var preview = document.getElementById(fotoembase64);
-		var fileUser = document.getElementById(filefoto).files[0];
-		var reader = new FileReader();
-		
-		reader.onloadend = function (){
-			preview.src = reader.result /*Carregar foto na tela*/
+		function visualizarImg(fotoembase64, filefoto) {
+
+			var preview = document.getElementById(fotoembase64);
+			var fileUser = document.getElementById(filefoto).files[0];
+			var reader = new FileReader();
+
+			reader.onloadend = function() {
+				preview.src = reader.result /*Carregar foto na tela*/
+			}
+
+			if (fileUser) {
+				reader.readAsDataURL(fileUser);
+			} else {
+				preview.src = '';
+			}
+
 		}
-		
-		if(fileUser){
-			reader.readAsDataURL(fileUser);
-		}else{
-			preview.src= '';
-		}
-		
-}
-    </script>
+	</script>
 </body>
 </html>
