@@ -89,10 +89,54 @@ public class ServletGerenciarSistema extends HttpServlet {
 					request.setAttribute("modelAnuncio", modelAnuncio);
 					request.setAttribute("totalPagina", daoGerenciarSistemaRepository.totalPaginaAvaliacao(Long.parseLong(id)));
 					request.getRequestDispatcher("principal/carregarAnuncioBanido.jsp").forward(request, response);
+				}else {
+					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);	
+				}
+				
+				
+			}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("AtivarAnuncio")) {
+		
+				String id_user = request.getParameter("id_user");
+				
+				String id = request.getParameter("id"); 
+
+				String paginar = "0";
+				
+				String providencia = "ATIVO";
+
+				HttpSession session = request.getSession();
+
+				String usuarioLogado = (String) session.getAttribute("usuario");
+
+				Long id_usuario = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId();
+
+				String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
+
+				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {	
+				
+					daoGerenciarSistemaRepository.ativarAnuncio(Long.parseLong(id));
+					
+					ModelAnuncio modelAnuncio = daoGerenciarSistemaRepository.consultarAnuncioID(Long.parseLong(id));							
+					
+					ModelAvaliacao modelAvaliacao = daoGerenciarSistemaRepository.carregarNotaMediaAvaliacao(Long.parseLong(id));
+					
+					List<ModelAvaliacao> modelAvaliacaos = daoGerenciarSistemaRepository.listAvaliacaoPaginada(Long.parseLong(id), Integer.parseInt(paginar));					
+					
+					request.setAttribute("msg", "Anuncio ativado com sucesso!");
+					request.setAttribute("modelAvaliacaos", modelAvaliacaos);												
+					request.setAttribute("modelAvaliacao", modelAvaliacao);												
+					request.setAttribute("modelAnuncio", modelAnuncio);
+					request.setAttribute("totalPagina", daoGerenciarSistemaRepository.totalPaginaAvaliacao(Long.parseLong(id)));
+					request.getRequestDispatcher("principal/carregarAnuncioBanido.jsp").forward(request, response);
+						
+				}else {
+					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);	
+				}
+				
 			}else {
 				request.getRequestDispatcher("principal/principal.jsp").forward(request, response);
 			}
-			}	
+				
 		}catch (Exception e) {
 			e.printStackTrace();
 

@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>Projeto_Servico</groupId>
   <artifactId>Projeto_Servico</artifactId> 
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1-SNAPSHOT</version> 
   <packaging>war</packaging>  
   <name>Projeto_Servico</name>
   <dependencies>
@@ -79,7 +79,7 @@
   <version>2.5</version>
   <scope>provided</scope>
 </dependency>
-
+ 
   </dependencies>
   <build>
     <plugins>

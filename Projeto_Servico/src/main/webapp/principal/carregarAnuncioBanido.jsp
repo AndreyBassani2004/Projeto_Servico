@@ -30,19 +30,23 @@
 		<div class="container">
 			<div class="row">
 				<h5>Gerenciar Anuncio</h5>
-				<span>${msg}</span>
 				<hr style="background-color: #F3F3F3; padding: 0.05em; width: 100%;">
+
 			</div>
 			<div class="row">
-				<div class="col"></div>
 				<div class="col">
-					<button type="button" class="btn btn-success">Ativar</button>
+					<br />
+					<p>
+						<span style="color: green;">${msg}</span>
+					</p>
 				</div>
 				<div class="col"></div>
 				<div class="col">
-					<button type="button" class="btn btn-danger">Desativar</button>
+					<br /> <a
+						href="<%=request.getContextPath()%>/ServletGerenciarSistema?acao=AtivarAnuncio&id_user=<%=session.getAttribute("id")%>&paginar=0&id=${modelAnuncio.id}"><button
+							type="button" class="btn btn-success">Ativar</button></a>
 				</div>
-				<div class="col"></div>
+
 			</div>
 			<br /> <br /> <br /> <br />
 			<div class="row">
@@ -188,12 +192,13 @@
 						<%
 						ModelAnuncio modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
 
-												int totalPagina = (int) request.getAttribute("totalPagina");
-						
-										for (int p = 0; p < totalPagina; p++){
-										String url = request.getContextPath()+ "/ServletGerenciarSistema?acao=carregarAnuncioBanido&id_user="+ session.getAttribute("id") +"&paginar=" + (p * 5) + "&id=" + modelAnuncio.getId();
-									out.print("<li class=\"page-item\"><a class=\"page-link\" href=\""+url+"\">"+(p + 1)+" </a></li>");									}
-						
+						int totalPagina = (int) request.getAttribute("totalPagina");
+
+						for (int p = 0; p < totalPagina; p++) {
+							String url = request.getContextPath() + "/ServletGerenciarSistema?acao=carregarAnuncioBanido&id_user="
+							+ session.getAttribute("id") + "&paginar=" + (p * 5) + "&id=" + modelAnuncio.getId();
+							out.print("<li class=\"page-item\"><a class=\"page-link\" href=\"" + url + "\">" + (p + 1) + " </a></li>");
+						}
 						%>
 
 

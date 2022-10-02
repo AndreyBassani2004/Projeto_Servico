@@ -194,4 +194,15 @@ public class DAOGerenciarSistemaRepository {
 
 	}
 	
+	
+	public void ativarAnuncio(Long id_anuncio) throws Exception{
+		
+		String sql = "UPDATE public.anuncio SET situacao='ATIVO' WHERE id=?;";
+		PreparedStatement statement = connection.prepareStatement(sql);
+		statement.setLong(1, id_anuncio);
+		
+		statement.execute();
+
+		connection.commit();
+	}
 }

@@ -35,10 +35,10 @@
 					
 					 <c:if test="${modelAnuncio.foto != '' && modelAnuncio.foto != null}">
 										<img alt="Imagen User" id="fotoembase64" src="${modelAnuncio.foto}" width="519px"
-					height="459px">
+					height="459px" style="border-radius: 8px; margin: 5px;">
 															</c:if>
 															<c:if test="${modelAnuncio.foto == '' || modelAnuncio.foto == null}">
-															<img alt="Imagen User" id="fotoembase64" src="<%=request.getContextPath()%>/principal/img/semImg.png" width="519px"
+															<img alt="Imagen User" id="fotoembase64" src="<%=request.getContextPath()%>/principal/img/semImg.png" width="519px" style="border-radius: 8px; margin: 5px;"
 					height="459px">
 															</c:if>
 															<br><br>
