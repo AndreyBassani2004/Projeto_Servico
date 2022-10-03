@@ -37,6 +37,7 @@
                     	<c:if test="${perfil == 'PRESTADOR' && situacao_user == 'ATIVO'}">
                     	<c:if test="${perfil == 'PRESTADOR' && situacao_user == 'ATIVO'}">
                         <li><a href="<%=request.getContextPath()%>\principal\perfil.jsp" id="opcao">Perfil</a></li>
+                      <!--<li><a href="#" id="opcao">Gerenciar Clientes</a></li>-->
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarMensagem&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Mensagens de alerta</a></li>
                           </c:if>
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarCriarAnuncio&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Criar Anuncio</a></li>
