@@ -1,3 +1,4 @@
+<%@page import="Model.ModelLogin"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -26,40 +27,39 @@
 	<c:if test="${isAdmin}">
 		<div class="container">
 			<div class="row">
-				<h1>Biblioteca do sistema</h1>
-			</div>
-			<br /> <br /> <br />
-			<div class="row">
-				<h5>Administradores</h5>
+				<h2>Perfil Banido</h2>
 				<hr style="background-color: #F3F3F3; padding: 0.05em; width: 100%;">
 			</div>
+			<br /> <br />
 			<div class="row">
-				<a href="<%=request.getContextPath()%>\principal\cadastroUser.jsp">Cadastra
-					usuário Administrador</a><br />
+				<div class="col">
+					<label>ID do usuário:</label> <input type="text" name="id" id="id"
+						class="form-control" value="${modelLogin.id}" readonly="readonly"> <br />
+					<br /> <label>Email de usuário:</label> <input type="text"
+						name="id" id="id" class="form-control" value="${modelLogin.login}"
+						readonly="readonly"> <br /> <br />
+				</div>
+				<div class="col">
+					<label>Nome do usuário:</label> <input type="text" name="id"
+						id="id" class="form-control" value="${modelLogin.nome}" readonly="readonly">
+					<br /> <br /> <label>Estado da conta:</label> <input type="text"
+						name="id" id="id" class="form-control" value="${modelLogin.situacao_user}"
+						readonly="readonly"> <br /> <br />
+				</div>
 			</div>
 			<div class="row">
-				<a
-					href="<%=request.getContextPath()%>\ServletGerenciarConta?acao=carregarUsuariosAdms&id_user=<%=session.getAttribute("id")%>&paginar=0">Usuários
-					Adminstradores</a>
-			</div>
-			<br /> <br /> <br /> <br />
-			<div class="row">
-				<h5>Gerenciar Banimentos</h5>
 				<hr style="background-color: #F3F3F3; padding: 0.05em; width: 100%;">
 			</div>
+
 			<div class="row">
-				<a href="<%=request.getContextPath()%>/ServletGerenciarSistema?acao=carregarAnunciosBanido&id_user=<%=session.getAttribute("id")%>&paginar=0">Gerenciar Anuncios Banido</a><br />
-			</div>
-			<div class="row">
-				<a href="<%=request.getContextPath()%>/ServletGerenciarSistema?acao=carregarPerfilPrestsBanido&id_user=<%=session.getAttribute("id")%>&paginar=0">Gerenciar Perfil de prestadores Banido</a><br />
-			</div>
-			<br /> <br /> <br /> <br />
-			<div class="row">
-				<h5>Mensagens</h5>
-				<hr style="background-color: #F3F3F3; padding: 0.05em; width: 100%;">
-			</div>
-			<div class="row">
-				<a href="#">Gerenciar Mensagens De Alerta Enviado</a><br />
+				<div class="col"></div>
+				<div class="col">
+					<span style="color: green;">${msg}</span>
+				</div>
+				<div class="col">
+					<a href="#"><button type="submit" class="btn btn-success">Ativar</button></a>
+				</div>
+				<div class="col"></div>
 			</div>
 		</div>
 		<br />
@@ -68,12 +68,7 @@
 		<br />
 		<br />
 		<br />
-		<br />
-		<br />
-		<br />
-		<br />
 	</c:if>
-
 
 	<c:if test="${perfil == 'PRESTADOR' || perfil == 'ADMIN' && !isAdmin}">
 		<br />
@@ -108,7 +103,6 @@
 		<br />
 		<br />
 	</c:if>
-
 
 	<%@include file="/Componentes/rodape.jsp"%>
 

@@ -205,4 +205,73 @@ public class DAOGerenciarSistemaRepository {
 
 		connection.commit();
 	}
+	
+	public List<ModelLogin> listPerfilsPrestadorBanido(Long offset) throws Exception{
+		
+		List<ModelLogin> retorno = new ArrayList<ModelLogin>();
+		
+		String sql = "SELECT id, nome, email, situacao_user FROM usuario where situacao_user='DESATIVADO' and perfil='PRESTADOR' offset "+offset+" limit 5;";
+		PreparedStatement statement = connection.prepareStatement(sql);
+
+		ResultSet rs = statement.executeQuery();
+		
+		while (rs.next()) {
+			
+			ModelLogin modelLogin = new ModelLogin();
+			
+			modelLogin.setId(rs.getLong("id"));
+			modelLogin.setNome(rs.getString("nome"));
+			modelLogin.setLogin(rs.getString("email"));
+			modelLogin.setSituacao_user(rs.getString("situacao_user"));
+			
+			retorno.add(modelLogin);
+		}
+		
+		return retorno;
+	}
+	
+	public int totalPaginaPerfilPrestBanido() throws Exception {
+
+		String sql = "select count(1) as total from usuario where situacao_user='DESATIVADO' and perfil='PRESTADOR';";
+		PreparedStatement statement = connection.prepareStatement(sql);
+
+		ResultSet resultado = statement.executeQuery();
+
+		resultado.next();
+
+		Double cadastros = resultado.getDouble("total");
+
+		Double porpagina = 5.0;
+
+		Double pagina = cadastros / porpagina;
+
+		Double resto = pagina % 2;
+
+		if (resto > 0) {
+			pagina++;
+		}
+
+		return pagina.intValue();
+
+	}
+	
+	public ModelLogin carregarPerfilBanido(Long id) throws Exception{
+		
+		ModelLogin modelLogin = new ModelLogin();
+		String sql = "SELECT id, nome, email, situacao_user FROM usuario where situacao_user='DESATIVADO' and perfil='PRESTADOR' and id=? ;";
+		PreparedStatement statement = connection.prepareStatement(sql);
+		statement.setLong(1, id);
+		
+		ResultSet rs = statement.executeQuery();
+		
+		while (rs.next()) {
+			modelLogin.setId(rs.getLong("id"));
+			modelLogin.setNome(rs.getString("nome"));
+			modelLogin.setLogin(rs.getString("email"));
+			modelLogin.setSituacao_user(rs.getString("situacao_user"));
+		}
+		
+		return modelLogin;
+	}
+	
 }
