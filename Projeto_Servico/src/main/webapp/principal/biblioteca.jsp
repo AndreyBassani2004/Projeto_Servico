@@ -53,6 +53,7 @@
 			<div class="row">
 				<a href="<%=request.getContextPath()%>/ServletGerenciarSistema?acao=carregarPerfilPrestsBanido&id_user=<%=session.getAttribute("id")%>&paginar=0">Gerenciar Perfil de prestadores Banido</a><br />
 			</div>
+			<!--  
 			<br /> <br /> <br /> <br />
 			<div class="row">
 				<h5>Mensagens</h5>
@@ -60,7 +61,7 @@
 			</div>
 			<div class="row">
 				<a href="#">Gerenciar Mensagens De Alerta Enviado</a><br />
-			</div>
+			</div>-->
 		</div>
 		<br />
 		<br />

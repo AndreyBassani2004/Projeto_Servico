@@ -41,7 +41,9 @@ public class ServletCadastroAdm extends ServletGenericUtil{
 			
 			String msg ="Operacao realizada com sucesso!";
 			
-			if(nome == null && nome.isEmpty() && email == null && email.isEmpty() && senha == null && senha.isEmpty() && telefone == null && telefone.isEmpty() && uf == null && uf.isEmpty() && cidade == null && cidade.isEmpty() && logradouro == null && logradouro.isEmpty()) {
+			if(nome == null || nome.isEmpty() || email == null || email.isEmpty() || senha == null ||
+					senha.isEmpty() || telefone == null || telefone.isEmpty() || uf == null || uf.isEmpty() 
+					|| cidade == null || cidade.isEmpty() || logradouro == null || logradouro.isEmpty()) {
 				
 				request.setAttribute("msg", "Preencha todos os campos!");
 				
@@ -61,7 +63,7 @@ public class ServletCadastroAdm extends ServletGenericUtil{
 			modelLogin.setPerfil(perfil);
 			
 			if(daoCadastroAdm.validarLogin(modelLogin.getLogin()) && modelLogin.getId() == null) {
-				msg = "JÃ¡ existe usuario com o mesmo login, informe outro login.";
+				msg = "Já existe usuario com o mesmo login, informe outro login.";
 			}else {
 				modelLogin = daoCadastroAdm.gravarUsuario(modelLogin, super.getUserLogado(request));
 			
@@ -69,7 +71,7 @@ public class ServletCadastroAdm extends ServletGenericUtil{
 			
 			request.setAttribute("msg", msg);
 			request.setAttribute("modelLogin", modelLogin);
-		    request.getRequestDispatcher("/principal/cadastroUser.jsp").forward(request, response);
+		    request.getRequestDispatcher("/principal/relatorioCriarAdm.jsp").forward(request, response);
 						
 			}
 			
