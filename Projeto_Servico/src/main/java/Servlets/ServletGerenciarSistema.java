@@ -161,7 +161,6 @@ public class ServletGerenciarSistema extends HttpServlet {
 				
 				
 			}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("carregarPerfilPrestBanido")) {	
-
 				
 				String id_user = request.getParameter("id_user");
 				
@@ -181,6 +180,34 @@ public class ServletGerenciarSistema extends HttpServlet {
 					
 					request.setAttribute("modelLogin", modelLogin);
 					request.getRequestDispatcher("principal/GerenciarPerfilPrestBanido.jsp").forward(request, response);
+				}else {
+					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);	
+				}
+				
+			}else if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("AtivarPerfil")) {
+	
+				String id_user = request.getParameter("id_user");
+				
+				String id = request.getParameter("id"); 
+
+				HttpSession session = request.getSession();
+
+				String usuarioLogado = (String) session.getAttribute("usuario");
+
+				Long id_usuario = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getId();
+
+				String perfil = daoUsuarioPosLogin.consultaUsuarioLogado(usuarioLogado).getPerfil();
+
+				if (id_usuario.equals(Long.parseLong(id_user)) && perfil.equals("ADMIN")) {
+					
+					daoGerenciarSistemaRepository.ativarPerfil(Long.parseLong(id));
+					daoGerenciarSistemaRepository.pausarAnuncios(Long.parseLong(id));
+					
+					ModelLogin modelLogin = daoGerenciarSistemaRepository.carregarPerfilBanido(Long.parseLong(id));
+					
+					request.setAttribute("modelLogin", modelLogin);
+					request.setAttribute("msg", "Perfil ativado com sucesso!");
+					request.getRequestDispatcher("/principal/GerenciarPerfilPrestBanido.jsp").forward(request, response);
 				}else {
 					request.getRequestDispatcher("principal/erro404.jsp").forward(request, response);	
 				}

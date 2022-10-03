@@ -258,7 +258,7 @@ public class DAOGerenciarSistemaRepository {
 	public ModelLogin carregarPerfilBanido(Long id) throws Exception{
 		
 		ModelLogin modelLogin = new ModelLogin();
-		String sql = "SELECT id, nome, email, situacao_user FROM usuario where situacao_user='DESATIVADO' and perfil='PRESTADOR' and id=? ;";
+		String sql = "SELECT id, nome, email, situacao_user FROM usuario where perfil='PRESTADOR' and id=? ;";
 		PreparedStatement statement = connection.prepareStatement(sql);
 		statement.setLong(1, id);
 		
@@ -272,6 +272,30 @@ public class DAOGerenciarSistemaRepository {
 		}
 		
 		return modelLogin;
+	}
+	
+	public void ativarPerfil(Long id) throws Exception{
+		
+		String sql = "UPDATE usuario SET situacao_user='ATIVO' WHERE id=?;";
+		PreparedStatement statement = connection.prepareStatement(sql);
+		statement.setLong(1, id);
+		
+		statement.execute();
+
+		connection.commit();
+		
+	}
+	
+	public void pausarAnuncios(Long id) throws Exception{
+	
+		String sql = "UPDATE anuncio SET situacao='PAUSADO' WHERE id_prestador=?;";
+		PreparedStatement statement = connection.prepareStatement(sql);
+		statement.setLong(1, id);
+		
+		statement.execute();
+
+		connection.commit();
+				
 	}
 	
 }

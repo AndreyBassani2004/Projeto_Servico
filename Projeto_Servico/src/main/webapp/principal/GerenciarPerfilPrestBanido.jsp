@@ -57,7 +57,7 @@
 					<span style="color: green;">${msg}</span>
 				</div>
 				<div class="col">
-					<a href="#"><button type="submit" class="btn btn-success">Ativar</button></a>
+					<a href="<%=request.getContextPath()%>/ServletGerenciarSistema?acao=AtivarPerfil&id_user=<%=session.getAttribute("id")%>&id=${modelLogin.id}"><button type="submit" class="btn btn-success">Ativar</button></a>
 				</div>
 				<div class="col"></div>
 			</div>
