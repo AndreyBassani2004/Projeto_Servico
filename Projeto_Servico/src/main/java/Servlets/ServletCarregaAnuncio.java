@@ -86,7 +86,7 @@ public class ServletCarregaAnuncio extends HttpServlet {
 				String id_anuncio = request.getParameter("id");
 				
 				if(daoAnuncioRepository.ExisteAvaliacao(Long.parseLong(id_anuncio))) {
-					msg = "Este anuncio n√£o pode ser excluido! <br><b>Ele possu√≠ avalia√ß√£o, somente pode ser pausado.</b>";
+					msg = "Este anuncio n„o pode ser excluido! <br><b>Ele possuÌ avaliaÁ„o, somente pode ser pausado.</b>";
 				}else {
 
 				daoAnuncioRepository.deleteAnuncioDenuncias(Long.parseLong(id_anuncio));

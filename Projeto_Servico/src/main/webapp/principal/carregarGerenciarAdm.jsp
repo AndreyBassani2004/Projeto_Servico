@@ -1,4 +1,4 @@
-<%@page import="Model.ModelLogin" %>
+<%@page import="Model.ModelLogin"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -54,16 +54,17 @@
 			<br /> <br />
 			<div class="row">
 				<div class="col">
-					<label>ID:</label> <input type="text" name="id" id="id" value="${modelLogin.id}"
+					<label>ID:</label> <input type="text" name="id" id="id"
+						value="${modelLogin.id}" class="form-control" readonly="readonly">
+					<br /> <br /> <label>Situação:</label><br /> <input type="text"
+						name="situacao" value="${modelLogin.situacao_user}" id="situacao"
 						class="form-control" readonly="readonly"> <br /> <br />
-					<label>Situação:</label><br /> <input type="text" name="situacao" value="${modelLogin.situacao_user}"
-						id="situacao" class="form-control" readonly="readonly"> <br />
-					<br />
 				</div>
 				<div class="col">
-					<label>Nome:</label><br /> <input type="text" name="nome" value="${modelLogin.nome}"
-						id="nome" class="form-control" readonly="readonly"> <br />
-					<br /> <label>Email:</label> <input type="text" name="email" value="${modelLogin.login}"
+					<label>Nome:</label><br /> <input type="text" name="nome"
+						value="${modelLogin.nome}" id="nome" class="form-control"
+						readonly="readonly"> <br /> <br /> <label>Email:</label>
+					<input type="text" name="email" value="${modelLogin.login}"
 						id="email" class="form-control" readonly="readonly"> <br />
 					<br />
 				</div>
@@ -76,13 +77,15 @@
 			<div class="row">
 				<div class="col"></div>
 				<div class="col">
-					<a href="<%=request.getContextPath()%>/ServletGerenciarConta?acao=AtivarConta&id_user=<%=session.getAttribute("id")%>&id=${modelLogin.id}"><button class="btn btn-success waves-effect waves-light">Ativar</button></a>
+					<a
+						href="<%=request.getContextPath()%>/ServletGerenciarConta?acao=AtivarConta&id_user=<%=session.getAttribute("id")%>&id=${modelLogin.id}"><button
+							class="btn btn-success waves-effect waves-light">Ativar</button></a>
 				</div>
+				<div class="col"></div>
 				<div class="col">
-					<a href="<%=request.getContextPath()%>/ServletGerenciarConta?acao=DesativarConta&id_user=<%=session.getAttribute("id")%>&id=${modelLogin.id}"><button class="btn btn-danger waves-effect waves-light">Desativar</button></a>
-				</div>
-				<div class="col">
-					<button class="btn btn-primary waves-effect waves-light">Emitir <i>PDF</i> de registro</button>
+					<a
+						href="<%=request.getContextPath()%>/ServletGerenciarConta?acao=DesativarConta&id_user=<%=session.getAttribute("id")%>&id=${modelLogin.id}"><button
+							class="btn btn-danger waves-effect waves-light">Desativar</button></a>
 				</div>
 				<div class="col"></div>
 

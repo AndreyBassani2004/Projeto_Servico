@@ -131,9 +131,9 @@ public class ServletGerenciarConta extends HttpServlet {
 				
 				String providencia = "DESATIVADO";
 				
-				ModelLogin modelLogin = daoGerenciarContasRepository.carregarDadosADM(Long.parseLong(id));
-				
 				daoGerenciarContasRepository.ativarDesativarContaAdm(Long.parseLong(id), providencia);
+				
+				ModelLogin modelLogin = daoGerenciarContasRepository.carregarDadosADM(Long.parseLong(id));
 				
 				request.setAttribute("msg", "Conta desativado com sucesso!");
 				request.setAttribute("modelLogin", modelLogin);
