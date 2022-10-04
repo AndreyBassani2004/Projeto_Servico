@@ -41,7 +41,7 @@ public class ServletPosLoginPrestador extends HttpServlet {
 			
 				ModelLogin modelLogin = daoCadastroPrestador.consultaUsuario(login);
 				
-				request.setAttribute("msg", "Usuario em ediÃ§Ã£o");
+				request.setAttribute("msg", "Usuario em edição");
 				request.setAttribute("modelLogin", modelLogin);
 				request.getRequestDispatcher("principal/perfil.jsp").forward(request, response);
 			}else {
@@ -68,7 +68,7 @@ public class ServletPosLoginPrestador extends HttpServlet {
 			String logradouro = request.getParameter("logradouro");
 			String perfil = "PRESTADOR";
 			
-			String msg ="Alteraï¿½ï¿½o realizada com sucesso!";
+			String msg ="Alteração realizada com sucesso!";
 
 			ModelLogin modelLogin = new ModelLogin();
 			
@@ -108,7 +108,7 @@ public class ServletPosLoginPrestador extends HttpServlet {
 		    request.getRequestDispatcher("/principal/perfil2.jsp").forward(request, response);
 			
 			}else {
-				request.setAttribute("msg", "Senhas nÃ£o identicas!");
+				request.setAttribute("msg", "Senhas não identicas!");
 				request.setAttribute("modelLogin", modelLogin);
 			    request.getRequestDispatcher("/principal/perfil.jsp").forward(request, response);
 			}

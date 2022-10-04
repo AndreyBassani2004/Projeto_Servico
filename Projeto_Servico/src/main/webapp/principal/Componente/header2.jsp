@@ -22,10 +22,10 @@
     <div id="barra">
         <div id="fotoNome">
         <c:if test="${fotouser != '' && fotouser != null}">
-															<img alt="Imagen User" id="fotoembase64" src="${fotouser}" width="70px">
+															<img alt="Imagen User" id="fotoembase64" src="${fotouser}" width="70px" style="border-radius: 80px;">
 															</c:if>
 															<c:if test="${fotouser == '' || fotouser == null}">
-															<img alt="Imagen User" id="fotoembase64" src="<%=request.getContextPath()%>/principal/img/user.jpg" width="70px">
+															<img alt="Imagen User" id="fotoembase64" src="<%=request.getContextPath()%>/principal/img/user.jpg" width="70px" style="border-radius: 80px;">
 															</c:if>
         
         <br><br>

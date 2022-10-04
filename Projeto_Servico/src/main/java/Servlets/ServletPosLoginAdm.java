@@ -69,7 +69,7 @@ public class ServletPosLoginAdm extends HttpServlet {
 			String logradouro = request.getParameter("logradouro");
 			String perfil = "PRESTADOR";
 			
-			String msg ="Altera√ß√£o realizada com sucesso!";
+			String msg ="AlteraÁ„o realizada com sucesso!";
 
 			ModelLogin modelLogin = new ModelLogin();
 			
@@ -105,7 +105,7 @@ public class ServletPosLoginAdm extends HttpServlet {
 		    request.getRequestDispatcher("/principal/perfilAdm2.jsp").forward(request, response);
 			
 			}else {
-				request.setAttribute("msg", "Senhas n√£o identicas!");
+				request.setAttribute("msg", "Senhas n„o identicas!");
 				request.setAttribute("modelLogin", modelLogin);
 			    request.getRequestDispatcher("/principal/perfilAdm.jsp").forward(request, response);
 			}
