@@ -37,7 +37,7 @@ public class ServletProvidenciaDenunciaAvaliacao extends HttpServlet {
 		
 		try {
 			
-		String msg = "OperaÃ§Ã£o realizada com sucesso!";
+		String msg = "Operação realizada com sucesso!";
 		
 		String id_denuncia = request.getParameter("id_avaliacao");
 		String providencia = request.getParameter("providencia");

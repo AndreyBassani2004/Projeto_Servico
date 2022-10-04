@@ -67,7 +67,7 @@ public class ServletCadastroPrestador extends HttpServlet {
 			modelLogin.setrSenha(Rsenha);
 			
 			if(daoCadastroPrestador.validarLogin(modelLogin.getLogin()) && modelLogin.getId() == null) {
-				msg = "JÃ¡ existe usuario com o mesmo login, informe outro login.";
+				msg = "Já existe usuario com o mesmo login, informe outro login.";
 			}else {
 				modelLogin = daoCadastroPrestador.gravarUsuario(modelLogin);
 			

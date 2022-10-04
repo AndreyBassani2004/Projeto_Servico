@@ -32,7 +32,7 @@ public class ServletProvidenciaDenunciaAnuncio extends HttpServlet {
 		
 		try {
 			
-			String msg = "<b>OperaÃ§Ã£o realizada com sucesso!</b>";
+			String msg = "<b>Operação realizada com sucesso!</b>";
 			
 			String id_denuncia = request.getParameter("id");
 			String id_adm = request.getParameter("id_adm");
