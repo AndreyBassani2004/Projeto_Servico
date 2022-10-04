@@ -1,8 +1,10 @@
 package Dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -316,7 +318,7 @@ public class DAOCarregarPublicoRepository {
 		preparedSql.setString(2, objeto.getNome_cliente());
 		preparedSql.setString(3, objeto.getEmail_cliente());
 		preparedSql.setString(4, objeto.getDescricao_cliente());
-		preparedSql.setString(5, objeto.getData_prestacao());
+		preparedSql.setDate(5, objeto.getData_prestacao());
 		preparedSql.setDouble(6, objeto.getNota());
 		preparedSql.setString(7, objeto.getTitulo());
 		preparedSql.setString(8, objeto.getDescricao());
@@ -415,7 +417,7 @@ public class DAOCarregarPublicoRepository {
 			modelDenunciaAvaliacao.setDescricao_avaliacao(resultado.getString("descricao"));
 			modelDenunciaAvaliacao.setNota(resultado.getLong("nota"));
 			modelDenunciaAvaliacao.setTitulo(resultado.getString("titulo"));
-			modelDenunciaAvaliacao.setData_prestacao(resultado.getString("data_prestacao"));
+			modelDenunciaAvaliacao.setData_prestacao(resultado.getDate("data_prestacao"));
 			modelDenunciaAvaliacao.setFotoAvaliacao(resultado.getString("foto"));
 			modelDenunciaAvaliacao.setExtfotoAvaliacao(resultado.getString("fotoExtencao"));
 		}

@@ -12,7 +12,9 @@
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
 	 <link rel="icon" type="image/png" href="<%= request.getContextPath() %>/Img/logo_superior.png"/>
-	
+	<link
+	href="https://code.jquery.com/ui/1.9.1/themes/smoothness/jquery-ui.css"
+	rel="stylesheet">
 </head>
 <body>
 
@@ -154,9 +156,9 @@
 						<p>
 							<b>Data da prestação:</b>
 						</p>
-						<input type="text" class="form-control"
-							value="${modelDenunciaAvaliacao.data_prestacao}"
-							name="data_prestacao" id="data_prestacao" readonly="readonly">
+						<input type="date" class="form-control"
+							value="${modelDenunciaAvaliacao.data_prestacao}" name="data_prestacao"
+							id="data_prestacao" readonly="readonly">
 					</div>
 					<br />
 					<div id="textcampo">
@@ -325,6 +327,31 @@
 			preview.src= '';
 		}
 		
+		$(function() {
+
+			$("#data")
+					.datepicker(
+							{
+								dateFormat : 'dd/mm/yy',
+								dayNames : [ 'Domingo', 'Segunda', 'Terça',
+										'Quarta', 'Quinta', 'Sexta', 'Sábado' ],
+								dayNamesMin : [ 'D', 'S', 'T', 'Q', 'Q', 'S',
+										'S', 'D' ],
+								dayNamesShort : [ 'Dom', 'Seg', 'Ter', 'Qua',
+										'Qui', 'Sex', 'Sáb', 'Dom' ],
+								monthNames : [ 'Janeiro', 'Fevereiro', 'Março',
+										'Abril', 'Maio', 'Junho', 'Julho',
+										'Agosto', 'Setembro', 'Outubro',
+										'Novembro', 'Dezembro' ],
+								monthNamesShort : [ 'Jan', 'Fev', 'Mar', 'Abr',
+										'Mai', 'Jun', 'Jul', 'Ago', 'Set',
+										'Out', 'Nov', 'Dez' ],
+								nextText : 'Próximo',
+								prevText : 'Anterior'
+							});
+		});
+		$("#data").val(dateFormat.toLocaleDateString('pt-BR',{timeZone: 'UTC'}));
+
 }
     </script>
 

@@ -34,7 +34,8 @@ public class DAOSistemaAdmRepository {
 			modelAvaliacao.setNota(resultado.getDouble("nota"));
 			modelAvaliacao.setTitulo(resultado.getString("titulo"));
 			modelAvaliacao.setDescricao(resultado.getString("descricao"));
-			modelAvaliacao.setData_prestacao(resultado.getString("data_prestacao"));
+			modelAvaliacao.setData_prestacao(resultado.getDate("data_prestacao"));
+			//setData_prestacao(resultado.getString());
 			modelAvaliacao.setFoto(resultado.getString("foto"));
 			modelAvaliacao.setExtfoto(resultado.getString("fotoExtencao"));
 		}

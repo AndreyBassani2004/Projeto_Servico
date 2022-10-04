@@ -1,6 +1,7 @@
 package Model;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 
 public class ModelAvaliacao implements Serializable{
@@ -12,7 +13,6 @@ public class ModelAvaliacao implements Serializable{
 	private String nome_cliente;
 	private String email_cliente;
 	private String descricao_cliente;
-	private String data_prestacao;
 	private Double nota;
 	private String titulo;
 	private String descricao;
@@ -34,8 +34,20 @@ public class ModelAvaliacao implements Serializable{
 	private String foto;
 	private String extfoto;
 	
+	//Data
+	private Date data_prestacao;
 	
 	
+	
+
+	public Date getData_prestacao() {
+		return data_prestacao;
+	}
+
+	public void setData_prestacao(Date data_prestacao) {
+		this.data_prestacao = data_prestacao;
+	}
+
 	public String getFoto() {
 		return foto;
 	}
@@ -74,14 +86,6 @@ public class ModelAvaliacao implements Serializable{
 
 	public void setEmail_prestador(String email_prestador) {
 		this.email_prestador = email_prestador;
-	}
-
-	public String getData_prestacao() {
-		return data_prestacao;
-	}
-
-	public void setData_prestacao(String data_prestacao) {
-		this.data_prestacao = data_prestacao;
 	}
 
 	public String getTitulo() {

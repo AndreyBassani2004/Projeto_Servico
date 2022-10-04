@@ -1,6 +1,9 @@
 package Servlets;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.sql.Date;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -38,7 +41,7 @@ public class ServletCadastrarAvaliacao extends HttpServlet {
 			throws ServletException, IOException {
 
 		try {
-
+			
 			String id_prestador = request.getParameter("id");
 			String nome_cliente = request.getParameter("nome_cliente");
 			String email_cliente = request.getParameter("email_cliente");
@@ -47,10 +50,10 @@ public class ServletCadastrarAvaliacao extends HttpServlet {
 			String nota = request.getParameter("nota");
 			String titulo_avaliacao = request.getParameter("titulo");
 			String descricao = request.getParameter("descricao2");
+			
 
 			if (id_prestador != null && !id_prestador.isEmpty() && nome_cliente != null && !nome_cliente.isEmpty()
-					&& email_cliente != null && !email_cliente.isEmpty() && data_prestacao != null
-					&& !data_prestacao.isEmpty() && descricao_cliente != null && !descricao_cliente.isEmpty()
+					&& email_cliente != null && !email_cliente.isEmpty() && descricao_cliente != null && !descricao_cliente.isEmpty()
 					&& nota != null && !nota.isEmpty() && titulo_avaliacao != null && !titulo_avaliacao.isEmpty()
 					&& descricao != null && !descricao.isEmpty()) {
 
@@ -59,7 +62,7 @@ public class ServletCadastrarAvaliacao extends HttpServlet {
 				modelAvaliacao.setId_anuncio(Long.parseLong(id_prestador));
 				modelAvaliacao.setNome_cliente(nome_cliente);
 				modelAvaliacao.setEmail_cliente(email_cliente);
-				modelAvaliacao.setData_prestacao(data_prestacao);
+				modelAvaliacao.setData_prestacao(new Date(new SimpleDateFormat("yyyy-mm-dd").parse(data_prestacao).getTime()));
 				modelAvaliacao.setDescricao_cliente(descricao_cliente);
 				modelAvaliacao.setNota(Double.parseDouble(nota));
 				modelAvaliacao.setTitulo(titulo_avaliacao);
@@ -87,7 +90,7 @@ public class ServletCadastrarAvaliacao extends HttpServlet {
 				modelAvaliacao.setId_anuncio(Long.parseLong(id_prestador));
 				modelAvaliacao.setNome_cliente(nome_cliente);
 				modelAvaliacao.setEmail_cliente(email_cliente);
-				modelAvaliacao.setData_prestacao(data_prestacao);
+				modelAvaliacao.setData_prestacao(new Date(new SimpleDateFormat().parse(data_prestacao).getTime()));
 				modelAvaliacao.setDescricao_cliente(descricao_cliente);
 				modelAvaliacao.setNota(Double.parseDouble(nota));
 				modelAvaliacao.setTitulo(titulo_avaliacao);

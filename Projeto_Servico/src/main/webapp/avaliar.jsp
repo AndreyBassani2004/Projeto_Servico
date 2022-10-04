@@ -1,7 +1,8 @@
 <%@page import="Model.ModelAnuncio"%>
 <%@page import="Model.ModelLogin"%>
 <%@page import="Model.ModelAvaliacao"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,8 +13,12 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-	 <link rel="icon" type="image/png" href="<%= request.getContextPath() %>/Img/logo_superior.png"/>
-	
+<link rel="icon" type="image/png"
+	href="<%=request.getContextPath()%>/Img/logo_superior.png" />
+<link
+	href="https://code.jquery.com/ui/1.9.1/themes/smoothness/jquery-ui.css"
+	rel="stylesheet">
+
 <title>PresTec</title>
 </head>
 <body>
@@ -27,7 +32,9 @@
 	<br />
 	<br />
 	<div class="container">
-		<form method="post" action="<%=request.getContextPath()%>/ServletCadastrarAvaliacao" enctype="multipart/form-data">
+		<form method="post"
+			action="<%=request.getContextPath()%>/ServletCadastrarAvaliacao"
+			enctype="multipart/form-data">
 			<h3>Anuncio</h3>
 			<hr>
 			<div class="row">
@@ -79,8 +86,9 @@
 							<b>Titulo:</b>
 						</p>
 						<input type="text" class="form-control"
-							placeholder="Digite seu nome completo" name="titulo_anuncio" id="titulo_anuncio"
-							value="${modelAvaliacao.titulo_anuncio}" readonly="readonly">
+							placeholder="Digite seu nome completo" name="titulo_anuncio"
+							id="titulo_anuncio" value="${modelAvaliacao.titulo_anuncio}"
+							readonly="readonly">
 					</div>
 					<br />
 					<div id="textcampo">
@@ -106,7 +114,7 @@
 						</p>
 						<input type="text" class="form-control"
 							placeholder="Digite seu nome completo" name="nome_cliente"
-							value="${modelAvaliacao.nome_cliente}" id="nome_cliente" 
+							value="${modelAvaliacao.nome_cliente}" id="nome_cliente"
 							required="required">
 					</div>
 					<br />
@@ -133,15 +141,22 @@
 						<p>
 							<b>Data Prestação:</b>
 						</p>
-						<input type="date" class="form-control" name="data" id="data"
-							value="${modelAvaliacao.data_prestacao}" required="required">
+						<input type="date" class="form-control"
+							value="${modelDenunciaAvaliacao.data_prestacao}" name="data_prestacao"
+							id="data_prestacao" readonly="readonly">
+
+
+
+
+
 					</div>
 					<br />
 					<div id="textcampo">
 						<p>
 							<b>Como foi a prestação:</b>
 						</p>
-						<textarea class="form-control" maxlength="150" required="required" id="descricao_cliente" name="descricao_cliente">${modelAvaliacao.descricao_cliente}</textarea>
+						<textarea class="form-control" maxlength="150" required="required"
+							id="descricao_cliente" name="descricao_cliente">${modelAvaliacao.descricao_cliente}</textarea>
 					</div>
 				</div>
 				<div class="col">
@@ -151,8 +166,10 @@
 						</p>
 						<p>Tire um print ou foto da concersa você e o prestador</p>
 						<p>(Essa imagen sera mandida em sigilo)</p>
-					<input type="file" id="fileFoto" name="fileFoto" accept="image/*" class="form-control-file" style="margin-top: 15px; margin-left: 5px;" required="required">
-						
+						<input type="file" id="fileFoto" name="fileFoto" accept="image/*"
+							class="form-control-file"
+							style="margin-top: 15px; margin-left: 5px;" required="required">
+
 					</div>
 
 				</div>
@@ -223,27 +240,48 @@
 
 
 	<%@include file="/Componentes/rodape.jsp"%>
-	
+
 	<script type="text/javascript">
-	function visualizarImg(fotoembase64, filefoto) {
-		
-		
-		var preview = document.getElementById(fotoembase64);
-		var fileUser = document.getElementById(filefoto).files[0];
-		var reader = new FileReader();
-		
-		reader.onloadend = function (){
-			preview.src = reader.result /*Carregar foto na tela*/
+		function visualizarImg(fotoembase64, filefoto) {
+
+			var preview = document.getElementById(fotoembase64);
+			var fileUser = document.getElementById(filefoto).files[0];
+			var reader = new FileReader();
+
+			reader.onloadend = function() {
+				preview.src = reader.result /*Carregar foto na tela*/
+			}
+
+			if (fileUser) {
+				reader.readAsDataURL(fileUser);
+			} else {
+				preview.src = '';
+			}
 		}
-		
-		if(fileUser){
-			reader.readAsDataURL(fileUser);
-		}else{
-			preview.src= '';
-		}
-		
-}
-    </script>
+		$(function() {
+
+			$("#data")
+					.datepicker(
+							{
+								dateFormat : 'dd/mm/yy',
+								dayNames : [ 'Domingo', 'Segunda', 'Terça',
+										'Quarta', 'Quinta', 'Sexta', 'Sábado' ],
+								dayNamesMin : [ 'D', 'S', 'T', 'Q', 'Q', 'S',
+										'S', 'D' ],
+								dayNamesShort : [ 'Dom', 'Seg', 'Ter', 'Qua',
+										'Qui', 'Sex', 'Sáb', 'Dom' ],
+								monthNames : [ 'Janeiro', 'Fevereiro', 'Março',
+										'Abril', 'Maio', 'Junho', 'Julho',
+										'Agosto', 'Setembro', 'Outubro',
+										'Novembro', 'Dezembro' ],
+								monthNamesShort : [ 'Jan', 'Fev', 'Mar', 'Abr',
+										'Mai', 'Jun', 'Jul', 'Ago', 'Set',
+										'Out', 'Nov', 'Dez' ],
+								nextText : 'Próximo',
+								prevText : 'Anterior'
+							});
+		});
+	</script>
 
 </body>
 </html>

@@ -92,7 +92,7 @@
 						<p>
 							<b>Data da prestação:</b>
 						</p>
-						<input type="text" class="form-control"
+						<input type="date" class="form-control"
 							value="${modelDenunciaAvaliacao.data_prestacao}" name="data_prestacao"
 							id="data_prestacao" readonly="readonly">
 					</div>

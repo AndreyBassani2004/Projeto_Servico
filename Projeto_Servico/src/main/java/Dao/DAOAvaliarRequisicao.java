@@ -261,7 +261,7 @@ public class DAOAvaliarRequisicao {
 			modelDenunciaAvaliacao.setDescricao_avaliacao(resultado2.getString("descricao"));
 			modelDenunciaAvaliacao.setNota(resultado2.getLong("nota"));
 			modelDenunciaAvaliacao.setTitulo(resultado2.getString("titulo"));
-			modelDenunciaAvaliacao.setData_prestacao(resultado2.getString("data_prestacao"));
+			modelDenunciaAvaliacao.setData_prestacao(resultado2.getDate("data_prestacao"));;
 			modelDenunciaAvaliacao.setFoto(resultado2.getString("foto"));
 			modelDenunciaAvaliacao.setExtfoto(resultado2.getString("fotoExtencao"));
 			}
