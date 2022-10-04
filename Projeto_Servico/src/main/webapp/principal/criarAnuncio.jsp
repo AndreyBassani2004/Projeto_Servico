@@ -183,10 +183,10 @@
 									<b>Foto Anuncio:</b>
 								</p>
 								 <c:if test="${modelAnuncio.foto != '' && modelAnuncio.foto != null}">
-															<img alt="Imagen User" id="fotoembase64" src="${modelAnuncio.foto}" width="480px" height="350px">
+															<img alt="Imagen User" id="fotoembase64B" src="${modelAnuncio.foto}" width="480px" height="350px">
 															</c:if>
 															<c:if test="${modelAnuncio.foto == '' || modelAnuncio.foto == null}">
-															<img alt="Imagen User" id="fotoembase64" src="<%=request.getContextPath()%>/principal/img/semImg.png" width="480px" height="350px">
+															<img alt="Imagen User" id="fotoembase64B" src="<%=request.getContextPath()%>/principal/img/semImg.png" width="480px" height="350px">
 															</c:if>
 							</div>
 						</td>
@@ -195,7 +195,7 @@
 								<p>
 									<b>Arquivo de imagen:</b>
 								</p>
-	<input type="file" id="fileFoto" name="fileFoto" accept="image/*" onchange="visualizarImg('fotoembase64', 'fileFoto');" class="form-control-file" style="margin-top: 15px; margin-left: 5px;" required="required">
+	<input type="file" id="fileFotoB" name="fileFotoB" accept="image/*" onchange="visualizarImg('fotoembase64B', 'fileFotoB');" class="form-control-file" style="margin-top: 15px; margin-left: 5px;" required="required">
 								
 							</div>
 						</td>
@@ -225,11 +225,11 @@
 	<%@include file="/Componentes/rodape.jsp"%>
 	
 	<script type="text/javascript">
-	function visualizarImg(fotoembase64, filefoto) {
+	function visualizarImg(fotoembase64B, filefotoB) {
 		
 		
-		var preview = document.getElementById(fotoembase64);
-		var fileUser = document.getElementById(filefoto).files[0];
+		var preview = document.getElementById(fotoembase64B);
+		var fileUser = document.getElementById(filefotoB).files[0];
 		var reader = new FileReader();
 		
 		reader.onloadend = function (){

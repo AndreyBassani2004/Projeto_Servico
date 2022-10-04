@@ -87,7 +87,7 @@ public class ServletCadastraAnuncio extends ServletGenericUtil {
 				
 				if (ServletFileUpload.isMultipartContent(request)) {
 
-					Part part = request.getPart("fileFoto"); /*Pega foto da tela*/
+					Part part = request.getPart("fileFotoB"); /*Pega foto da tela*/
 					byte[] foto = IOUtils.toByteArray(part.getInputStream());/*Converte imagem para byte*/
 					String imagemBase64 = "data:image/"+ part.getContentType().split("\\/")[1] + ";base64," + new Base64().encodeBase64String(foto);
 					
