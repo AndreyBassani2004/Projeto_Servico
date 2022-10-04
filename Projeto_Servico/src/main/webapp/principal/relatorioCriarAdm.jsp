@@ -61,8 +61,7 @@
 		</div>
 		<br />
 		<div class="row">
-			<a href="#"><button type="button"
-											class="btn btn-primary">Emitir <i>PDF</i> de registro</button></a>
+			<a href="<%=request.getContextPath()%>/principal/biblioteca.jsp"><button type="button" class="btn btn-primary">Voltar a biblioteca</button></a>
 		</div>
 
 	</div>
