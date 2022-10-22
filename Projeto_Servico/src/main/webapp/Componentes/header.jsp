@@ -32,3 +32,4 @@
 	</div>
 	
     <div id="barra2"></div>
+    

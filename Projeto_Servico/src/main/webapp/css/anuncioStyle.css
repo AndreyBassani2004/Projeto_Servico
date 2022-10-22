@@ -1,0 +1,209 @@
+@charset "ISO-8859-1";
+
+:root{
+    --grey-light: #F3F3F3;
+    --orange-main: #FFCC33
+}
+
+
+    /*--------------------------------------------------*/
+
+
+    .anuncio{
+        border: hidden;
+    }
+
+    .anuncio-c{
+        display: flex;
+        /*Como elementos vão ser exibido*/
+        align-items: center;
+        /*Como os itens vão ser alinhados*/
+        justify-content: space-around;
+        /* As Margins superior e inferior vão ser 0 e dos lado vão ser automático, caso a tela seja maior de 960px sera feita uma divisão das duas margens. */
+        flex-wrap: wrap;
+        /*Quebra do menu se da em várias linhas */
+        margin: 50px auto 50px auto;
+        width: 1200px;
+    }
+
+    .titulo__anuncio-c h1{
+        font-size: 3rem;
+        font-weight: bold;
+        margin: auto 0;
+    }
+
+    .titulo__anuncio-c p{
+        font-size: 1.0rem;
+        font-weight: normal;
+        margin: 20px auto;
+    }
+    
+    .contato__Anuncio{
+        border: hidden;
+    }
+
+    .contato__Anuncio-c{
+        display: flex;
+        /*Como elementos vão ser exibido*/
+        align-items: center;
+        /*Como os itens vão ser alinhados*/
+        justify-content: space-around;
+        /* As Margins superior e inferior vão ser 0 e dos lado vão ser automático, caso a tela seja maior de 960px sera feita uma divisão das duas margens. */
+        flex-wrap: wrap;
+        /*Quebra do menu se da em várias linhas */
+        margin: auto;
+       position: relative;
+       top: -705px;
+    }
+    
+    .contato__Anuncio2{
+    	display: none;
+    }
+    
+    .hr_separador2{
+        display: none;
+    }
+
+    @media only screen and (max-width: 1100px) {
+        .hr_separador2{
+            display: flex;
+            border: none;
+            background-color: var(--grey-light);
+            height: 2px;
+            margin: 40px 3%;
+        }
+
+        .contato__Anuncio-c{
+            display: none;          
+        }
+
+        .contato__Anuncio2{
+            border: hidden;
+            display: flex;
+        }
+    
+        .contato__Anuncio-c2{
+            display: flex;
+            /*Como elementos vão ser exibido*/
+            align-items: center;
+            /*Como os itens vão ser alinhados*/
+            justify-content: space-around;
+            /* As Margins superior e inferior vão ser 0 e dos lado vão ser automático, caso a tela seja maior de 960px sera feita uma divisão das duas margens. */
+            flex-wrap: wrap;
+            /*Quebra do menu se da em várias linhas */
+            margin: auto;
+           
+        }
+
+        .nota__anuncio2{
+            background-color: var(--orange-main);
+            width: 100%;
+        }
+    
+        .nota__anuncio-c2{
+            text-align: center;
+            margin-left: 10px;
+        }
+    
+        .nota__anuncio-c2 p{
+            font-size: 1.5rem;
+        }
+    
+        .dados__prestador2{
+            background-color: var(--grey-light);
+            width: 100%;
+            height: 500px;
+            margin-top: 20px;
+            border: 3px solid #CCCCCC;
+        }
+    
+        .dados__prestador-c2{
+            text-align: left;
+            margin-left: 70px;
+            
+        }
+        
+    }
+
+    .foto__Anuncio{
+        width: 700px;
+        height: 500px;
+    }
+
+    .nota__anuncio{
+        background-color: var(--orange-main);
+        width: 100%;
+        border-top-right-radius: 50px;
+    }
+
+    .nota__anuncio-c{
+        text-align: start;
+        margin-left: 10px;
+    }
+
+    .nota__anuncio-c p{
+        font-size: 1.5rem;
+    }
+
+    .dados__prestador{
+        background-color: var(--grey-light);
+        width: 100%;
+        height: 520px;
+        margin-top: 20px;
+        border: 3px solid #CCCCCC;
+    }
+
+    .dados__prestador-c{
+        text-align: center;
+        
+    }
+
+    .hr_separador{
+        border: none;
+        background-color: var(--grey-light);
+        height: 2px;
+        margin: 40px 0;
+        width: 100%;
+    }
+
+    .descricao-c{
+        text-align: start;
+    }
+
+    .descricao-c h4{
+        font-size: 1.5rem;
+    }
+
+    .dados__prestador p{
+        font-size: 1.1rem;
+    }
+    .avaliacoes{
+        border: hidden;
+    }
+    
+    .avaliacao{
+        border: 1px solid gray;
+        border-radius: 4px;
+        margin-top: 30px;
+    }
+
+    .avaliacao:hover{
+        background-color: var(--grey-light);
+    }
+
+    .descricao__avaliacao{
+        margin: 10px;
+    }
+
+    .nome_avaliacao{
+        margin: 10px;
+        display: flex;
+    }
+
+    .nome_avaliacao_2 {
+        margin-left: 200px;
+    }
+
+    .paginacao{
+        margin: 30px 0;
+    }
