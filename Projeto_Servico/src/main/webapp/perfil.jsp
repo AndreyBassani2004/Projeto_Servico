@@ -22,6 +22,11 @@
 	<%@include file="/Componentes/header.jsp"%>
 
 	<section>
+		<div class="row" style="width: 100%; height: 100px">
+		</div>
+	</section>
+
+	<section>
         <div class="anuncio">
             <div class="anuncio-c" class="row">
                 <div class="anuncio__Detalhes" class="col">
@@ -146,6 +151,11 @@
             </div>
         </div>
     </section>
+    
+    <section>
+		<div class="row" style="width: 100%; height: 100px">
+		</div>
+	</section>
 
 	<%@include file="/Componentes/rodape.jsp"%>
 
