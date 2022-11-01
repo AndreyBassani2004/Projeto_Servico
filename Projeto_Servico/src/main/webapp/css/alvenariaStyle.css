@@ -1,0 +1,338 @@
+@charset "ISO-8859-1";
+
+:root{
+    --grey-light: #F3F3F3;
+    --orange-main: #FFCC33
+}
+
+body{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+a,
+    a:hover,
+    /*Quando o mouse passa em cima do link*/
+    
+    a:active,
+    /*Quando o link é clicado*/
+    
+    a:link,
+    /*link sem ação */
+    /*link já foi clicado*/
+    
+    a:visited {
+        text-decoration: none;
+        /* Tirar sublinhado do link */
+        color: black;
+        /*Cor do link*/
+    }
+
+.titulo{
+    border: hidden;
+}
+
+.titulo-c h1{
+    margin: 70px auto 70px auto;
+    text-align: center;
+}
+
+.anuncios-c{
+        display: block;
+        /*Como elementos vão ser exibido*/
+        align-items: center;
+        /*Como os itens vão ser alinhados*/
+        justify-content: space-between;
+        /*Como os itens vão ser separados*/
+        max-width: 960px;
+        /*Tamanho maximo do menu*/
+        margin: 0 auto;
+        /* As Margins superior e inferior vão ser 0 e dos lado vão ser automático, caso a tela seja maior de 960px sera feita uma divisão das duas margens. */
+        flex-wrap: nowrap;
+        /*Quebra do menu se da em várias linhas */
+}
+
+/*Caixa Pesquisa*/
+
+.caixa__pesquisa{
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+
+.caixa__pesquisa-c{
+    display: inline-block;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px;
+    flex-wrap: wrap;
+}
+
+.elemento{
+    display: inline-block;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.elemento input{
+    width: 450px;
+}
+
+.elemento select{
+    width: 300px;
+}
+
+@media only screen and (max-width: 960px) {
+
+    .caixa__pesquisa{
+        border: 1px solid gray;
+        border-radius: 20px;
+    }
+
+    .caixa__pesquisa-c{
+        display: block;
+        align-items: center;
+        justify-content: space-around;
+        margin: auto;
+        flex-wrap: wrap;
+    }
+
+    .elemento{
+        display: block;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px 5%;
+        flex-wrap: wrap;
+    }
+    
+    .elemento input{
+        width: 90%;
+    }
+
+    .elemento select{
+        width: 90%;
+    }
+
+    .elemento button{
+        width: 90%;
+    }
+
+}
+
+/*Anuncio*/
+
+.anuncios2{
+    border: hidden;
+}
+
+.anuncios2-c{
+    display: block;
+    /*Como elementos vão ser exibido*/
+    align-items: center;
+    /*Como os itens vão ser alinhados*/
+    justify-content: space-between;
+    /*Como os itens vão ser separados*/
+    max-width: 960px;
+    /*Tamanho maximo do menu*/
+    margin: 0 auto;
+    /* As Margins superior e inferior vão ser 0 e dos lado vão ser automático, caso a tela seja maior de 960px sera feita uma divisão das duas margens. */
+    flex-wrap: nowrap;
+    /*Quebra do menu se da em várias linhas */
+}
+
+.anuncio{
+    border: 1px solid grey;
+    border-radius: 20px; 
+}
+
+.anuncio:hover{
+    background-color: var(--grey-light);
+}
+
+.anuncio-c{
+    display: inline-block;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.anuncio_foto{
+    display: inline-block;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.anuncio_foto img{
+    width: 450px;
+    height: 300px;
+    border-radius: 20px 0 0 20px;
+}
+
+.anuncio_elemento{
+    display: inline-block;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0px;
+    flex-wrap: wrap;
+}
+
+.anuncio_elemento-t{
+    display: flex;
+    /*Como elementos vão ser exibido*/
+    align-items: center;
+    /*Como os itens vão ser alinhados*/
+    justify-content: space-between;
+    /*Como os itens vão ser separados*/
+    max-width: 500px;
+    /*Tamanho maximo do menu*/
+    margin: 0 auto;
+    /* As Margins superior e inferior vão ser 0 e dos lado vão ser automático, caso a tela seja maior de 960px sera feita uma divisão das duas margens. */
+    flex-wrap: wrap;
+    /*Quebra do menu se da em várias linhas */
+    position: relative;
+    top: -40px;
+}
+
+.anuncio_elemento-t-T{
+    margin: 0 0 0 10px;
+}
+
+.anuncio_elemento-t-T h4{
+    font-size: 2rem;
+}
+
+.anuncio_elemento-t-N{
+   margin-left: 200px;
+}
+
+.anuncio_elemento-t-N h5{
+    font-size: 1.5rem;
+}
+
+.anuncio_elemento-Espacao{
+    height: 80px;
+}
+
+.anuncio_elemento-Espacao2{
+    height: 30px;
+}
+
+.anuncio_elemento-d p{
+   margin: 20px 0 auto 10px;
+   font-size: 1rem;
+   text-align: center;
+}
+
+.anuncio_elemento-c{
+    margin: 0 0 0 10px;
+    font-size: 1rem;
+    position: relative;
+    top: 140px;
+}
+
+@media only screen and (max-width: 960px) {
+
+    .anuncio{
+        width: 80%;
+        height: 500px;
+        border: 1px solid grey;
+        border-radius: 20px;
+        margin: auto 10%; 
+    }
+    
+    .anuncio:hover{
+        background-color: var(--grey-light);
+    }
+    
+    .anuncio-c{
+        display: block;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+        flex-wrap: wrap;
+    }
+    
+    .anuncio_foto{
+        display: block;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+        flex-wrap: wrap;
+    }
+    
+    .anuncio_foto img{
+        width: 100%;
+        height: 300px;
+        border-radius: 20px 20px 0 0 ;
+    }
+
+    .anuncio_elemento{
+        display: block;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 0px;
+        flex-wrap: wrap;
+    }
+
+    .anuncio_elemento-t{
+        display: flex;
+        /*Como elementos vão ser exibido*/
+        align-items: center;
+        /*Como os itens vão ser alinhados*/
+        justify-content: space-between;
+        /*Como os itens vão ser separados*/
+        max-width: 500px;
+        /*Tamanho maximo do menu*/
+        margin: 0 auto;
+        /* As Margins superior e inferior vão ser 0 e dos lado vão ser automático, caso a tela seja maior de 960px sera feita uma divisão das duas margens. */
+        flex-wrap: wrap;
+        /*Quebra do menu se da em várias linhas */
+        position: relative;
+        top: 40px;
+    }
+
+    .anuncio_elemento-t-T{
+        margin: 0 0 0 40%;
+    }
+    
+    .anuncio_elemento-t-T h4{
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .anuncio_elemento-t-N{
+      display: none;
+    }
+    
+    .anuncio_elemento-t-N h5{
+        display: none;
+    }
+    
+    .anuncio_elemento-Espacao{
+        height: 80px;
+    }
+    
+    .anuncio_elemento-Espacao2{
+        height: 30px;
+    }
+    
+    .anuncio_elemento-d p{
+       margin: 20px 0 auto 10px;
+       font-size: 1rem;
+       text-align: center;
+       position: relative;
+       top: 20px;
+    }
+    
+    .anuncio_elemento-c{
+        margin: 0 0 0 10px;
+        font-size: 1rem;
+        position: relative;
+        top: -850px;
+    }
+}

@@ -9,6 +9,8 @@
 <title>PresTec</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/alvenaria.css">
+	<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/css/alvenariaStyle.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -19,97 +21,39 @@
 <body>
 	<%@include file="/Componentes/header.jsp"%>
 
-	<div id="titulo">
-		<h1>
-			Eletricista
-		</h1>
-	</div>
-
-	<div id="linha1"></div>
-
-	<div class="listaBarra">
-		<div class="listaBarra-c">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="card mb-3"
-							style="min-height: 800px; min-width: 700px;">
-							<div class="row g-0">
-
-
-								<c:forEach items="${modelAnuncios}" var="an">
-									<div class="col-md-4">
-										 <c:if test="${an.foto != '' && an.foto != null}">
-															<img alt="Imagen User" id="fotoembase64" src="${an.foto}" width="247px" height="137px" style="border-radius: 8px; margin: 5px;" >
-															</c:if>
-															<c:if test="${an.foto == '' || an.foto == null}">
-															<img alt="Imagen User" id="fotoembase64" src="<%=request.getContextPath()%>/Img/semImg.png" width="247px" height="137px" style="border-radius: 8px; margin: 5px;">
-															</c:if>
-									</div>
-									<div class="col-md-8">
-										<div class="card-body">
-											<h5 class="card-title">
-												<c:out value="${an.titulo}"></c:out>
-											</h5>
-											<p class="card-text">
-												<c:out value="${an.descricao}"></c:out>
-											</p>
-											<p class="card-text">
-												<small class="text-muted"><a href="<%=request.getContextPath()%>/ServletPrestadores?acao=perfil&id=${an.id}&paginar=0"> <button type="button"
-														class="btn btn-secondary">Conhecer</button></a></small>
-											</p>
-										</div>
-									</div>
-								</c:forEach>
-
+	<section>
+		<div class="titulo">
+			<div class="titulo-c">
+				<h1>Eletricista</h1>
+			</div>
+		</div>
+	</section>	
+	
+	<section>
+		<div class="anuncios">
+			<div class="anuncios-c">
+				<div class="caixa__pesquisa">
+					<div class="caixa__pesquisa-c">
+						<form action="<%=request.getContextPath()%>/ServletPesquisaPrestadorPublic?" method="get">
+                        <input type="hidden" id="acao" name="acao" value="pesquisa">
+									<input type="hidden" id="paginar" name="paginar" value="0">
+																		  <input type="hidden" id="categoria" name="categoria" value="alvenaria"> 
+							<div class="elemento">
+								<label>Cidade:</label> <input type="text" class="form-control"
+									name="cidade" id="cidade"
+									placeholder="Digite o nome da cidade."
+									value="${modelAnuncio.cidade_pesquisa}" required="required">
 							</div>
-						</div>
-						<nav aria-label="Page navigation example" style="">
-							<ul class="pagination">
-								
-								<%	
-									//ServletPesquisaPrestadorPublic?acao=pesquisa&paginar=0&categoria=alvenaria&cidade=abc&uf=AC	
-									
-									ModelAnuncio modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
-									
-								 	String categoria_pesquisa = request.getParameter("modelAnuncio.categoria_pesquisa");
- 									
-									int totalPagina = (int) request.getAttribute("totalPagina");
-									
-									for (int p = 0; p < totalPagina; p++){
-										String url = request.getContextPath()+ "/ServletPesquisaPrestadorPublic?acao=pagina4&paginar=" + (p * 5) + "&categoria=" + modelAnuncio.getCategoria_pesquisa() + "&cidade=" + 
-									    modelAnuncio.getCidade_pesquisa() + "&uf=" + modelAnuncio.getEstado_pesquisa();
-										out.print("<li class=\"page-item\"><a class=\"page-link\" href=\""+url+"\">"+(p + 1)+" </a></li>");									}
-								
-								%>
-								
-								
-							</ul>
-						</nav>
-					</div>
-					<div class="col">
-						<div class="card mb-3"
-							style="min-width: 360px; min-height: 800px;">
-							<div class="row g-0">
-								<form action="<%=request.getContextPath()%>/ServletPesquisaPrestadorPublic?" method="get" class="col-md-4" id="form_pesquisa">
-									<input type="hidden" id="acao" name="acao" value="pesquisa">
-									<input type="hidden" id="paginar" name="paginar" value="0">   
-									<h5>
-										<b>Pesquisar</b>
-									</h5>
-									<br /> <br /> <br />
-									  <input type="hidden" id="categoria" name="categoria" value="eletricista"> 
-									<div id="text_campo">
-										<label>Cidade:</label><input type="text" class="form-control" name="cidade" id="cidade" value="${modelAnuncio.cidade_pesquisa}"
-											placeholder="Digite o nome da cidade." style="width: 250px;" required="required">
-									</div>
-									<br />
-									<div id="textcampo">
-										<p>Estado:</p>
-										<select class="form-control" name="uf" id="uf">
+							<div class="elemento">
+								<label>Estado:</label>
+								<select class="form-control" name="uf" id="uf">
 									<option value="">Selecione</option>
 									<option value="AC"
-										<% modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+										<% 
+										ModelAnuncio modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
+
+										
+										modelAnuncio = (ModelAnuncio) request.getAttribute("modelAnuncio");
 
 
 if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("AC")) {
@@ -325,20 +269,91 @@ if (modelAnuncio != null && modelAnuncio.getEstado_pesquisa().equals("TO")) {
 	out.print("selected=\"selected\"");
 	out.print(" ");
 }%>>TO</option>
-								</select>
-									</div>
-									<div id="linha2"></div>
-									<div id="textcampo">
-										<button type="submit" class="btn btn-primary">Pesquisar</button>
-									</div>
-								</form>
+								</select> 
 							</div>
-						</div>
+							<div class="elemento">
+								<label></label>
+								<button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
+							</div>
+						</form>
 					</div>
+				</div>
+				<hr>
+				<div class="anuncios2">
+					<div class="anuncios2-c">
+							<c:forEach items="${modelAnuncios}" var="an">
+							<div>
+								<a
+									href="<%=request.getContextPath()%>/ServletPrestadores?acao=perfil&id=${an.id}&paginar=0">
+									<div class="anuncio">
+										<div class="anuncio-c">
+											<div class="anuncio_foto">
+												<c:if test="${an.foto != '' && an.foto != null}">
+													<img alt="Imagen User" id="fotoembase64" src="${an.foto}"
+														class="foto__Anuncio">
+												</c:if>
+												<c:if test="${an.foto == '' || an.foto == null}">
+													<img alt="Imagen User" id="fotoembase64"
+														src="<%=request.getContextPath()%>/Img/semImg.png"
+														class="foto__Anuncio">
+												</c:if>
+											</div>
+											<div class="anuncio_elemento">
+												<div class="anuncio_elemento-t">
+													<div class="anuncio_elemento-t-T">
+														<h4>
+															<c:out value="${an.titulo}"></c:out>
+														</h4>
+													</div>
+													<div class="anuncio_elemento-t-N"></div>
+												</div>
+
+
+
+												<div class="anuncio_elemento-d">
+													<p>
+														<c:out value="${an.descricao}"></c:out>
+													</p>
+												</div>
+
+
+
+												<div class="anuncio_elemento-c">
+													<h6>
+														<strong>Cidades atendidas:</strong>${an.regiao}
+													</h6>
+												</div>
+											</div>
+										</div>
+									</div>
+								</a> <br />
+							</div>
+						</c:forEach>
+
+					</div>
+
+					<nav aria-label="Page navigation example" style="">
+						<ul class="pagination">
+
+							<%
+														
+						 	String categoria_pesquisa = request.getParameter("modelAnuncio.categoria_pesquisa");
+								
+							int totalPagina = (int) request.getAttribute("totalPagina");
+							
+							for (int p = 0; p < totalPagina; p++){
+								String url = request.getContextPath()+ "/ServletPesquisaPrestadorPublic?acao=pagina&paginar=" + (p * 5) + "&categoria=" + modelAnuncio.getCategoria_pesquisa() + "&cidade=" + 
+							    modelAnuncio.getCidade_pesquisa() + "&uf=" + modelAnuncio.getEstado_pesquisa();
+								out.print("<li class=\"page-item\"><a class=\"page-link\" href=\""+url+"\">"+(p + 1)+" </a></li>");	}	
+							%>
+
+
+						</ul>
+					</nav>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
 	<div id="linha1"></div>
 

@@ -28,8 +28,8 @@
 
 	<section>
         <div class="anuncio">
-            <div class="anuncio-c" class="row">
-                <div class="anuncio__Detalhes" class="col">
+            <div class="anuncio-c">
+                <div class="anuncio__Detalhes">
                     <div class="anuncio__Detalhes-c" >
                         <div class="titulo__anuncio-c">
                             <h1>${modelAnuncio.titulo}</h1>
@@ -125,7 +125,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="contato__Anuncio" class="col">
+                <div class="contato__Anuncio" >
                     <div class="contato__Anuncio-c">
                         <div class="nota__anuncio">
                             <div class="nota__anuncio-c">
@@ -146,7 +146,10 @@
                             </div>
                             </div>
                         </div>
-                    </div>
+                       
+                    </div> 
+                    <div style="height: 800px;">
+                        </div>
                 </div>
             </div>
         </div>

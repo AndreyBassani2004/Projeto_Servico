@@ -58,7 +58,7 @@ body{
         /*Quebra do menu se da em várias linhas */
         margin: 61px 5% 48px 5%;
         position: relative;
-        top: -300px
+        top: 0;
     }
     
     .contato__Anuncio2{
