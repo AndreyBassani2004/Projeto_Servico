@@ -19,7 +19,7 @@
 
 	<div id="titulo">
 		<h1>
-			<b>Cadastra-se e trabalhe conosco.</b>
+			<b>Cadastra-se e anuncie conosco,</br> sua conta é totalmente gratuita.</b>
 		</h1>
 	</div>
 

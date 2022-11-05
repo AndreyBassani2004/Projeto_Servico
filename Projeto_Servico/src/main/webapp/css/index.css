@@ -6,6 +6,33 @@ body {
     padding: 0;
 }
 
+a,
+    a:hover,
+    /*Quando o mouse passa em cima do link*/
+    
+    a:active,
+    /*Quando o link é clicado*/
+    
+    a:link,
+    /*link sem ação */
+    /*link já foi clicado*/
+    
+    a:visited {
+        text-decoration: none;
+        /* Tirar sublinhado do link */
+        color: black;
+        /*Cor do link*/
+    }
+
+:root {
+    --ff-primary: "Nunito", Helvetica, Arial, sans-serif;
+    --clr-green-dark: #049A40;
+    --clr-green-light: #0BF96A;
+    --clr-pink-dark: #E10BF9;
+    --clr-pink-light: #F3A0FD;
+    --clr-white: #F5F5F5;
+}
+
 #titulo {
     display: flex;
     align-items: center;
@@ -66,7 +93,7 @@ body {
     align-items: center;
     justify-content: space-between;
     background-color: #EFF3F4;	
-}
+} 
 
 #img2{
 	margin-left: 5em;
@@ -140,3 +167,292 @@ body {
 
 
 }
+
+.titulo_AND h3{
+    margin: 50px auto;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.anuncios_destaque{
+    border: hidden;
+    max-width: 1024px;
+    /*Definir tamanho maximo do bloco*/
+    margin: 0 auto;
+    /*Centralizar itens*/
+}
+
+.anuncios_destaque-c{
+    display: flex;
+    /*Como os elementos vão ser exibidos*/
+    flex-wrap: wrap;
+    /*Quebra do menu se da em várias linhas */
+    justify-content: center;
+    /*Centralizar items*/
+    align-items: flex-end;
+    /*Alinhar todos os items pela base*/
+}
+
+.anuncio_AND{
+    border: 1px solid black;
+    width: 302px;
+    height: 400px;
+    margin:  10px 10px;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+}
+
+.anuncio_AND:hover{
+    background-color: #EFF3F4;
+}
+
+.texto_AND {
+    text-align: center;
+    margin:  10px 10px;
+}
+
+.titulo_anuncio_AND{
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.descricao_anuncio_AND{
+    text-align: center;
+    font-size: 1.0rem;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+.Quem__Somos{
+    width: 100%;
+    background-color: #ffc107;
+    opacity: 0.95;
+}
+
+.titulo__QM{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: auto 40px;
+    padding: 50px;
+}
+
+.Texto__QM-c{
+    max-width: 1024px;
+    /*Definir tamanho maximo do bloco*/
+    margin: 0 auto;
+    /*Centralizar itens*/
+}
+
+.Texto__QM{
+    border: hidden;
+    max-width: 1024px;
+    margin: 20px auto;
+}
+
+.Texto__QM-c{
+    display: flex;
+    /*Como os elementos vão ser exibidos*/
+    flex-wrap: wrap;
+    /*Quebra do menu se da em várias linhas */
+    justify-content: center;
+    /*Centralizar items*/
+    align-items: flex-end;
+    /*Alinhar todos os items pela base*/
+}
+
+.Texto__QM-p1{
+    max-width: 400px;
+    margin: 10px auto;
+    display: inline-block;
+    text-align: start;
+    font-size: 1.3rem;
+}
+
+.Texto__QM-p2{
+    max-width: 400px;
+    margin: 20px auto;
+    display: inline-block;
+    text-align: start;
+    font-size: 1.3rem;
+    position: relative;
+    top: -85px;
+}
+
+@media (max-width: 960px){
+    .Texto__QM-p2{
+        position: relative;
+        top: 0;
+    }
+}
+
+.titulo_PL h3{
+    text-align: center;
+    font-size: 3rem;
+    padding: 50px;
+}
+
+.planos{
+    background-color: #ffff;
+}
+
+.planos-c{
+    max-width: 960px;
+    /*Definir tamanho maximo do bloco*/
+    margin: 0 auto;
+    /*Centralizar itens*/
+    display: flex;
+    /*Como os elementos vão ser exibidos*/
+    flex-wrap: wrap;
+    /*Quebra do menu se da em várias linhas */
+    justify-content: center;
+    /*Centralizar items*/
+    align-items: flex-end;
+    /*Alinhar todos os items pela base*/
+}
+
+.plano {
+    width: 290px;
+    /*Definir tamanho*/
+    margin: 10px 10px;
+    /*Definir espaço entre os blocos*/
+    border: 2px solid grey;
+    /*Definir a borda dos blocos*/
+}
+
+.plano__titulo{
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.plano__preco{
+    font-size: 3rem;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
+.plano__preco sup{
+    position: relative;
+    /*Para alterar posição*/
+    font-size: 1.5rem;
+    top: -20px;
+    /*Deixar texto em cima*/
+}
+
+.plano__divisor{
+    background-color: #F5F5F5;
+    width: 20px;
+    margin: 5px auto;
+}
+
+.plano-lista{
+    max-width: 195px;
+    margin: 0 auto;
+}
+
+.plano-lista__item{
+    margin: 10px 0;
+    font-style: italic;
+    display: flex;
+    /*Elemento ficar lado a lado*/
+    align-items: center;
+    /*Centralizar Marcador*/
+}
+
+/*Pseudo elemento marcadores do texto vantangem*/
+.plano-lista__item::before{
+    content: "";
+    /*Para elemento aparecer*/
+    display: block;
+    width: 5px;
+    height: 5px;
+    background-color: #ffc107;
+    border-radius: 5px;
+    /*Deixar elemento com cantos arredondados*/
+    margin-right: 5px;
+    /*Margin do pseudo elemento*/
+}
+
+.plano__btn-comprar{
+    display: block;
+    /*Definir posicionamento*/
+    max-width: 180px;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 15px auto;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px solid var(--clr-green-light);
+}
+
+/*Pseudo classe que seleciona o ultimo plano*/
+.plano:last-child{
+    background-color: #ffc107;
+}
+
+/*Pseudo classe que seleciona o ultimo plano*/
+.plano:last-child, .plano:last-child, .plano__btn-comprar{
+    border: 2px solid gray;
+} 
+
+/*Pseudo classe que seleciona o ultimo plano*/
+.plano:last-child .plano-lista__item::before, .plano:last-child .plano__divisor {
+    background-color: gray;
+}
+
+@media (max-width:800px) {
+    
+    /*Aterar ordem dos container*/
+    .plano:nth-child(3){
+        order: -2;
+    }
+
+    /*Aterar ordem dos container*/
+    .plano:nth-child(2){
+        order: -1;
+    }
+
+}
+
+footer{
+    margin: 0;
+     width: 100%;
+     height: 10em;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     background-color: #C0C0C0;
+     margin-bottom: 0em;
+    }
+    
+ footer h4{
+     font-family:cursive;
+     font-size: 25px;
+ }
+ 
+ footer h5{
+     font-family:cursive; 
+     font-size:20px;
+ }
+ 
+ footer p{
+     font-family:cursive; 
+     font-size:15px; 
+ }
+ 
+ #t1{
+     margin-right: 10em;
+     margin-left: 2em;
+ }
+ #t2{
+     margin-left: 10em;
+     margin-right: 2em;
+     margin-top: 7em;
+ }

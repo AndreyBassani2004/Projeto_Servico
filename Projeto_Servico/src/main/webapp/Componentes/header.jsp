@@ -15,19 +15,19 @@
 	
 	<nav>	
         <ul>
-            <li><a href="<%= request.getContextPath() %>/ServletPrestadores?acao=inicio">INICIO</a></li>
-            <li><a href="<%= request.getContextPath() %>/ServletPrestadores?acao=trabalheConosco">TRABALHE CONOSCO</a></li>
-            <li><a href="<%= request.getContextPath() %>/ServletPrestadores?acao=quemsomos">QUEM SOMOS</a></li>
-            
+            <li><a href="<%= request.getContextPath() %>/index.jsp">INICIO</a></li>
+            <li><a href="<%= request.getContextPath() %>/index.jsp#planos">ANUNCIE CONOSCO</a></li>
+            <li><a href="<%= request.getContextPath() %>/index.jsp#somos">QUEM SOMOS</a></li>
+            <li><a href="<%= request.getContextPath() %>/login.jsp">LOGIN</a></li>
           </ul>
     </nav>
 	
 	<div id="navMobile">
 	   <ul>
-            <li><a href="<%= request.getContextPath() %>/ServletPrestadores?acao=inicio">INICIO</a></li>
-            <li><a href="<%= request.getContextPath() %>/ServletPrestadores?acao=trabalheConosco">TRABALHE CONOSCO</a></li>
-            <li><a href="<%= request.getContextPath() %>/ServletPrestadores?acao=quemsomos">QUEM SOMOS</a></li>
-            
+            <li><a href="<%= request.getContextPath() %>/index.jsp">INICIO</a></li>
+            <li><a href="<%= request.getContextPath() %>/index.jsp#planos">ANUNCIE CONOSCO</a></li>
+            <li><a href="<%= request.getContextPath() %>/index.jsp#somos">QUEM SOMOS</a></li>
+            <li><a href="<%= request.getContextPath() %>/login.jsp">LOGIN</a></li>
           </ul>
 	</div>
 	
