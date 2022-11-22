@@ -225,6 +225,7 @@
 
     <hr style="width: 80%">
 
+  <!--  
     <section class="planos" id="planos">
         <div class="titulo_PL">
             <h3>Anuncie conosco, confira nossos planos</h3>
@@ -269,6 +270,42 @@
 				<a href="#" class="plano__btn-comprar">Assinar</a>
 			</div>
         </div>
+    </section>
+    -->
+    
+    <section class="Cadastrase">
+    	<div class="Cadastrase-c">
+    		<div class="titulo__cadastrase" style="font-family: 'Times New Roman', Times, serif;
+    text-align: center;  
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.9em;
+    margin-bottom: 0.5em;
+    font-size: 50px;   ">
+    			<h1>Trabalhe Conosco</h1>
+    		</div>
+    		<div class="txt__cadastrase">
+    			<p style="font-family: 'Times New Roman', Times, serif;
+    text-align: center;  
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;  ">Se quer uma maneira fácil de solucionar seus problemas do dia a dia ou uma maneira de arranjar serviço,<br/> 
+ 		  na <i>PresTec</i> facilitamos a sua procura, contando com profissionais especializados para atender suas <br/>
+ 		  necessidades diárias, através de uma navegação simples fácil e gratuita.</p><br/>  
+
+          <p style="font-family: 'Times New Roman', Times, serif;
+    text-align: center;  
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;  ">Também ao profissional facilitamos as oportunidades de serviço, com uma página somente de anúncio sobre<br/>
+           seu trabalho, além disso o site conta com uma maneira muito fácil de se cadastrar rápido prático e seguro.<p/>  
+    		</div>
+    		<div class="btnLink__cadastrase" style="text-align: center;  
+    margin-left: auto;
+    margin-right: auto;">
+    		<a href="<%= request.getContextPath() %>/ServletPrestadores?acao=cadastrase"><button type="button" class="btn btn-warning">Cadastrar-se</button></a>
+    		</div>
+    	</div>
     </section>
 
         <hr style="width: 80%">
