@@ -135,35 +135,35 @@
              <div class="anuncio_destaque-c">
         
                 <div class="anuncio_AND">
-                    <a href="#" class="link__AND">
+                    <a href="<%=request.getContextPath()%>/ServletPrestadores?acao=perfil&id=123&paginar=0" class="link__AND">
                     <div class="anuncio__img_AND">
-                        <img src="<%=request.getContextPath()%>/Img/semImg.png" alt="Sem Imagem" width="300" height="250">
+                        <img src="<%=request.getContextPath()%>/Img/An1.jpg" alt="Imagem" width="300" height="250">
                     </div>
                     <div class="texto_AND">
-                        <div class="titulo_anuncio_AND">Titulo</div>
-                        <div class="descricao_anuncio_AND"><p>Descriçao</p></div>
+                        <div class="titulo_anuncio_AND">Alvenaria ?</div>
+                        <div class="descricao_anuncio_AND"><p>ABC alvenaria a melhor da região de campinas!</p></div>
                     </div>
                     </a>
                 </div>
                 <div class="anuncio_AND">
-                    <a href="#" class="link__AND">
+                    <a href="<%=request.getContextPath()%>/ServletPrestadores?acao=perfil&id=127&paginar=0" class="link__AND">
                     <div class="anuncio__img_AND">
-                        <img src="<%=request.getContextPath()%>/Img/semImg.png" alt="Sem Imagem" width="300" height="250">
+                        <img src="<%=request.getContextPath()%>/Img/An2.jpg" alt="Imagem" width="300" height="250">
                     </div>
                     <div class="texto_AND">
-                        <div class="titulo_anuncio_AND">Titulo</div>
-                        <div class="descricao_anuncio_AND"><p>Descriçao</p></div>
+                        <div class="titulo_anuncio_AND">Eletricista ?</div>
+                        <div class="descricao_anuncio_AND"><p>ETL eletricista a melhor da região do Grande ABC Paulista!</p></div>
                     </div>
                     </a>
                 </div>
                 <div class="anuncio_AND">
-                    <a href="#" class="link__AND">
+                    <a href="<%=request.getContextPath()%>/ServletPrestadores?acao=perfil&id=131&paginar=0" class="link__AND">
                     <div class="anuncio__img_AND">
-                        <img src="<%=request.getContextPath()%>/Img/semImg.png" alt="Sem Imagem" width="300" height="250">
+                        <img src="<%=request.getContextPath()%>/Img/An3.jpg" alt="Sem Imagem" width="300" height="250">
                     </div>
                     <div class="texto_AND">
-                        <div class="titulo_anuncio_AND">Titulo</div>
-                        <div class="descricao_anuncio_AND"><p>Descriçao</p></div>
+                        <div class="titulo_anuncio_AND">Encanador ?</div>
+                        <div class="descricao_anuncio_AND"><p>CA encanamentos a melhor da região de campinas!</p></div>
                     </div>
                     </a>
                 </div>  
@@ -223,7 +223,7 @@
         </div>
     </section>
 
-    <hr style="width: 80%">
+    <hr style="width: 80%" id="planos">
 
   <!--  
     <section class="planos" id="planos">

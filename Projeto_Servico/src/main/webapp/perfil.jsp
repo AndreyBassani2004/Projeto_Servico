@@ -74,7 +74,7 @@
                                         <h2>Email: ${modelAnuncio.email_contato}</h2><br/><br/>
                                     </div>
                                     <div class="opcoes__anuncio2">
-                                        <button class="btn btn-warning" style="width: 200px;">Entre em contato</button><br/><br/>
+                                      <!--   <button class="btn btn-warning" style="width: 200px;">Entre em contato</button><br/><br/> -->
                                         <a href="<%=request.getContextPath()%>/ServletPrestadores?acao=avaliar&id=${modelAnuncio.id}"><button class="btn btn-success" style="width: 200px;">Avaliar</button></a><br/><br/>
                                         <a href="<%=request.getContextPath()%>/ServletPrestadores?acao=denuncia&id=${modelAnuncio.id}"><button class="btn btn-danger" style="width: 200px;">Denunciar</button></a><br/><br/>
                                     </div>
@@ -140,7 +140,7 @@
                                 <h2>Email: <br/> ${modelAnuncio.email_contato} </h2><br/>
                             </div>
                             <div class="opcoes__anuncio">
-                                <button class="btn btn-warning" style="width: 200px;">Entre em contato</button><br/>
+                                <!--  <button class="btn btn-warning" style="width: 200px;">Entre em contato</button><br/>-->
                                 <a href="<%=request.getContextPath()%>/ServletPrestadores?acao=avaliar&id=${modelAnuncio.id}"><button class="btn btn-success" style="width: 200px; margin-top: 12px;">Avaliar</button></a><br/>
                                <a href="<%=request.getContextPath()%>/ServletPrestadores?acao=denuncia&id=${modelAnuncio.id}"><button class="btn btn-danger" style="width: 200px; margin-top: 12px;">Denunciar</button></a><br/>
                             </div>
