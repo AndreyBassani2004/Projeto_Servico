@@ -36,6 +36,7 @@
                     <ul>
                     	<c:if test="${perfil == 'PRESTADOR' && situacao_user == 'ATIVO'}">
                     	<c:if test="${perfil == 'PRESTADOR' && situacao_user == 'ATIVO'}">
+                    	<li><a href="<%=request.getContextPath()%>/principal/principal.jsp">Inicio</a></li>
                         <li><a href="<%=request.getContextPath()%>\principal\perfil.jsp" id="opcao">Perfil</a></li>
                       <!--<li><a href="#" id="opcao">Gerenciar Clientes</a></li>-->
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarMensagem&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Mensagens de alerta</a></li>
@@ -45,6 +46,7 @@
                         <li><a href="<%=request.getContextPath()%>\ServletCarregarRequisicao?acao=carregarMinhasAvaliacoes&id_user=<%= session.getAttribute("id")%>&paginar=0" id="opcao">Avaliações</a></li>
                         </c:if>  
                         <c:if test="${perfil == 'ADMIN' && situacao_user == 'ATIVO'}">
+                        <li><a href="<%=request.getContextPath()%>/principal/principal.jsp">Inicio</a></li>
                         <li><a href="<%=request.getContextPath()%>\principal\perfilAdm.jsp" id="opcao">Perfil</a></li>
                         </c:if>
                         <c:if test="${isAdmin}">
